@@ -1,0 +1,22 @@
+# Material de terceiros e pessoal: NUNCA versionar (repo público)
+materiais/
+*.pdf
+*.PDF
+*.jpg
+*.jpeg
+econometria.png
+
+# Obsidian (inclui o cofre-semente criado em econometria/ — abra a raiz do repo como cofre)
+.obsidian/
+.trash/
+/econometria/
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
+Rplots.pdf
+
+# Sistema
+Thumbs.db
+desktop.ini

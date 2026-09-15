@@ -1,0 +1,132 @@
+chave,valor
+m02_ex40_n,           15
+m02_ex40_somaX,          120
+m02_ex40_somaY,        42.08
+m02_ex40_somaXY,       418.53
+m02_ex40_somaX2,         1240
+m02_ex40_somaY2,     142.6064
+m02_ex40_Xbar,            8
+m02_ex40_Ybar,2.80533333333
+m02_ex40_nXbar2,          960
+m02_ex40_nXbarYbar,       336.64
+m02_ex40_Sxx,          280
+m02_ex40_Sxy,        81.89
+m02_ex40_Syy,24.5579733333
+m02_ex40_nSomaXY,      6277.95
+m02_ex40_somaXsomaY,       5049.6
+m02_ex40_nSomaX2,        18600
+m02_ex40_somaXquad,        14400
+m02_ex40_det,         4200
+m02_ex40_num_b2,      1228.35
+m02_ex40_somaX2somaY,      52179.2
+m02_ex40_somaXsomaXY,      50223.6
+m02_ex40_num_b1,       1955.6
+m02_ex40_b2Xbar,2.33971428571
+m02_ex40_b1,0.465619047619
+m02_ex40_b2,0.292464285714
+m02_ex40_SQR,0.60807297619
+m02_ex40_SQE,23.9499003571
+m02_ex40_SQT,24.5579733333
+m02_ex40_s2,0.0467748443223
+m02_ex40_s,0.216274927632
+m02_ex40_R2,0.975239285102
+m02_ex40_rXY,0.987542042194
+m02_ex40_gl,           13
+m02_ex40_ep_b1,0.117514747767
+m02_ex40_ep_b2,0.0129248990494
+m02_ex40_cov_b1b2,-0.0013364241235
+m02_ex40_corr_b1b2,-0.879882690128
+m02_ex40_t_b1,3.96221798937
+m02_ex40_t_b2,22.6279744698
+m02_ex40_p_b1,0.00162367394952
+m02_ex40_p_b2,7.95787985271e-12
+m02_ex40_tcrit,2.16036865646
+m02_ex40_tcrit2,4.66719273183
+m02_ex40_Fcrit,4.66719273183
+m02_ex40_F,512.025228606
+m02_ex40_F_R2,512.025228606
+m02_ex40_t2,512.025228606
+m02_ex40_r2XY,0.975239285102
+m02_ex40_zcrit,1.95996398454
+m02_ex40_ic_b2_inf,0.26454173892
+m02_ex40_ic_b2_sup,0.320386832509
+m02_ex40_b2x20,5.84928571429
+m02_ex40_prev20, 6.3149047619
+m02_ex40_ep_ajuste20,0.164845252215
+m02_ex40_ep_prev20,0.271935289178
+m02_ex40_ip20_inf,5.72742428658
+m02_ex40_ip20_sup,6.90238523723
+m02_ex40_ep_ajuste_media,0.0558419461948
+m02_ex40_elast,0.834023628463
+m02_ex40_elast_chave,0.835714285714
+m02_ex40_PMe_media,0.350666666667
+m02_ex40_quad_c3,-0.00805349062702
+m02_ex40_quad_t3,-3.07071772522
+m02_ex40_quad_p3,0.00970384736338
+m02_ex40_quad_prev20,5.30553393665
+m02_ex40_R2adj,0.973334614725
+m02_ex40_dpY,1.32443986363
+m02_ex40_pF,7.95787985271e-12
+m02_ex17_soma_u,4.55191440096e-15
+m02_ex17_soma_Xu,4.5852210917e-14
+m02_ex21_soma_Yhat_u,1.59455781912e-14
+m02_ex21_media_Yhat,2.80533333333
+m02_ex21_semconst_b,0.337524193548
+m02_ex21_semconst_soma_u,1.57709677419
+m02_ex21_semconst_media_Yhat,2.70019354839
+m02_ex22_b2_desvios,0.292464285714
+m02_ex22_max_dif_resid,6.10622663544e-16
+m02_ex41_t2,126.441478944
+m02_ex41_F_R2,126.441725224
+m02_ex41_r,0.913739569024
+m02_ex41_tcrit,2.05953855275
+m02_mc_R,        20000
+m02_mc_beta1,          0.5
+m02_mc_beta2,          0.3
+m02_mc_sigma,          0.3
+m02_mc_sigma2,         0.09
+m02_mc_media_b1,0.500144869594
+m02_mc_media_b2,0.299954157332
+m02_mc_var_b1,0.0267369568734
+m02_mc_var_b1_teo,0.0265714285714
+m02_mc_var_b2,0.00032338205719
+m02_mc_var_b2_teo,0.000321428571429
+m02_mc_cov,-0.0025941623725
+m02_mc_cov_teo,-0.00257142857143
+m02_mc_corr,-0.882232816498
+m02_mc_corr_teo,-0.879882690128
+m02_mc_media_s2,0.0898807980759
+m02_mc_media_s2n,0.0778966916657
+m02_mc_s2n_teo,        0.078
+m02_mc_media_s,0.294130455565
+m02_ex15_n,           50
+m02_ex15_R,        10000
+m02_ex15_beta1,            1
+m02_ex15_beta2,            2
+m02_ex15_beta3,          1.5
+m02_ex15_sigma,            2
+m02_ex15_d_aux,0.576698135287
+m02_ex15_vies_teo,0.86504720293
+m02_ex15_media_b2_curta,2.86497918367
+m02_ex15_vies_mc,0.864979183673
+m02_ex15_media_b2_longa,1.99849494837
+m02_ex15_var_curta,0.00992202656722
+m02_ex15_var_longa,0.0231225227695
+m02_ex15_r23,0.745042371479
+m02_ex20_Sxx_alta,          280
+m02_ex20_Sxx_baixa,22.8571428571
+m02_ex20_var_alta_teo,0.000321428571429
+m02_ex20_var_baixa_teo,    0.0039375
+m02_ex20_var_alta_mc,0.000325679402862
+m02_ex20_var_baixa_mc,0.00398957268506
+m02_ex20_razao_var_teo,        12.25
+m02_ex20_razao_dp_teo,          3.5
+m02_me_sigma_u,          0.3
+m02_me_sigma_e,          0.4
+m02_me_media_b2_semerro,0.300008327973
+m02_me_media_b2_comerro,0.299720350682
+m02_me_var_semerro_teo,0.000321428571429
+m02_me_var_comerro_teo,0.000892857142857
+m02_me_var_semerro_mc,0.000320380671837
+m02_me_var_comerro_mc,0.000890893641815
+m02_me_razao_var_teo,2.77777777778

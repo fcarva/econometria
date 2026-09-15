@@ -1,0 +1,70 @@
+chave,valor
+m04_psid_n,         4165
+m04_psid_K,           10
+m04_psid_gl,         4155
+m04_psid_b_ed,0.0611276721836
+m04_psid_se_ed,0.00277225763012
+m04_psid_t_ed,22.0497804819
+m04_psid_ee,581.271270225
+m04_fwl_b_ed,0.0611276721836
+m04_fwl_dif_b,3.53189699709e-15
+m04_fwl_dif_resid,7.45954513437e-13
+m04_fwl_se_ingenuo,0.00276926005387
+m04_fwl_se_corrigido,0.00277225763012
+m04_fwl_fator_gl,1.00108244665
+m04_fwl_b_ycru,0.0611276721836
+m04_fwl_b_xcru,0.0343782527316
+m04_fwl_media_ex,1.69092535259e-16
+m04_fwl_media_ey,6.22160110504e-17
+m04_inv_bloco22,5.49362922681e-05
+m04_inv_1_sobre_xMx,5.49362922681e-05
+m04_inv_dif,1.21972744405e-19
+m04_pc_r2_parcial,0.104756005241
+m04_pc_t2_formula,0.104756005241
+m04_pc_via_r2,0.104756005241
+m04_pc_r2_curta,0.267916660812
+m04_pc_r2_longa,0.344606786928
+m04_pc_r2_longa_formula,0.344606786928
+m04_pc_ee_curta,649.288097577
+m04_pc_uu_longa,581.271270225
+m04_pc_queda_ssr,68.0168273525
+m04_pc_dif_teo35,3.41060513165e-13
+m04_pc_p1_r2_parcial,0.104757872556
+m04_pc_p1_r_parcial,0.32366320853
+m04_desv_b_ed,0.0764029089172
+m04_desv_dif,5.6898930012e-15
+m04_desv_intercepto,5.43586135326
+m04_desv_intercepto_formula,5.43586135326
+m04_ex25_psid_bexp_curta,0.0408676556832
+m04_ex25_psid_bexp_longa,0.0429166484702
+m04_ex25_psid_delta_exp,-0.0335198890099
+m04_ex25_psid_dif_ident,2.30926389122e-14
+m04_ex25_mc_vies_teo_b2,0.511367710139
+m04_ex25_mc_vies_sim_b2,0.513419690685
+m04_ex25_mc_vies_teo_b1,0.754088276159
+m04_ex25_mc_vies_sim_b1,0.748263781293
+m04_ex25_mc_ort_vies_teo_b2,6.49258935859e-15
+m04_ex25_mc_ort_vies_sim_b2,0.000686036786427
+m04_ex25_mc_ort_vies_teo_b1,          2.1
+m04_ex25_mc_ort_vies_sim_b1,2.09768806631
+m04_fe_N,          595
+m04_fe_T,            7
+m04_fe_n,         4165
+m04_fe_K,            9
+m04_fe_gl_lsdv,         3561
+m04_fe_gl_ingenuo,         4156
+m04_fe_b_weeks,0.0008359549357
+m04_fe_b_exp,0.113208169594
+m04_fe_b_union,0.0327846279847
+m04_fe_dif_b,8.52833428877e-15
+m04_fe_se_weeks_lsdv,0.000599669006547
+m04_fe_se_weeks_ingenuo,0.000555085420532
+m04_fe_fator_gl,1.08031842373
+m04_fe_dif_se_corrigido,1.87350135405e-16
+m04_fe_dif_resid,9.14181924605e-13
+m04_fe_dif_ai,           NA
+m04_fe_ed_na,            0
+m04_fe_ss_within_ed,            0
+m04_fe_twfe_exp_na,            0
+m04_fe_dif_plm,            0
+m04_fe_dif_se_plm,1.80411241502e-16
