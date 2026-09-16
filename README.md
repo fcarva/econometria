@@ -121,8 +121,6 @@ Build completo passando em 15/09/2026: pacotes conferidos, **82 testes** do test
 | 10 endogeneidade e VI | ✅ D10.1–D10.11 | ✅ ex. 65–70 | ✅ |
 | 11–14 (P2) | esqueleto | mapa da Lista 2 | — |
 
-Provas: [P1 2025/2 resolvida e reproduzida em R](provas/p1_2025_2/econometria-i-prova-2025-2-resolvida.md), [banco de derivações](provas/banco/derivacoes.md) com 36 itens e o [Simulado 01](provas/simulados/simulado_01.md) completo com gabarito e rubrica.
-
-**Em aberto:** banco de interpretação de outputs, simulados 02 e 03.
+Provas: [P1 2025/2 resolvida e reproduzida em R](provas/p1_2025_2/econometria-i-prova-2025-2-resolvida.md), [banco de derivações](provas/banco/derivacoes.md) com 36 itens, [banco de interpretação](provas/banco/interpretacao.md) com 12 blocos e **três simulados completos** com gabarito e rubrica ([01](provas/simulados/simulado_01.md), [02](provas/simulados/simulado_02.md), [03](provas/simulados/simulado_03.md)).
 
 Dois achados que valem nota e estão registrados na [errata](formulario/errata_chave_lista1.md): a chave inverte a decisão do RESET no ex. 50, e a matriz de correlação do ex. 64 é matematicamente impossível (autovalor negativo).
