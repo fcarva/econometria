@@ -127,7 +127,7 @@ Regras:
 
 ## 5. Matemática
 
-- Inline `$...$`. Bloco `$$...$$` em linhas próprias, com linha em branco antes e depois.
+- Fórmula no meio da frase entre cifrões simples; fórmula em bloco entre cifrões duplos, em linhas próprias, com linha em branco antes e depois.
 - Dinheiro: escrever `R\$` (senão o `$` abre matemática).
 - Dentro de tabela: nada de `|` na matemática; use `\mid`, `\lvert`, `\rvert`, `\lVert`.
 - Sinal de menor seguido de letra: use `\lt`.
