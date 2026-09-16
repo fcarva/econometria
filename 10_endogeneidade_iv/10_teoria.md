@@ -441,24 +441,128 @@ O detalhe fino: $X'\varepsilon/n\to\gamma\neq 0$, mas $\gamma$ é finito e vem m
 > - "Compare a variância do VI com a do MQO": caso escalar, $\operatorname{Asy.Var}(b_{IV})=\sigma^2/(n\sigma_x^2\rho_{zx}^2)$ contra $\sigma^2/(n\sigma_x^2)$. A razão $1/\rho_{zx}^2\ge 1$ mostra que o VI é menos preciso, e muito menos com instrumento fraco (D10.9, D10.10).
 > - "Onde entrou a relevância?" Na inversa de $Q_{ZX}$, nos passos 2 e 3.
 
-(Em construção: D10.7 a D10.13.)
+### D10.7 · Mínimos quadrados em dois estágios
+
+> [!NOTE]
+> **O que se quer provar**
+> Com $L\ge K$ instrumentos em $Z$ e $P_Z=Z(Z'Z)^{-1}Z'$,
+> $$\hat\beta_{MQ2E}=\big[X'Z(Z'Z)^{-1}Z'X\big]^{-1}X'Z(Z'Z)^{-1}Z'y=(\hat X'\hat X)^{-1}\hat X'y,\qquad \hat X=P_ZX.$$
+
+**Por que importa.** Com mais instrumentos que regressores endógenos, $(Z'X)$ deixa de ser quadrada e o VI simples não existe. A saída é projetar $X$ no espaço de $Z$: fica-se com a parte de $X$ **explicada pelos instrumentos**, que é exógena por construção.
+
+**Passo a passo.**
+
+1. Primeiro estágio: regrida cada coluna de $X$ em $Z$ e guarde os ajustados, $\hat X=Z(Z'Z)^{-1}Z'X=P_ZX$.
+
+2. Segundo estágio: MQO de $y$ em $\hat X$:
+$$\hat\beta=(\hat X'\hat X)^{-1}\hat X'y.$$
+
+3. Use que $P_Z$ é simétrica e idempotente: $\hat X'\hat X=X'P_Z'P_ZX=X'P_ZX$ e $\hat X'y=X'P_Zy$. Logo
+$$\hat\beta=(X'P_ZX)^{-1}X'P_Zy=\big[X'Z(Z'Z)^{-1}Z'X\big]^{-1}X'Z(Z'Z)^{-1}Z'y.\qquad\blacksquare$$
+
+4. Se $L=K$, $Z'X$ é quadrada e inversível, e a expressão colapsa em $(Z'X)^{-1}Z'y$ — o VI da D10.5.
+
+> [!WARNING]
+> **Os erros-padrão do segundo estágio ingênuo estão errados**
+> Se você rodar o segundo estágio "na mão" com `lm`, o software calcula os resíduos como $y-\hat X\hat\beta$, quando o correto é $y-X\hat\beta$. Os coeficientes saem certos, os erros-padrão não. Use `ivreg` (ou corrija $s^2$). Verificado no script: os coeficientes batem até $10^{-13}$ e o erro-padrão correto do preço é 0,26320.
+
+### D10.8 · Quando $Z=X$, o VI é o MQO
+
+Substituindo $Z=X$ em $\hat\beta_{IV}=(Z'X)^{-1}Z'y$:
+$$\hat\beta_{IV}=(X'X)^{-1}X'y=b.$$
+Interpretação: se o regressor é exógeno, ele é o melhor instrumento de si mesmo. Toda a perda de precisão do VI vem de usar apenas a parte de $X$ que o instrumento consegue explicar.
+
+### D10.9 · Variância assintótica e o custo do instrumento fraco
+
+Para o VI exatamente identificado,
+$$\operatorname{Asy.Var}(\hat\beta_{IV})=\sigma^2\big(Q_{ZX}\big)^{-1}Q_{ZZ}\big(Q_{XZ}\big)^{-1}\Big/n .$$
+
+No caso de uma variável, isso vira
+$$\operatorname{Asy.Var}(\hat\beta_{IV})=\frac{\sigma^2}{n\,\sigma_x^2\,\rho_{zx}^2}=\underbrace{\frac{\sigma^2}{n\,\sigma_x^2}}_{\text{variância do MQO}}\times\frac{1}{\rho_{zx}^2}.$$
+
+Como $\rho_{zx}^2\le 1$, o VI é **sempre menos preciso** que o MQO. Com instrumento fraco ($\rho_{zx}\approx 0$), a variância explode: o remédio fica pior que a doença — e ainda com viés na direção do MQO em amostra finita. Daí a regra prática de $F\gt 10$ no primeiro estágio.
+
+### D10.10 · O teste de Wu-Hausman como função de controle
+
+A forma prática do teste, e a que o `ivreg` reporta:
+
+1. Estime o primeiro estágio, $X_{end}=Z\pi+v$, e guarde $\hat v$.
+2. Estime a equação original **acrescentando** $\hat v$ como regressor extra:
+$$y=X\beta+\gamma\hat v+\text{erro}.$$
+3. Teste $H_0:\gamma=0$ por $t$ ou $F$.
+
+Sob exogeneidade, $\hat v$ não carrega informação sobre $y$ e $\gamma=0$; sob endogeneidade, $\hat v$ captura justamente a parte de $X$ correlacionada com o erro, então $\gamma\neq 0$. Rejeitar $H_0$ é concluir pela endogeneidade e pelo MQ2E.
+
+A forma original de Hausman compara os dois vetores de estimativas:
+$$H=(b_{MQ2E}-b_{MQO})'\big[\operatorname{Var}(b_{MQ2E})-\operatorname{Var}(b_{MQO})\big]^{-1}(b_{MQ2E}-b_{MQO})\ \sim\ \chi^2_J .$$
+A subtração das variâncias só é válida porque, sob $H_0$, o MQO é **eficiente** — é isso que a hipótese nula afirma além da consistência.
+
+### D10.11 · O teste de Sargan
+
+1. Estime por MQ2E e guarde os resíduos $\hat\varepsilon=y-X\hat\beta_{MQ2E}$.
+2. Regrida $\hat\varepsilon$ em **todos** os instrumentos (os externos e os exógenos do modelo).
+3. A estatística é $nR^2\sim\chi^2_{L-K}$ sob $H_0$ de que todos os instrumentos são exógenos.
+
+A intuição: se os instrumentos são válidos, não devem explicar o que sobrou. Verificado no script: o cálculo manual devolve 0,332622, idêntico ao reportado pelo `ivreg`, com 1 grau de liberdade.
+
+> [!WARNING]
+> **O que o Sargan não faz**
+> Ele testa o conjunto, não instrumento por instrumento, e supõe que **pelo menos** $K$ dos instrumentos são válidos. Não rejeitar não garante exogeneidade: com todos os instrumentos igualmente ruins, o teste passa.
 
 ## 3. Como cai na prova
 
-(em construção)
+| Formato | O que fazer |
+|---|---|
+| "Derive $\hat\beta_{IV}$" (Q6 de 2025/2) | D10.5: parta de $\operatorname{plim}(Z'\varepsilon/n)=0$, substitua $\varepsilon=y-X\beta$, isole e passe ao análogo amostral. |
+| "Prove que o MQO é inconsistente" | D10.1 no caso geral, D10.2 para erro de medição, D10.4 para simultaneidade. Sempre pelo plim, nunca pela esperança. |
+| "Erro de medição vicia?" (Q4) | Separe: em $Y$ não vicia, infla variância (D10.3); em $X$ vicia e atenua (D10.2). |
+| "Leia este output de `ivreg`" (Q2) | Os três testes na ordem: fracos → Wu-Hausman → Sargan, cada um com as quatro linhas. |
+| "Quais as duas propriedades de um instrumento?" | Relevância $\operatorname{Cov}(Z,X)\neq 0$ (testável) e exogeneidade $\operatorname{Cov}(Z,\varepsilon)=0$ (não testável sem sobreidentificação). |
+| "MQ2E ou VI?" | Com $L\gt K$, MQ2E usa toda a informação e permite Sargan. |
 
 ## 4. Interpretação de output
 
-(em construção)
+Bloco de diagnóstico do `ivreg`, na ordem em que aparece:
+
+```text
+Diagnostic tests:
+                 df1 df2 statistic p-value
+Weak instruments   2  44   228,738  0,0000   -> H0: instrumentos fracos; rejeitar é bom
+Wu-Hausman         1  44     3,823  0,0569   -> H0: regressor exógeno; rejeitar manda usar MQ2E
+Sargan             1  NA     0,333  0,5641   -> H0: instrumentos válidos; rejeitar é ruim
+```
+
+Três leituras que valem ponto:
+1. `df1` do Sargan é $L-K$: ele só existe com sobreidentificação (por isso `df2 = NA`).
+2. Os graus de liberdade do Wu-Hausman contam **um por regressor endógeno**.
+3. Trocar o `vcov` muda os diagnósticos: com erros robustos, $F$ fraco $=228{,}738$ e Wu-Hausman $p=0{,}0569$; sem robustez, $244{,}734$ e $p=0{,}0868$.
+
+No formato NLOGIT da P2 2024/2, o mesmo conteúdo aparece como "Mínimos quadrados em dois estágios (MQ2E)" com a lista de variáveis instrumentais no cabeçalho. Reproduza com `saida_mq2e()` em [../R/saida_nlogit.R](../R/saida_nlogit.R).
 
 ## 5. Armadilhas
 
-(em construção)
+> [!WARNING]
+> **Seis erros que custam caro**
+> 1. Usar esperança em vez de plim nas provas de inconsistência: $E[(X'X)^{-1}X'\varepsilon]$ não se separa.
+> 2. Dizer que o VI é não viesado. Ele é **consistente**; em amostra finita é viesado (e nem sempre tem momentos).
+> 3. Inverter a hipótese nula do teste de instrumentos fracos: rejeitar é o **bom** resultado.
+> 4. Inverter a do Sargan: rejeitar é o **mau** resultado.
+> 5. Rodar o segundo estágio na mão e reportar os erros-padrão que o `lm` imprime.
+> 6. Achar que erro de medição em $Y$ e em $X$ dão o mesmo resultado.
 
 ## 6. Checklist
 
-(em construção)
+- [ ] Derivo $\hat\beta_{IV}=(Z'X)^{-1}Z'y$ em até 6 minutos (D10.5).
+- [ ] Derivo $\hat\beta_{MQ2E}$ e mostro que colapsa no VI quando $L=K$ (D10.7, D10.8).
+- [ ] Provo a atenuação por erro de medição em $X$ e a não distorção em $Y$ (D10.2, D10.3).
+- [ ] Derivo a inconsistência do modelo keynesiano até o número final (D10.4).
+- [ ] Leio o bloco de diagnóstico do `ivreg` com as quatro linhas por teste, a 5% e a 10%.
+- [ ] Digo de cor as duas propriedades do instrumento e qual delas é testável.
 
 ## 7. Referências
 
-(em construção)
+- Greene, *Econometric Analysis*, cap. 8 (endogeneidade, VI, MQ2E, testes de endogeneidade e de sobreidentificação).
+- Slides SL10, com a aplicação de retornos da escolaridade.
+- Exercícios resolvidos: [10_lista1.md](10_lista1.md), ex. 65 a 70.
+- Prova resolvida: [P1 2025/2](../provas/p1_2025_2/econometria-i-prova-2025-2-resolvida.md), Q2, Q4 e Q6.
+- Base assintótica: [módulo 08](../08_assintotica/08_teoria.md), D08.1 e D08.2.
