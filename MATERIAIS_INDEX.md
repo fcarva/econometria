@@ -37,7 +37,7 @@ Os PDFs ficam em `materiais/`, que é **ignorada pelo git** (repositório públi
 | L1 | `materiais/listas/lista1.pdf` | Lista 1: 74 exercícios, conteúdo da P1. Mapa em [LISTA1_MAPA.md](LISTA1_MAPA.md) |
 | L1K | `materiais/listas/lista1_chave.pdf` | Chave de correção da Lista 1 (34 págs.). **Tem erros**: ver [errata](formulario/errata_chave_lista1.md) |
 | L2 | `materiais/listas/lista2.pdf` | Lista 2: 57 exercícios, conteúdo da P2 |
-| P1-25 | `materiais/provas/p1_2025_2_pag1.png` | Foto da pág. 1 da 1ª prova de 2025/2 (03/10/2025). Resolução completa em [provas/p1_2025_2](provas/p1_2025_2/econometria-i-prova-2025-2-resolvida.md) |
+| P1-25 | `materiais/provas/p1_2025_2/` | **1ª prova de 2025/2 (03/10/2025) completa**: `p1_2025_2_pag1/2/3.jpeg` (enunciado, 3 páginas) e `gabarito_q1`, `gabarito_q2`, `gabarito_q3_q4a`, `gabarito_q4b_q5`, `gabarito_q6` (resolução manuscrita). Mapa e conferência em [provas/p1_2025_2/README.md](provas/p1_2025_2/README.md) |
 | P2-24 | `materiais/provas/p2_2024_2.pdf` | 2ª prova de 2024/2 (29/11/2024), em scan de celular |
 
 ## Livros

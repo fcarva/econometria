@@ -18,6 +18,11 @@ aliases:
 
 # Provas: como treinar para a P1 de 02/10/2026
 
+
+> [!IMPORTANT]
+> **A distribuição real de pontos da P1 2025/2**
+> Interpretação de output (Q1 e Q2) valeu **6,5 dos 10 pontos**; as quatro demonstrações, 3,5. Comece sempre pelas questões de output. Mapa completo em [p1_2025_2/README.md](p1_2025_2/README.md).
+
 > [!NOTE]
 > **O que há nesta pasta**
 >

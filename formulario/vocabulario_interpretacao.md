@@ -37,7 +37,7 @@ Conclusão:   EXP é estatisticamente significativa; mais experiência está ass
 > |---|---|---|---|
 > | Lista 1, ex. 67 | 228,738 (p = 0,0000) | 3,823 (p = 0,0569) | 0,333 (p = 0,5641) |
 > | P2 2024/2 | 228,738 (p = 0,0000) | 3,823 (p = 0,0369) | 0,333 (p = 0,5641) |
-> | P1 2025/2 | 228,738 (p = 0,0000) | p = 0,0469 | p = 0,8468 |
+> | P1 2025/2 (confirmado na foto da prova) | 228,738 (p = 0,0000) | p = 0,0469 | p = 0,8468, com gl1 = 2 impresso |
 >
 > Nunca responda de memória: **decida pelo número impresso na sua prova e pelo $\alpha$ que o enunciado deu**. Com Wu-Hausman de p = 0,0569, a 10% rejeita-se H0 e a 5% não — a conclusão inverte.
 
