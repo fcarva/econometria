@@ -1,0 +1,29 @@
++----------------------------------------------------------------+
+| Mínimos quadrados em dois estágios (MQ2E)                      |
+| LHS=LWAGE           Média                     = 1,190173       |
+|                     Desvio padrão             = 0,7231978      |
+|                     Número de observações     = 428            |
+| Tamanho do modelo   Parâmetros                = 4              |
+|                     Graus de liberdade        = 424            |
+| Resíduos            Soma dos quadrados        = 193,0200       |
+|                     Erro padrão dos resíduos  = 0,6747117      |
+| Ajuste              R-quadrado                = 0,1357085      |
+|                     R-quadrado ajustado       = 0,1295932      |
+| Teste de modelo F[3,424] (valor-p)            = 22,19 (0,0000) |
+| Variáveis instrumentais:                                       |
+| ONE      EXPER    EXPERSQ  MOTHEDUC FATHEDUC                   |
++----------------------------------------------------------------+
++----------+---------------+----------------+---------+---------+-------------+
+|Variáveis | Coeficientes  | Erro padrão    | b/E.p.  |P[|Z|>z] | Média de X  |
++----------+---------------+----------------+---------+---------+-------------+
+Constant |     0,04810031      0,40032808     0,120   0,9044              
+EDUC     |     0,06139663      0,03143670     1,953   0,0508    12,6588785
+EXPER    |     0,04417039      0,01343248     3,288   0,0010    13,0373832
+EXPERSQ  |    -0,00089897      0,00040169    -2,238   0,0252    234,719626
++----------+---------------+----------------+---------+---------+-------------+
+
+Testes de diagnóstico:
+                     gl1    gl2   Estatística   Valor-p
+Weak instruments       2    423        55,400    0,0000
+Wu-Hausman             1    423         2,793    0,0954
+Sargan                 1     NA         0,378    0,5386

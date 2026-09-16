@@ -1,0 +1,15 @@
+ivreg(formula = CONS ~ PIB | INV + GOV)
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)
+(Intercept) -1,465e+02  6,519e+00  -22,47   <2e-16
+PIB          6,895e-01  1,298e-03  531,26   <2e-16
+
+Diagnostic tests:
+                 df1 df2 statistic  p-value
+Weak instruments   2 201 11992,010  < 2e-16
+Wu-Hausman         1 201    53,694 5,58e-12
+Sargan             1  NA     0,546     0,46
+
+Multiple R-Squared: 0,9993,	Adjusted R-squared: 0,9993
+Wald test: 2,822e+05 on 1 and 202 DF, p-value: < 2,2e-16

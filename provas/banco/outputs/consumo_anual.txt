@@ -1,0 +1,27 @@
++-------------------------------------------------------------------+
+| Regressão de mínimos quadrados ordinários (MQO)                   |
+| LHS=LCONS           Média                     = 9,096128          |
+|                     Desvio padrão             = 0,2748489         |
+|                     Número de observações     = 44                |
+| Tamanho do modelo   Parâmetros                = 2                 |
+|                     Graus de liberdade        = 42                |
+| Resíduos            Soma dos quadrados        = 0,008694167       |
+|                     Erro padrão dos resíduos  = 0,01438763        |
+| Ajuste              R-quadrado                = 0,9973235         |
+|                     R-quadrado ajustado       = 0,9972597         |
+| Teste de modelo F[1,42] (valor-p)             = 15649,98 (0,0000) |
++-------------------------------------------------------------------+
++----------+---------------+----------------+---------+---------+-------------+
+|Variáveis | Coeficientes  | Erro padrão    | b/E.p.  |P[|Z|>z] | Média de X  |
++----------+---------------+----------------+---------+---------+-------------+
+Constant |    -0,04900952      0,07313485    -0,670   0,5028              
+LRENDA   |     0,99496822      0,00795339   125,100   0,0000    9,19138606
++----------+---------------+----------------+---------+---------+-------------+
+
+Série anual 1950-1993 (EUA); consumo e renda disponível em logaritmo.
+Testes de diagnóstico:
+Teste                              Estatística            gl   Valor-p
+Durbin-Watson                           0,5208             -   <0,0001
+Breusch-Godfrey (1 defasagem)          22,4376             1   <0,0001
+Breusch-Godfrey (2 defasagens)         22,5697             2   <0,0001
+Jarque-Bera (resíduos)                  0,6706             2    0,7151

@@ -1,0 +1,33 @@
++-----------------------------------------------------------------+
+| Mínimos quadrados em dois estágios (MQ2E)                       |
+| LHS=LWAGE           Média                     = 6,261832        |
+|                     Desvio padrão             = 0,4437976       |
+|                     Número de observações     = 3010            |
+| Tamanho do modelo   Parâmetros                = 7               |
+|                     Graus de liberdade        = 3003            |
+| Resíduos            Soma dos quadrados        = 459,1785        |
+|                     Erro padrão dos resíduos  = 0,3910327       |
+| Ajuste              R-quadrado                = 0,2252004       |
+|                     R-quadrado ajustado       = 0,2236524       |
+| Teste de modelo F[6,3003] (valor-p)           = 145,47 (0,0000) |
+| Variáveis instrumentais:                                        |
+| ONE      NEARC4   EXPER    EXPERSQ  BLACK    SMSA               |
+| SOUTH                                                           |
++-----------------------------------------------------------------+
++----------+---------------+----------------+---------+---------+-------------+
+|Variáveis | Coeficientes  | Erro padrão    | b/E.p.  |P[|Z|>z] | Média de X  |
++----------+---------------+----------------+---------+---------+-------------+
+Constant |     3,75278134      0,82934088     4,525   0,0000              
+EDUC     |     0,13228884      0,04923324     2,687   0,0072    13,2634551
+EXPER    |     0,10749799      0,02130061     5,047   0,0000    8,85614618
+EXPERSQ  |    -0,00228407      0,00033413    -6,836   0,0000    95,5790698
+BLACK    |    -0,13080189      0,05287231    -2,474   0,0134    0,23355482
+SMSA     |     0,13132366      0,03012984     4,359   0,0000    0,71295681
+SOUTH    |    -0,10490053      0,02307310    -4,546   0,0000    0,40365449
++----------+---------------+----------------+---------+---------+-------------+
+
+Testes de diagnóstico:
+                     gl1    gl2   Estatística   Valor-p
+Weak instruments       1   3003        16,718    0,0000
+Wu-Hausman             1   3002         1,539    0,2149
+Sargan                 0     NA            NA        NA

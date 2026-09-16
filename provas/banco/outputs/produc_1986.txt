@@ -1,0 +1,22 @@
+Irrestrito, 1986 (48 estados): LGSP = log PIB; LK = log capital privado; LL = log emprego
++------------------------------------------------------------------+
+| Regressão de mínimos quadrados ordinários (MQO)                  |
+| LHS=LGSP            Média                     = 10,73271         |
+|                     Desvio padrão             = 1,018436         |
+|                     Número de observações     = 48               |
+| Tamanho do modelo   Parâmetros                = 4                |
+|                     Graus de liberdade        = 44               |
+| Resíduos            Soma dos quadrados        = 0,2171663        |
+|                     Erro padrão dos resíduos  = 0,07025381       |
+| Ajuste              R-quadrado                = 0,9955452        |
+|                     R-quadrado ajustado       = 0,9952415        |
+| Teste de modelo F[3,44] (valor-p)             = 3277,67 (0,0000) |
++------------------------------------------------------------------+
++----------+---------------+----------------+---------+---------+-------------+
+|Variáveis | Coeficientes  | Erro padrão    | b/E.p.  |P[|Z|>z] | Média de X  |
++----------+---------------+----------------+---------+---------+-------------+
+Constant |     2,27257761      0,18397681    12,353   0,0000              
+LK       |     0,28892731      0,04046803     7,140   0,0000    10,7844400
+LL       |     0,75753681      0,03526684    21,480   0,0000    7,15126665
+UNEMP    |    -0,01055463      0,00619321    -1,704   0,0883    6,92916667
++----------+---------------+----------------+---------+---------+-------------+

@@ -1,0 +1,21 @@
+Restrito (a_K + a_L = 1), 1986: LGSP_L = log(PIB/emprego); LK_L = log(capital/emprego)
++----------------------------------------------------------------+
+| Regressão de mínimos quadrados ordinários (MQO)                |
+| LHS=LGSP_L          Média                     = 3,581443       |
+|                     Desvio padrão             = 0,1083877      |
+|                     Número de observações     = 48             |
+| Tamanho do modelo   Parâmetros                = 3              |
+|                     Graus de liberdade        = 45             |
+| Resíduos            Soma dos quadrados        = 0,2895589      |
+|                     Erro padrão dos resíduos  = 0,08021623     |
+| Ajuste              R-quadrado                = 0,4755797      |
+|                     R-quadrado ajustado       = 0,4522722      |
+| Teste de modelo F[2,45] (valor-p)             = 20,40 (0,0000) |
++----------------------------------------------------------------+
++----------+---------------+----------------+---------+---------+-------------+
+|Variáveis | Coeficientes  | Erro padrão    | b/E.p.  |P[|Z|>z] | Média de X  |
++----------+---------------+----------------+---------+---------+-------------+
+Constant |     2,85162948      0,11968419    23,826   0,0000              
+LK_L     |     0,20352184      0,03855794     5,278   0,0000    3,63317338
+UNEMP    |    -0,00138783      0,00652198    -0,213   0,8315    6,92916667
++----------+---------------+----------------+---------+---------+-------------+

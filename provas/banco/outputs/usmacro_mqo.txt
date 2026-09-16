@@ -1,0 +1,25 @@
++--------------------------------------------------------------------+
+| Regressão de mínimos quadrados ordinários (MQO)                    |
+| LHS=CONS            Média                     = 2999,436           |
+|                     Desvio padrão             = 1459,707           |
+|                     Número de observações     = 204                |
+| Tamanho do modelo   Parâmetros                = 2                  |
+|                     Graus de liberdade        = 202                |
+| Resíduos            Soma dos quadrados        = 305556,9           |
+|                     Erro padrão dos resíduos  = 38,89290           |
+| Ajuste              R-quadrado                = 0,9992936          |
+|                     R-quadrado ajustado       = 0,9992901          |
+| Teste de modelo F[1,202] (valor-p)            = 285745,66 (0,0000) |
++--------------------------------------------------------------------+
++----------+---------------+----------------+---------+---------+-------------+
+|Variáveis | Coeficientes  | Erro padrão    | b/E.p.  |P[|Z|>z] | Média de X  |
++----------+---------------+----------------+---------+---------+-------------+
+Constant |    -149,991895      6,49055534   -23,109   0,0000              
+PIB      |     0,69026349      0,00129129   534,552   0,0000    4562,64559
++----------+---------------+----------------+---------+---------+-------------+
+
+Dados trimestrais dos EUA, 1950:1 a 2000:4; bilhões de dólares de 1996.
+Testes de diagnóstico:
+Teste                              Estatística            gl   Valor-p
+Durbin-Watson                           0,3237             -   <0,0001
+Breusch-Godfrey (4 defasagens)        139,0008             4   <0,0001

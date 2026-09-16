@@ -1,0 +1,6 @@
+Testes de diagnóstico:
+Teste                                     Estatística            gl   Valor-p
+Jarque-Bera (resíduos)                        34,8894             2   <0,0001
+RESET (ŷ² e ŷ³)                                2,5650        2 e 82    0,0831
+Breusch-Pagan (Koenker)                        4,2232             3    0,2383
+White (quadrados e produtos cruzados)          9,5494             9    0,3882

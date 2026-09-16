@@ -1,0 +1,17 @@
+ivreg(formula = LWAGE ~ EDUC + EXPER + EXPERSQ | EXPER + EXPERSQ + FATHEDUC)
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)
+(Intercept) -0,0611169  0,4364461  -0,140  0,88870
+EDUC         0,0702263  0,0344427   2,039  0,04208
+EXPER        0,0436716  0,0134001   3,259  0,00121
+EXPERSQ     -0,0008822  0,0004009  -2,200  0,02832
+
+Diagnostic tests:
+                 df1 df2 statistic p-value
+Weak instruments   1 424    87,741  <2e-16
+Wu-Hausman         1 423     1,437   0,231
+Sargan             0  NA        NA      NA
+
+Multiple R-Squared: 0,143,	Adjusted R-squared: 0,137
+Wald test: 8,314 on 3 and 424 DF, p-value: 2,201e-05

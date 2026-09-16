@@ -1,0 +1,300 @@
+chave,valor
+bnc_psid_sst,886.904938951
+bnc_psid_r2_cabecalho,0.344606565617
+bnc_psid_F_cabecalho,242.744861839
+bnc_psid_s2,0.139896908087
+bnc_psid_elast_wks,0.226654096527
+bnc_psid_ed_exato, 6.3034608449
+bnc_psid_blk_exato,-23.102355283
+bnc_psid_smsa_exato,14.7851861065
+bnc_psid_prop_south,0.290276110444
+bnc_psid2_r2,0.427849776221
+bnc_psid2_r2adj,0.426334328963
+bnc_psid2_b_fem,-0.408573414045
+bnc_psid2_t_fem,-22.4788992883
+bnc_psid2_fem_exato,-33.5402320104
+bnc_psid2_b_union,0.0942954177712
+bnc_psid2_t_union,7.37438504047
+bnc_psid2_union_exato,9.88843279302
+bnc_psid2_b_ed,0.0569107796432
+bnc_psid2_F_conj,302.113799693
+bnc_psid2_F_conj_p,3.1850386226e-123
+bnc_psid2_Fcrit,2.99789425987
+bnc_p2_r2,0.319246745658
+bnc_p2_r2adj,0.317772189872
+bnc_p2_F,216.503674381
+bnc_p2_b_wks,0.0192294995304
+bnc_p2_se_wks,0.0058396038726
+bnc_p2_s,0.380737713024
+bnc_p2_ssr,603.763423483
+bnc_p2_ssr_nlogit,602.313811422
+bnc_p2_expstar,30.8291683846
+bnc_p2_df2,         4154
+bnc_p2_weak,84.5688686016
+bnc_p2_wh,6.55495604376
+bnc_p2_wh_p,0.0104943039734
+bnc_p2_sargan,502.982846477
+bnc_p2_sargan_p,2.13288248592e-111
+bnc_cig_mqo_b_preco,-1.40650035162
+bnc_cig_mqo_se_preco,0.251375485367
+bnc_cig_iv_b_preco,-1.27742413343
+bnc_cig_wald_chi2,34.5064643872
+bnc_cig_wald_F,17.2532321936
+bnc_cig_wald_razao,            2
+bnc_cps_n,          534
+bnc_cps_r2adj,0.320139705784
+bnc_cps_b_ed,0.0866401500924
+bnc_cps_b_fem,-0.234289109748
+bnc_cps_t_fem,-6.08622023329
+bnc_cps_fem_exato,-20.886694145
+bnc_cps_b_union,0.201068973083
+bnc_cps_union_exato,22.2709102931
+bnc_cps_t_hisp,-0.781073442242
+bnc_cps_t_outra,-1.94675458024
+bnc_cps_t_south,-2.18561597576
+bnc_cps_expstar,  32.82884555
+bnc_cps_jb, 72.465263258
+bnc_cps_jb_p,2.22044604925e-16
+bnc_cps_reset,6.10373026708
+bnc_cps_reset_p,0.00239688473636
+bnc_cps_bp,10.6157623308
+bnc_cps_bp_p,0.224435107758
+bnc_cps_bp_gl,            8
+bnc_cps_white, 24.331431613
+bnc_cps_white_p,0.945768807146
+bnc_cps_white_gl,           37
+bnc_cps_chi2crit_bp,15.5073130559
+bnc_cps_bp_r2aux,0.0198797047393
+bnc_cps_se_fem_hc1,0.0390302005785
+bnc_cps_se_fem,0.0384950101652
+bnc_chow_ssr_r,113.092374835
+bnc_chow_ssr_u,102.072447051
+bnc_chow_ssr_h,59.7064390849
+bnc_chow_ssr_m,42.3660079657
+bnc_chow_F,14.1969801409
+bnc_chow_gl2,          526
+bnc_chow_p,5.19163070781e-11
+bnc_chow_Fcrit,2.38888187284
+bnc_vif_r2_age,0.999783713188
+bnc_vif_age,4623.49040717
+bnc_vif_r2_ed,0.995656413299
+bnc_vif_ed,230.224482426
+bnc_vif_se_ed,0.113712468297
+bnc_vif_se_ed_curto,0.00799420828184
+bnc_vif_r2,0.270300925246
+bnc_vif_F, 48.989095095
+bnc_vif_t_ed,1.56060771891
+bnc_vif_t_exp,0.811762420101
+bnc_vif_t_age,-0.700474322997
+bnc_vif_cor_age_exp,0.977961246068
+bnc_hp_n,           88
+bnc_hp_b_lot,0.167966702763
+bnc_hp_b_sqrft,0.700232405229
+bnc_hp_se_sqrft,0.0928652466121
+bnc_hp_t_sqrft,7.54030631237
+bnc_hp_b_bdrms,0.0369584122188
+bnc_hp_t_bdrms,1.34241408026
+bnc_hp_bdrms_exato,3.76498663853
+bnc_hp_tcrit_5,1.98860966698
+bnc_hp_ic_sqrft_inf,0.51555967809
+bnc_hp_ic_sqrft_sup,0.884905132368
+bnc_hp_jb,34.8894458284
+bnc_hp_jb_p,2.65370779795e-08
+bnc_hp_reset,2.56504620475
+bnc_hp_reset_p,0.0830754662428
+bnc_hp_bp, 4.2232481173
+bnc_hp_bp_p,0.238344590581
+bnc_hp_white,9.54944852108
+bnc_hp_white_p,0.388174328921
+bnc_hp_white_gl,            9
+bnc_hp_chi2crit_2,5.99146454711
+bnc_hp_Fcrit_reset,3.10789130154
+bnc_hp_t_sqrft_1,-3.22798469511
+bnc_cons_n,           44
+bnc_cons_b,0.994968220261
+bnc_cons_se,0.00795338959786
+bnc_cons_t,125.099897097
+bnc_cons_t2,15649.9842536
+bnc_cons_F,15649.9842536
+bnc_cons_r2,0.997323474245
+bnc_cons_r,0.998660840448
+bnc_cons_F_de_r2,15649.9842536
+bnc_cons_t_elast1,-0.632658525904
+bnc_cons_dw,0.520771074571
+bnc_cons_rho_dw,0.739614462714
+bnc_cons_bg1,22.4376267963
+bnc_cons_bg1_p,2.17079394346e-06
+bnc_cons_bg2,22.5697480828
+bnc_cons_bg2_p,1.25614991948e-05
+bnc_cons_tcrit,2.01808170282
+bnc_crs70_ssr_u,0.60270838161
+bnc_crs70_ssr_r,0.71557044748
+bnc_crs70_F,8.23935928189
+bnc_crs70_p,0.00627932033097
+bnc_crs70_Fcrit,4.06170646012
+bnc_crs70_soma,1.05355039914
+bnc_crs70_ep_soma,0.0186558908329
+bnc_crs70_t,2.87042841435
+bnc_crs70_b_k,0.410984508665
+bnc_crs70_b_l,0.642565890476
+bnc_crs70_b_unemp,0.0149300168244
+bnc_crs70_r2adj,0.987613566122
+bnc_crs70_se_k,0.0460997985109
+bnc_crs70_se_l,0.039835713642
+bnc_crs70_cov_kl,-0.00168201662067
+bnc_crs70_tcrit,2.01536757444
+bnc_crs86_ssr_u,0.217166308522
+bnc_crs86_ssr_r,0.289558925216
+bnc_crs86_F, 14.667446144
+bnc_crs86_p,0.000402830387867
+bnc_crs86_Fcrit,4.06170646012
+bnc_crs86_soma,1.04646411835
+bnc_crs86_ep_soma,0.0121322248264
+bnc_crs86_t,3.82981019686
+bnc_crs86_b_k,0.288927312642
+bnc_crs86_b_l,0.757536805709
+bnc_crs86_b_unemp,-0.0105546326488
+bnc_crs86_r2adj,0.995241472439
+bnc_crs86_se_k,0.0404680260834
+bnc_crs86_se_l,0.0352668443326
+bnc_crs86_cov_kl,-0.00136711028251
+bnc_crs86_tcrit,2.01536757444
+bnc_crs86_reset,1.61740214385
+bnc_crs86_reset_p,0.210527129916
+bnc_crs86_reset_Fcrit,3.21994229318
+bnc_crs86_bp, 4.3715685947
+bnc_crs86_bp_p,0.224036162189
+bnc_crs86_white,10.9116733963
+bnc_crs86_white_p,0.28181192451
+bnc_crs86_white_gl,            9
+bnc_crs86_white_crit,16.9189776046
+bnc_crs86_jb,0.943734810256
+bnc_crs86_jb_p,0.623836224918
+bnc_pchow_ssr_r,0.94169122107
+bnc_pchow_ssr_u,0.819874690131
+bnc_pchow_F,3.26874791102
+bnc_pchow_p,0.0150819586414
+bnc_pchow_Fcrit,2.47527740887
+bnc_pchow_b_d86,0.648970187245
+bnc_pchow_t_d86_lk,-1.81212199424
+bnc_mroz_n,          428
+bnc_mroz_iv_b_educ,0.0613966286602
+bnc_mroz_iv_se_educ,0.0314366956447
+bnc_mroz_iv_z_educ,1.95302424129
+bnc_mroz_iv_p_educ,0.0508167228203
+bnc_mroz_iv_educ_exato,6.33205739751
+bnc_mroz_mqo_b_educ,0.107489640149
+bnc_mroz_mqo_se_educ,0.0141464783251
+bnc_mroz_weak,55.4003004278
+bnc_mroz_weak_df2,          423
+bnc_mroz_wh,2.79259195891
+bnc_mroz_wh_p,0.0954405509031
+bnc_mroz_sargan,0.378071341964
+bnc_mroz_sargan_p,0.538637233071
+bnc_mroz_iv_expstar,24.5672342706
+bnc_mroz_iv_ic_educ_inf,0.00968326432463
+bnc_mroz_iv_ic_educ_sup,0.113109992996
+bnc_mroz_fs_b_moth,0.157597032749
+bnc_mroz_fs_b_fath,0.189548410155
+bnc_mrozf_b_educ,0.0702262912721
+bnc_mrozf_se_educ,0.0344426941326
+bnc_mrozf_weak, 87.740888777
+bnc_mrozf_t_fs,9.36701066386
+bnc_mrozf_wh,1.43731169538
+bnc_mrozf_wh_p,0.231246046376
+bnc_mrozf_wald_simples,0.0591734799994
+bnc_inj_n,         5626
+bnc_inj_b_did,0.190601200659
+bnc_inj_se_did,0.0685089053232
+bnc_inj_t_did,2.78213758868
+bnc_inj_did_exato,20.9976817893
+bnc_inj_r2,0.0206630603924
+bnc_inj_b_af,0.00765731271228
+bnc_inj_b_high,0.256478531575
+bnc_inj_m00,1.12561540876
+bnc_inj_m01,1.13327272148
+bnc_inj_m10,1.38209394034
+bnc_inj_m11,1.58035245371
+bnc_s1_n,          526
+bnc_s1_r2,0.436248459824
+bnc_s1_r2adj,0.428630195767
+bnc_s1_F,57.2634994786
+bnc_s1_Fcrit,2.02724622871
+bnc_s1_jb,25.9955639343
+bnc_s1_jb_p,2.26534845604e-06
+bnc_s1_b_educ,0.0796547270923
+bnc_s1_se_educ,0.00685558885564
+bnc_s1_ic_educ_inf,0.0662177729352
+bnc_s1_ic_educ_sup,0.0930916812493
+bnc_s1_b_tenure,0.0160849287641
+bnc_s1_t_tenure,5.57956015385
+bnc_s1_t_married,1.35099131622
+bnc_s1_t_nonwhite,-0.320327311747
+bnc_s1_b_married,0.0554870779304
+bnc_s1_b_nonwhite,-0.018619193598
+bnc_s1_b_exper,0.0301800114949
+bnc_s1_b_expersq,-0.000602935903597
+bnc_s1_expstar,25.0275454777
+bnc_s1_expstar_ep,1.43931074118
+bnc_s1_frac_acima,0.268060836502
+bnc_s1_b_female,-0.291432214451
+bnc_s1_female_aprox,-29.1432214451
+bnc_s1_female_exato,-25.2807339249
+bnc_s1_efmarg_exper_10,0.0181212934229
+bnc_s2k_n,          204
+bnc_s2k_mqo_b,0.690263492663
+bnc_s2k_mqo_se,0.00129129384722
+bnc_s2k_dw,0.323726836713
+bnc_s2k_rho_dw,0.838136581644
+bnc_s2k_bg,139.000818061
+bnc_s2k_bg_p,4.61899513337e-29
+bnc_s2k_bg_crit,9.48772903678
+bnc_s2k_iv_b,0.689492071813
+bnc_s2k_iv_se,0.0012978384306
+bnc_s2k_iv_t,531.261870165
+bnc_s2k_weak, 11992.010443
+bnc_s2k_weak_p,8.40976498823e-210
+bnc_s2k_wh,53.6940164215
+bnc_s2k_wh_p,5.57822249311e-12
+bnc_s2k_sargan,0.546353139037
+bnc_s2k_sargan_p,0.459811640093
+bnc_s2k_r2,0.999292328928
+bnc_s2k_mult_mqo,3.22855064325
+bnc_s2k_mult_iv, 3.2205296845
+bnc_s2k_t_mpc1,-239.250064466
+bnc_s3k_n,          321
+bnc_s3k_b_did,-0.131513244953
+bnc_s3k_se_did,0.0519711954868
+bnc_s3k_t_did,-2.53050259323
+bnc_s3k_p_did,0.0113899242964
+bnc_s3k_did_exato,-12.3232337685
+bnc_s3k_b_nearinc,0.0322320249779
+bnc_s3k_t_nearinc,0.678746595412
+bnc_s3k_b_y81,0.162072470805
+bnc_s3k_r2adj,0.723936047921
+bnc_s3k_r2aux,0.938534689957
+bnc_s3k_vif_age,16.2693395558
+bnc_s3k_b_did_sem,-0.0626489272655
+bnc_s3k_se_did_sem,0.0834407819119
+bnc_s3k_t_did_sem,-0.750819033931
+bnc_s3k_agestar,111.056135999
+bnc_s3c_n,         3010
+bnc_s3c_iv_b_educ,   0.13228884
+bnc_s3c_iv_se_educ,0.0492332361185
+bnc_s3c_iv_z_educ,2.68698242143
+bnc_s3c_mqo_b_educ,0.0740089942006
+bnc_s3c_mqo_se_educ,0.00350543495692
+bnc_s3c_weak,16.7175914365
+bnc_s3c_weak_p,4.45150794408e-05
+bnc_s3c_wh, 1.5390377958
+bnc_s3c_wh_p,0.21485802942
+bnc_s3c_razao_se,14.0448294501
+bnc_s3c_ic_educ_inf,0.0357916972082
+bnc_s3c_ic_educ_sup,0.228785982793
+bnc_s3c_fs_b_nearc4,0.337320780089
+bnc_s3c_fs_t_nearc4,4.08871513271
+bnc_chi2_2gl_5,5.99146454711
+bnc_chi2_5gl_5,11.0704976935
+bnc_chi2_2gl_10,4.60517018599
+bnc_z_5,1.95996398454
+bnc_z_10,1.64485362695

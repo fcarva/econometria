@@ -1,0 +1,27 @@
++--------------------------------------------------------------+
+| Regressão de mínimos quadrados ordinários (MQO)              |
+| LHS=LWAGE           Média                     = 2,059189     |
+|                     Desvio padrão             = 0,5277422    |
+|                     Número de observações     = 534          |
+| Tamanho do modelo   Parâmetros                = 5            |
+|                     Graus de liberdade        = 529          |
+| Resíduos            Soma dos quadrados        = 108,3215     |
+|                     Erro padrão dos resíduos  = 0,4525114    |
+| Ajuste              R-quadrado                = 0,2703009    |
+|                     R-quadrado ajustado       = 0,2647834    |
+| Teste de modelo F[4,529] (valor-p)            = 48,99 (0,00) |
++--------------------------------------------------------------+
++----------+---------------+----------------+---------+---------+-------------+
+|Variáveis | Coeficientes  | Erro padrão    | b/E.p.  |P[|Z|>z] | Média de X  |
++----------+---------------+----------------+---------+---------+-------------+
+Constant |     1,15357178      0,69386759     1,663   0,0964              
+ED       |     0,17746056      0,11371247     1,561   0,1186    13,0187266
+EXP      |     0,09234128      0,11375407     0,812   0,4169    17,8220974
+AGE      |    -0,07961080      0,11365271    -0,700   0,4836    36,8333333
+FEM      |    -0,25736111      0,03947960    -6,519   0,0000    0,45880150
++----------+---------------+----------------+---------+---------+-------------+
+
+Regressões auxiliares (cada regressor contra os demais):
+  AGE contra ED, EXP, FEM:  R² = 0,9997837
+  ED contra EXP, AGE, FEM:  R² = 0,9956564
+Correlação simples entre AGE e EXP = 0,9780

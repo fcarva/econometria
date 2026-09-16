@@ -1,0 +1,16 @@
+ivreg(formula = log(packs) ~ log(rprice) + log(rincome) | log(rincome) + tdiff + I(tax/cpi))
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)
+(Intercept)    9,8950     1,0586   9,348 4,12e-12
+log(rprice)   -1,2774     0,2632  -4,853 1,50e-05
+log(rincome)   0,2804     0,2386   1,175    0,246
+
+Diagnostic tests:
+                 df1 df2 statistic p-value
+Weak instruments   2  44   244,734  <2e-16
+Wu-Hausman         1  44     3,068  0,0868
+Sargan             1  NA     0,333  0,5641
+
+Multiple R-Squared: 0,4294,	Adjusted R-squared: 0,4041
+Wald test: 13,28 on 2 and 45 DF, p-value: 2,931e-05
