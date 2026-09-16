@@ -115,7 +115,7 @@ Nos arquivos novos, use **somente** `NOTE`, `TIP`, `IMPORTANT`, `WARNING` e `CAU
 Regras:
 - O marcador fica **sozinho** na linha. O título vai em negrito na linha seguinte.
 - Sem `-` ou `+` de dobra e sem callout aninhado.
-- Matemática em bloco (`$$`) de preferência **fora** do callout.
+- Matemática em bloco (cifrão duplo) de preferência **fora** do callout.
 
 | Tipo | Uso |
 |---|---|

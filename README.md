@@ -104,6 +104,25 @@ Regras de escrita (notação, callouts, formato das demonstrações e dos exerc�
 
 ## Estado atual
 
-> [!NOTE]
-> **Em construção**
-> Módulos 00–10, banco e simulados sendo escritos e verificados (15–16/09/2026). Esta seção passa a trazer o resultado do build e da verificação adversarial das demonstrações.
+Build completo passando em 15/09/2026: pacotes conferidos, **82 testes** do testthat, **14 scripts** de módulo executados, **605 números** das notas conferidos contra o R, lint sem erros e índice com **105 demonstrações**.
+
+| Módulo | Teoria | Lista 1 | Script R |
+|---|---|---|---|
+| 00 fundamentos | ✅ | ✅ ex. 1–9 | ✅ |
+| 01 paradigma e projeção | ✅ | ✅ ex. 10–12 | ✅ |
+| 02 MQO simples | ✅ D02.1–D02.16 | ✅ ex. 13–22, 40 | ✅ |
+| 03 MQO matricial | ✅ | ✅ ex. 23, 24, 28–31, 34, 35 | ✅ |
+| 04 FWL | ✅ D04.1–D04.6 | ✅ ex. 25 | ✅ |
+| 05 ajuste e restrições | ✅ | ✅ ex. 27, 55, 56, 62 | ✅ |
+| 06 amostra finita e multicolinearidade | ✅ | ✅ ex. 26, 32, 33, 36, 37, 53, 54, 63, 64 | ✅ |
+| 07 testes de hipóteses | ✅ D07.1–D07.7 | ✅ ex. 41–46, 49–52 + computacional 38, 39, 74 | ✅ |
+| 08 assintótica | ✅ D08.1–D08.6 | ✅ ex. 73 | ✅ |
+| 09 dummies, forma funcional, DiD | ✅ D09.1–D09.9 | ✅ ex. 43, 47, 48, 57–61, 71, 72 | ✅ |
+| 10 endogeneidade e VI | ✅ D10.1–D10.11 | ✅ ex. 65–70 | ✅ |
+| 11–14 (P2) | esqueleto | mapa da Lista 2 | — |
+
+Provas: [P1 2025/2 resolvida e reproduzida em R](provas/p1_2025_2/econometria-i-prova-2025-2-resolvida.md), [banco de derivações](provas/banco/derivacoes.md) com 36 itens e o [Simulado 01](provas/simulados/simulado_01.md) completo com gabarito e rubrica.
+
+**Em aberto:** banco de interpretação de outputs, simulados 02 e 03.
+
+Dois achados que valem nota e estão registrados na [errata](formulario/errata_chave_lista1.md): a chave inverte a decisão do RESET no ex. 50, e a matriz de correlação do ex. 64 é matematicamente impossível (autovalor negativo).
