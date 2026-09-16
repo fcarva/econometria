@@ -71,6 +71,7 @@ registrar("m06_mc_cov_b2b3_sim", V_sim[2, 3])
 registrar("m06_mc_erro_rel_max_diag", max(abs(diag(V_sim) - diag(V_teo)) / diag(V_teo)))
 
 registrar("m06_mc_media_s2", mean(s2))
+registrar("m06_mc_media_s", mean(sqrt(s2)))                        # E[s] < sigma = 2 (Jensen)
 registrar("m06_mc_media_een", mean(colSums(E^2) / n))            # e'e/n: viesado para baixo
 registrar("m06_mc_een_teo", sigma^2 * (n - K) / n)
 
@@ -85,6 +86,16 @@ registrar("m06_mc_tcrit", qt(0.975, n - K))
 
 cat(sprintf("A. media(b) = (%.4f, %.4f, %.4f) | Var(b2): teo %.5f sim %.5f | E[s2]: %.4f | var(q): %.3f\n",
             mean(B[1, ]), mean(B[2, ]), mean(B[3, ]), V_teo[2, 2], V_sim[2, 2], mean(s2), var(q)))
+
+# D06.9: Var(b_k|X) = sigma2 / [(1 - R_k^2) S_kk], com R_k^2 da regressão auxiliar de x_k nos demais
+r2_x3 <- summary(lm(x3 ~ x2))$r.squared
+S33   <- sum((x3 - mean(x3))^2)
+var_b3_fwl <- sigma^2 / ((1 - r2_x3) * S33)
+stopifnot(abs(var_b3_fwl - V_teo[3, 3]) < 1e-12)
+registrar("m06_mc_r2_aux_x3", r2_x3)
+registrar("m06_mc_fiv_x3", 1 / (1 - r2_x3))
+registrar("m06_mc_var_b3_fwl", var_b3_fwl)
+registrar("m06_mc_var_b3_sem_colin", sigma^2 / S33)                  # se x3 fosse ortogonal a x2
 
 # Figura 1: distribuição amostral de b2 com X fixo
 abrir_png("m06_dist_b2.png")
@@ -180,7 +191,7 @@ dev.off()
 
 ## ---- D. Erros não esféricos (ex. 36 e 37) ----
 # D1: heterocedasticidade, Var(eps_i|X) = sigma2 * w_i (diagonal NÃO constante)
-w <- (x2 / mean(x2))^4
+w <- 0.1 + ((x2 - mean(x2)) / sd(x2))^2                        # variância cresce com o desvio de x2
 Sig_h <- sigma^2 * diag(w)
 V_h_verd <- A %*% Sig_h %*% t(A)                               # (X'X)^-1 X' Sigma X (X'X)^-1
 Es2_h    <- sum(diag(M %*% Sig_h)) / (n - K)                    # E[s2|X] = tr(M Sigma)/(n-K)
@@ -207,10 +218,11 @@ f_lo <- Employed ~ Year + GNP.deflator + GNP + Armed.Forces
 lo61 <- subset(longley, Year <= 1961)
 m61  <- lm(f_lo, data = lo61)
 m62  <- lm(f_lo, data = longley)
-fiv_car <- car::vif(m61)
+# FIV na amostra completa 1947-1962: são os números da Tabela 4.9 do Greene reproduzida no SL06, p. 52
+fiv_car <- car::vif(m62)
 reg_lo  <- c("Year", "GNP.deflator", "GNP", "Armed.Forces")
 fiv_aux <- sapply(reg_lo, function(v) {
-  r2 <- summary(lm(reformulate(setdiff(reg_lo, v), response = v), data = lo61))$r.squared
+  r2 <- summary(lm(reformulate(setdiff(reg_lo, v), response = v), data = longley))$r.squared
   1 / (1 - r2)
 })
 stopifnot(max(abs(fiv_aux - fiv_car[reg_lo])) < 1e-6)
@@ -225,7 +237,7 @@ registrar("m06_lo_varpct_gnp", var_pct[["GNP"]])
 registrar("m06_lo_varpct_armed", var_pct[["Armed.Forces"]])
 registrar("m06_lo_varpct_year", var_pct[["Year"]])
 # Número de condição: colunas de X escaladas para comprimento 1 (Belsley), inclusive a constante
-Xlo  <- model.matrix(m61)
+Xlo  <- model.matrix(m62)
 Xlo_n <- sweep(Xlo, 2, sqrt(colSums(Xlo^2)), "/")
 ev_n <- eigen(crossprod(Xlo_n), symmetric = TRUE, only.values = TRUE)$values
 ev_b <- eigen(crossprod(Xlo), symmetric = TRUE, only.values = TRUE)$values
@@ -410,12 +422,14 @@ legend("topleft", bty = "n", lwd = 2, lty = c(1, 1, 2), pch = c(19, 17, 15),
 dev.off()
 
 ## ---- I. Output ilustrativo (formato LIMDEP/NLOGIT) + componentes principais (SL06, p. 56-60) ----
-set.seed(20260919)
+# Dados simulados (ilustração didática): beta2 = beta3 = 0,6, corr populacional 0,98, sigma = 1.
+# A semente foi escolhida entre as que exibem o quadro típico (F significativo, t's não significativos).
+set.seed(20260961)
 nI <- 40
 zI <- rnorm(nI)
 x2I <- 5 + zI
 x3I <- 5 + 0.98 * zI + sqrt(1 - 0.98^2) * rnorm(nI)
-yI  <- 1 + 0.6 * x2I + 0.6 * x3I + rnorm(nI, 0, 2)
+yI  <- 1 + 0.6 * x2I + 0.6 * x3I + rnorm(nI, 0, 1)
 dI  <- data.frame(Y = yI, X2 = x2I, X3 = x3I)
 mI  <- lm(Y ~ X2 + X3, data = dI)
 sI  <- summary(mI)
@@ -455,6 +469,9 @@ registrar("m06_out_t2", cfI["X2", 3]); registrar("m06_out_p2", cfI["X2", 4])
 registrar("m06_out_b3", cfI["X3", 1]); registrar("m06_out_se3", cfI["X3", 2])
 registrar("m06_out_t3", cfI["X3", 3]); registrar("m06_out_p3", cfI["X3", 4])
 registrar("m06_out_r2", sI$r.squared)
+registrar("m06_out_r2adj", sI$adj.r.squared)
+registrar("m06_out_b1", cfI["(Intercept)", 1]); registrar("m06_out_se1", cfI["(Intercept)", 2])
+registrar("m06_out_ssr", sum(resid(mI)^2)); registrar("m06_out_se_e", sI$sigma)
 registrar("m06_out_f", sI$fstatistic[["value"]])
 registrar("m06_out_pf", pf(sI$fstatistic[["value"]], 2, nI - 3, lower.tail = FALSE))
 registrar("m06_out_fcrit5", qf(0.95, 2, nI - 3))

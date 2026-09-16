@@ -19,6 +19,13 @@ m04_fwl_media_ey,6.22160110504e-17
 m04_inv_bloco22,5.49362922681e-05
 m04_inv_1_sobre_xMx,5.49362922681e-05
 m04_inv_dif,1.21972744405e-19
+m04_var_sst_ed,32366.4235294
+m04_var_r2_aux,0.437599183748
+m04_var_fiv,1.77809130269
+m04_var_xMx,18202.9030121
+m04_var_dif_xMx,4.0017766878e-11
+m04_var_s2,0.139896815939
+m04_var_se_formula,0.00277225763012
 m04_pc_r2_parcial,0.104756005241
 m04_pc_t2_formula,0.104756005241
 m04_pc_via_r2,0.104756005241
@@ -56,15 +63,15 @@ m04_fe_gl_ingenuo,         4156
 m04_fe_b_weeks,0.0008359549357
 m04_fe_b_exp,0.113208169594
 m04_fe_b_union,0.0327846279847
-m04_fe_dif_b,8.52833428877e-15
+m04_fe_dif_b,1.16376309631e-13
 m04_fe_se_weeks_lsdv,0.000599669006547
 m04_fe_se_weeks_ingenuo,0.000555085420532
 m04_fe_fator_gl,1.08031842373
-m04_fe_dif_se_corrigido,1.87350135405e-16
-m04_fe_dif_resid,9.14181924605e-13
-m04_fe_dif_ai,           NA
-m04_fe_ed_na,            0
+m04_fe_dif_se_corrigido,1.34614541736e-15
+m04_fe_dif_resid,2.07803219077e-12
+m04_fe_dif_ai,1.24344978758e-14
+m04_fe_ed_na,            1
 m04_fe_ss_within_ed,            0
-m04_fe_twfe_exp_na,            0
+m04_fe_twfe_exp_na,            1
 m04_fe_dif_plm,            0
-m04_fe_dif_se_plm,1.80411241502e-16
+m04_fe_dif_se_plm,1.33920652345e-15

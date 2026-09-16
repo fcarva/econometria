@@ -41,6 +41,16 @@ m03_ex34_sqreg,          8.1
 m03_ex34_r2,         0.81
 m03_ex34_media_yhat,            4
 m03_ex34_media_y,            4
+m03_ex34_xbar,            6
+m03_ex34_ybar,            4
+m03_ex34_sxx,           40
+m03_ex34_sxy,           18
+m03_ex34_adj11,          220
+m03_ex34_adj12,          -30
+m03_ex34_adj22,            5
+m03_ex34_yhat_yhat,         88.1
+m03_ex34_tcrit,3.18244630528
+m03_ex34_p_b2,0.0373860734685
 m03_ex34_autoval_max,224.107571428
 m03_ex34_autoval_min,0.892428572251
 m03_ex34_trP,            2
@@ -48,6 +58,8 @@ m03_ex34_trM,            3
 m03_ex34_h1,          0.6
 m03_ex34_h2,          0.3
 m03_ex34_h3,          0.2
+m03_ex34_h4,          0.3
+m03_ex34_h5,          0.6
 m03_ex34_erro_My,5.77315972805e-15
 m03_ex34_erro_Py,5.3290705182e-15
 m03_ex34_erro_Xte,6.03961325396e-14
@@ -76,6 +88,11 @@ m03_ex35_xty1,           14
 m03_ex35_xty2,           78
 m03_ex35_xty3,          156
 m03_ex35_det,            0
+m03_ex35_menor11,            0
+m03_ex35_menor12,            0
+m03_ex35_menor13,            0
+m03_ex35_erro_Xa,            0
+m03_ex35_erro_XtXa,            0
 m03_ex35_posto,            2
 m03_ex35_autoval_min,-1.13686837722e-13
 m03_ex35_inversao_falha,            1

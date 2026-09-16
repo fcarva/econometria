@@ -100,6 +100,10 @@ $$\log(\text{packs}) = a_1 + a_2\log(\text{price}) + a_3\log(\text{renda}) + \va
 > [!info] Contexto: por que IV aqui
 > Preço é **endógeno** — determinado simultaneamente com a quantidade (oferta e demanda). MQO seria viesado. Usam-se instrumentos ($\text{tdiff}$ e $\text{tax}/\text{cpi}$) para isolar a variação exógena do preço.
 
+> [!CAUTION]
+> **Output reciclado: decida pelo número impresso na questão**
+> Este mesmo output do `ivreg` circula em várias versões com os p-valores editados. Wu-Hausman (estatística 3,823): p = 0,0569 na Lista 1, ex. 67; p = 0,0369 na P2 2024/2; p = 0,0469 nesta nota. Sargan (estatística 0,333): p = 0,5641 na Lista 1 e na P2 2024/2; p = 0,8468 nesta nota. A decisão usa sempre o p-valor impresso e o α dado no enunciado. Com p = 0,0569 a decisão depende do α: a 10% rejeita-se H0 (endogeneidade, usar MQ2E); a 5% não se rejeita (MQO é consistente e eficiente). Com 0,0469 ou 0,0369, rejeita-se nos dois níveis. Ver [provas/README.md](../README.md).
+
 ### (a) Qual variável é endógena e quais são instrumentos?
 
 > [!note] Padrão de resposta

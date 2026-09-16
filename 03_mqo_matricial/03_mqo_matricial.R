@@ -64,6 +64,18 @@ registrar_varios(list(
   m03_ex34_media_yhat = mean(yhat), m03_ex34_media_y = mean(y)
 ))
 
+# Conferência pela rota escalar (notação da Lista 1): b2 = Sxy/Sxx e b1 = ybar - b2*xbar
+Sxx <- sum((x - mean(x))^2); Sxy <- sum((x - mean(x)) * (y - mean(y)))
+stopifnot(abs(Sxy / Sxx - b[2]) < 1e-12, abs(detXtX - n * Sxx) < 1e-12)
+registrar_varios(list(
+  m03_ex34_xbar = mean(x), m03_ex34_ybar = mean(y),
+  m03_ex34_sxx = Sxx, m03_ex34_sxy = Sxy,
+  m03_ex34_adj11 = adjXtX[1, 1], m03_ex34_adj12 = adjXtX[1, 2], m03_ex34_adj22 = adjXtX[2, 2],
+  m03_ex34_yhat_yhat = sum(yhat^2),               # y'y = yhat'yhat + e'e (Pitágoras)
+  m03_ex34_tcrit = qt(0.975, n - K),              # t crítico bilateral a 5% com n - K = 3 gl
+  m03_ex34_p_b2 = 2 * pt(-abs(tstat[2]), n - K)   # p-valor de H0: beta2 = 0
+))
+
 # Autovalores de X'X (condição de 2ª ordem: ambos > 0 => positiva definida)
 ev <- eigen(XtX, symmetric = TRUE)$values
 registrar("m03_ex34_autoval_max", ev[1])
@@ -75,6 +87,7 @@ M <- diag(n) - P
 registrar_varios(list(
   m03_ex34_trP = sum(diag(P)), m03_ex34_trM = sum(diag(M)),
   m03_ex34_h1 = P[1, 1], m03_ex34_h2 = P[2, 2], m03_ex34_h3 = P[3, 3],
+  m03_ex34_h4 = P[4, 4], m03_ex34_h5 = P[5, 5],
   m03_ex34_erro_My = erro_max(M %*% y, e),       # e = My (ex. 28)
   m03_ex34_erro_Py = erro_max(P %*% y, yhat),    # yhat = Py (ex. 29)
   m03_ex34_erro_Xte = erro_max(crossprod(X, e))  # X'e = 0 (ex. 31)
@@ -136,6 +149,12 @@ cof_det3 <- function(A) {
     A[1, 3] * (A[2, 1] * A[3, 2] - A[2, 2] * A[3, 1])
 }
 det35 <- cof_det3(XtX35)
+# menores da 1ª linha usados na expansão por cofatores
+menor11 <- XtX35[2, 2] * XtX35[3, 3] - XtX35[2, 3] * XtX35[3, 2]
+menor12 <- XtX35[2, 1] * XtX35[3, 3] - XtX35[2, 3] * XtX35[3, 1]
+menor13 <- XtX35[2, 1] * XtX35[3, 2] - XtX35[2, 2] * XtX35[3, 1]
+# vetor não nulo a com X a = 0 (x3 - 2 x2 = 0): a = (0, 2, -1)'
+a_nulo <- c(0, 2, -1)
 inversao_falha <- inherits(try(solve(XtX35), silent = TRUE), "try-error")
 fit35 <- lm(y35 ~ x2 + x3)
 # Combinações estimáveis: y em [1, x2] identifica beta1 e beta2 + 2*beta3
@@ -148,6 +167,9 @@ registrar_varios(list(
   m03_ex35_xtx22 = XtX35[2, 2], m03_ex35_xtx23 = XtX35[2, 3], m03_ex35_xtx33 = XtX35[3, 3],
   m03_ex35_xty1 = Xty35[1], m03_ex35_xty2 = Xty35[2], m03_ex35_xty3 = Xty35[3],
   m03_ex35_det = det35,
+  m03_ex35_menor11 = menor11, m03_ex35_menor12 = menor12, m03_ex35_menor13 = menor13,
+  m03_ex35_erro_Xa = erro_max(X35 %*% a_nulo),
+  m03_ex35_erro_XtXa = erro_max(XtX35 %*% a_nulo),
   m03_ex35_posto = qr(X35)$rank,
   m03_ex35_autoval_min = min(eigen(XtX35, symmetric = TRUE)$values),
   m03_ex35_inversao_falha = as.numeric(inversao_falha),
@@ -201,20 +223,19 @@ Xg <- cbind(c(1, 1, 1), c(-1, 0.5, 1.5)) # duas colunas em R^3 (constante e um r
 yg <- c(0.6, 2.4, 2.2)
 Pg <- Xg %*% solve(crossprod(Xg)) %*% t(Xg)
 yh_g <- drop(Pg %*% yg); e_g <- yg - yh_g
-png(file.path(dir_fig, "03_geometria_mqo.png"), width = 1600, height = 1000, res = 200)
-par(mar = c(1, 1, 3, 1))
-# grade do plano col(X): combinações a*x1 + c*x2
-aa <- seq(-0.2, 2.0, length.out = 12); cc <- seq(-0.6, 1.1, length.out = 12)
-# reparametrização: base ortonormal do plano para desenhar com persp
+stopifnot(abs(sum(yh_g * e_g)) < 1e-12)            # (Py)'(My) = 0
+# base ortonormal (u1, u2) do plano col(X); a normal é a direção de e = My,
+# de modo que no novo sistema o plano é z = 0 e y fica acima dele
 u1 <- Xg[, 1] / sqrt(sum(Xg[, 1]^2))
 v <- Xg[, 2] - sum(Xg[, 2] * u1) * u1; u2 <- v / sqrt(sum(v^2))
-nrm <- c(u1[2] * u2[3] - u1[3] * u2[2], u1[3] * u2[1] - u1[1] * u2[3], u1[1] * u2[2] - u1[2] * u2[1])
-# sistema de coordenadas (u1, u2, normal): o plano é z = 0
+nrm <- e_g / sqrt(sum(e_g^2))
 coords <- function(p) c(sum(p * u1), sum(p * u2), sum(p * nrm))
 Y <- coords(yg); YH <- coords(yh_g); X1c <- coords(Xg[, 1]); X2c <- coords(Xg[, 2])
-pm <- persp(x = c(-0.5, 3.5), y = c(-1.5, 2), z = matrix(0, 2, 2), zlim = c(-0.5, 1.8),
-            theta = 35, phi = 22, col = adjustcolor("grey85", 0.6), border = "grey60",
-            box = FALSE, main = "Geometria do MQO: y = Py + My, com Py ⟂ e")
+png(file.path(dir_fig, "03_geometria_mqo.png"), width = 1600, height = 1000, res = 200)
+par(mar = c(0.5, 0.5, 3, 0.5))
+pm <- persp(x = c(-0.4, 3.8), y = c(-0.6, 2.3), z = matrix(0, 2, 2), zlim = c(0, 1),
+            theta = 28, phi = 18, col = adjustcolor("grey85", 0.7), border = "grey55",
+            box = FALSE, main = "Geometria do MQO: y = Py + My, com (Py)'(My) = 0")
 pt <- function(p) trans3d(p[1], p[2], p[3], pm)
 seta <- function(de, para, ...) {
   a <- pt(de); b <- pt(para)
@@ -222,13 +243,19 @@ seta <- function(de, para, ...) {
 }
 O <- c(0, 0, 0)
 seta(O, X1c, col = "grey30"); seta(O, X2c, col = "grey30")
-seta(O, Y, col = "black"); seta(O, YH, col = "steelblue4"); seta(YH, Y, col = "firebrick")
+seta(O, YH, col = "steelblue4"); seta(YH, Y, col = "firebrick"); seta(O, Y, col = "black")
+# marcador de ângulo reto no pé da perpendicular (e é ortogonal ao plano)
+s_ang <- 0.12
+d_e <- (Y - YH) / sqrt(sum((Y - YH)^2)); d_o <- (O - YH) / sqrt(sum((O - YH)^2))
+qa <- rbind(YH + s_ang * d_e, YH + s_ang * (d_e + d_o), YH + s_ang * d_o)
+qq <- trans3d(qa[, 1], qa[, 2], qa[, 3], pm); lines(qq$x, qq$y, col = "firebrick", lwd = 1.5)
 lab <- function(p, txt, ...) { q <- pt(p); text(q$x, q$y, txt, ...) }
-lab(X1c * 1.12, "x1", col = "grey20"); lab(X2c * 1.15, "x2", col = "grey20")
-lab(Y * 1.06, "y", font = 2)
-lab(YH * 1.1 + c(0, -0.1, 0), "ŷ = Py", col = "steelblue4", font = 2)
-lab((Y + YH) / 2 + c(0.35, 0, 0), "e = My", col = "firebrick", font = 2)
-lab(c(2.9, 1.8, 0), "col(X)", col = "grey40")
+lab(X1c + c(0.1, -0.3, 0), expression(x[1] == iota), col = "grey20")
+lab(X2c + c(0, 0.3, 0), expression(x[2]), col = "grey20")
+lab(Y + c(0, 0, 0.08), "y", font = 2)
+lab(YH + c(0.3, 0.35, 0), expression(hat(y) == P * y), col = "steelblue4")
+lab((Y + YH) / 2 + c(0.5, 0, 0), "e = My", col = "firebrick", font = 2)
+lab(c(3.4, 2.1, 0), "col(X)", col = "grey40")
 dev.off()
 
 # (2) Ex. 34: dados, reta ajustada e resíduos
@@ -239,8 +266,11 @@ plot(x, y, pch = 19, cex = 1.3, xlim = c(1, 11), ylim = c(1, 7),
 abline(b[1], b[2], col = "steelblue4", lwd = 2)
 segments(x, y, x, yhat, col = "firebrick", lwd = 2, lty = 2)
 points(mean(x), mean(y), pch = 4, cex = 2, lwd = 2)
+fmt2 <- function(v) formatC(v, format = "f", digits = 2, decimal.mark = ",")
 legend("topleft", bty = "n",
-       legend = c(sprintf("ŷ = %.2f + %.2f X", b[1], b[2]), "resíduos e = y − ŷ", "ponto médio (X̄, Ȳ)"),
+       legend = c(as.expression(bquote(hat(y) == .(fmt2(b[1])) + .(fmt2(b[2])) ~ X)),
+                  expression("resíduos" ~ e == y - hat(y)),
+                  expression("ponto médio" ~ (bar(X) * "," ~ bar(Y)))),
        col = c("steelblue4", "firebrick", "black"), lty = c(1, 2, NA), pch = c(NA, NA, 4), lwd = 2)
 dev.off()
 

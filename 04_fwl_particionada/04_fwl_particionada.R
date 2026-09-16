@@ -67,6 +67,19 @@ registrar_varios(list(
   m04_inv_dif = abs(XtXinv["education", "education"] - 1 / sum(ex^2))
 ))
 
+## ---- Variância de b_ED pela FWL e o FIV (liga com D15) ----
+# Com constante em X1: x2'M1x2 = SQT(ED) * (1 - R2 da auxiliar de ED em X1)
+sst_ed <- sum((d$education - mean(d$education))^2)
+r2_aux <- summary(aux)$r.squared
+s2_longa <- sum(resid(longa)^2) / (n - K)
+registrar_varios(list(
+  m04_var_sst_ed = sst_ed, m04_var_r2_aux = r2_aux, m04_var_fiv = 1 / (1 - r2_aux),
+  m04_var_xMx = sum(ex^2),
+  m04_var_dif_xMx = abs(sum(ex^2) - sst_ed * (1 - r2_aux)),
+  m04_var_s2 = s2_longa,
+  m04_var_se_formula = sqrt(s2_longa / (sst_ed * (1 - r2_aux)))
+))
+
 ## ---- Correlação parcial, t e variação do R^2 (Greene, Teorema 3.5) ----
 R2_longa <- summary(longa)$r.squared
 R2_curta <- summary(curta)$r.squared
@@ -207,7 +220,8 @@ bw_sub <- coef(lm(wdm(sub$lwage) ~ wdm(sub$experience) - 1))
 png(file.path(dir_fig, "04_within_lsdv.png"), width = 1600, height = 1000, res = 200)
 par(mfrow = c(1, 2), mar = c(4.5, 4.5, 3.5, 1))
 plot(sub$experience, sub$lwage, pch = 19, cex = 0.7, col = cores[as.integer(sub$id)],
-     xlab = "EXP (anos)", ylab = "LWAGE", main = "Painel bruto: um intercepto por indivíduo")
+     xlab = "EXP (anos)", ylab = "LWAGE", main = "Bruto: um intercepto por indivíduo",
+     cex.main = 0.9)
 for (j in seq_along(levels(sub$id))) {
   s <- sub[sub$id == levels(sub$id)[j], ]
   a <- mean(s$lwage) - bw_sub * mean(s$experience)
@@ -215,7 +229,7 @@ for (j in seq_along(levels(sub$id))) {
 }
 plot(wdm(sub$experience), wdm(sub$lwage), pch = 19, cex = 0.7, col = cores[as.integer(sub$id)],
      xlab = "EXP − média do indivíduo", ylab = "LWAGE − média do indivíduo",
-     main = "Dados within (M_D): inclinação comum")
+     main = "Within (desvios da média): inclinação comum", cex.main = 0.9)
 abline(0, bw_sub, lwd = 2)
 dev.off()
 
@@ -223,8 +237,10 @@ dev.off()
 png(file.path(dir_fig, "04_ex25_vies_omissao.png"), width = 1600, height = 1000, res = 200)
 par(mar = c(4.5, 4.5, 3.5, 1))
 rng <- range(c(s_cor[, 2], s_ort[, 2]))
+ymax <- 1.6 * max(hist(s_ort[, 2], breaks = 60, plot = FALSE)$density,
+                  hist(s_cor[, 2], breaks = 60, plot = FALSE)$density)
 hist(s_ort[, 2], breaks = 60, col = adjustcolor("steelblue", 0.5), border = "white", freq = FALSE,
-     xlim = rng, xlab = "coeficiente de x1 na regressão curta", ylab = "densidade",
+     xlim = rng, ylim = c(0, ymax), xlab = "coeficiente de x1 na regressão curta", ylab = "densidade",
      main = "Viés de omissão (ex. 25): x2 correlacionada vs. ortogonal a x1")
 hist(s_cor[, 2], breaks = 60, col = adjustcolor("firebrick", 0.5), border = "white", freq = FALSE, add = TRUE)
 abline(v = beta1[2], lwd = 2)

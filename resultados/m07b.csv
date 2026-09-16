@@ -1,0 +1,171 @@
+chave,valor
+m07b_qnorm_975,1.95996398454
+m07b_qchisq_95_1,3.84145882069
+m07b_qt_975_25,2.05953855275
+m07b_qt_975_4, 2.7764451052
+m07b_qt_975_4_quad,7.70864742218
+m07b_qf_95_1_4,7.70864742218
+m07b_qt_975_76,1.99167260964
+m07b_qf_95_1_76,3.96675978401
+m07b_qf_95_2_10,4.10282101513
+m07b_qchisq_90_2,4.60517018599
+m07b_qchisq_95_2,5.99146454711
+m07b_qchisq_99_2,9.21034037198
+m07b_ex41_t1,-2.77808413484
+m07b_ex41_t2,11.2446160221
+m07b_ex41_p1,0.0102213324533
+m07b_ex41_F,126.441389483
+m07b_ex41_r2_via_t,0.834919634023
+m07b_ex41_r,0.913739569024
+m07b_ex41_dpib_2,     215.4844
+m07b_ex42_meia_largura,19.7338187648
+m07b_ex42_ic_lo,88.0083812352
+m07b_ex42_ic_hi,127.476018765
+m07b_ex42_ic_z_lo,88.9624718883
+m07b_ex42_ic_z_hi,126.521928112
+m07b_ex44_gl_impl, 4.0000024182
+m07b_ex44_n_impl,            6
+m07b_ex44_t1,3.50415575049
+m07b_ex44_t2,5.11991782988
+m07b_ex44_p1_recalc,0.0248026754266
+m07b_ex44_p2_recalc,0.00688652548232
+m07b_ex44_F_t2,26.2135585847
+m07b_ex44_Fcrit_tc2,     7.706176
+m07b_ex44_qbar,144.499934455
+m07b_ex44_elast,0.668940243993
+m07b_ex44_elast_alt,0.668940243993
+m07b_ex44_ic_lo,  5.063790704
+m07b_ex44_ic_hi, 17.058309296
+m07b_ex44_s_recalc,118.122489391
+m07b_ex44_r2a_recalc,   0.83451125
+m07b_ex44_sqt_sy,421567.296384
+m07b_ex44_sqt_r2,421567.100483
+m07b_ex44_sqe,365755.410483
+m07b_ex44_F_anova,26.2135341526
+m07b_ex44_lnL_recalc,-35.9275686655
+m07b_ex44_aic_recalc,12.6425228885
+m07b_ex44_sc_recalc,12.5731093782
+m07b_ex44_hq_recalc,12.3646549423
+m07b_ex44_jb_p,0.465333930974
+m07b_ex44_rho_dw,   -0.5359245
+m07b_ex45_ln_intercepto,4.23004027768
+m07b_ex45_pct_exato,5.75976837366
+m07b_ex45_t_ano,18.6666666667
+m07b_ex45_anos_dobrar,12.3776282243
+m07b_ex45b_ct_q1,2.35608183522
+m07b_ex45b_pct10,2.37233296602
+m07b_ex46_exp_b1, 106.14838779
+m07b_ex46_pct10,7.18351543018
+m07b_ex46_t2,10.5145325321
+m07b_ex46_ic_lo,   0.59217896
+m07b_ex46_ic_hi,   0.86353704
+m07b_ex46_jb_parte_S,10.1468190425
+m07b_ex46_jb_parte_K,0.336709333597
+m07b_ex46_jb_sk,10.4835283761
+m07b_ex46_jb_sk_p,0.00529091442947
+m07b_ex46_jb_lista_p,7.98515717272e-05
+m07b_ex46_sqt,102.768030285
+m07b_ex46_sqe,65.0884402853
+m07b_ex46_qmres,0.495784078947
+m07b_ex46_F_anova,131.283845224
+m07b_ex46_F_r2,131.283845224
+m07b_ex46_t2_quad,110.555394368
+m07b_ex46_sqt_sy,121.740635602
+m07b_ex46_ssr_s,44.7444795228
+m07b_ex46_r2_via_t,0.592614299589
+m07b_ex46_r2_via_r2a,0.632460051948
+m07b_ex46_r2_via_sy_s,0.632460605273
+m07b_ex46_lnL_ssr,-82.3011855223
+m07b_ex46_aic_do_lnL,1.97826282051
+m07b_ex46h_pib,     40000000
+m07b_ex46h_elast,        0.625
+m07b_ex50_p_2_10,0.152345985011
+m07b_ex51_d,8.34686919743
+m07b_ex51_b2_teorico,-0.661252321026
+m07b_ex51_b2_medio_sim,-0.661713020712
+m07b_ex51_b1_teorico,15.2982326416
+m07b_ex51_b1_medio_sim,15.2990088653
+m07b_ex51_xbar,4.18719215538
+m07b_ex51_derivada_media,-0.650246275693
+m07b_ex51_reset_F,68.1073174521
+m07b_ex51_reset_p,3.85761618791e-19
+m07b_ex52_p,0.0713612695564
+m07b_sim_t_tamanho_n20,      0.04825
+m07b_sim_t_poder05_n20,        0.394
+m07b_teo_t_poder05_n20,0.404213405772
+m07b_sim_t_poder10_n20,      0.92425
+m07b_teo_t_poder10_n20,0.929010756791
+m07b_sd_b2_n20,0.275643231984
+m07b_sim_t_poder05_n60,       0.9805
+m07b_sim_trind_n15_W,      0.16225
+m07b_sim_trind_n15_LR,       0.1185
+m07b_sim_trind_n15_LM,      0.06575
+m07b_sim_trind_n15_F,        0.056
+m07b_sim_trind_n30_W,      0.09375
+m07b_sim_trind_n30_LR,       0.0765
+m07b_sim_trind_n30_LM,      0.05375
+m07b_sim_trind_n30_F,       0.0495
+m07b_sim_trind_n60_W,      0.06425
+m07b_sim_trind_n60_LR,        0.058
+m07b_sim_trind_n60_LM,      0.05125
+m07b_sim_trind_n60_F,       0.0495
+m07b_sim_trind_n200_W,       0.0555
+m07b_sim_trind_n200_LR,      0.05275
+m07b_sim_trind_n200_LM,         0.05
+m07b_sim_trind_n200_F,      0.04925
+m07b_sim_trind_prop_ordem,            1
+m07b_sim_jb_tam_n10,       0.0065
+m07b_sim_jb_pod_exp_n10,      0.11675
+m07b_sim_t_tam_exp_n10,      0.06425
+m07b_sim_jb_tam_n20,       0.0265
+m07b_sim_jb_pod_exp_n20,      0.42975
+m07b_sim_t_tam_exp_n20,        0.055
+m07b_sim_jb_tam_n50,      0.03775
+m07b_sim_jb_pod_exp_n50,        0.943
+m07b_sim_t_tam_exp_n50,      0.05225
+m07b_sim_jb_tam_n100,         0.04
+m07b_sim_jb_pod_exp_n100,            1
+m07b_sim_t_tam_exp_n100,      0.04775
+m07b_sim_jb_tam_n500,      0.04525
+m07b_sim_jb_pod_exp_n500,            1
+m07b_sim_t_tam_exp_n500,       0.0485
+m07b_sim_jb_tam_n1000,       0.0505
+m07b_sim_jb_pod_exp_n1000,            1
+m07b_sim_t_tam_exp_n1000,      0.04675
+m07b_t4_t2,3.44928063215
+m07b_t4_F1_ssr,3.44928063215
+m07b_t4_F1_wald,3.44928063215
+m07b_t4_F2,5.49296285265
+m07b_t4_JF,10.9859257053
+m07b_t4_W_ml,11.9412235927
+m07b_t4_W_via_F,11.9412235927
+m07b_t4_LR_formula,10.7081461703
+m07b_t4_LR_loglik,10.7081461703
+m07b_t4_LM_nR2,9.63915701055
+m07b_t4_LM_formula,9.63915701055
+m07b_t4_tcrit,2.01289559892
+m07b_t4_t_no_limite,2.01289559892
+m07b_t4_dw,0.625730532682
+m07b_t4_dw_aprox,0.627309733926
+m07b_t4_r1,0.686345133037
+m07b_t4_dw_lmtest,0.625730532682
+m07b_t4_bg_manual,94.9987068196
+m07b_t4_bg_lmtest,94.9987068196
+m07b_t4_bp_manual,23.7935812625
+m07b_t4_bp_lmtest,23.7935812625
+m07b_t4_white_manual,26.8631313112
+m07b_t4_white_lmtest,26.8631313112
+m07b_t5_d12,0.651325699684
+m07b_t5_omit_b1_teo,1.32566284984
+m07b_t5_omit_b1_sim,1.32490398887
+m07b_t5_longa_b1_sim,0.998467508073
+m07b_t5_omit_s2_teo,1.11291594523
+m07b_t5_omit_s2_sim,1.11328398735
+m07b_t5_var_curta_sim,0.0246216970804
+m07b_t5_var_longa_sim,0.0439755355916
+m07b_t5_var_curta_teo,0.0246562326723
+m07b_t5_var_longa_teo,0.0442239391993
+m07b_t5_irrel_b1_sim,0.99915010147
+m07b_t5_irrel_razao_var_sim,2.22544156978
+m07b_t5_irrel_razao_var_teo, 2.2531195876
+m07b_t5_r2_13,0.556170917201

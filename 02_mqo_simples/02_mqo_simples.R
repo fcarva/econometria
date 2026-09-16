@@ -11,6 +11,7 @@
 #   Ex. 15       — Monte Carlo: viés de variável omitida
 #   Ex. 20       — Monte Carlo: dispersão de X e precisão de b2
 #   D02.14       — Monte Carlo: erro de medição em Y (variante da Q4 da P1 2025/2)
+#   D02.16       — Monte Carlo: Gauss-Markov (MQO x estimador "dos extremos")
 #
 # Rodar: powershell -ExecutionPolicy Bypass -File scripts\r.ps1 02_mqo_simples\02_mqo_simples.R
 
@@ -163,7 +164,13 @@ stopifnot(isTRUE(all.equal(t_b2^2, F_calc)), isTRUE(all.equal(F_calc, F_R2)),
           isTRUE(all.equal(R2, r_XY^2)), isTRUE(all.equal(t_crit^2, F_crit)),
           isTRUE(all.equal(F_calc, unname(summary(fit)$fstatistic["value"]))))
 corr_b12_hat <- cov_b12_hat / sqrt(var_b1_hat * var_b2_hat)
+fator_b1 <- 1 / n + Xbar^2 / S_XX                  # = soma(X^2) / (n S_XX)
+stopifnot(isTRUE(all.equal(fator_b1, soma_X2 / (n * S_XX))))
 
+registrar("m02_ex40_fator_b1", fator_b1)
+registrar("m02_ex40_Xbar2_Sxx", Xbar^2 / S_XX)
+registrar("m02_ex40_var_b1", var_b1_hat)
+registrar("m02_ex40_var_b2", var_b2_hat)
 registrar("m02_ex40_gl", gl)
 registrar("m02_ex40_ep_b1", ep_b1)
 registrar("m02_ex40_ep_b2", ep_b2)
@@ -209,6 +216,8 @@ elast <- b2 * Xbar / Ybar
 elast_chave <- 0.2925 * 8 / 2.80     # conta da chave, com b2 e Ybar arredondados
 registrar("m02_ex40_elast", elast)
 registrar("m02_ex40_elast_chave", elast_chave)
+# Elasticidade da reta em X0 = 20 (a elasticidade muda ao longo de uma reta)
+registrar("m02_ex40_elast20", b2 * X0 / Y0_hat)
 # eta = PMg / PMe: produto médio na média
 registrar("m02_ex40_PMe_media", Ybar / Xbar)
 
@@ -302,6 +311,8 @@ registrar("m02_ex41_t2", t41^2)
 registrar("m02_ex41_F_R2", R2_41 / ((1 - R2_41) / (n41 - 2)))
 registrar("m02_ex41_r", sqrt(R2_41))
 registrar("m02_ex41_tcrit", qt(0.975, n41 - 2))
+# Volta: R^2 = t^2 / (t^2 + n - 2) (D02.12)
+registrar("m02_ex41_R2_de_t", t41^2 / (t41^2 + n41 - 2))
 
 ## ---- Ex. 14 e 16 (Monte Carlo) ----
 # X fixo em amostras repetidas (X do ex. 40); u ~ N(0, sigma^2) i.i.d. [A1]-[A6]
@@ -404,6 +415,19 @@ registrar("m02_ex15_media_b2_longa", mean(b2_longa))
 registrar("m02_ex15_var_curta", var(b2_curta))
 registrar("m02_ex15_var_longa", var(b2_longa))
 registrar("m02_ex15_r23", cor(X2, X3))
+# Variâncias teóricas (condicionais a X2, X3): curta sigma^2/S22; longa sigma^2/[S22 (1 - r23^2)]
+S22 <- sum(x2d^2)
+r23 <- cor(X2, X3)
+registrar("m02_ex15_var_curta_teo", sig15^2 / S22)
+registrar("m02_ex15_var_longa_teo", sig15^2 / (S22 * (1 - r23^2)))
+registrar("m02_ex15_fiv", 1 / (1 - r23^2))
+# Intercepto da curta: E[b1] = beta1 + beta3 * d1, com d1 = intercepto da auxiliar de X3 em X2
+d1_aux <- mean(X3) - d_aux * mean(X2)
+stopifnot(isTRUE(all.equal(d1_aux, unname(coef(lm(X3 ~ X2))[1]))))
+b1_curta <- colMeans(Y15) - b2_curta * mean(X2)
+registrar("m02_ex15_d1_aux", d1_aux)
+registrar("m02_ex15_vies_b1_teo", g3 * d1_aux)
+registrar("m02_ex15_vies_b1_mc", mean(b1_curta) - g1)
 
 abrir_png("m02_ex15_vies_omitida.png")
 par(mar = c(4.5, 4.5, 3, 1))
@@ -412,8 +436,9 @@ hist(b2_longa, breaks = br, col = adjustcolor("grey50", 0.6), border = "white", 
      main = "Ex. 15 — viés de variável omitida (10000 amostras)",
      xlab = expression("estimativa do coeficiente de " * X[2]), ylab = "densidade", ylim = c(0, 8.5))
 hist(b2_curta, breaks = br, col = adjustcolor("firebrick", 0.45), border = "white", freq = FALSE, add = TRUE)
-abline(v = g2, lwd = 2.5)
-abline(v = g2 + vies_teo, lwd = 2.5, lty = 2, col = "firebrick")
+# linhas verticais só até y = 5,5 para não cruzar a legenda
+segments(g2, 0, g2, 5.5, lwd = 2.5)
+segments(g2 + vies_teo, 0, g2 + vies_teo, 5.5, lwd = 2.5, lty = 2, col = "firebrick")
 legend("topleft", bty = "n", cex = 0.8,
        legend = c("Regressão longa (Y em X2 e X3): não viesada",
                   "Regressão curta (Y só em X2): viesada",
@@ -480,6 +505,19 @@ registrar("m02_me_var_comerro_teo", (sig_u^2 + sig_e^2) / S_XX)
 registrar("m02_me_var_semerro_mc", var(b2_star))
 registrar("m02_me_var_comerro_mc", var(b2_obs))
 registrar("m02_me_razao_var_teo", (sig_u^2 + sig_e^2) / sig_u^2)
+# s^2 da regressão com Y observado estima sigma_u^2 + sigma_e^2 (a variância do erro composto)
+res_obs <- Yobs - outer(rep(1, n), colMeans(Yobs) - b2_obs * Xbar) - outer(X, b2_obs)
+registrar("m02_me_sigma2_composto", sig_u^2 + sig_e^2)
+registrar("m02_me_media_s2_comerro", mean(colSums(res_obs^2) / (n - 2)))
+# Torção: erro de medição SISTEMÁTICO, correlacionado com X: e = gama0 + gama1 X + ruído
+gama0 <- 0.2; gama1 <- 0.05
+Ysis <- Ystar + gama0 + gama1 * X + E_me
+b2_sis <- colSums(k * Ysis)
+b1_sis <- colMeans(Ysis) - b2_sis * Xbar
+registrar("m02_me_gama0", gama0)
+registrar("m02_me_gama1", gama1)
+registrar("m02_me_media_b2_sistematico", mean(b2_sis))
+registrar("m02_me_media_b1_sistematico", mean(b1_sis))
 
 abrir_png("m02_erro_medicao_y.png")
 par(mar = c(4.5, 4.5, 3, 1))
@@ -492,6 +530,41 @@ abline(v = beta2, col = "grey30")
 legend("topright", bty = "n", cex = 0.8,
        legend = c("Y* sem erro (sigma_u = 0,3)", "Y = Y* + e (sigma_e = 0,4)",
                   "linha vertical: beta2 verdadeiro = 0,3"),
+       col = c("navy", "firebrick", NA), lty = c(1, 2, NA), lwd = c(2.5, 2.5, NA))
+fechar_png()
+
+## ---- D02.16: Gauss-Markov (Monte Carlo) ----
+# Estimador alternativo linear e não viesado de beta2: inclinação entre os extremos,
+# b2_ext = (Y_15 - Y_1) / (X_15 - X_1). Pesos c_i: -1/14 em i = 1, +1/14 em i = 15, zero no resto.
+cpes <- rep(0, n); cpes[1] <- -1 / (X[n] - X[1]); cpes[n] <- 1 / (X[n] - X[1])
+dpes <- cpes - k                                  # desvio em relação aos pesos de MQO
+stopifnot(isTRUE(all.equal(sum(cpes), 0)), isTRUE(all.equal(sum(cpes * X), 1)),
+          isTRUE(all.equal(sum(dpes), 0)), isTRUE(all.equal(sum(dpes * X), 0)),
+          abs(sum(k * dpes)) < 1e-14,
+          isTRUE(all.equal(sum(cpes^2), sum(k^2) + sum(dpes^2))))
+b2_ext <- colSums(cpes * Ysim)                    # mesmas 20000 amostras do Ex. 14/16
+var_ext_teo <- sigma^2 * sum(cpes^2)
+registrar("m02_gm_soma_c2", sum(cpes^2))
+registrar("m02_gm_soma_k2", sum(k^2))
+registrar("m02_gm_soma_d2", sum(dpes^2))
+registrar("m02_gm_soma_kd", sum(k * dpes))
+registrar("m02_gm_var_ext_teo", var_ext_teo)
+registrar("m02_gm_var_ext_mc", var(b2_ext))
+registrar("m02_gm_media_ext_mc", mean(b2_ext))
+registrar("m02_gm_razao_var", var_ext_teo / var_b2_teo)
+
+abrir_png("m02_gauss_markov.png")
+par(mar = c(4.5, 4.5, 3, 1))
+dm <- density(b2_sim); de <- density(b2_ext)
+plot(dm, lwd = 2.5, col = "navy", xlim = range(de$x), ylim = c(0, max(dm$y) * 1.5),
+     main = "Gauss-Markov: dois estimadores lineares não viesados de beta2",
+     xlab = expression(hat(beta)[2]), ylab = "densidade")
+lines(de, lwd = 2.5, col = "firebrick", lty = 2)
+segments(beta2, 0, beta2, max(dm$y) * 1.05, col = "grey30")   # não cruza a legenda
+legend("top", bty = "n", cex = 0.8,
+       legend = c(sprintf("MQO (variância teórica %s)", fmt(var_b2_teo, 6)),
+                  sprintf("Extremos (Y15 - Y1)/14 (variância teórica %s)", fmt(var_ext_teo, 6)),
+                  "mesmas 20000 amostras; linha vertical: beta2 = 0,3"),
        col = c("navy", "firebrick", NA), lty = c(1, 2, NA), lwd = c(2.5, 2.5, NA))
 fechar_png()
 

@@ -1,0 +1,137 @@
+chave,valor
+m06_trM,           27
+m06_autoval_M_uns,           27
+m06_autoval_M_zeros,            3
+m06_mc_cor_x2x3,0.830987195235
+m06_mc_media_b1,1.03601219526
+m06_mc_media_b2,0.494263923381
+m06_mc_media_b3,-0.297609107718
+m06_mc_var_b2_teo,0.0856450187679
+m06_mc_var_b2_sim,0.0874196056017
+m06_mc_var_b3_teo,0.0926508647174
+m06_mc_var_b3_sim,0.095184996958
+m06_mc_cov_b2b3_teo,-0.0740235867557
+m06_mc_cov_b2b3_sim,-0.0761041479465
+m06_mc_erro_rel_max_diag,0.0273514148879
+m06_mc_media_s2,3.99513790597
+m06_mc_media_s,1.98033197358
+m06_mc_media_een,3.59562411537
+m06_mc_een_teo,          3.6
+m06_mc_media_q,26.9671808653
+m06_mc_var_q,54.2125549341
+m06_mc_cor_b2_s2,0.0113432292417
+m06_mc_tamanho_t,       0.0533
+m06_mc_tcrit,2.05183051648
+m06_mc_r2_aux_x3,0.690539718645
+m06_mc_fiv_x3,3.23143246565
+m06_mc_var_b3_fwl,0.0926508647174
+m06_mc_var_b3_sem_colin,0.0286717626632
+m06_inc_media_b2,0.500186779266
+m06_inc_var_b2_sim,0.109329343949
+m06_inc_var_b2_teo,0.106641539777
+m06_inc_var_b2_jensen,0.0925355979677
+m06_gm_media_b2_meio,0.494842985945
+m06_gm_media_b2_dm,0.494683391384
+m06_gm_var_b2_meio_teo,0.147238668543
+m06_gm_var_b2_meio_sim,0.147123883801
+m06_gm_var_b2_dm_teo,0.243096837856
+m06_gm_var_b2_dm_sim,0.244535094942
+m06_gm_razao_var_b2_meio,1.71917375536
+m06_gm_razao_var_b2_dm,2.83842354585
+m06_gm_autoval_min_cc1,0.000547012954466
+m06_gm_autoval_min_cc2,0.154228769265
+m06_gm_vies_b2_cx,-1.20344510733
+m06_gm_vies_b2_cx_sim,-1.21055110472
+m06_nesf_het_razao_dp_b2,0.843379354989
+m06_nesf_ar1_rho,          0.6
+m06_nesf_ar1_Es2,3.28392660766
+m06_nesf_ar1_razao_dp_b2,0.501638146107
+m06_lo_fiv_year,143.463545365
+m06_lo_fiv_deflator,75.6707340016
+m06_lo_fiv_gnp,132.463800912
+m06_lo_fiv_armed,1.55319087806
+m06_lo_dif_max_aux_car,1.62003743753e-12
+m06_lo_varpct_deflator,89.0858282344
+m06_lo_varpct_gnp,-29.2900550985
+m06_lo_varpct_armed,86.4616321756
+m06_lo_varpct_year,20.1303211841
+m06_lo_ncond_escalado,15824.1485408
+m06_lo_ncond_bruto,10082544.0837
+m06_ex54_r2aux,0.831509751069
+m06_ex54_faux,13.5714192954
+m06_ex54_gl1,            4
+m06_ex54_gl2,           11
+m06_ex54_paux,0.000310651853701
+m06_ex54_fcrit10,2.53618823221
+m06_ex54_fiv_x1,5.93506156197
+m06_ex54_r2_modelo,0.825276810101
+m06_ex54_f_gl_errados,19.7388724036
+m06_ex54_fcrit10_gl_errados,2.60552492083
+m06_ex54_fiv_x2,4.29218454498
+m06_ex54_fiv_x3,18.1074659297
+m06_ex54_fiv_x4,4.89856557671
+m06_ex54_fiv_x5,9.45711014276
+m06_ex63_assimetria,        5e-05
+m06_ex63_fivpar_preco_rendabr,1.01483612073
+m06_ex63_fivpar_preco_rendach,1.06059222836
+m06_ex63_fivpar_br_ch_sup,4.69952555352
+m06_ex63_fivpar_br_ch_inf,4.69756688584
+m06_ex63_fiv_preco,1.10640454867
+m06_ex63_fiv_rendabr,4.90149986908
+m06_ex63_fiv_rendach,5.12249471837
+m06_ex63_r2_export,0.415146384677
+m06_ex63_r2_br_ch, 0.7872125625
+m06_ex63_autoval_min,0.104655175051
+m06_ex63_ncond,4.32241434316
+m06_ex64_fivpar_x1x2,6.51041666667
+m06_ex64_fivpar_x1x3,1.00250626566
+m06_ex64_fivpar_x2x3,1.65809981761
+m06_ex64_autoval_min,-0.13872689746
+m06_ex64_det_rxx,     -0.30376
+m06_ex64_r2_x1_implicito, 1.5036644006
+m06_ex64_autoval_min_4x4,-0.437402077096
+m06_ex64_contra_r13,0.70359754473
+m06_ex64_contra_fivpar_max,1.98039215686
+m06_ex64_contra_fiv_x3,          101
+m06_ex53_cor_amostral,0.909955236401
+m06_ex53_delta,0.850137712915
+m06_ex53_razao_var_curta_longa,0.171981467746
+m06_ex53_eqm_curta_tau0_teo,0.171981467746
+m06_ex53_eqm_curta_tau1_teo,            1
+m06_ex53_eqm_curta_tau2_teo,3.48405559676
+m06_ex53_eqm_curta_tau0_sim,0.167970305014
+m06_ex53_eqm_curta_tau2_sim,3.48771011195
+m06_ex53_eqm_longa_tau2_sim,0.979596457358
+m06_ex53_eqm_pre_max_sim,2.24645486357
+m06_ex53_eqm_pre_tau_max,         2.25
+m06_out_b2,-0.726521886271
+m06_out_se2,1.36198693343
+m06_out_t2,-0.533427941514
+m06_out_p2,0.596927442546
+m06_out_b3,1.95698684346
+m06_out_se3,1.40467072033
+m06_out_t3,1.39319971231
+m06_out_p3,0.171873546961
+m06_out_r2,0.432327575646
+m06_out_r2adj,0.401642579735
+m06_out_b1,0.636576126841
+m06_out_se1,1.11673032631
+m06_out_ssr,62.0368858758
+m06_out_se_e,1.29486392769
+m06_out_f,14.0892173132
+m06_out_pf,2.82363961153e-05
+m06_out_fcrit5,3.25192384639
+m06_out_tcrit5,2.02619246303
+m06_out_r23,0.986433634064
+m06_out_fiv,37.1075612108
+m06_out_corr_b2b3,-0.986433634064
+m06_out_soma_b,1.23046495719
+m06_out_se_soma,0.231798848669
+m06_out_t_soma,5.30833075425
+m06_out_curta_b2,1.14525546954
+m06_out_curta_se2,0.22633593768
+m06_out_pc_autoval1,1.98643363406
+m06_out_pc_autoval2,0.0135663659363
+m06_out_pc_share1,0.993216817032
+m06_out_pc_t,5.22410764832
+m06_out_pc_r2,0.417992909006
