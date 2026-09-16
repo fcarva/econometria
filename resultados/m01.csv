@@ -1,0 +1,104 @@
+chave,valor
+m01_d5_a,            4
+m01_d5_Ex,            2
+m01_d5_Varx,1.33333333333
+m01_d5_Eg,  2.666666966
+m01_d5_Exg,6.39999995461
+m01_d5_cov_xg, 1.0666660226
+m01_d5_beta_teo,0.79999951695
+m01_d5_alfa_teo, 1.0666679321
+m01_d5_aprox_teo,0.035555555556
+m01_d5_var_cef,0.888887292423
+m01_d5_var_proj,0.853332302827
+m01_d5_x_cruz1,0.594884751782
+m01_d5_x_cruz2,2.98845135545
+m01_d5_vies_x0,-1.0666679321
+m01_d5_vies_x1,0.133332550946
+m01_d5_vies_x4,-0.266665999904
+m01_d5_sigma_u,          0.5
+m01_d5_eqm_cef_teo,         0.25
+m01_d5_eqm_proj_teo,0.285555555556
+m01_d5_eqm_const_teo,1.13888729242
+m01_d5_n,       200000
+m01_d5_ols_alfa,1.06357618467
+m01_d5_ols_beta,0.801575496647
+m01_d5_media_v,5.98147404597e-05
+m01_d5_cor_xv,0.00339018032939
+m01_d5_Ev_xbaixo,-0.459071665744
+m01_d5_Ev_xmeio,0.16862365542
+m01_d5_eqm_cef_sim,0.251024685246
+m01_d5_eqm_proj_sim,0.286743196528
+m01_d5_eqm_const_sim, 1.1393026306
+m01_d5_raiz_const,-0.00560092323891
+m01_d5_raiz_coef,2.00369047606
+m01_d6_K,            4
+m01_d6_posto,            3
+m01_d6_T_na,            1
+m01_d6_Xdelta_max,            0
+m01_ex12_Sxx,          665
+m01_ex12_somaw_mqo,            0
+m01_ex12_somawx_mqo,            1
+m01_ex12_var_teo_mqo,0.00601503759398
+m01_ex12_somaw_extremos,            0
+m01_ex12_somawx_extremos,            1
+m01_ex12_var_teo_extremos,0.0221606648199
+m01_ex12_somaw_grupos,            0
+m01_ex12_somawx_grupos,            1
+m01_ex12_var_teo_grupos,        0.008
+m01_ex12_media_mqo,0.499651339132
+m01_ex12_var_sim_mqo,0.0060705169529
+m01_ex12_media_extremos,0.499699886207
+m01_ex12_var_sim_extremos,0.0220918240644
+m01_ex12_media_grupos,0.49947364837
+m01_ex12_var_sim_grupos,0.00810496881064
+m01_psid_n,         4165
+m01_psid_nind,          595
+m01_psid_nanos,            7
+m01_psid_media_lwage,6.67634664653
+m01_psid_dp_lwage,0.461512107307
+m01_psid_media_ed,12.8453781513
+m01_psid_media_exp,19.8537815126
+m01_psid_media_exp2,514.405042017
+m01_psid_media_occ,0.511164465786
+m01_psid_media_ind,0.39543817527
+m01_psid_media_south,0.290276110444
+m01_psid_media_smsa,0.653781512605
+m01_psid_media_blk,0.072268907563
+m01_psid_media_wks,46.8115246098
+m01_psid_media_fem,0.112605042017
+m01_psid_cont_occ,         2129
+m01_psid_cont_blk,          301
+m01_psid_exp_media_quad, 394.17264035
+m01_psid_exp_var_n,120.232401667
+m01_psid_exp_dp_n,10.9650536554
+m01_psid_K,           10
+m01_psid_gl,         4155
+m01_psid_b_const,5.13171017689
+m01_psid_b_ed,0.0611276721836
+m01_psid_ep_ed,0.00277225763012
+m01_psid_b_exp,0.0429166484702
+m01_psid_t_exp,18.6770748911
+m01_psid_b_exp2,-0.000708030122022
+m01_psid_b_south,-0.0762907581659
+m01_psid_b_wks,0.00484185543093
+m01_psid_r2,0.344606786928
+m01_psid_r2aj,0.34318716264
+m01_psid_sqr,581.271270225
+m01_psid_s,0.37402782776
+m01_psid_F,242.745062748
+m01_psid_efeito_exp_media,0.0148024977763
+m01_psid_exp_pico,30.3070781422
+m01_psid_frac_within_lwage,0.271337516094
+m01_psid_within_ed,            0
+m01_psid_within_blk,            0
+m01_psid_within_fem,            0
+m01_psid_lin_const,6.50143205791
+m01_psid_lin_b,0.00881013969599
+m01_psid_quad_b1,0.0422101946837
+m01_psid_quad_b2,-0.000757480795361
+m01_psid_quad_pico,27.8622210241
+m01_psid_lin_r2,0.0438253304224
+m01_psid_quad_r2,0.0793515689434
+m01_psid_sat_r2,0.095734335826
+m01_psid_sat_K,           51
+m01_psid_sat_maxdif,1.51789691927e-12

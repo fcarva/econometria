@@ -16,6 +16,10 @@ Gerado por `scripts/indice_D.R`. Não edite à mão.
 
 | ID | Demonstração | Onde está |
 |---|---|---|
+| **D00.1** | Decomposição do erro quadrático médio | [00_fundamentos/00_teoria.md](../00_fundamentos/00_teoria.md) |
+| **D00.2** | Desigualdade de Chebyshev e consistência | [00_fundamentos/00_teoria.md](../00_fundamentos/00_teoria.md) |
+| **D01.1** | A projeção linear populacional | [01_paradigma_projecao/01_teoria.md](../01_paradigma_projecao/01_teoria.md) |
+| **D01.2** | Quando a projeção coincide com a esperança condicional | [01_paradigma_projecao/01_teoria.md](../01_paradigma_projecao/01_teoria.md) |
 | **D02.1** | Equações normais em somas e solução por Cramer | [02_mqo_simples/02_teoria.md](../02_mqo_simples/02_teoria.md) |
 | **D02.2** | Propriedades algébricas dos resíduos e dos ajustados | [02_mqo_simples/02_teoria.md](../02_mqo_simples/02_teoria.md) |
 | **D02.3** | Regressão em desvios da média | [02_mqo_simples/02_teoria.md](../02_mqo_simples/02_teoria.md) |
@@ -36,6 +40,12 @@ Gerado por `scripts/indice_D.R`. Não edite à mão.
 | **D03.2** | Equações normais com checagem de dimensões | [03_mqo_matricial/03_teoria.md](../03_mqo_matricial/03_teoria.md) |
 | **D03.3** | Condição de 2ª ordem: X'X é positiva definida sob A2 | [03_mqo_matricial/03_teoria.md](../03_mqo_matricial/03_teoria.md) |
 | **D03.4** | Propriedades de P e M | [03_mqo_matricial/03_teoria.md](../03_mqo_matricial/03_teoria.md) |
+| **D04.1** | A solução particionada | [04_fwl_particionada/04_teoria.md](../04_fwl_particionada/04_teoria.md) |
+| **D04.2** | O teorema de Frisch-Waugh-Lovell | [04_fwl_particionada/04_teoria.md](../04_fwl_particionada/04_teoria.md) |
+| **D04.3** | Incluir constante é centrar as variáveis | [04_fwl_particionada/04_teoria.md](../04_fwl_particionada/04_teoria.md) |
+| **D04.4** | Viés de omissão em forma matricial (ex. 25) | [04_fwl_particionada/04_teoria.md](../04_fwl_particionada/04_teoria.md) |
+| **D04.5** | Variância, FIV e correlação parcial | [04_fwl_particionada/04_teoria.md](../04_fwl_particionada/04_teoria.md) |
+| **D04.6** | Efeitos fixos: within é FWL | [04_fwl_particionada/04_teoria.md](../04_fwl_particionada/04_teoria.md) |
 | **D05.1** | b minimiza e'e: prova sem cálculo | [05_ajuste_restricoes/05_teoria.md](../05_ajuste_restricoes/05_teoria.md) |
 | **D05.2** | Decomposição da variação: SQT = SQE + SQR | [05_ajuste_restricoes/05_teoria.md](../05_ajuste_restricoes/05_teoria.md) |
 | **D05.3** | R²: definição, limites e R² = corr(y, ŷ)² | [05_ajuste_restricoes/05_teoria.md](../05_ajuste_restricoes/05_teoria.md) |
@@ -112,4 +122,4 @@ Gerado por `scripts/indice_D.R`. Não edite à mão.
 | **D15** | Multicolinearidade: efeito na variância e o FIV | [demonstracoes/econometria-i-demonstracoes-mes-1-1.md](../demonstracoes/econometria-i-demonstracoes-mes-1-1.md) |
 | **D16** | Gauss–Markov matricial: MQO é BLUE | [demonstracoes/econometria-i-demonstracoes-mes-1-1.md](../demonstracoes/econometria-i-demonstracoes-mes-1-1.md) |
 
-Total: **95** demonstrações em 9 arquivos.
+Total: **105** demonstrações em 12 arquivos.

@@ -234,7 +234,7 @@ source(file.path(.d, "R", "raiz.R"))
 
 ## 10. Links
 
-- Nos arquivos novos, links relativos em Markdown, que funcionam no GitHub e no Obsidian, no formato `[D06.2](caminho/relativo/06_teoria.md)`. Cite o D pelo id no texto; não confie em âncoras.
+- Nos arquivos novos, links relativos em Markdown, que funcionam no GitHub e no Obsidian, no formato `[D06.2]` seguido do caminho relativo entre parênteses. Cite o D pelo id no texto; não confie em âncoras.
 - Wikilinks `[[...]]` só existem nas notas antigas e resolvem pelos aliases da §3.
 
 ## 11. Modelo de resposta de teste (vale ponto na prova)

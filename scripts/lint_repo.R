@@ -93,6 +93,7 @@ for (md in mds) {
       for (m in regmatches(ln, gregexpr("\\]\\(([^)]+)\\)", ln))[[1]]) {
         alvo <- sub("^\\]\\(", "", sub("\\)$", "", m))
         if (grepl("^(https?:|mailto:|#)", alvo)) next
+        if (grepl("[$\\ ]", alvo)) next          # é matemática, não link
         alvo <- sub("#.*$", "", alvo)
         if (!nzchar(alvo)) next
         if (!file.exists(file.path(dirname(md), alvo)))
@@ -132,8 +133,9 @@ if (dir.exists(dir_txt)) {
     if (length(w) < 12) next
     for (k in seq_len(length(w) - 11)) assign(paste(w[k:(k + 11)], collapse = " "), TRUE, envir = grams)
   }
+  sem_referencias <- function(linhas) linhas[!grepl("\\((19|20)[0-9]{2}\\)", linhas)]
   for (md in mds) {
-    w <- normaliza(sem_codigo(readLines(md, warn = FALSE, encoding = "UTF-8")))
+    w <- normaliza(sem_referencias(sem_codigo(readLines(md, warn = FALSE, encoding = "UTF-8"))))
     if (length(w) < 12) next
     for (k in seq_len(length(w) - 11)) {
       g <- paste(w[k:(k + 11)], collapse = " ")
