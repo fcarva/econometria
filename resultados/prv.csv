@@ -1,0 +1,70 @@
+chave,valor
+prv_q1_n,         4165
+prv_q1_K,           10
+prv_q1_gl,         4155
+prv_q1_r2,0.344606589078
+prv_q1_r2adj,0.343186964362
+prv_q1_ssr,581.271653102
+prv_q1_s,0.374027950944
+prv_q1_F,242.744850101
+prv_q1_ymedia,6.67634640096
+prv_q1_ydp,0.461512189643
+prv_q1_jb,68.5548647691
+prv_q1_jb_p,1.33226762955e-15
+prv_q1_assimetria,0.0273100651294
+prv_q1_curtose,3.62613950207
+prv_q1_b_exp,0.0429166489248
+prv_q1_se_exp,0.00229782569566
+prv_q1_t_exp,18.6770689377
+prv_q1_p_exp,7.60838474622e-78
+prv_q1_b_exp2,-0.000708030114979
+prv_q1_expstar,30.3070787646
+prv_q1_expstar_foto,30.3070844456
+prv_q1_expstar_ep,0.707941361759
+prv_q1_expstar_ic_inf,28.9195136956
+prv_q1_expstar_ic_sup,31.6946438337
+prv_q1_exp_max_amostra,           51
+prv_q1_frac_acima_pico,0.215846338535
+prv_q1_efmarg_exp_media,0.0148024985105
+prv_q1_b_ed,0.0611276561666
+prv_q1_se_ed,0.00277225854315
+prv_q1_ic_ed_inf, 0.0556940304
+prv_q1_ic_ed_sup, 0.0665612896
+prv_q1_b_south,-0.0762906194934
+prv_q1_south_aprox,-7.62906194934
+prv_q1_south_exato,-7.34531051615
+prv_q1_south_kennedy,-7.35336202379
+prv_q1_r2adj_pct,34.3186964362
+prv_q2_n,           48
+prv_q2_b_const,9.89495554116
+prv_q2_b_preco,-1.27742413343
+prv_q2_b_renda,0.280404825083
+prv_q2_rob_se_preco,0.241683843647
+prv_q2_rob_se_renda,0.245827599866
+prv_q2_rob_z_preco,-5.28551728634
+prv_q2_rob_z_renda,    1.1406564
+prv_q2_rob_p_renda,0.254012936971
+prv_q2_cla_se_preco,0.26319859028
+prv_q2_rob_weak,228.737748433
+prv_q2_rob_wh,3.82346717984
+prv_q2_rob_wh_p,0.0569091690302
+prv_q2_rob_sargan,0.332622141937
+prv_q2_rob_sargan_p,0.564119140018
+prv_q2_cla_weak,244.733753556
+prv_q2_cla_wh,3.06781627294
+prv_q2_cla_wh_p,0.0868250462413
+prv_q2_cla_sargan,0.332622141937
+prv_q2_cla_sargan_p,0.564119140018
+prv_q2_df2,           44
+prv_q2_r2,0.429422417993
+prv_q2_r2adj,0.404063414348
+prv_q2_wald,34.5064643872
+prv_q2_wald_p,3.21378236506e-08
+prv_q2_wald_F_cla,13.2807857805
+prv_q2_chi2_crit_2gl,5.99146454711
+prv_q2_chi2_crit_5gl,11.0704976935
+prv_q2_ic_preco_inf,-1.75112446698
+prv_q2_ic_preco_sup,-0.803723799879
+prv_q2_mqo_b_preco,-1.40650035162
+prv_q2_b_vhat,           NA
+prv_q2_sargan_r2aux,0.00692962795701

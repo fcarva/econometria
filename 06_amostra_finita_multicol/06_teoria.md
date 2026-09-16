@@ -457,7 +457,7 @@ $$
 | m06_mc_media_s2 | 3,995 |
 | m06_mc_media_een | 3,596 |
 | m06_mc_een_teo | 3,6 |
-| m06_mc_media_s | 1,984 |
+| m06_mc_media_s | 1,9803 |
 
 ### D06.8 · Distribuição de b e de s² sob normalidade
 

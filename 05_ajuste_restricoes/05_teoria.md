@@ -629,9 +629,6 @@ $$
 | m05_sl05_t_pd | 0,3065 |
 | m05_sl05_rparc_ps_r2 | 0,331 |
 | m05_sl05_rparc_ps_t | 0,331 |
-| m05_sl05_rparc_ps_F | 0,331 |
-| m05_sl05_aic_nlogit | 3,3079 |
-| m05_sl05_amemiya | 3,3187 |
 
 > [!WARNING]
 > **Não rejeitar não é provar**

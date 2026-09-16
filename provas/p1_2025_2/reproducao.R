@@ -141,7 +141,7 @@ dr <- sr$diagnostics; dc <- sc$diagnostics
 
 registrar_varios(c(
   prv_q2_n = nobs(iv2),
-  prv_q2_b_const = coef(iv2)[1], prv_q2_b_preco = coef(iv2)[2], prv_q2_b_renda = coef(iv2)[3],
+  prv_q2_b_const = unname(coef(iv2))[1], prv_q2_b_preco = unname(coef(iv2))[2], prv_q2_b_renda = unname(coef(iv2))[3],
   prv_q2_rob_se_preco = sr$coefficients[2, 2], prv_q2_rob_se_renda = sr$coefficients[3, 2],
   prv_q2_rob_z_preco = sr$coefficients[2, 3], prv_q2_rob_z_renda = sr$coefficients[3, 3],
   prv_q2_rob_p_renda = sr$coefficients[3, 4],
@@ -157,12 +157,12 @@ registrar_varios(c(
   prv_q2_chi2_crit_2gl = qchisq(0.95, 2), prv_q2_chi2_crit_5gl = qchisq(0.95, 5)))
 
 # IC de 95% robusto para a elasticidade-preço
-registrar("prv_q2_ic_preco_inf", coef(iv2)[2] - 1.96 * sr$coefficients[2, 2])
-registrar("prv_q2_ic_preco_sup", coef(iv2)[2] + 1.96 * sr$coefficients[2, 2])
+registrar("prv_q2_ic_preco_inf", unname(coef(iv2))[2] - 1.96 * sr$coefficients[2, 2])
+registrar("prv_q2_ic_preco_sup", unname(coef(iv2))[2] + 1.96 * sr$coefficients[2, 2])
 
 # MQO da mesma equação, para comparar a elasticidade
 mqo2 <- lm(log(packs) ~ log(rprice) + log(rincome), data = cig)
-registrar("prv_q2_mqo_b_preco", coef(mqo2)[2])
+registrar("prv_q2_mqo_b_preco", unname(coef(mqo2))[2])
 
 # Reconstrução das três estatísticas de diagnóstico
 fs <- lm(log(rprice) ~ log(rincome) + tdiff + I(tax/cpi), data = cig)      # 1º estágio
@@ -178,7 +178,7 @@ wh_cla <- coeftest(aux)["v_hat", "t value"]^2
 wh_rob <- coeftest(aux, vcov. = sandwich(aux))["v_hat", "t value"]^2
 confere(wh_cla, dc[2, 3], "Wu-Hausman clássico = t² do resíduo do 1º estágio", 1e-6)
 confere(wh_rob, dr[2, 3], "Wu-Hausman robusto = t² robusto do resíduo do 1º estágio", 1e-6)
-registrar("prv_q2_b_vhat", coef(aux)["v_hat"])
+registrar("prv_q2_b_vhat", unname(coef(aux))["v_hat"])
 
 u_iv <- resid(iv2)
 sargan <- nobs(iv2) * summary(lm(u_iv ~ log(rincome) + tdiff + I(tax/cpi), data = cig))$r.squared
