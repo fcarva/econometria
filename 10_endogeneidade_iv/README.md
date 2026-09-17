@@ -41,6 +41,10 @@ Instrumento válido: **relevante** ($\operatorname{Cov}(Z,X)\neq 0$, testável p
 > **Decida pelo número impresso**
 > O mesmo quadro aparece nas provas com p-valores trocados (0,0569 na lista, 0,0369 na P2 2024/2, 0,0469 na P1 2025/2). Com Wu-Hausman de 0,0569, a 10% rejeita e a 5% não.
 
+> [!TIP]
+> **Intuição visual antes da álgebra**
+> Figura(s) 11 e 12 da [galeria didática](../didatica/intuicao_visual.md): a atenuação por erro de medição e o instrumento como peneira.
+
 ## Como estudar
 
 1. D10.5 e D10.7 no papel, sem olhar: são a Q6.

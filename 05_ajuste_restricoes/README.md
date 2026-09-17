@@ -28,6 +28,10 @@ $$b_*=b-(X'X)^{-1}R'\big[R(X'X)^{-1}R'\big]^{-1}(Rb-q)$$
 
 $$F=\frac{(SQR_R-SQR_{IR})/J}{SQR_{IR}/(n-K)}=\frac{(R^2_{IR}-R^2_R)/J}{(1-R^2_{IR})/(n-K)},\qquad \bar R^2=1-\frac{n-1}{n-K}(1-R^2)$$
 
+> [!TIP]
+> **Intuição visual antes da álgebra**
+> Figura(s) 3 da [galeria didática](../didatica/intuicao_visual.md): a decomposição SQT = SQE + SQR em um ponto.
+
 ## Como estudar
 
 1. Derive o $F$ nas três formas e saiba dizer quando cada uma se aplica.

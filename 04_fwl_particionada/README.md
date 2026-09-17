@@ -22,6 +22,10 @@ O que significa, algebricamente, "controlar por outras variáveis". Base do vié
 | [04_lista1.md](04_lista1.md) | ex. 25 |
 | [04_fwl_particionada.R](04_fwl_particionada.R) | FWL na equação de salários, erro-padrão ingênuo × corrigido, FIV pela inversa particionada, within contra LSDV |
 
+> [!TIP]
+> **Intuição visual antes da álgebra**
+> Figura(s) 8 da [galeria didática](../didatica/intuicao_visual.md): o que "controlar por" significa, em três painéis.
+
 ## O essencial
 
 $$b_2=\big(X_2'M_1X_2\big)^{-1}X_2'M_1y,\qquad M_1=I-X_1(X_1'X_1)^{-1}X_1'$$

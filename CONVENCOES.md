@@ -234,6 +234,7 @@ source(file.path(.d, "R", "raiz.R"))
 - `set.seed()` antes de qualquer simulação.
 - Rodar sem internet e sem `materiais/`: dados embutidos no script ou vindos de pacotes (`AER`, `wooldridge`).
 - Pacotes permitidos: `AER` (`ivreg`, `PSID7682`, `CigarettesSW`, `CPS1985`), `lmtest`, `car`, `sandwich`, `tseries`, `moments`, `MASS`, `wooldridge`, `plm`, `testthat`, `ggplot2`.
+- **Estilo das figuras:** use `R/estilo_grafico.R` (paleta Flexoki, `tema_editorial()`, `titulo_editorial()` e `salvar_figura()`, que exporta PNG e SVG juntos). Título é frase que conclui algo; rodapé sempre com `Fonte:`. Ver [didatica/README.md](didatica/README.md).
 - **Figuras:** gráficos base do R em `NN_tema/figuras/*.png`, com `png(w = 1600, h = 1000, res = 200)`. Títulos em português. Sem imagem de terceiros.
 - Seções do script por exercício (`## ---- Ex. 40 ----`), comentadas em pt-BR. O script precisa terminar com status 0.
 - Arquivos de texto em UTF-8 sem BOM.

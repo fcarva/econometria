@@ -28,6 +28,10 @@ $$b=(X'X)^{-1}X'y,\qquad P=X(X'X)^{-1}X',\qquad M=I-P$$
 
 $$e=My,\qquad \hat y=Py,\qquad X'e=0,\qquad e'e=y'y-b'X'y,\qquad \operatorname{tr}(M)=n-K$$
 
+> [!TIP]
+> **Intuição visual antes da álgebra**
+> Figura(s) 7 da [galeria didática](../didatica/intuicao_visual.md): a geometria da projeção: y, a sombra no plano de X e o resíduo perpendicular.
+
 ## Como estudar
 
 1. Derive $b$ pelas equações normais, com as dimensões anotadas em cada passo.

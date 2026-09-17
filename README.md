@@ -61,6 +61,7 @@ Primeira vez nesta máquina: `scripts\r.ps1 R\00_setup.R` instala o que faltar.
 | Treinar no formato da prova | [provas/](provas/README.md): banco de derivações, banco de outputs, simulados |
 | Achar uma demonstração | [demonstracoes/INDICE_D.md](demonstracoes/INDICE_D.md) |
 | Ver o que o professor derivou em aula | [demonstracoes/caderno_aulas.md](demonstracoes/caderno_aulas.md) |
+| Entender a intuição antes da álgebra | [didatica/intuicao_visual.md](didatica/intuicao_visual.md) — 16 figuras comentadas |
 | Achar um exercício da Lista 1 | [LISTA1_MAPA.md](LISTA1_MAPA.md) |
 | Ver onde a chave do professor erra | [formulario/errata_chave_lista1.md](formulario/errata_chave_lista1.md) |
 
@@ -93,6 +94,7 @@ As demonstrações centrais D0–D16 do primeiro mês estão em [demonstracoes/]
 ```text
 econometrics/
 ├── NN_tema/            módulo: README, NN_teoria.md, NN_lista1.md, NN_tema.R, figuras/
+├── didatica/           16 figuras comentadas: intuição visual e metáforas com fronteira
 ├── demonstracoes/      núcleo D0–D16 + INDICE_D.md (gerado)
 ├── provas/             P1 2025/2 resolvida e reproduzida, banco de questões, simulados, log de erros
 ├── formulario/         formulário, vocabulário de interpretação, errata da chave

@@ -118,6 +118,17 @@ if (dir.exists(file.path(RAIZ, ".git"))) {
     E("arquivo proibido versionado: %s", p)
 }
 
+# arquivos versionados que sumiram do diretório (movidos para fora do repo, por exemplo
+# arrastados para dentro de materiais/ no Obsidian) — some do git no próximo commit
+if (dir.exists(file.path(RAIZ, ".git"))) {
+  st <- tryCatch(system2("git", c("status", "--porcelain"), stdout = TRUE), error = function(e) character(0))
+  sumidos <- sub("^\\s*D\\s+", "", grep("^\\s*D\\s", st, value = TRUE))
+  if (length(sumidos)) {
+    E("%d arquivo(s) versionado(s) sumiram do diretório — foram movidos para fora do repo?", length(sumidos))
+    for (p in utils::head(sumidos, 8)) E("   sumiu: %s", p)
+  }
+}
+
 dir_txt <- file.path(RAIZ, "materiais", "_txt")
 if (dir.exists(dir_txt)) {
   normaliza <- function(s) {

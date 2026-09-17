@@ -29,6 +29,10 @@ $$Y=\alpha_1+\alpha_2D+\beta_1X+\beta_2(DX)+u,\qquad X^*=-\frac{\beta_2}{2\beta_
 
 $$F_{Chow}=\frac{(SQR_P-(SQR_1+SQR_2))/K}{(SQR_1+SQR_2)/(n_1+n_2-2K)}\ \equiv\ F \text{ das interações}$$
 
+> [!TIP]
+> **Intuição visual antes da álgebra**
+> Figura(s) 14 e 15 da [galeria didática](../didatica/intuicao_visual.md): o salto da dummy, a abertura do leque e o pico do perfil quadrático.
+
 ## Como estudar
 
 1. D09.2 (armadilha) e D09.3 (efeito exato) primeiro: são os itens rápidos da prova.

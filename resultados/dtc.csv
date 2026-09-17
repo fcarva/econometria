@@ -1,0 +1,35 @@
+chave,valor
+dtc_f1_b1,1.84852745191
+dtc_f1_b2,0.754321453405
+dtc_f1_soma_res,-6.99440505514e-15
+dtc_f1_xbar,5.83842534165
+dtc_f1_ybar,6.25257694122
+dtc_f5_media_b2,0.751796299287
+dtc_f5_dp_b2,0.107218556929
+dtc_f5_beta2,         0.75
+dtc_f6_var_mqo,0.00818560247714
+dtc_f6_var_extremos,0.0299672188974
+dtc_f6_razao,3.66096679885
+dtc_f8_b_longa,0.840023157419
+dtc_f8_b_fwl,0.840023157419
+dtc_f8_b_bruta, 1.8631204948
+dtc_f9_b_curta,1.47814407088
+dtc_f9_b_longa,0.403475774586
+dtc_f9_beta_verdadeiro,          0.4
+dtc_f10_cor_colinear,0.978129512053
+dtc_f10_fiv_colinear,23.1146225012
+dtc_f10_fiv_independente,1.00739340042
+dtc_f11_b_sem_erro,0.983451188716
+dtc_f11_b_com_erro,0.634932787011
+dtc_f11_lambda_teorico,0.666666666667
+dtc_f12_b_mqo,2.02237443942
+dtc_f12_b_iv,0.835600288735
+dtc_f12_beta_verdadeiro,            1
+dtc_f13_b,0.80398211285
+dtc_f14_intercepto_base,1.97334009577
+dtc_f14_salto_intercepto,3.35579934347
+dtc_f14_dif_inclinacao,0.391921306979
+dtc_f15_xstar,30.3070844456
+dtc_f16_b_sem,0.677994327798
+dtc_f16_b_com,0.116483937777
+dtc_f16_alavancagem,0.708048374412
