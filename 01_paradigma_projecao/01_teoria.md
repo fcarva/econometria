@@ -87,6 +87,8 @@ Se $E[y\mid x]$ **é** linear em $x$, projeção e esperança condicional coinci
 | A5 | $X$ gerado exogenamente | condicionamento em $X$ é legítimo | inferência condicional inválida |
 | A6 | normalidade do erro | inferência **exata** ($t$ e $F$) | só resta a inferência assintótica ([módulo 08](../08_assintotica/08_teoria.md)) |
 
+**Na numeração do professor.** Em aula essas hipóteses são **h1 a h5** (h4 é a exogeneidade estrita e h5 a ausência de multicolinearidade); homocedasticidade e ausência de autocorrelação vêm junto com a variância. Ver [caderno_aulas.md](../demonstracoes/caderno_aulas.md) §2 e responda na numeração dele.
+
 > [!IMPORTANT]
 > **A hierarquia que vale ponto**
 > A3 é a hipótese crítica: sem ela não há não-viés nem consistência. A4 afeta **eficiência e inferência**, não o não-viés. A6 afeta só a inferência exata em amostra pequena. Saber dizer **qual propriedade cai com qual hipótese** é o que separa uma resposta boa de uma decorada.

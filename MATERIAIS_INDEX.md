@@ -39,6 +39,7 @@ Os PDFs ficam em `materiais/`, que é **ignorada pelo git** (repositório públi
 | L2 | `materiais/listas/lista2.pdf` | Lista 2: 57 exercícios, conteúdo da P2 |
 | P1-25 | `materiais/provas/p1_2025_2/` | **1ª prova de 2025/2 (03/10/2025) completa**: `p1_2025_2_pag1/2/3.jpeg` (enunciado, 3 páginas) e `gabarito_q1`, `gabarito_q2`, `gabarito_q3_q4a`, `gabarito_q4b_q5`, `gabarito_q6` (resolução manuscrita). Mapa e conferência em [provas/p1_2025_2/README.md](provas/p1_2025_2/README.md) |
 | P2-24 | `materiais/provas/p2_2024_2.pdf` | 2ª prova de 2024/2 (29/11/2024), em scan de celular |
+| CAD | `materiais/caderno/` | **Caderno de aula**: 15 fotos das aulas de 14/08 e 21/08. Mapa página a página, notação h1–h5 e vocabulário do professor em [demonstracoes/caderno_aulas.md](demonstracoes/caderno_aulas.md) |
 
 ## Livros
 
@@ -48,5 +49,7 @@ Os PDFs ficam em `materiais/`, que é **ignorada pelo git** (repositório públi
 | HAY | `materiais/livros/hayashi_2000.pdf` | HAYASHI, F. *Econometrics*. Princeton University Press, 2000 |
 | WOO | `materiais/livros/wooldridge_5e.pdf` | WOOLDRIDGE, J. M. *Introductory Econometrics: A Modern Approach*. 5ª ed. |
 | SW | `materiais/livros/stock_watson_2010.pdf` | STOCK, J. H.; WATSON, M. W. *Introduction to Econometrics*. Addison-Wesley, 2010 (escaneado, sem texto) |
+
+Citado em aula e não disponível aqui: MONTGOMERY, D. C.; PECK, E. A.; VINING, G. G. *Introduction to Linear Regression Analysis* — a referência que o professor indicou na primeira aula, ao lado do Greene.
 
 O livro-texto do curso é o Greene (2017/2018, 7ª/8ª ed.). Aqui só temos os apêndices. As seções do corpo do livro são citadas pelos slides, que seguem a numeração dele.

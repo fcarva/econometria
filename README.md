@@ -58,6 +58,7 @@ Primeira vez nesta máquina: `scripts\r.ps1 R\00_setup.R` instala o que faltar.
 | Escrever H0/H1, decisão e conclusão sem errar | [formulario/vocabulario_interpretacao.md](formulario/vocabulario_interpretacao.md) |
 | Treinar no formato da prova | [provas/](provas/README.md): banco de derivações, banco de outputs, simulados |
 | Achar uma demonstração | [demonstracoes/INDICE_D.md](demonstracoes/INDICE_D.md) |
+| Ver o que o professor derivou em aula | [demonstracoes/caderno_aulas.md](demonstracoes/caderno_aulas.md) |
 | Achar um exercício da Lista 1 | [LISTA1_MAPA.md](LISTA1_MAPA.md) |
 | Ver onde a chave do professor erra | [formulario/errata_chave_lista1.md](formulario/errata_chave_lista1.md) |
 

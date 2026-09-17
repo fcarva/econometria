@@ -45,13 +45,14 @@ Conclusão:   EXP é estatisticamente significativa; mais experiência está ass
 
 ## 1. Significância individual: teste $t$
 
-| | |
-|---|---|
-| **H0** | $\beta_k = 0$ (o regressor não afeta $y$) |
-| **H1** | $\beta_k \neq 0$ |
-| **Estatística** | $t = \hat\beta_k/\text{E.p.}(\hat\beta_k) \sim t_{n-K}$; com $n$ grande, $\approx N(0,1)$ |
-| **Decisão** | rejeita H0 se $\lvert t\rvert > t_{crit}$ (ou $p \lt \alpha$) |
-| **Conclusão** | "o coeficiente é estatisticamente significativo a $\alpha$; a variável se relaciona com $y$" |
+|                 |                                                                                              |
+| --------------- | -------------------------------------------------------------------------------------------- |
+| **H0**          | $\beta_k = 0$ (o regressor não afeta $y$)                                                    |
+| **H1**          | $\beta_k \neq 0$                                                                             |
+| **Estatística** | $t = \hat\beta_k/\text{E.p.}(\hat\beta_k) \sim t_{n-K}$; com $n$ grande, $\approx N(0,1)$    |
+| **Decisão**     | rejeita H0 se $\lvert t\rvert > t_{crit}$ (ou $p \lt \alpha$)                                |
+| **Conclusão**   | "o coeficiente é estatisticamente significativo a $\alpha$; a variável se relaciona com $y$" |
+|                 |                                                                                              |
 
 **Armadilha.** Significância estatística não é relevância econômica; com $n$ enorme quase tudo é significativo. Teste unilateral usa $t_{\alpha}$, não $t_{\alpha/2}$.
 

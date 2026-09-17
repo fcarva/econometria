@@ -57,6 +57,18 @@ Nas questões de prova, preservar a notação do enunciado ($a_1,a_2,\dots$; $\v
 | A5 | $X$ gerado independentemente do processo de $\varepsilon$ (fixo ou aleatório) |
 | A6 | Normalidade: $\varepsilon\mid X\sim N(0,\sigma^2I)$ |
 
+**Como o professor numera em aula.** No caderno as hipóteses aparecem como **h1 a h5**; escreva assim na prova. A tradução completa está em [caderno_aulas.md](demonstracoes/caderno_aulas.md) §2.
+
+| Professor | Greene | Enunciado |
+|---|---|---|
+| h1 | A1 | parâmetros lineares |
+| h2 | A5 | amostra aleatória |
+| h3 | A2 (escalar) | variação em $X$ |
+| h4 | A3 | exogeneidade estrita, $E[arepsilon\mid X]=0$ |
+| h5 | A2 (matricial) | ausência de multicolinearidade |
+
+Homocedasticidade e ausência de autocorrelação (A4) não entram na lista numerada dele: aparecem junto da variância. Normalidade (A6) só surge na inferência exata.
+
 **Graus de liberdade.**
 - Greene: $n-K$, com $K$ incluindo a constante.
 - Wooldridge: $n-k-1$, o mesmo número, com $k$ inclinações.
