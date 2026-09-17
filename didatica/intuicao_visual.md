@@ -24,6 +24,10 @@ Dezesseis figuras, cada uma com o que olhar, a metáfora que ajuda a lembrar e �
 Todas as figuras são geradas por [didatica.R](didatica.R) e existem em PNG e SVG. Os números citados vêm do mesmo script e são conferidos pelo `check_numbers`.
 
 > [!TIP]
+> **Tem uma versão interativa**
+> A [Bancada de Regressão](https://claude.ai/artifact/SP86pYTZzigmoEDA5YZ8ee) traz as figuras 1, 9, 11 e 12 em versão manipulável: arraste os pontos, mexa no ruído da medida e veja os coeficientes reagirem.
+
+> [!TIP]
 > **Como usar esta página**
 > Antes de estudar um módulo, olhe a figura correspondente por dois minutos e tente explicar em voz alta o que ela mostra. Depois da leitura, volte e veja se a explicação mudou. É o teste mais rápido de "entendi" contra "reconheci".
 

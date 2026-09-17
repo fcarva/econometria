@@ -62,6 +62,7 @@ Primeira vez nesta máquina: `scripts\r.ps1 R\00_setup.R` instala o que faltar.
 | Achar uma demonstração | [demonstracoes/INDICE_D.md](demonstracoes/INDICE_D.md) |
 | Ver o que o professor derivou em aula | [demonstracoes/caderno_aulas.md](demonstracoes/caderno_aulas.md) |
 | Entender a intuição antes da álgebra | [didatica/intuicao_visual.md](didatica/intuicao_visual.md) — 16 figuras comentadas |
+| Brincar com os conceitos | [Bancada de Regressão](https://claude.ai/artifact/SP86pYTZzigmoEDA5YZ8ee) — três experimentos interativos |
 | Achar um exercício da Lista 1 | [LISTA1_MAPA.md](LISTA1_MAPA.md) |
 | Ver onde a chave do professor erra | [formulario/errata_chave_lista1.md](formulario/errata_chave_lista1.md) |
 
