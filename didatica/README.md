@@ -28,7 +28,7 @@ O que a figura estática não faz: **[Bancada de Regressão](https://claude.ai/a
 | Experimento | O que testar |
 |---|---|
 | 1 · A reta e os resíduos | arraste um ponto para longe na horizontal e veja a alavancagem disparar; ligue os quadrados para entender por que o MQO odeia erro grande |
-| 2 · Viés de variável omitida | zere a separação entre grupos **ou** o efeito do grupo: o viés some nos dois casos, porque ele é o produto $eta_3\hat\delta$ |
+| 2 · Viés de variável omitida | zere a separação entre grupos **ou** o efeito do grupo: o viés some nos dois casos, porque ele é o produto $\beta_3\hat\delta$ |
 | 3 · Erro de medição e instrumento | aumente o ruído e veja o MQO escorregar para zero enquanto o MQ2E resiste; enfraqueça o instrumento e veja o erro-padrão explodir |
 
 ## Por que metáfora com fronteira
