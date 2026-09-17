@@ -19,6 +19,10 @@ aliases:
 # Provas: como treinar para a P1 de 02/10/2026
 
 
+> [!NOTE]
+> **Revisão espaçada**
+> Os [flashcards](banco/flashcards.md) cobrem 60 perguntas curtas com resposta escondida, organizadas por módulo — são a ferramenta das revisões de +1, +3 e +7 dias.
+
 > [!IMPORTANT]
 > **A distribuição real de pontos da P1 2025/2**
 > Interpretação de output (Q1 e Q2) valeu **6,5 dos 10 pontos**; as quatro demonstrações, 3,5. Comece sempre pelas questões de output. Mapa completo em [p1_2025_2/README.md](p1_2025_2/README.md).

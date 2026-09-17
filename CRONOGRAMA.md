@@ -14,7 +14,7 @@ aliases:
 
 # Cronograma até a P1
 
-17 dias, duas aulas pela frente (18/09 e 25/09) e dois simulados cronometrados. A regra que sustenta o plano: **revisão espaçada em +1, +3 e +7 dias**. Revisar aqui significa derivar duas demonstrações de cabeça, em papel, e resolver três itens de interpretação — anotando tudo o que sair errado em [provas/log_erros.md](provas/log_erros.md).
+17 dias, duas aulas pela frente (18/09 e 25/09) e dois simulados cronometrados. A regra que sustenta o plano: **revisão espaçada em +1, +3 e +7 dias**, usando os [flashcards](provas/banco/flashcards.md) — dez cartões por sessão, seis minutos. Revisar aqui significa derivar duas demonstrações de cabeça, em papel, e resolver três itens de interpretação — anotando tudo o que sair errado em [provas/log_erros.md](provas/log_erros.md).
 
 > [!IMPORTANT]
 > **A regra dos 20 minutos**
@@ -44,8 +44,8 @@ aliases:
 - [ ] **Seg 28/09 — banco, bloco 2.** VI, erro de medição, viés de omissão, consistência e Gauss-Markov, mais seis outputs. · revisão de 09/10
 - [ ] **Ter 29/09 — Simulado 2.** [Simulado 02](provas/simulados/simulado_02.md) cronometrado + correção. Compare a nota com a do S1: o que subiu, o que não.
 - [ ] **Qua 30/09 — revisão final.** Todo o log de erros e todas as demonstrações em vermelho. Formulário fechado. Se sobrar fôlego, partes do [Simulado 03](provas/simulados/simulado_03.md), no máximo 90 min. **Pare às 18h.**
-- [ ] **Qui 01/10 — descanso.** No máximo 45 min de formulário e vocabulário. Durma cedo: rendimento na prova depende mais disso do que de mais uma hora de estudo.
-- [ ] **Sex 02/10 — P1.** Leia o vocabulário por 15 min antes. Na prova: **resolva primeiro as questões de output**, que são pontos rápidos, e deixe as demonstrações para depois, com as hipóteses sempre escritas.
+- [ ] **Qui 01/10 — descanso.** No máximo 45 min com a [folha de última revisão](formulario/ultima_revisao.md). Durma cedo: rendimento na prova depende mais disso do que de mais uma hora de estudo.
+- [ ] **Sex 02/10 — P1.** Leia a [folha de última revisão](formulario/ultima_revisao.md) por 15 min antes. Na prova: **resolva primeiro as questões de output**, que são pontos rápidos, e deixe as demonstrações para depois, com as hipóteses sempre escritas.
 
 ## Se o tempo apertar
 

@@ -55,6 +55,8 @@ Primeira vez nesta máquina: `scripts\r.ps1 R\00_setup.R` instala o que faltar.
 | Saber o que fazer hoje | [CRONOGRAMA.md](CRONOGRAMA.md) |
 | Entender a lógica do plano | [PLANO_ESTUDO.md](PLANO_ESTUDO.md) |
 | Revisar fórmulas | [formulario/formulario.md](formulario/formulario.md) |
+| Revisar na véspera e antes da prova | [formulario/ultima_revisao.md](formulario/ultima_revisao.md) |
+| Fazer a revisão espaçada (+1, +3, +7) | [provas/banco/flashcards.md](provas/banco/flashcards.md) |
 | Escrever H0/H1, decisão e conclusão sem errar | [formulario/vocabulario_interpretacao.md](formulario/vocabulario_interpretacao.md) |
 | Treinar no formato da prova | [provas/](provas/README.md): banco de derivações, banco de outputs, simulados |
 | Achar uma demonstração | [demonstracoes/INDICE_D.md](demonstracoes/INDICE_D.md) |
