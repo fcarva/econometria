@@ -22,7 +22,7 @@ aliases:
 
 ## Semana 1
 
-- [ ] **Ter 15/09 — diagnóstico.** Resolva as Q3 a Q6 da [P1 2025/2](provas/p1_2025_2/econometria-i-prova-2025-2-resolvida.md) sem consulta, cronometrando (90 min). Corrija com a nota e registre cada erro no log. É esse diagnóstico que define onde você vai gastar os 17 dias.
+- [x] **Ter 15/09 — diagnóstico.** Resolva as Q3 a Q6 da [P1 2025/2](provas/p1_2025_2/econometria-i-prova-2025-2-resolvida.md) sem consulta, cronometrando (90 min). Corrija com a nota e registre cada erro no log. É esse diagnóstico que define onde você vai gastar os 17 dias.
 - [ ] **Qua 16/09 — módulo 02, MQO simples.** [Teoria](02_mqo_simples/02_teoria.md) e [lista](02_mqo_simples/02_lista1.md) (ex. 13–22 e 40). Meta: escrever D0 a D8 de cabeça. É a Q3 da prova.
 - [ ] **Qui 17/09 — módulos 03 e 04.** [Matricial](03_mqo_matricial/03_teoria.md) (ex. 23, 24, 28–31, 34, 35) e [FWL](04_fwl_particionada/04_teoria.md) (ex. 25). · revisão do 02 (+1)
 - [ ] **Sex 18/09 — módulo 06 + aula.** Manhã: não-viés, $\operatorname{Var}(b)=\sigma^2(X'X)^{-1}$, Gauss-Markov e $E[e'e]=\sigma^2(n-K)$ (ex. 26, 32, 33, 36, 37). Aula à noite. Depois da aula, 20 min consolidando o que foi dado: se for conteúdo de P2, uma nota curta no esqueleto do [módulo 11](11_mqg_heterosk_autocorr/README.md) basta.
