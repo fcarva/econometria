@@ -25,7 +25,7 @@ E <- function(...) erros <<- c(erros, sprintf(...))
 A <- function(...) avisos <<- c(avisos, sprintf(...))
 
 mds <- list.files(RAIZ, pattern = "\\.md$", recursive = TRUE, full.names = TRUE)
-mds <- mds[!grepl("/materiais/|/econometria/|/\\.git/", mds)]
+mds <- mds[!grepl("/materiais/|/econometria/|/\\.git/|/caderno/_build/", mds)]
 rel_de <- function(p) sub(paste0(RAIZ, "/"), "", gsub("\\\\", "/", p), fixed = TRUE)
 
 # tira blocos de código: outputs gerados pelo nosso próprio R não são cópia

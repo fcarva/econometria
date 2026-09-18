@@ -15,7 +15,8 @@ alvos <- c(
 rel <- sub(paste0(RAIZ, "/"), "", gsub("\\\\", "/", alvos), fixed = TRUE)
 manter <- grepl("^[0-9]{2}_[^/]+/[^/]+\\.R$", rel) |
   grepl("^provas/.+\\.R$", rel) |
-  grepl("^formulario/.+\\.R$", rel)
+  grepl("^formulario/.+\\.R$", rel) |
+  grepl("^(didatica|fontes)/[^/]+\\.R$", rel)
 rel <- sort(rel[manter])
 
 rscript <- file.path(R.home("bin"), "Rscript")

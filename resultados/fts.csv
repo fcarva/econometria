@@ -1,0 +1,34 @@
+chave,valor
+fts_fw_b_completa,0.556932273847
+fts_fw_b_destendenciada,0.556932273847
+fts_fw_b_sem_tendencia,0.943580126215
+fts_ding_se_completa,0.111919093844
+fts_ding_se_parcial_ingenuo,0.110005805957
+fts_ding_razao,0.982904723213
+fts_ding_razao_teorica,0.982904723213
+fts_ding_hc0_completa,0.120870415343
+fts_ding_hc0_parcial,0.120870415343
+fts_blp_b_mqo,1.65224933832
+fts_blp_a_mqo, 1.6456863712
+fts_blp_b_teorico, 1.6487212707
+fts_hp_coef,-0.296510993097
+fts_hp_pct_ingenuo,-29.6510993097
+fts_hp_pct_exato,-25.6592545131
+fts_hp_pct_kennedy,-25.7068927854
+fts_bs_W,132.197016836
+fts_bs_LR,117.930826105
+fts_bs_LM,105.645618374
+fts_bs_F,32.6094352367
+fts_bp_koenker,44.1501267421
+fts_bp_original,148.980542609
+fts_card_b_mqo,0.0740089942006
+fts_card_se_mqo,0.00350543495692
+fts_card_b_iv,   0.13228884
+fts_card_se_iv,0.0492332361185
+fts_card_t_iv,2.68698242143
+fts_card_F_1estagio,16.7175914365
+fts_card_n,         3010
+fts_hc_se_classico,0.0493373159199
+fts_hc_se_hc0,0.0609255747516
+fts_hc_se_hc1,0.0612172258906
+fts_hc_se_hc3,0.0621611781081

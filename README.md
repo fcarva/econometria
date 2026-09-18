@@ -63,6 +63,9 @@ Primeira vez nesta máquina: `scripts\r.ps1 R\00_setup.R` instala o que faltar.
 | Ver o que o professor derivou em aula | [demonstracoes/caderno_aulas.md](demonstracoes/caderno_aulas.md) |
 | Entender a intuição antes da álgebra | [didatica/intuicao_visual.md](didatica/intuicao_visual.md) — 16 figuras comentadas |
 | Brincar com os conceitos | [Bancada de Regressão](https://claude.ai/artifact/SP86pYTZzigmoEDA5YZ8ee) — três experimentos interativos |
+| Saber de onde veio cada resultado | [fontes/fontes_primarias.md](fontes/fontes_primarias.md) — artigos originais, onde o livro simplifica, 104 referências com DOI |
+| Ler além do Greene | [fontes/cursos_e_livros.md](fontes/cursos_e_livros.md) — seção de cada livro por módulo, cursos de Stanford e do MIT |
+| Estudar no papel | `caderno/` — o caderno de estudo em PDF (ver [caderno/README.md](caderno/README.md)) |
 | Achar um exercício da Lista 1 | [LISTA1_MAPA.md](LISTA1_MAPA.md) |
 | Ver onde a chave do professor erra | [formulario/errata_chave_lista1.md](formulario/errata_chave_lista1.md) |
 
@@ -96,6 +99,8 @@ As demonstrações centrais D0–D16 do primeiro mês estão em [demonstracoes/]
 econometrics/
 ├── NN_tema/            módulo: README, NN_teoria.md, NN_lista1.md, NN_tema.R, figuras/
 ├── didatica/           16 figuras comentadas: intuição visual e metáforas com fronteira
+├── fontes/             artigos originais, cursos e livros, bibliografia conferida no Crossref
+├── caderno/            gera o caderno de estudo em PDF (pandoc + xelatex); o PDF fica fora do git
 ├── demonstracoes/      núcleo D0–D16 + INDICE_D.md (gerado)
 ├── provas/             P1 2025/2 resolvida e reproduzida, banco de questões, simulados, log de erros
 ├── formulario/         formulário, vocabulário de interpretação, errata da chave

@@ -244,6 +244,8 @@ source(file.path(.d, "R", "raiz.R"))
 - Proibido copiar trechos de slides, listas, chave, provas ou livros. O lint rejeita qualquer sequência de 12 palavras idêntica às de `materiais/_txt/`.
 - Citar pela referência: "Greene, 8ª ed., §4.3", "SL06, p. 12", "Lista 1, ex. 33".
 - Nada de `materiais/` entra no git. As notas mencionam arquivos por id (`SL07`, `lista1.pdf`), nunca pelo nome original.
+- Artigos se citam por autor e ano no texto, como "Frisch e Waugh (1933)". Toda referência nova entra em [fontes/referencias.R](fontes/referencias.R), com o DOI conferido no Crossref, e o script regenera o `.bib` e a lista.
+- Nota nova que deva ir para o PDF entra nas listas de `volume_teoria()` ou `volume_exercicios()` em [caderno/montar_caderno.R](caderno/montar_caderno.R).
 
 ## 10. Links
 

@@ -1,0 +1,121 @@
+---
+title: "Referências das fontes primárias"
+disciplina: Econometria I (PECO-5021/6021)
+tags:
+  - econometria
+  - fontes
+aliases:
+  - Referências
+---
+
+# Referências
+
+> [!NOTE]
+> **Arquivo gerado**
+> Gerado por [referencias.R](referencias.R), que também produz o [BibTeX](referencias.bib) para importar no Zotero. São 104 referências. Todas as que têm DOI foram conferidas no Crossref (título, periódico, volume, número e páginas); as sem DOI são livros ou artigos da *American Economic Review* anteriores ao registro de DOI.
+
+- Aitken, A. C. (1936). On least squares and linear combination of observations. *Proceedings of the Royal Society of Edinburgh*, v. 55, p. 42–48. [doi:10.1017/S0370164600014346](https://doi.org/10.1017/S0370164600014346) · módulo 03
+- Akaike, H. (1974). A new look at the statistical model identification. *IEEE Transactions on Automatic Control*, v. 19, n. 6, p. 716–723. [doi:10.1109/TAC.1974.1100705](https://doi.org/10.1109/TAC.1974.1100705) · módulo 05
+- Anderson, T. W.; Rubin, H. (1949). Estimation of the parameters of a single equation in a complete system of stochastic equations. *Annals of Mathematical Statistics*, v. 20, n. 1, p. 46–63. [doi:10.1214/aoms/1177730090](https://doi.org/10.1214/aoms/1177730090) · módulo 10
+- Andrews, I.; Stock, J. H.; Sun, L. (2019). Weak instruments in instrumental variables regression: theory and practice. *Annual Review of Economics*, v. 11, p. 727–753. [doi:10.1146/annurev-economics-080218-025643](https://doi.org/10.1146/annurev-economics-080218-025643) · módulo 10
+- Angrist, J. D.; Krueger, A. B. (1991). Does compulsory school attendance affect schooling and earnings? *Quarterly Journal of Economics*, v. 106, n. 4, p. 979–1014. [doi:10.2307/2937954](https://doi.org/10.2307/2937954) · módulo 10
+- Angrist, J. D.; Krueger, A. B. (2001). Instrumental variables and the search for identification: from supply and demand to natural experiments. *Journal of Economic Perspectives*, v. 15, n. 4, p. 69–85. [doi:10.1257/jep.15.4.69](https://doi.org/10.1257/jep.15.4.69) · módulo 10
+- Angrist, J. D.; Pischke, J.-S. (2010). The credibility revolution in empirical economics: how better research design is taking the con out of econometrics. *Journal of Economic Perspectives*, v. 24, n. 2, p. 3–30. [doi:10.1257/jep.24.2.3](https://doi.org/10.1257/jep.24.2.3) · módulo 10
+- Anscombe, F. J. (1973). Graphs in statistical analysis. *The American Statistician*, v. 27, n. 1, p. 17–21. [doi:10.1080/00031305.1973.10478966](https://doi.org/10.1080/00031305.1973.10478966) · módulo 02
+- Ashenfelter, O. (1978). Estimating the effect of training programs on earnings. *Review of Economics and Statistics*, v. 60, n. 1, p. 47–57. [doi:10.2307/1924332](https://doi.org/10.2307/1924332) · módulo 09
+- Ashenfelter, O.; Card, D. (1985). Using the longitudinal structure of earnings to estimate the effect of training programs. *Review of Economics and Statistics*, v. 67, n. 4, p. 648–660. [doi:10.2307/1924810](https://doi.org/10.2307/1924810) · módulo 09
+- Basmann, R. L. (1957). A generalized classical method of linear estimation of coefficients in a structural equation. *Econometrica*, v. 25, n. 1, p. 77–83. [doi:10.2307/1907743](https://doi.org/10.2307/1907743) · módulo 10
+- Basu, D. (2023). The Yule-Frisch-Waugh-Lovell theorem. arXiv:2307.00369 [econ.EM]. · módulo 04
+- Belsley, D. A.; Kuh, E.; Welsch, R. E. (1980). *Regression Diagnostics: Identifying Influential Data and Sources of Collinearity*. Nova York: Wiley. · módulo 06
+- Berndt, E. R.; Savin, N. E. (1977). Conflict among criteria for testing hypotheses in the multivariate linear regression model. *Econometrica*, v. 45, n. 5, p. 1263–1277. [doi:10.2307/1914072](https://doi.org/10.2307/1914072) · módulo 07
+- Bertrand, M.; Duflo, E.; Mullainathan, S. (2004). How much should we trust differences-in-differences estimates? *Quarterly Journal of Economics*, v. 119, n. 1, p. 249–275. [doi:10.1162/003355304772839588](https://doi.org/10.1162/003355304772839588) · módulo 09
+- Bound, J.; Jaeger, D. A.; Baker, R. M. (1995). Problems with instrumental variables estimation when the correlation between the instruments and the endogenous explanatory variable is weak. *Journal of the American Statistical Association*, v. 90, n. 430, p. 443–450. [doi:10.1080/01621459.1995.10476536](https://doi.org/10.1080/01621459.1995.10476536) · módulo 10
+- Bowman, K. O.; Shenton, L. R. (1975). Omnibus test contours for departures from normality based on sqrt(b1) and b2. *Biometrika*, v. 62, n. 2, p. 243–250. [doi:10.1093/biomet/62.2.243](https://doi.org/10.1093/biomet/62.2.243) · módulo 07
+- Box, G. E. P.; Cox, D. R. (1964). An analysis of transformations. *Journal of the Royal Statistical Society, Series B*, v. 26, n. 2, p. 211–243. [doi:10.1111/j.2517-6161.1964.tb00553.x](https://doi.org/10.1111/j.2517-6161.1964.tb00553.x) · módulo 09
+- Breusch, T. S. (1978). Testing for autocorrelation in dynamic linear models. *Australian Economic Papers*, v. 17, n. 31, p. 334–355. [doi:10.1111/j.1467-8454.1978.tb00635.x](https://doi.org/10.1111/j.1467-8454.1978.tb00635.x) · módulo 07
+- Breusch, T. S. (1979). Conflict among criteria for testing hypotheses: extensions and comments. *Econometrica*, v. 47, n. 1, p. 203–207. [doi:10.2307/1912356](https://doi.org/10.2307/1912356) · módulo 07
+- Breusch, T. S.; Pagan, A. R. (1979). A simple test for heteroscedasticity and random coefficient variation. *Econometrica*, v. 47, n. 5, p. 1287–1294. [doi:10.2307/1911963](https://doi.org/10.2307/1911963) · módulo 07
+- Callaway, B.; Sant'Anna, P. H. C. (2021). Difference-in-differences with multiple time periods. *Journal of Econometrics*, v. 225, n. 2, p. 200–230. [doi:10.1016/j.jeconom.2020.12.001](https://doi.org/10.1016/j.jeconom.2020.12.001) · módulo 09
+- Card, D. (1995). Using geographic variation in college proximity to estimate the return to schooling. In: *Aspects of Labour Market Behaviour: Essays in Honour of John Vanderkamp (Christofides, L. N.; Grant, E. K.; Swidinsky, R., orgs.)*, p. 201–222. Toronto: University of Toronto Press. · módulo 10
+- Card, D. (2001). Estimating the return to schooling: progress on some persistent econometric problems. *Econometrica*, v. 69, n. 5, p. 1127–1160. [doi:10.1111/1468-0262.00237](https://doi.org/10.1111/1468-0262.00237) · módulo 10
+- Card, D.; Krueger, A. B. (1994). Minimum wages and employment: a case study of the fast-food industry in New Jersey and Pennsylvania. *American Economic Review*, v. 84, n. 4, p. 772–793. · módulo 09
+- Chow, G. C. (1960). Tests of equality between sets of coefficients in two linear regressions. *Econometrica*, v. 28, n. 3, p. 591–605. [doi:10.2307/1910133](https://doi.org/10.2307/1910133) · módulo 07, 09
+- Cornwell, C.; Rupert, P. (1988). Efficient estimation with panel data: an empirical comparison of instrumental variables estimators. *Journal of Applied Econometrics*, v. 3, n. 2, p. 149–155. [doi:10.1002/jae.3950030206](https://doi.org/10.1002/jae.3950030206) · módulo 07
+- de Chaisemartin, C.; D'Haultfoeuille, X. (2020). Two-way fixed effects estimators with heterogeneous treatment effects. *American Economic Review*, v. 110, n. 9, p. 2964–2996. [doi:10.1257/aer.20181169](https://doi.org/10.1257/aer.20181169) · módulo 09
+- Ding, P. (2021). The Frisch-Waugh-Lovell theorem for standard errors. *Statistics & Probability Letters*, v. 168, p. 108945. [doi:10.1016/j.spl.2020.108945](https://doi.org/10.1016/j.spl.2020.108945) · módulo 04
+- Doob, J. L. (1935). The limiting distributions of certain statistics. *Annals of Mathematical Statistics*, v. 6, n. 3, p. 160–169. [doi:10.1214/aoms/1177732594](https://doi.org/10.1214/aoms/1177732594) · módulo 08
+- Durbin, J. (1954). Errors in variables. *Review of the International Statistical Institute*, v. 22, n. 1/3, p. 23–32. [doi:10.2307/1401917](https://doi.org/10.2307/1401917) · módulo 10
+- Durbin, J. (1970). Testing for serial correlation in least-squares regression when some of the regressors are lagged dependent variables. *Econometrica*, v. 38, n. 3, p. 410–421. [doi:10.2307/1909547](https://doi.org/10.2307/1909547) · módulo 07
+- Durbin, J.; Watson, G. S. (1950). Testing for serial correlation in least squares regression. I. *Biometrika*, v. 37, n. 3/4, p. 409–428. [doi:10.2307/2332391](https://doi.org/10.2307/2332391) · módulo 07
+- Durbin, J.; Watson, G. S. (1951). Testing for serial correlation in least squares regression. II. *Biometrika*, v. 38, n. 1/2, p. 159–178. [doi:10.2307/2332325](https://doi.org/10.2307/2332325) · módulo 07
+- Eicker, F. (1967). Limit theorems for regressions with unequal and dependent errors. In: *Proceedings of the Fifth Berkeley Symposium on Mathematical Statistics and Probability*, v. 1, p. 59–82. Berkeley: University of California Press. · módulo 08
+- Engle, R. F. (1984). Wald, likelihood ratio, and Lagrange multiplier tests in econometrics. In: *Handbook of Econometrics, v. 2 (Griliches, Z.; Intriligator, M. D., orgs.)*, p. 775–826. Amsterdã: North-Holland. [doi:10.1016/S1573-4412(84)02005-5](https://doi.org/10.1016/S1573-4412(84)02005-5) · módulo 07
+- Ezekiel, M. (1930). *Methods of Correlation Analysis*. Nova York: Wiley. · módulo 05
+- Farrar, D. E.; Glauber, R. R. (1967). Multicollinearity in regression analysis: the problem revisited. *Review of Economics and Statistics*, v. 49, n. 1, p. 92–107. [doi:10.2307/1937887](https://doi.org/10.2307/1937887) · módulo 06
+- Fisher, R. A. (1922). On the mathematical foundations of theoretical statistics. *Philosophical Transactions of the Royal Society of London, Series A*, v. 222, n. 594-604, p. 309–368. [doi:10.1098/rsta.1922.0009](https://doi.org/10.1098/rsta.1922.0009) · módulo 00
+- Frisch, R. (1934). *Statistical Confluence Analysis by Means of Complete Regression Systems*. Oslo: Universitetets Økonomiske Institutt. · módulo 06
+- Frisch, R.; Waugh, F. V. (1933). Partial time regressions as compared with individual trends. *Econometrica*, v. 1, n. 4, p. 387–401. [doi:10.2307/1907330](https://doi.org/10.2307/1907330) · módulo 04
+- Galton, F. (1886). Regression towards mediocrity in hereditary stature. *Journal of the Anthropological Institute of Great Britain and Ireland*, v. 15, p. 246–263. [doi:10.2307/2841583](https://doi.org/10.2307/2841583) · módulo 02
+- Gauss, C. F. (1809). *Theoria motus corporum coelestium in sectionibus conicis solem ambientium*. Hamburgo: Perthes et Besser. · módulo 02
+- Gauss, C. F. (1823). *Theoria combinationis observationum erroribus minimis obnoxiae*. Göttingen: Dieterich. · módulo 06
+- Giles, D. E. A. (1982). The interpretation of dummy variables in semilogarithmic equations. *Economics Letters*, v. 10, n. 1-2, p. 77–79. [doi:10.1016/0165-1765(82)90119-7](https://doi.org/10.1016/0165-1765(82)90119-7) · módulo 09
+- Godfrey, L. G. (1978). Testing against general autoregressive and moving average error models when the regressors include lagged dependent variables. *Econometrica*, v. 46, n. 6, p. 1293–1301. [doi:10.2307/1913829](https://doi.org/10.2307/1913829) · módulo 07
+- Goldberger, A. S. (1991). *A Course in Econometrics*. Cambridge, MA: Harvard University Press. · módulo 06
+- Goodman-Bacon, A. (2021). Difference-in-differences with variation in treatment timing. *Journal of Econometrics*, v. 225, n. 2, p. 254–277. [doi:10.1016/j.jeconom.2021.03.014](https://doi.org/10.1016/j.jeconom.2021.03.014) · módulo 09
+- Griliches, Z. (1977). Estimating the returns to schooling: some econometric problems. *Econometrica*, v. 45, n. 1, p. 1–22. [doi:10.2307/1913285](https://doi.org/10.2307/1913285) · módulo 10
+- Haavelmo, T. (1943). The statistical implications of a system of simultaneous equations. *Econometrica*, v. 11, n. 1, p. 1–12. [doi:10.2307/1905714](https://doi.org/10.2307/1905714) · módulo 10
+- Haavelmo, T. (1944). The probability approach in econometrics. *Econometrica*, v. 12, n. suplemento, p. iii–115. [doi:10.2307/1906935](https://doi.org/10.2307/1906935) · módulo 01
+- Haavelmo, T. (1947). Methods of measuring the marginal propensity to consume. *Journal of the American Statistical Association*, v. 42, n. 237, p. 105–122. [doi:10.1080/01621459.1947.10501917](https://doi.org/10.1080/01621459.1947.10501917) · módulo 10
+- Halvorsen, R.; Palmquist, R. (1980). The interpretation of dummy variables in semilogarithmic equations. *American Economic Review*, v. 70, n. 3, p. 474–475. · módulo 09
+- Hansen, L. P. (1982). Large sample properties of generalized method of moments estimators. *Econometrica*, v. 50, n. 4, p. 1029–1054. [doi:10.2307/1912775](https://doi.org/10.2307/1912775) · módulo 10
+- Hausman, J. A. (1978). Specification tests in econometrics. *Econometrica*, v. 46, n. 6, p. 1251–1271. [doi:10.2307/1913827](https://doi.org/10.2307/1913827) · módulo 10
+- Hoaglin, D. C.; Welsch, R. E. (1978). The hat matrix in regression and ANOVA. *The American Statistician*, v. 32, n. 1, p. 17–22. [doi:10.1080/00031305.1978.10479237](https://doi.org/10.1080/00031305.1978.10479237) · módulo 03
+- Huber, P. J. (1967). The behavior of maximum likelihood estimates under nonstandard conditions. In: *Proceedings of the Fifth Berkeley Symposium on Mathematical Statistics and Probability*, v. 1, p. 221–233. Berkeley: University of California Press. · módulo 08
+- Imbens, G. W.; Angrist, J. D. (1994). Identification and estimation of local average treatment effects. *Econometrica*, v. 62, n. 2, p. 467–475. [doi:10.2307/2951620](https://doi.org/10.2307/2951620) · módulo 10
+- Jarque, C. M.; Bera, A. K. (1980). Efficient tests for normality, homoscedasticity and serial independence of regression residuals. *Economics Letters*, v. 6, n. 3, p. 255–259. [doi:10.1016/0165-1765(80)90024-5](https://doi.org/10.1016/0165-1765(80)90024-5) · módulo 07
+- Jarque, C. M.; Bera, A. K. (1987). A test for normality of observations and regression residuals. *International Statistical Review*, v. 55, n. 2, p. 163–172. [doi:10.2307/1403192](https://doi.org/10.2307/1403192) · módulo 07
+- Kennedy, P. E. (1981). Estimation with correctly interpreted dummy variables in semilogarithmic equations. *American Economic Review*, v. 71, n. 4, p. 801. · módulo 09
+- Koenker, R. (1981). A note on studentizing a test for heteroscedasticity. *Journal of Econometrics*, v. 17, n. 1, p. 107–112. [doi:10.1016/0304-4076(81)90062-2](https://doi.org/10.1016/0304-4076(81)90062-2) · módulo 07
+- Leamer, E. E. (1983). Let's take the con out of econometrics. *American Economic Review*, v. 73, n. 1, p. 31–43. · módulo 10
+- Lee, D. S.; McCrary, J.; Moreira, M. J.; Porter, J. (2022). Valid t-ratio inference for IV. *American Economic Review*, v. 112, n. 10, p. 3260–3290. [doi:10.1257/aer.20211063](https://doi.org/10.1257/aer.20211063) · módulo 10
+- Legendre, A.-M. (1805). *Nouvelles méthodes pour la détermination des orbites des comètes*. Paris: Courcier. · módulo 02
+- Long, J. S.; Ervin, L. H. (2000). Using heteroscedasticity consistent standard errors in the linear regression model. *The American Statistician*, v. 54, n. 3, p. 217–224. [doi:10.1080/00031305.2000.10474549](https://doi.org/10.1080/00031305.2000.10474549) · módulo 08
+- Lovell, M. C. (1963). Seasonal adjustment of economic time series and multiple regression analysis. *Journal of the American Statistical Association*, v. 58, n. 304, p. 993–1010. [doi:10.1080/01621459.1963.10480682](https://doi.org/10.1080/01621459.1963.10480682) · módulo 04
+- Lovell, M. C. (2008). A simple proof of the FWL theorem. *Journal of Economic Education*, v. 39, n. 1, p. 88–91. [doi:10.3200/JECE.39.1.88-91](https://doi.org/10.3200/JECE.39.1.88-91) · módulo 04
+- MacKinnon, J. G.; White, H. (1985). Some heteroskedasticity-consistent covariance matrix estimators with improved finite sample properties. *Journal of Econometrics*, v. 29, n. 3, p. 305–325. [doi:10.1016/0304-4076(85)90158-7](https://doi.org/10.1016/0304-4076(85)90158-7) · módulo 08
+- Mann, H. B.; Wald, A. (1943). On stochastic limit and order relationships. *Annals of Mathematical Statistics*, v. 14, n. 3, p. 217–226. [doi:10.1214/aoms/1177731415](https://doi.org/10.1214/aoms/1177731415) · módulo 08
+- Markov, A. A. (1900). *Ischislenie veroyatnostei [Cálculo das probabilidades]*. São Petersburgo. · módulo 06
+- Marquardt, D. W. (1970). Generalized inverses, ridge regression, biased linear estimation, and nonlinear estimation. *Technometrics*, v. 12, n. 3, p. 591–612. [doi:10.1080/00401706.1970.10488699](https://doi.org/10.1080/00401706.1970.10488699) · módulo 06
+- Montiel Olea, J. L.; Pflueger, C. (2013). A robust test for weak instruments. *Journal of Business & Economic Statistics*, v. 31, n. 3, p. 358–369. [doi:10.1080/00401706.2013.806694](https://doi.org/10.1080/00401706.2013.806694) · módulo 10
+- Nelson, C. R.; Startz, R. (1990). Some further results on the exact small sample properties of the instrumental variable estimator. *Econometrica*, v. 58, n. 4, p. 967–976. [doi:10.2307/2938359](https://doi.org/10.2307/2938359) · módulo 10
+- Neyman, J. (1934). On the two different aspects of the representative method: the method of stratified sampling and the method of purposive selection. *Journal of the Royal Statistical Society*, v. 97, n. 4, p. 558–625. [doi:10.2307/2342192](https://doi.org/10.2307/2342192) · módulo 06
+- Oehlert, G. W. (1992). A note on the delta method. *The American Statistician*, v. 46, n. 1, p. 27–29. [doi:10.1080/00031305.1992.10475842](https://doi.org/10.1080/00031305.1992.10475842) · módulo 08
+- Plackett, R. L. (1949). A historical note on the method of least squares. *Biometrika*, v. 36, n. 3/4, p. 458–460. [doi:10.2307/2332682](https://doi.org/10.2307/2332682) · módulo 06
+- Plackett, R. L. (1950). Some theorems in least squares. *Biometrika*, v. 37, n. 1/2, p. 149–157. [doi:10.2307/2332158](https://doi.org/10.2307/2332158) · módulo 03
+- Ramsey, J. B. (1969). Tests for specification errors in classical linear least-squares regression analysis. *Journal of the Royal Statistical Society, Series B*, v. 31, n. 2, p. 350–371. [doi:10.1111/j.2517-6161.1969.tb00796.x](https://doi.org/10.1111/j.2517-6161.1969.tb00796.x) · módulo 07
+- Ramsey, J. B.; Schmidt, P. (1976). Some further results on the use of OLS and BLUS residuals in specification error tests. *Journal of the American Statistical Association*, v. 71, n. 354, p. 389–390. [doi:10.1080/01621459.1976.10480355](https://doi.org/10.1080/01621459.1976.10480355) · módulo 07
+- Rao, C. R. (1948). Large sample tests of statistical hypotheses concerning several parameters with applications to problems of estimation. *Mathematical Proceedings of the Cambridge Philosophical Society*, v. 44, n. 1, p. 50–57. [doi:10.1017/S0305004100023987](https://doi.org/10.1017/S0305004100023987) · módulo 07
+- Reiersøl, O. (1941). Confluence analysis by means of lag moments and other methods of confluence analysis. *Econometrica*, v. 9, n. 1, p. 1–24. [doi:10.2307/1907171](https://doi.org/10.2307/1907171) · módulo 10
+- Roth, J.; Sant'Anna, P. H. C.; Bilinski, A.; Poe, J. (2023). What's trending in difference-in-differences? A synthesis of the recent econometrics literature. *Journal of Econometrics*, v. 235, n. 2, p. 2218–2244. [doi:10.1016/j.jeconom.2023.03.008](https://doi.org/10.1016/j.jeconom.2023.03.008) · módulo 09
+- Sargan, J. D. (1958). The estimation of economic relationships using instrumental variables. *Econometrica*, v. 26, n. 3, p. 393–415. [doi:10.2307/1907619](https://doi.org/10.2307/1907619) · módulo 10
+- Schwarz, G. (1978). Estimating the dimension of a model. *Annals of Statistics*, v. 6, n. 2, p. 461–464. [doi:10.1214/aos/1176344136](https://doi.org/10.1214/aos/1176344136) · módulo 05
+- Silvey, S. D. (1959). The Lagrangian multiplier test. *Annals of Mathematical Statistics*, v. 30, n. 2, p. 389–407. [doi:10.1214/aoms/1177706259](https://doi.org/10.1214/aoms/1177706259) · módulo 07
+- Snow, J. (1855). *On the Mode of Communication of Cholera*. 2. ed. Londres: John Churchill. · módulo 09
+- Spearman, C. (1904). The proof and measurement of association between two things. *American Journal of Psychology*, v. 15, n. 1, p. 72–101. [doi:10.2307/1412159](https://doi.org/10.2307/1412159) · módulo 10
+- Staiger, D.; Stock, J. H. (1997). Instrumental variables regression with weak instruments. *Econometrica*, v. 65, n. 3, p. 557–586. [doi:10.2307/2171753](https://doi.org/10.2307/2171753) · módulo 10
+- Stigler, S. M. (1981). Gauss and the invention of least squares. *Annals of Statistics*, v. 9, n. 3, p. 465–474. [doi:10.1214/aos/1176345451](https://doi.org/10.1214/aos/1176345451) · módulo 02
+- Stock, J. H.; Trebbi, F. (2003). Retrospectives: who invented instrumental variable regression? *Journal of Economic Perspectives*, v. 17, n. 3, p. 177–194. [doi:10.1257/089533003769204416](https://doi.org/10.1257/089533003769204416) · módulo 10
+- Stock, J. H.; Wright, J. H.; Yogo, M. (2002). A survey of weak instruments and weak identification in generalized method of moments. *Journal of Business & Economic Statistics*, v. 20, n. 4, p. 518–529. [doi:10.1198/073500102288618658](https://doi.org/10.1198/073500102288618658) · módulo 10
+- Stock, J. H.; Yogo, M. (2005). Testing for weak instruments in linear IV regression. In: *Identification and Inference for Econometric Models: Essays in Honor of Thomas Rothenberg (Andrews, D. W. K.; Stock, J. H., orgs.)*, p. 80–108. Cambridge: Cambridge University Press. [doi:10.1017/CBO9780511614491.006](https://doi.org/10.1017/CBO9780511614491.006) · módulo 10
+- Suits, D. B. (1957). Use of dummy variables in regression equations. *Journal of the American Statistical Association*, v. 52, n. 280, p. 548–551. [doi:10.1080/01621459.1957.10501412](https://doi.org/10.1080/01621459.1957.10501412) · módulo 09
+- Theil, H. (1961). *Economic Forecasts and Policy*. 2. ed. Amsterdã: North-Holland. · módulo 05
+- Theil, H.; Goldberger, A. S. (1961). On pure and mixed statistical estimation in economics. *International Economic Review*, v. 2, n. 1, p. 65–78. [doi:10.2307/2525589](https://doi.org/10.2307/2525589) · módulo 05
+- Toyoda, T. (1974). Use of the Chow test under heteroscedasticity. *Econometrica*, v. 42, n. 3, p. 601–608. [doi:10.2307/1911796](https://doi.org/10.2307/1911796) · módulo 07, 09
+- Wald, A. (1943). Tests of statistical hypotheses concerning several parameters when the number of observations is large. *Transactions of the American Mathematical Society*, v. 54, n. 3, p. 426–482. [doi:10.1090/S0002-9947-1943-0012401-3](https://doi.org/10.1090/S0002-9947-1943-0012401-3) · módulo 07
+- White, H. (1980). Using least squares to approximate unknown regression functions. *International Economic Review*, v. 21, n. 1, p. 149–170. [doi:10.2307/2526245](https://doi.org/10.2307/2526245) · módulo 01
+- White, H. (1980). A heteroskedasticity-consistent covariance matrix estimator and a direct test for heteroskedasticity. *Econometrica*, v. 48, n. 4, p. 817–838. [doi:10.2307/1912934](https://doi.org/10.2307/1912934) · módulo 07, 08
+- Wright, P. G. (1928). *The Tariff on Animal and Vegetable Oils*. Nova York: Macmillan. · módulo 10
+- Wu, D.-M. (1973). Alternative tests of independence between stochastic regressors and disturbances. *Econometrica*, v. 41, n. 4, p. 733–750. [doi:10.2307/1914093](https://doi.org/10.2307/1914093) · módulo 10
+- Yule, G. U. (1897). On the theory of correlation. *Journal of the Royal Statistical Society*, v. 60, n. 4, p. 812–854. [doi:10.2307/2979746](https://doi.org/10.2307/2979746) · módulo 01
+- Yule, G. U. (1907). On the theory of correlation for any number of variables, treated by a new system of notation. *Proceedings of the Royal Society of London, Series A*, v. 79, n. 529, p. 182–193. [doi:10.1098/rspa.1907.0028](https://doi.org/10.1098/rspa.1907.0028) · módulo 04
+

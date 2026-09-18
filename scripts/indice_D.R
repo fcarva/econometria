@@ -8,7 +8,7 @@ source(file.path(.d, "R", "raiz.R"))
 
 RAIZ <- raiz()
 mds <- list.files(RAIZ, pattern = "\\.md$", recursive = TRUE, full.names = TRUE)
-mds <- mds[!grepl("/materiais/|/econometria/|/\\.git/", mds)]
+mds <- mds[!grepl("/materiais/|/econometria/|/\\.git/|/caderno/_build/", mds)]
 
 padrao <- "^#{2,4}\\s+(D[0-9]+(\\.[0-9]+)?)\\s*[·:-]\\s*(.+?)\\s*$"
 linhas <- list()

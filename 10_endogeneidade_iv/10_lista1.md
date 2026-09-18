@@ -116,7 +116,7 @@ Conclusão:   não há evidência contra a validade dos instrumentos.
 
 O teste só existe porque há **sobreidentificação**: $L=4$ instrumentos (incluindo os exógenos do modelo) para $K=3$ parâmetros, logo $L-K=1$ grau de liberdade. Com um único instrumento (caso exatamente identificado) não haveria teste nenhum — é essa a vantagem do MQ2E sobre o VI simples aqui.
 
-**(d) Leitura do coeficiente.** $\hat\beta_{\log preço}=-1{,}2774$: modelo log-log, então é **elasticidade-preço** — 1% de aumento no preço reduz o consumo em cerca de 1,28%, demanda elástica. Compare com o MQO, $-1{,}4065$: ignorar a endogeneidade **exagera** a sensibilidade ao preço.
+**(d) Leitura do coeficiente.** $\hat\beta_{\log\text{preço}}=-1{,}2774$: modelo log-log, então é **elasticidade-preço** — 1% de aumento no preço reduz o consumo em cerca de 1,28%, demanda elástica. Compare com o MQO, $-1{,}4065$: ignorar a endogeneidade **exagera** a sensibilidade ao preço.
 
 **Conferência numérica**
 
