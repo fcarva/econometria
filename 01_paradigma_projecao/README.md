@@ -14,7 +14,7 @@ aliases:
 
 # Módulo 01 — Paradigma, projeção e o modelo de regressão
 
-O que exatamente se está estimando: esperança condicional, projeção linear e reta ajustada são três objetos distintos. Aqui também entram, pela primeira vez, as hipóteses A1 a A6.
+O que exatamente se está estimando: esperança condicional, projeção linear e reta ajustada são três objetos distintos. Aqui também entram, pela primeira vez, as hipóteses H1–H5.
 
 | Arquivo | Conteúdo |
 |---|---|
@@ -24,9 +24,9 @@ O que exatamente se está estimando: esperança condicional, projeção linear e
 
 ## O essencial
 
-$$\beta=\operatorname{Var}(x)^{-1}\operatorname{Cov}(x,y),\qquad \alpha=E[y]-\beta'E[x]$$
+$$\beta=\operatorname{Var}(x)^{-1}\operatorname{Cov}(x,\mathbf y),\qquad \alpha=E(\mathbf y)-\beta'E(x)$$
 
-A3 ($E[\varepsilon\mid X]=0$) é a hipótese crítica: sem ela, nem não-viés nem consistência. A4 mexe em eficiência e inferência; A6, só na inferência exata.
+H2 ($E(\varepsilon\mid X)=0$) é a hipótese crítica: sem ela, nem não-viés nem consistência. H4 mexe em eficiência e inferência; H5, só na inferência exata.
 
 ```bash
 powershell -ExecutionPolicy Bypass -File scripts\r.ps1 01_paradigma_projecao\01_paradigma_projecao.R

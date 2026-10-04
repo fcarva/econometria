@@ -24,9 +24,9 @@ Esperança, variância, covariância, esperança condicional e propriedades de e
 
 ## O essencial
 
-$$E[\bar X]=\mu,\qquad \operatorname{Var}(\bar X)=\frac{\sigma^2}{n},\qquad EQM(\hat\theta)=\operatorname{Var}(\hat\theta)+\big[\text{viés}(\hat\theta)\big]^2$$
+$$E(\bar X)=\mu,\qquad \operatorname{Var}(\bar X)=\frac{\sigma^2}{n},\qquad EQM(\widehat\theta)=\operatorname{Var}(\widehat\theta)+\big[\text{viés}(\widehat\theta)\big]^2$$
 
-$$\Pr\big(\lvert Z-E[Z]\rvert\ge\delta\big)\le\frac{\operatorname{Var}(Z)}{\delta^2}\quad\text{(Chebyshev)}$$
+$$\Pr\big(\lvert Z-E(Z)\rvert\ge\delta\big)\le\frac{\operatorname{Var}(Z)}{\delta^2}\quad\text{(Chebyshev)}$$
 
 ```bash
 powershell -ExecutionPolicy Bypass -File scripts\r.ps1 00_fundamentos\00_fundamentos.R

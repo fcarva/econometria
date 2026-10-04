@@ -27,22 +27,22 @@ aliases:
 
 **Tipo:** derivação · **Chave:** ➖ · **Cai como:** Q4, versão matricial
 
-**O que se pede.** O modelo verdadeiro é $y=X_1\beta_1+X_2\beta_2+\varepsilon$, mas estima-se apenas $\hat y=X_1b_1$, com $b_1=(X_1'X_1)^{-1}X_1'y$. O estimador $b_1$ é viciado?
+**O que se pede.** O modelo verdadeiro é $\mathbf y=\mathbf X_1\beta_1+\mathbf X_2\beta_2+\varepsilon$, mas estima-se apenas $\widehat{\mathbf y}=\mathbf X_1\mathbf b_1$, com $\mathbf b_1=(\mathbf X_1'\mathbf X_1)^{-1}\mathbf X_1'\mathbf y$. O estimador $\mathbf b_1$ é viciado?
 
 **Resposta: sim, em geral.**
 
 **Passo a passo.**
 
 1. Substitua o modelo **verdadeiro** dentro do estimador curto:
-$$b_1=(X_1'X_1)^{-1}X_1'\big(X_1\beta_1+X_2\beta_2+\varepsilon\big).$$
+$$\mathbf b_1=(\mathbf X_1'\mathbf X_1)^{-1}\mathbf X_1'\big(\mathbf X_1\beta_1+\mathbf X_2\beta_2+\varepsilon\big).$$
 
-2. Distribua, usando $(X_1'X_1)^{-1}X_1'X_1=I$:
-$$b_1=\beta_1+(X_1'X_1)^{-1}X_1'X_2\,\beta_2+(X_1'X_1)^{-1}X_1'\varepsilon .$$
+2. Distribua, usando $(\mathbf X_1'\mathbf X_1)^{-1}\mathbf X_1'\mathbf X_1=\mathbf I$:
+$$\mathbf b_1=\beta_1+(\mathbf X_1'\mathbf X_1)^{-1}\mathbf X_1'\mathbf X_2\,\beta_2+(\mathbf X_1'\mathbf X_1)^{-1}\mathbf X_1'\varepsilon .$$
 
-3. Tome a esperança condicional em $X$; o último termo morre por exogeneidade *[A3]*:
-$$\boxed{E[b_1\mid X]=\beta_1+(X_1'X_1)^{-1}X_1'X_2\,\beta_2 .}$$
+3. Tome a esperança condicional em $\mathbf X$; o último termo morre por exogeneidade *[H2]*:
+$$\boxed{E(\mathbf b_1\mid \mathbf X)=\beta_1+(\mathbf X_1'\mathbf X_1)^{-1}\mathbf X_1'\mathbf X_2\,\beta_2 .}$$
 
-4. O **viés** é $(X_1'X_1)^{-1}X_1'X_2\beta_2$. A matriz $P_{12}=(X_1'X_1)^{-1}X_1'X_2$ é exatamente a matriz de coeficientes das regressões auxiliares de cada coluna de $X_2$ sobre $X_1$: ela mede **quanto de $X_2$ está embutido em $X_1$**.
+4. O **viés** é $(\mathbf X_1'\mathbf X_1)^{-1}\mathbf X_1'\mathbf X_2\beta_2$. A matriz $\mathbf P_{12}=(\mathbf X_1'\mathbf X_1)^{-1}\mathbf X_1'\mathbf X_2$ é exatamente a matriz de coeficientes das regressões auxiliares de cada coluna de $\mathbf X_2$ sobre $\mathbf X_1$: ela mede **quanto de $\mathbf X_2$ está embutido em $\mathbf X_1$**.
 
 **Quando o viés desaparece.**
 
@@ -51,7 +51,7 @@ $$\boxed{E[b_1\mid X]=\beta_1+(X_1'X_1)^{-1}X_1'X_2\,\beta_2 .}$$
 | $\beta_2=0$ | o bloco omitido era irrelevante; omiti-lo não custa nada |
 | $X_1'X_2=0$ | blocos ortogonais na amostra: $X_1$ não carrega informação de $X_2$ |
 
-**Sinal do viés.** No caso de uma variável omitida, o viés é $\beta_2\hat\delta$, com $\hat\delta$ o coeficiente da auxiliar. Ele é positivo quando $\beta_2$ e $\hat\delta$ têm o mesmo sinal (por exemplo: habilidade eleva o salário e é positivamente correlacionada com escolaridade ⇒ o retorno da escolaridade é superestimado).
+**Sinal do viés.** No caso de uma variável omitida, o viés é $\beta_2\widehat\delta$, com $\widehat\delta$ o coeficiente da auxiliar. Ele é positivo quando $\beta_2$ e $\widehat\delta$ têm o mesmo sinal (por exemplo: habilidade eleva o salário e é positivamente correlacionada com escolaridade ⇒ o retorno da escolaridade é superestimado).
 
 > [!TIP]
 > **Como escrever na prova**
@@ -59,11 +59,11 @@ $$\boxed{E[b_1\mid X]=\beta_1+(X_1'X_1)^{-1}X_1'X_2\,\beta_2 .}$$
 
 **Relação com o resto do módulo.** O complemento de D04.4 é o teorema de Frisch-Waugh-Lovell (D04.2): ele mostra que o coeficiente **longo** $b_2$ é o da regressão entre as partes limpas, e que o coeficiente **curto** difere justamente pelo que $X_1$ e $X_2$ compartilham.
 
-**Conferência numérica** (equação de salários, `AER::PSID7682`)
-
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R — (equação de salários, `AER::PSID7682`)
 | chave_R | nota |
 |---|---|
 | m04_pc_r2_curta | 0,267917 |
 | m04_pc_r2_longa | 0,344607 |
 | m04_pc_queda_ssr | 68,0168 |
 | m04_psid_b_ed | 0,0611277 |
+-->

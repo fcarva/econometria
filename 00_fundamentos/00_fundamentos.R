@@ -119,7 +119,7 @@ plot(x[id], y[id], pch = 16, cex = 0.4, col = adjustcolor("grey30", 0.4),
      main = "Cov(X, Y) = 0, mas Y é função de X")
 curve(x^2, add = TRUE, col = "firebrick", lwd = 2)
 abline(lm(y ~ x), col = "steelblue", lwd = 2, lty = 2)
-legend("top", legend = c("E[Y | X] = X²", "Projeção linear (reta MQO)"),
+legend("top", legend = c("E(Y | X) = X²", "Projeção linear (reta MQO)"),
        col = c("firebrick", "steelblue"), lwd = 2, lty = c(1, 2), bty = "n", cex = 0.85)
 plot(x[id], y2[id], pch = 16, cex = 0.4, col = adjustcolor("grey30", 0.4),
      xlab = "X", ylab = "Y = S X",

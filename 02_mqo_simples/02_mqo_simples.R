@@ -364,16 +364,16 @@ registrar("m02_mc_media_s", mean(sqrt(s2_sim)))    # sigma-chapéu é viesado pa
 abrir_png("m02_mc_nao_vies_covariancia.png")
 par(mfrow = c(1, 3), mar = c(4.5, 4.2, 3.2, 0.8), oma = c(0, 0, 1.6, 0))
 hist(b1_sim, breaks = 60, col = "grey80", border = "white", freq = FALSE,
-     main = "Intercepto b1", xlab = expression(hat(beta)[1]), ylab = "densidade")
+     main = "Intercepto b1", xlab = expression(widehat(beta)[1]), ylab = "densidade")
 abline(v = beta1, col = "firebrick", lwd = 2.5); abline(v = mean(b1_sim), col = "navy", lwd = 2, lty = 2)
 curve(dnorm(x, beta1, sqrt(var_b1_teo)), add = TRUE, lwd = 1.5)
 hist(b2_sim, breaks = 60, col = "grey80", border = "white", freq = FALSE,
-     main = "Inclinação b2", xlab = expression(hat(beta)[2]), ylab = "densidade")
+     main = "Inclinação b2", xlab = expression(widehat(beta)[2]), ylab = "densidade")
 abline(v = beta2, col = "firebrick", lwd = 2.5); abline(v = mean(b2_sim), col = "navy", lwd = 2, lty = 2)
 curve(dnorm(x, beta2, sqrt(var_b2_teo)), add = TRUE, lwd = 1.5)
 idx <- 1:3000
 plot(b1_sim[idx], b2_sim[idx], pch = 16, cex = 0.35, col = adjustcolor("navy", 0.35),
-     xlab = expression(hat(beta)[1]), ylab = expression(hat(beta)[2]),
+     xlab = expression(widehat(beta)[1]), ylab = expression(widehat(beta)[2]),
      main = sprintf("Corr = %s (teórica %s)", fmt(cor(b1_sim, b2_sim), 3), fmt(corr_teo, 3)))
 abline(v = beta1, h = beta2, col = "firebrick", lty = 2)
 mtext("Monte Carlo (X fixo, 20000 amostras): vermelho = verdadeiro; tracejado azul = média; curva = normal teórica",
@@ -475,7 +475,7 @@ par(mar = c(4.5, 4.5, 3, 1))
 da <- density(b2_alta); db <- density(b2_baixa)
 plot(da, lwd = 2.5, col = "navy", xlim = range(db$x), ylim = c(0, max(da$y) * 1.05),
      main = "Ex. 20 — mais dispersão em X, estimativa mais precisa",
-     xlab = expression(hat(beta)[2]), ylab = "densidade")
+     xlab = expression(widehat(beta)[2]), ylab = "densidade")
 lines(db, lwd = 2.5, col = "firebrick", lty = 2)
 abline(v = beta2, col = "grey30")
 legend("topright", bty = "n", cex = 0.8,
@@ -524,7 +524,7 @@ par(mar = c(4.5, 4.5, 3, 1))
 d1 <- density(b2_star); d2 <- density(b2_obs)
 plot(d1, lwd = 2.5, col = "navy", xlim = range(d2$x), ylim = c(0, max(d1$y) * 1.05),
      main = "Erro de medição em Y: não vicia, mas aumenta a variância",
-     xlab = expression(hat(beta)[2]), ylab = "densidade")
+     xlab = expression(widehat(beta)[2]), ylab = "densidade")
 lines(d2, lwd = 2.5, col = "firebrick", lty = 2)
 abline(v = beta2, col = "grey30")
 legend("topright", bty = "n", cex = 0.8,
@@ -558,7 +558,7 @@ par(mar = c(4.5, 4.5, 3, 1))
 dm <- density(b2_sim); de <- density(b2_ext)
 plot(dm, lwd = 2.5, col = "navy", xlim = range(de$x), ylim = c(0, max(dm$y) * 1.5),
      main = "Gauss-Markov: dois estimadores lineares não viesados de beta2",
-     xlab = expression(hat(beta)[2]), ylab = "densidade")
+     xlab = expression(widehat(beta)[2]), ylab = "densidade")
 lines(de, lwd = 2.5, col = "firebrick", lty = 2)
 segments(beta2, 0, beta2, max(dm$y) * 1.05, col = "grey30")   # não cruza a legenda
 legend("top", bty = "n", cex = 0.8,

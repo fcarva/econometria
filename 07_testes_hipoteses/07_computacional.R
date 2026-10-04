@@ -345,8 +345,8 @@ op <- par(mfrow = c(1, 2), mar = c(4.2, 4.2, 3, 1))
 plot(cabos$ano, e, type = "b", pch = 19, xlab = "Ano", ylab = "Resíduo de MQO",
      main = "Resíduos ao longo do tempo")
 abline(h = 0, lty = 2, col = "gray40")
-plot(e[-n], e[-1], pch = 19, xlab = expression(hat(e)[t - 1]), ylab = expression(hat(e)[t]),
-     main = bquote("Resíduo contra o defasado (" * hat(rho) == .(sprintf("%.3f", rho)) * ")"))
+plot(e[-n], e[-1], pch = 19, xlab = expression(widehat(e)[t - 1]), ylab = expression(widehat(e)[t]),
+     main = bquote("Resíduo contra o defasado (" * widehat(rho) == .(sprintf("%.3f", rho)) * ")"))
 abline(h = 0, v = 0, lty = 2, col = "gray40")
 abline(lm(e[-1] ~ e[-n]), col = "firebrick", lwd = 2)
 par(op); dev.off()

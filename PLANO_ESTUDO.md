@@ -82,7 +82,7 @@ Se um agente (ou você mesmo, em outra sessão) for continuar este repositório:
 1. **Leia [CONVENCOES.md](CONVENCOES.md) primeiro.** Ele é o contrato: notação, frontmatter, os cinco callouts permitidos, o padrão `DNN.k` das demonstrações, o formato dos exercícios e as regras de código R.
 2. **Nunca copie** enunciado, chave, slide ou livro. Parafraseie em uma linha e cite pela referência (`SL07`, `Lista 1, ex. 33`, `Greene §5.3`). O lint rejeita 12 palavras seguidas iguais às dos materiais.
 3. **Todo número citado vem do R.** Registre com `registrar()` no script do módulo e cite na nota dentro de uma tabela `chave_R | nota`. Rode `check_numbers.R` antes de considerar a tarefa pronta.
-4. **Demonstração é passo a passo com justificativa.** Cada linha algébrica indica a hipótese (`[A3]`) ou a regra usada. Confira as dimensões das matrizes. Antecipe como o professor pode torcer o enunciado.
+4. **Demonstração é passo a passo com justificativa.** Cada linha algébrica indica a hipótese (`[H2]`) ou a regra usada. Confira as dimensões das matrizes. Antecipe como o professor pode torcer o enunciado.
 5. **Não duplique D0–D16**: referencie e complemente.
 6. **`materiais/` nunca entra no git.** Antes de qualquer commit, rode o lint; antes de qualquer push, confira `git ls-files`.
 7. **Ao terminar um módulo**, atualize o status no frontmatter (`status`, `verificacao`) e o [LISTA1_MAPA.md](LISTA1_MAPA.md).

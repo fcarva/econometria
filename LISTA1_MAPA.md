@@ -14,6 +14,10 @@ aliases:
 
 # Lista 1: mapa dos 74 exercícios
 
+> [!IMPORTANT]
+> **Existe uma versão nova**
+> O professor distribuiu a Lista 1 v.1, com 79 exercícios e numeração diferente, feita junto com a P1. Ela passa a ser a referência: ver o [mapa da v.1](provas/lista1_v1/mapa.md), que aponta para os exercícios desta lista quando o conteúdo é o mesmo.
+
 A Lista 1 cobre toda a P1. Cada exercício aparece aqui com uma paráfrase (o enunciado fica em `materiais/listas/lista1.pdf`), o tipo, o módulo onde está resolvido e o status em relação à chave do professor.
 
 **Tipo:**
@@ -51,28 +55,28 @@ A Lista 1 cobre toda a P1. Cada exercício aparece aqui com uma paráfrase (o en
 | 11 | Hipóteses do MRL simples | T | [01](01_paradigma_projecao/01_lista1.md) | ⏳ |
 | 12 | Propriedades ótimas do MQO em amostra finita | T | [01](01_paradigma_projecao/01_lista1.md) | ⏳ |
 | 13 | Investimento público × PIB estadual: interpretação, obtenção por MQO, por que é o "melhor" | D/T | [02](02_mqo_simples/02_lista1.md) | ⏳ |
-| 14 | Não-viés de $\hat\beta_1$ e $\hat\beta_2$ | D | [02](02_mqo_simples/02_lista1.md) | ⏳ |
+| 14 | Não-viés de $\widehat\beta_1$ e $\widehat\beta_2$ | D | [02](02_mqo_simples/02_lista1.md) | ⏳ |
 | 15 | Viés de variável omitida na regressão simples | D | [02](02_mqo_simples/02_lista1.md) | ⏳ |
-| 16 | Variâncias e covariância de $\hat\beta_1,\hat\beta_2$ | D | [02](02_mqo_simples/02_lista1.md) | ⏳ |
+| 16 | Variâncias e covariância de $\widehat\beta_1,\widehat\beta_2$ | D | [02](02_mqo_simples/02_lista1.md) | ⏳ |
 | 17 | Resíduos somam zero e são ortogonais a $X$ | D | [02](02_mqo_simples/02_lista1.md) | ⏳ |
 | 18 | $t^2=F$ na regressão simples | D | [02](02_mqo_simples/02_lista1.md) | ⏳ |
 | 19 | F escrito com $R^2$ (simples) | D | [02](02_mqo_simples/02_lista1.md) | ⏳ |
-| 20 | Dispersão de $X$ e precisão de $\hat\beta_2$ | T | [02](02_mqo_simples/02_lista1.md) | ⏳ |
+| 20 | Dispersão de $X$ e precisão de $\widehat\beta_2$ | T | [02](02_mqo_simples/02_lista1.md) | ⏳ |
 | 21 | Média dos ajustados = média observada | D | [02](02_mqo_simples/02_lista1.md) | ⏳ |
 | 22 | Regressão em desvios da média | D | [02](02_mqo_simples/02_lista1.md) | ⏳ |
-| 23 | Regressão múltipla matricial: hipóteses, $b$ e sua variância, propriedades finitas e assintóticas, endogeneidade | D/T | [03](03_mqo_matricial/03_lista1.md) | ⏳ |
-| 24 | $b$ é não viesado | D | [03](03_mqo_matricial/03_lista1.md) | ⏳ |
+| 23 | Regressão múltipla matricial: hipóteses, $\mathbf b$ e sua variância, propriedades finitas e assintóticas, endogeneidade | D/T | [03](03_mqo_matricial/03_lista1.md) | ⏳ |
+| 24 | $\mathbf b$ é não viesado | D | [03](03_mqo_matricial/03_lista1.md) | ⏳ |
 | 25 | Viés de omissão no modelo particionado | D | [04](04_fwl_particionada/04_lista1.md) | ⏳ |
-| 26 | $\operatorname{Var}(b\mid X)=\sigma^2(X'X)^{-1}$ | D | [06](06_amostra_finita_multicol/06_lista1.md) | ⏳ |
+| 26 | $\operatorname{Var}(\mathbf b\mid \mathbf X)=\sigma^2(\mathbf X'\mathbf X)^{-1}$ | D | [06](06_amostra_finita_multicol/06_lista1.md) | ⏳ |
 | 27 | F escrito com $R^2$ (múltipla) | D | [05](05_ajuste_restricoes/05_lista1.md) | ⏳ |
-| 28 | Resíduos $e=My$ (*residual maker*) | D | [03](03_mqo_matricial/03_lista1.md) | ⏳ |
-| 29 | Ajustados $\hat y=Py$ (projeção) | D | [03](03_mqo_matricial/03_lista1.md) | ⏳ |
-| 30 | $e'e=y'y-b'X'y$ | D | [03](03_mqo_matricial/03_lista1.md) | ⏳ |
-| 31 | $X'e=0$ | D | [03](03_mqo_matricial/03_lista1.md) | ⏳ |
+| 28 | Resíduos $\mathbf e=\mathbf M\mathbf y$ (*residual maker*) | D | [03](03_mqo_matricial/03_lista1.md) | ⏳ |
+| 29 | Ajustados $\widehat y=Py$ (projeção) | D | [03](03_mqo_matricial/03_lista1.md) | ⏳ |
+| 30 | $\mathbf e'\mathbf e=\mathbf y'\mathbf y-\mathbf b'\mathbf X'\mathbf y$ | D | [03](03_mqo_matricial/03_lista1.md) | ⏳ |
+| 31 | $\mathbf X'\mathbf e=0$ | D | [03](03_mqo_matricial/03_lista1.md) | ⏳ |
 | 32 | Significado de $E(\mu\mu'\mid X)=\sigma^2I$ | D/T | [06](06_amostra_finita_multicol/06_lista1.md) | ⏳ |
-| 33 | Gauss-Markov matricial com $b^*=[(X'X)^{-1}X'+C]y$ | D | [06](06_amostra_finita_multicol/06_lista1.md) | ⏳ |
+| 33 | Gauss-Markov matricial com $\mathbf b^*=[(\mathbf X'\mathbf X)^{-1}\mathbf X'+\mathbf C]\mathbf y$ | D | [06](06_amostra_finita_multicol/06_lista1.md) | ⏳ |
 | 34 | MQO matricial à mão (5 observações) | C | [03](03_mqo_matricial/03_lista1.md) | ⏳ |
-| 35 | Colinearidade perfeita: $X'X$ não inversível | C | [03](03_mqo_matricial/03_lista1.md) | ⏳ |
+| 35 | Colinearidade perfeita: $\mathbf X'\mathbf X$ não inversível | C | [03](03_mqo_matricial/03_lista1.md) | ⏳ |
 | 36 | Significado de $E(u_i^2)=\sigma_i^2$ | T | [06](06_amostra_finita_multicol/06_lista1.md) | ⏳ |
 | 37 | Matriz de covariância dos erros não diagonal: qual hipótese cai | T | [06](06_amostra_finita_multicol/06_lista1.md) | ⏳ |
 | 38 | Vendas de cabos: regressão múltipla, sinais, F e t a 10%, $R^2$ e $\bar R^2$ | R | [07](07_testes_hipoteses/07_lista1_computacional.md) | ⏳ |
@@ -101,12 +105,12 @@ A Lista 1 cobre toda a P1. Cada exercício aparece aqui com uma paráfrase (o en
 | 61 | Armadilha da variável dummy | D | [09](09_dummies_forma_funcional/09_lista1.md) | ⏳ |
 | 62 | Retornos constantes de escala por F restrito | I | [05](05_ajuste_restricoes/05_lista1.md) | ⏳ |
 | 63 | Matriz de correlação: indício de colinearidade | I | [06](06_amostra_finita_multicol/06_lista1.md) | ⏳ |
-| 64 | Matriz de correlação e FIV | C | [06](06_amostra_finita_multicol/06_lista1.md) | ⏳ |
-| 65 | Derivar $\hat\beta_{IV}$ via plim | D | [10](10_endogeneidade_iv/10_lista1.md) | ⏳ |
+| 64 | Matriz de correlação e VIF | C | [06](06_amostra_finita_multicol/06_lista1.md) | ⏳ |
+| 65 | Derivar $\widehat\beta_{IV}$ via plim | D | [10](10_endogeneidade_iv/10_lista1.md) | ⏳ |
 | 66 | VI, MQ2E e GMM: motivação, estimação, inferência | T | [10](10_endogeneidade_iv/10_lista1.md) | ⏳ |
 | 67 | Output do `ivreg` a 10%: instrumentos fracos, Wu-Hausman, Sargan | I | [10](10_endogeneidade_iv/10_lista1.md) | ⏳ |
 | 68 | Erro de medição no regressor: viés e inconsistência | D | [10](10_endogeneidade_iv/10_lista1.md) | ⏳ |
-| 69 | Simultaneidade keynesiana: $\hat\beta_1$ inconsistente | D | [10](10_endogeneidade_iv/10_lista1.md) | ⏳ |
+| 69 | Simultaneidade keynesiana: $\widehat\beta_1$ inconsistente | D | [10](10_endogeneidade_iv/10_lista1.md) | ⏳ |
 | 70 | Erro de medição na dependente: viés e variância | D | [10](10_endogeneidade_iv/10_lista1.md) | ⏳ |
 | 71 | Estimador de diferenças em diferenças | D | [09](09_dummies_forma_funcional/09_lista1.md) | ⏳ |
 | 72 | DiD com controles invariantes no tempo | D | [09](09_dummies_forma_funcional/09_lista1.md) | ⏳ |

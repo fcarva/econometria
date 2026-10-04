@@ -32,12 +32,14 @@ O padrão de resposta está em [vocabulario_interpretacao.md](../../formulario/v
 
 **Respostas.** (a) Não: pelo TLC a inferência é assintótica; a coluna do output já traz $P[\lvert Z\rvert\gt z]$. (b) $t=22{,}05\gt 1{,}96$: significativa; cada ano de estudo vale +6,11% (exato 6,30%). (c) $-a_3/(2a_4)=30{,}31$ anos; depois disso o salário cai. (d) $[0{,}0557;\ 0{,}0665]$. (e) SOUTH $-7{,}63\%$ (exato $-7{,}35\%$); BLK $-26{,}27\%$ (exato $-23{,}10\%$) — note que a diferença entre aproximado e exato **cresce** com o tamanho do coeficiente. (f) $\bar R^2=0{,}3432$: 34,3% da variação do log-salário, corrigido por graus de liberdade. (g) Elasticidade-semanas na média: $0{,}00484\times 46{,}81=0{,}2267$.
 
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R
 | chave_R | nota |
 |---|---|
 | bnc_psid_ed_exato | 6,3035 |
 | bnc_psid_blk_exato | -23,102 |
 | bnc_psid_elast_wks | 0,226654 |
 | bnc_psid_r2_cabecalho | 0,344607 |
+-->
 
 ## Bloco 2 — Salários com dummies de sexo e sindicato
 
@@ -59,7 +61,7 @@ O padrão de resposta está em [vocabulario_interpretacao.md](../../formulario/v
 
 **Perguntas.** (a) Monte o teste de Chow com as duas somas de quadrados impressas. (b) Qual a conclusão a 5%? (c) Por que a versão com interações é mais informativa?
 
-**Respostas.** Com $SQR_R=113{,}0924$ (modelo sem FEM e sem interações, 4 parâmetros) e $SQR_{IR}=102{,}0724$ (8 parâmetros, $n=534$): $J=4$, $F=\frac{(113{,}0924-102{,}0724)/4}{102{,}0724/526}=14{,}19$, muito acima de $F_{4;526;0,05}\approx 2{,}39$ ⇒ rejeita-se a ausência de quebra. A versão interagida ainda diz **onde** está a diferença: no intercepto (FEM) e no retorno da educação (FEM·ED).
+**Respostas.** Com $SQR_R=113{,}0924$ (modelo sem FEM e sem interações, 4 parâmetros) e $SQR_{UR}=102{,}0724$ (8 parâmetros, $n=534$): $q=4$, $F=\frac{(113{,}0924-102{,}0724)/4}{102{,}0724/526}=14{,}19$, muito acima de $F_{4;526;0,05}\approx 2{,}39$ ⇒ rejeita-se a ausência de quebra. A versão interagida ainda diz **onde** está a diferença: no intercepto (FEM) e no retorno da educação (FEM·ED).
 
 ## Bloco 5 — Preço de imóveis
 
@@ -69,6 +71,7 @@ O padrão de resposta está em [vocabulario_interpretacao.md](../../formulario/v
 
 **Respostas.** (a) Elasticidade: 1% a mais de área eleva o preço em 0,700%. (b) $t=(0{,}7002-1)/0{,}09287=-3{,}228$, e $\lvert-3{,}228\rvert\gt 1{,}989$ ⇒ **rejeita-se** a elasticidade unitária. (c) $[0{,}5156;\ 0{,}8849]$, que não contém 1 — mesma conclusão. (d) JB $=34{,}889$ ($p\lt 0{,}0001$): rejeita normalidade, mas com $n=88$ a inferência assintótica segue de pé; RESET $=2{,}565$ ($p=0{,}0831$): não rejeita a 5%, rejeitaria a 10%; BP $=4{,}223$ ($p=0{,}238$) e White $=9{,}549$ ($p=0{,}388$): não há evidência de heterocedasticidade.
 
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R
 | chave_R | nota |
 |---|---|
 | bnc_hp_b_sqrft | 0,700232 |
@@ -79,6 +82,7 @@ O padrão de resposta está em [vocabulario_interpretacao.md](../../formulario/v
 | bnc_hp_reset | 2,5650 |
 | bnc_hp_bp | 4,2232 |
 | bnc_hp_white | 9,5494 |
+-->
 
 ## Bloco 6 — Função consumo agregada (série temporal)
 
@@ -86,8 +90,9 @@ O padrão de resposta está em [vocabulario_interpretacao.md](../../formulario/v
 
 **Perguntas.** (a) Interprete a propensão marginal a consumir em log-log. (b) Teste se a elasticidade é 1. (c) Mostre que $t^2=F$ e que $F$ sai do $R^2$. (d) Há autocorrelação? Use DW e Breusch-Godfrey.
 
-**Respostas.** (a) Elasticidade-renda do consumo: 0,99497 — praticamente unitária. (b) $t=(0{,}99497-1)/0{,}0079534=-0{,}6327$, contra $t_{crit}=2{,}018$: **não** se rejeita elasticidade unitária. (c) $t^2=15\,650=F$, e $F$ reconstruído do $R^2$ dá o mesmo. (d) DW $=0{,}5208$, muito abaixo de $d_L$: autocorrelação positiva forte ($\hat\rho\approx 0{,}74$); BG de ordem 1 dá $22{,}44$ ($p\lt 0{,}0001$), confirmando. Consequência: os erros-padrão do output estão subestimados, e a inferência acima precisa de correção (P2).
+**Respostas.** (a) Elasticidade-renda do consumo: 0,99497 — praticamente unitária. (b) $t=(0{,}99497-1)/0{,}0079534=-0{,}6327$, contra $t_{crit}=2{,}018$: **não** se rejeita elasticidade unitária. (c) $t^2=15\,650=F$, e $F$ reconstruído do $R^2$ dá o mesmo. (d) DW $=0{,}5208$, muito abaixo de $d_L$: autocorrelação positiva forte ($\widehat\rho\approx 0{,}74$); BG de ordem 1 dá $22{,}44$ ($p\lt 0{,}0001$), confirmando. Consequência: os erros-padrão do output estão subestimados, e a inferência acima precisa de correção (P2).
 
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R
 | chave_R | nota |
 |---|---|
 | bnc_cons_b | 0,994968 |
@@ -97,6 +102,7 @@ O padrão de resposta está em [vocabulario_interpretacao.md](../../formulario/v
 | bnc_cons_dw | 0,520771 |
 | bnc_cons_rho_dw | 0,739614 |
 | bnc_cons_bg1 | 22,438 |
+-->
 
 ## Bloco 7 — Função de produção estadual e retornos de escala
 
@@ -104,8 +110,9 @@ O padrão de resposta está em [vocabulario_interpretacao.md](../../formulario/v
 
 **Perguntas.** (a) Interprete as elasticidades de capital e trabalho. (b) Teste retornos constantes de escala com as duas somas de quadrados. (c) Refaça pelo $t$ da soma, usando a covariância. (d) O modelo passa nos diagnósticos?
 
-**Respostas.** (a) $\hat\beta_K=0{,}2889$ e $\hat\beta_L=0{,}7575$: 1% a mais de capital eleva o produto em 0,289%; de trabalho, 0,758%. (b) $SQR_R=0{,}289559$ e $SQR_{IR}=0{,}217166$, com $J=1$: $F=14{,}667$ ($p=0{,}0004$) contra $F_{crit}=4{,}062$ ⇒ **rejeita-se** retornos constantes. (c) Soma $=1{,}0465$ com erro-padrão $0{,}0121$ (usando $\operatorname{Var}(\hat\beta_K)+\operatorname{Var}(\hat\beta_L)+2\operatorname{Cov}$), logo $t=3{,}830$ e $t^2=14{,}67=F$: retornos **crescentes**. (d) RESET $1{,}617$ ($p=0{,}211$), BP $4{,}372$ ($p=0{,}224$), White $10{,}912$ ($p=0{,}282$), JB $0{,}944$ ($p=0{,}624$): passa em todos.
+**Respostas.** (a) $\widehat\beta_K=0{,}2889$ e $\widehat\beta_L=0{,}7575$: 1% a mais de capital eleva o produto em 0,289%; de trabalho, 0,758%. (b) $SQR_R=0{,}289559$ e $SQR_{UR}=0{,}217166$, com $q=1$: $F=14{,}667$ ($p=0{,}0004$) contra $F_{crit}=4{,}062$ ⇒ **rejeita-se** retornos constantes. (c) Soma $=1{,}0465$ com erro-padrão $0{,}0121$ (usando $\operatorname{Var}(\widehat\beta_K)+\operatorname{Var}(\widehat\beta_L)+2\operatorname{Cov}$), logo $t=3{,}830$ e $t^2=14{,}67=F$: retornos **crescentes**. (d) RESET $1{,}617$ ($p=0{,}211$), BP $4{,}372$ ($p=0{,}224$), White $10{,}912$ ($p=0{,}282$), JB $0{,}944$ ($p=0{,}624$): passa em todos.
 
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R
 | chave_R | nota |
 |---|---|
 | bnc_crs86_ssr_u | 0,217166 |
@@ -115,6 +122,7 @@ O padrão de resposta está em [vocabulario_interpretacao.md](../../formulario/v
 | bnc_crs86_ep_soma | 0,0121322 |
 | bnc_crs86_t | 3,8298 |
 | bnc_crs86_jb | 0,943735 |
+-->
 
 ## Bloco 8 — Quebra estrutural entre dois anos
 
@@ -122,14 +130,16 @@ O padrão de resposta está em [vocabulario_interpretacao.md](../../formulario/v
 
 **Perguntas.** (a) Teste de Chow entre 1970 e 1986 a 5%. (b) Onde está a quebra?
 
-**Respostas.** $SQR_R=0{,}941691$ (empilhado) contra $SQR_{IR}=0{,}819875$ (interagido): $F=3{,}269$ ($p=0{,}0151$) contra $F_{crit}=2{,}475$ ⇒ **rejeita-se** a estabilidade. O coeficiente da dummy de período é 0,649 e a interação com capital tem $t=-1{,}812$: a mudança é sobretudo de nível, com indício de alteração no retorno do capital.
+**Respostas.** $SQR_R=0{,}941691$ (empilhado) contra $SQR_{UR}=0{,}819875$ (interagido): $F=3{,}269$ ($p=0{,}0151$) contra $F_{crit}=2{,}475$ ⇒ **rejeita-se** a estabilidade. O coeficiente da dummy de período é 0,649 e a interação com capital tem $t=-1{,}812$: a mudança é sobretudo de nível, com indício de alteração no retorno do capital.
 
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R
 | chave_R | nota |
 |---|---|
 | bnc_pchow_ssr_r | 0,941691 |
 | bnc_pchow_ssr_u | 0,819875 |
 | bnc_pchow_F | 3,2687 |
 | bnc_pchow_p | 0,015082 |
+-->
 
 ## Bloco 9 — Demanda por cigarros com VI (o quadro da prova)
 
@@ -157,10 +167,11 @@ O padrão de resposta está em [vocabulario_interpretacao.md](../../formulario/v
 
 **Output:** [outputs/cps_multicol.txt](outputs/cps_multicol.txt)
 
-**Perguntas.** (a) O que acontece ao incluir simultaneamente idade, educação e experiência? (b) Leia os $t$ e o $F$. (c) Qual o FIV?
+**Perguntas.** (a) O que acontece ao incluir simultaneamente idade, educação e experiência? (b) Leia os $t$ e o $F$. (c) Qual o VIF?
 
-**Respostas.** Como experiência é construída a partir de idade e educação, as três são quase linearmente dependentes ($r_{age,exp}=0{,}978$). O resultado é o retrato da multicolinearidade: nenhum $t$ é significativo ($t_{ED}=1{,}561$, $t_{EXP}=0{,}812$, $t_{AGE}=-0{,}700$), mas o $F$ global é 48,99 e o modelo explica 27% da variação. O FIV de idade é **4623** e o de educação, 230; o erro-padrão de ED passa de 0,00799 (sem as colineares) para 0,1137 — catorze vezes maior.
+**Respostas.** Como experiência é construída a partir de idade e educação, as três são quase linearmente dependentes ($r_{age,exp}=0{,}978$). O resultado é o retrato da multicolinearidade: nenhum $t$ é significativo ($t_{ED}=1{,}561$, $t_{EXP}=0{,}812$, $t_{AGE}=-0{,}700$), mas o $F$ global é 48,99 e o modelo explica 27% da variação. O VIF de idade é **4623** e o de educação, 230; o erro-padrão de ED passa de 0,00799 (sem as colineares) para 0,1137 — catorze vezes maior.
 
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R
 | chave_R | nota |
 |---|---|
 | bnc_vif_cor_age_exp | 0,977961 |
@@ -170,6 +181,7 @@ O padrão de resposta está em [vocabulario_interpretacao.md](../../formulario/v
 | bnc_vif_se_ed_curto | 0,00799421 |
 | bnc_vif_t_ed | 1,56061 |
 | bnc_vif_F | 48,989 |
+-->
 
 ---
 

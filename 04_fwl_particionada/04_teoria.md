@@ -28,46 +28,46 @@ aliases:
 
 > [!NOTE]
 > **O que é, por que importa, onde cai**
-> O que exatamente significa "o efeito de $X_2$ **mantidas constantes** as demais variáveis"? O teorema de Frisch-Waugh-Lovell responde com precisão algébrica: o coeficiente de $X_2$ na regressão múltipla é o coeficiente da regressão simples entre as **partes de $y$ e de $X_2$ que as outras variáveis não explicam**. Dessa mesma álgebra saem o viés de omissão em forma matricial (ex. 25), a fórmula da variância com FIV, a correlação parcial, os efeitos fixos e a transformação within do painel.
+> O que exatamente significa "o efeito de $X_2$ **mantidas constantes** as demais variáveis"? O teorema de Frisch-Waugh-Lovell responde com precisão algébrica: o coeficiente de $X_2$ na regressão múltipla é o coeficiente da regressão simples entre as **partes de $y$ e de $X_2$ que as outras variáveis não explicam**. Dessa mesma álgebra saem o viés de omissão em forma matricial (ex. 25), a fórmula da variância com VIF, a correlação parcial, os efeitos fixos e a transformação within do painel.
 
 ## 1. Notação
 
 Particione os regressores: $X=[X_1\ \ X_2]$, com $X_1$ de dimensão $n\times K_1$ e $X_2$ de $n\times K_2$. O modelo é
 $$y=X_1\beta_1+X_2\beta_2+\varepsilon,$$
 e a estimação dá $y=X_1b_1+X_2b_2+e$. Defina a matriz geradora de resíduos do primeiro bloco:
-$$M_1=I-X_1(X_1'X_1)^{-1}X_1',$$
+$$\mathbf M_1=\mathbf I-\mathbf X_1(\mathbf X_1'\mathbf X_1)^{-1}\mathbf X_1',$$
 simétrica, idempotente, com $M_1X_1=0$. Ela "limpa" de qualquer vetor a parte explicada por $X_1$.
 
 ## 2. Demonstrações
 
 ### D04.1 · A solução particionada
 
-Escreva as equações normais $X'Xb=X'y$ em blocos:
+Escreva as equações normais $\mathbf X'\mathbf X\mathbf b=\mathbf X'\mathbf y$ em blocos:
 $$\begin{pmatrix}X_1'X_1&X_1'X_2\\X_2'X_1&X_2'X_2\end{pmatrix}\begin{pmatrix}b_1\\b_2\end{pmatrix}=\begin{pmatrix}X_1'y\\X_2'y\end{pmatrix}.$$
 
 Da primeira linha, isolando $b_1$:
-$$b_1=(X_1'X_1)^{-1}X_1'(y-X_2b_2). \tag{D04.1a}$$
+$$\mathbf b_1=(\mathbf X_1'\mathbf X_1)^{-1}\mathbf X_1'(\mathbf y-\mathbf X_2\mathbf b_2). \tag{D04.1a}$$
 
-**Leitura.** $b_1$ é o coeficiente da regressão de $X_1$ sobre o que sobra de $y$ depois de tirar a contribuição de $X_2$. Se $X_1'X_2=0$ (blocos ortogonais), $b_1=(X_1'X_1)^{-1}X_1'y$: cada bloco pode ser estimado isoladamente.
+**Leitura.** $\mathbf b_1$ é o coeficiente da regressão de $\mathbf X_1$ sobre o que sobra de $\mathbf y$ depois de tirar a contribuição de $\mathbf X_2$. Se $\mathbf X_1'\mathbf X_2=0$ (blocos ortogonais), $\mathbf b_1=(\mathbf X_1'\mathbf X_1)^{-1}\mathbf X_1'\mathbf y$: cada bloco pode ser estimado isoladamente.
 
 ### D04.2 · O teorema de Frisch-Waugh-Lovell
 
 > [!NOTE]
 > **O que se quer provar**
-> $$b_2=\big(X_2'M_1X_2\big)^{-1}X_2'M_1y,$$
-> isto é, $b_2$ é o estimador da regressão de $M_1y$ (resíduo de $y$ em $X_1$) em $M_1X_2$ (resíduo de $X_2$ em $X_1$). Além disso, os resíduos das duas regressões são **idênticos**.
+> $$\mathbf b_2=\big(\mathbf X_2'\mathbf M_1\mathbf X_2\big)^{-1}\mathbf X_2'\mathbf M_1\mathbf y,$$
+> isto é, $\mathbf b_2$ é o estimador da regressão de $\mathbf M_1\mathbf y$ (resíduo de $\mathbf y$ em $\mathbf X_1$) em $\mathbf M_1\mathbf X_2$ (resíduo de $\mathbf X_2$ em $\mathbf X_1$). Além disso, os resíduos das duas regressões são **idênticos**.
 
 **Passo a passo.**
 
 1. Substitua (D04.1a) na segunda linha das equações normais:
-$$X_2'X_1\Big[(X_1'X_1)^{-1}X_1'(y-X_2b_2)\Big]+X_2'X_2b_2=X_2'y.$$
+$$\mathbf X_2'\mathbf X_1\Big[(\mathbf X_1'\mathbf X_1)^{-1}\mathbf X_1'(\mathbf y-\mathbf X_2\mathbf b_2)\Big]+\mathbf X_2'\mathbf X_2\mathbf b_2=\mathbf X_2'\mathbf y.$$
 
 2. Reagrupe os termos em $b_2$:
-$$X_2'\Big[X_2-X_1(X_1'X_1)^{-1}X_1'X_2\Big]b_2=X_2'\Big[y-X_1(X_1'X_1)^{-1}X_1'y\Big],$$
+$$\mathbf X_2'\Big[\mathbf X_2-\mathbf X_1(\mathbf X_1'\mathbf X_1)^{-1}\mathbf X_1'\mathbf X_2\Big]\mathbf b_2=\mathbf X_2'\Big[\mathbf y-\mathbf X_1(\mathbf X_1'\mathbf X_1)^{-1}\mathbf X_1'\mathbf y\Big],$$
 ou seja, $X_2'M_1X_2\,b_2=X_2'M_1y$.
 
-3. Como $M_1$ é idempotente e simétrica, $X_2'M_1X_2=(M_1X_2)'(M_1X_2)$ e $X_2'M_1y=(M_1X_2)'(M_1y)$. Com posto completo,
-$$b_2=\big[(M_1X_2)'(M_1X_2)\big]^{-1}(M_1X_2)'(M_1y). \qquad\blacksquare$$
+3. Como $\mathbf M_1$ é idempotente e simétrica, $\mathbf X_2'\mathbf M_1\mathbf X_2=(\mathbf M_1\mathbf X_2)'(\mathbf M_1\mathbf X_2)$ e $\mathbf X_2'\mathbf M_1\mathbf y=(\mathbf M_1\mathbf X_2)'(\mathbf M_1\mathbf y)$. Com posto completo,
+$$\mathbf b_2=\big[(\mathbf M_1\mathbf X_2)'(\mathbf M_1\mathbf X_2)\big]^{-1}(\mathbf M_1\mathbf X_2)'(\mathbf M_1\mathbf y). \qquad\blacksquare$$
 
 4. **Resíduos idênticos:** como $e=M_1y-M_1X_2b_2$ já é ortogonal a $X_1$ e a $X_2$, é também o resíduo da regressão original.
 
@@ -83,36 +83,36 @@ $$b_2=\big[(M_1X_2)'(M_1X_2)\big]^{-1}(M_1X_2)'(M_1y). \qquad\blacksquare$$
 
 ### D04.3 · Incluir constante é centrar as variáveis
 
-Faça $X_1=\iota$ (só a constante). Então
-$$M_1=M^0=I-\tfrac1n\iota\iota',$$
-que subtrai a média de cada coluna. Logo, regredir $y$ em $\iota$ e $X_2$ dá o mesmo $b_2$ que regredir $y$ centrado em $X_2$ centrado — a justificativa algébrica do "modelo em desvios" do ex. 22 ([módulo 02](../02_mqo_simples/02_lista1.md)).
+Faça $\mathbf X_1=\iota$ (só a constante). Então
+$$\mathbf M_1=\mathbf M^0=\mathbf I-\tfrac1n\iota\iota',$$
+que subtrai a média de cada coluna. Logo, regredir $\mathbf y$ em $\iota$ e $\mathbf X_2$ dá o mesmo $\mathbf b_2$ que regredir $\mathbf y$ centrado em $\mathbf X_2$ centrado — a justificativa algébrica do "modelo em desvios" do ex. 22 ([módulo 02](../02_mqo_simples/02_lista1.md)).
 
 ### D04.4 · Viés de omissão em forma matricial (ex. 25)
 
 > [!NOTE]
 > **O que se quer provar**
-> Se o modelo verdadeiro é $y=X_1\beta_1+X_2\beta_2+\varepsilon$ mas estima-se $\hat y=X_1b_1$ com $b_1=(X_1'X_1)^{-1}X_1'y$, então
-> $$E[b_1\mid X]=\beta_1+\underbrace{(X_1'X_1)^{-1}X_1'X_2}_{P_{12}}\,\beta_2 .$$
+> Se o modelo verdadeiro é $\mathbf y=\mathbf X_1\beta_1+\mathbf X_2\beta_2+\varepsilon$ mas estima-se $\widehat{\mathbf y}=\mathbf X_1\mathbf b_1$ com $\mathbf b_1=(\mathbf X_1'\mathbf X_1)^{-1}\mathbf X_1'\mathbf y$, então
+> $$E(\mathbf b_1\mid \mathbf X)=\beta_1+\underbrace{(\mathbf X_1'\mathbf X_1)^{-1}\mathbf X_1'\mathbf X_2}_{P_{12}}\,\beta_2 .$$
 
 **Passo a passo.**
 
 1. Substitua o modelo verdadeiro no estimador curto:
-$$b_1=(X_1'X_1)^{-1}X_1'\big(X_1\beta_1+X_2\beta_2+\varepsilon\big)=\beta_1+(X_1'X_1)^{-1}X_1'X_2\beta_2+(X_1'X_1)^{-1}X_1'\varepsilon .$$
+$$\mathbf b_1=(\mathbf X_1'\mathbf X_1)^{-1}\mathbf X_1'\big(\mathbf X_1\beta_1+\mathbf X_2\beta_2+\varepsilon\big)=\beta_1+(\mathbf X_1'\mathbf X_1)^{-1}\mathbf X_1'\mathbf X_2\beta_2+(\mathbf X_1'\mathbf X_1)^{-1}\mathbf X_1'\varepsilon .$$
 
-2. Tome a esperança condicional e use $E[\varepsilon\mid X]=0$ *[A3]*:
-$$E[b_1\mid X]=\beta_1+(X_1'X_1)^{-1}X_1'X_2\,\beta_2 .\qquad\blacksquare$$
+2. Tome a esperança condicional e use $E(\varepsilon\mid X)=0$ *[H2]*:
+$$E(\mathbf b_1\mid \mathbf X)=\beta_1+(\mathbf X_1'\mathbf X_1)^{-1}\mathbf X_1'\mathbf X_2\,\beta_2 .\qquad\blacksquare$$
 
 3. **Viés** $=P_{12}\beta_2$, em que $P_{12}$ é a matriz de coeficientes das regressões auxiliares de cada coluna de $X_2$ sobre $X_1$.
 
-**Quando some:** se $\beta_2=0$ (bloco irrelevante) ou se $X_1'X_2=0$ (blocos ortogonais). No caso escalar, reduz-se a $\beta_3\hat\delta$ do ex. 15.
+**Quando some:** se $\beta_2=0$ (bloco irrelevante) ou se $X_1'X_2=0$ (blocos ortogonais). No caso escalar, reduz-se a $\beta_3\widehat\delta$ do ex. 15.
 
-### D04.5 · Variância, FIV e correlação parcial
+### D04.5 · Variância, VIF e correlação parcial
 
 Do bloco (2,2) da inversa particionada,
-$$\big[(X'X)^{-1}\big]_{22}=\big(X_2'M_1X_2\big)^{-1},$$
+$$\big[(\mathbf X'\mathbf X)^{-1}\big]_{22}=\big(\mathbf X_2'\mathbf M_1\mathbf X_2\big)^{-1},$$
 logo, para um regressor escalar $x_k$,
 $$\operatorname{Var}(b_k\mid X)=\frac{\sigma^2}{x_k'M_{-k}x_k}=\frac{\sigma^2}{(1-R_k^2)\,S_{kk}},$$
-com $R_k^2$ da regressão auxiliar de $x_k$ nos demais e $FIV_k=1/(1-R_k^2)$. Verificado: o bloco (2,2) da inversa é $5{,}49363\times 10^{-5}$, exatamente $1/(x'M_1x)$, com $R^2_{aux}=0{,}437599$, $FIV=1{,}77809$ e o erro-padrão reconstruído pela fórmula igual ao do software.
+com $R_k^2$ da regressão auxiliar de $x_k$ nos demais e $VIF_k=1/(1-R_k^2)$. Verificado: o bloco (2,2) da inversa é $5{,}49363\times 10^{-5}$, exatamente $1/(x'M_1x)$, com $R^2_{aux}=0{,}437599$, $VIF=1{,}77809$ e o erro-padrão reconstruído pela fórmula igual ao do software.
 
 A mesma álgebra dá a **correlação parcial**:
 $$r^2_{yx_k\mid \text{demais}}=\frac{t_k^2}{t_k^2+(n-K)},$$
@@ -135,7 +135,7 @@ Aprofundamento na P2: [módulo 12](../12_painel_I/README.md).
 | "Prove que $b_1$ é viesado" (ex. 25) | D04.4 em três linhas, terminando no viés $P_{12}\beta_2$ e nas condições de anulação. |
 | "O que significa controlar por outras variáveis?" | FWL: o coeficiente é a regressão entre as partes não explicadas pelas demais. |
 | "Como se relacionam efeitos fixos e FWL?" | D04.6: within é FWL com dummies de unidade. |
-| "De onde vem o FIV na variância?" | D04.5, pelo bloco da inversa particionada. |
+| "De onde vem o VIF na variância?" | D04.5, pelo bloco da inversa particionada. |
 
 ## 4. Armadilhas
 
@@ -149,11 +149,10 @@ Aprofundamento na P2: [módulo 12](../12_painel_I/README.md).
 
 - [ ] Derivo FWL (D04.2) a partir das equações normais particionadas.
 - [ ] Escrevo o viés de omissão matricial (D04.4) e digo quando ele é zero.
-- [ ] Explico a fórmula da variância com $1-R_k^2$ e o FIV (D04.5).
+- [ ] Explico a fórmula da variância com $1-R_k^2$ e o VIF (D04.5).
 - [ ] Explico por que within é FWL e por que variáveis fixas no tempo somem.
 
-## 6. Conferência numérica
-
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R
 | chave_R | nota |
 |---|---|
 | m04_psid_b_ed | 0,0611277 |
@@ -169,8 +168,9 @@ Aprofundamento na P2: [módulo 12](../12_painel_I/README.md).
 | m04_pc_r2_curta | 0,267917 |
 | m04_pc_r2_longa | 0,344607 |
 | m04_pc_queda_ssr | 68,0168 |
+-->
 
-## 7. Referências
+## 6. Referências
 
 - Greene, *Econometric Analysis*, §3.3 (regressão particionada), §3.4 (FWL), §3.5 (correlação parcial).
 - Slides SL04, incluindo a aplicação a efeitos fixos.

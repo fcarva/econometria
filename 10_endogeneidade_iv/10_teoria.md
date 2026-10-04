@@ -30,45 +30,45 @@ Hub do módulo: [README](README.md) · Exercícios: [10_lista1.md](10_lista1.md)
 
 > [!NOTE]
 > **O que este módulo entrega**
-> Uma única pergunta atravessa o SL10: o que acontece quando $\operatorname{plim} X'\varepsilon/n\neq 0$ e como recuperar $\beta$. Primeiro, as três fontes clássicas de endogeneidade com o plim do MQO calculado em cada uma (variável omitida, erro de medição, simultaneidade). Depois, o remédio: o estimador de VI no caso exatamente identificado, o MQ2E no sobreidentificado e o GMM que engloba os dois. Por fim, os três diagnósticos que o `ivreg` imprime e que caem na prova (instrumentos fracos, Wu-Hausman, Sargan). O núcleo D0–D16 não é repetido: D9, D10, D13 e D14 são citados; a P1 2025/2 resolvida já tem versões curtas de Q4 (erro em $Y$) e Q6 (derivar $b_{IV}$), que aqui ganham a versão rigorosa.
+> Uma única pergunta atravessa o SL10: o que acontece quando $\operatorname{plim} \mathbf X'\varepsilon/n\neq 0$ e como recuperar $\beta$. Primeiro, as três fontes clássicas de endogeneidade com o plim do MQO calculado em cada uma (variável omitida, erro de medição, simultaneidade). Depois, o remédio: o estimador de VI no caso exatamente identificado, o MQ2E no sobreidentificado e o GMM que engloba os dois. Por fim, os três diagnósticos que o `ivreg` imprime e que caem na prova (instrumentos fracos, Wu-Hausman, Sargan). O núcleo D0–D16 não é repetido: D9, D10, D13 e D14 são citados; a P1 2025/2 resolvida já tem versões curtas de Q4 (erro em $Y$) e Q6 (derivar $\mathbf b_{IV}$), que aqui ganham a versão rigorosa.
 
 | D | Resultado | Hipóteses | Usado em |
 |---|---|---|---|
-| D10.1 | $\operatorname{plim} b=\beta+Q^{-1}\gamma$ e o viés "espalhado" | A1, A2, AI3 | todo o módulo |
-| D10.2 | Erro de medição em $X$: $\operatorname{Cov}(z,X)=-\beta\sigma_w^2$ e atenuação | erro clássico | ex. 68 |
-| D10.3 | Erro de medição em $Y$: não viesa, infla a variância | $X$ fixo | ex. 70, P1 Q4 |
-| D10.4 | Keynes: $\operatorname{plim}\hat\beta_1-\beta_1=(1-\beta_1)\sigma^2/(\sigma_I^2+\sigma^2)$ | $\operatorname{Cov}(I,u)=0$ | ex. 69 |
-| D10.5 | $b_{IV}=(Z'X)^{-1}Z'y$ pela condição de plim | I1, I2, $L=K$ | ex. 65, P1 Q6 |
-| D10.6 | Consistência e $\operatorname{Asy.Var}(b_{IV})=\sigma^2(Z'X)^{-1}Z'Z(X'Z)^{-1}$ | I1–I3 | D10.8, D10.9 |
-| D10.7 | MQ2E: três fórmulas iguais; $=$ MQO de $y$ em $\hat X$ | I1–I3, $L\ge K$ | ex. 66, 67 |
+| D10.1 | $\operatorname{plim} \mathbf b=\beta+\mathbf Q^{-1}\gamma$ e o viés "espalhado" | H1, H3, AI3 | todo o módulo |
+| D10.2 | Erro de medição em $\mathbf X$: $\operatorname{Cov}(z,\mathbf X)=-\beta\sigma_w^2$ e atenuação | erro clássico | ex. 68 |
+| D10.3 | Erro de medição em $Y$: não viesa, infla a variância | $\mathbf X$ fixo | ex. 70, P1 Q4 |
+| D10.4 | Keynes: $\operatorname{plim}\widehat\beta_1-\beta_1=(1-\beta_1)\sigma^2/(\sigma_I^2+\sigma^2)$ | $\operatorname{Cov}(I,u)=0$ | ex. 69 |
+| D10.5 | $\mathbf b_{IV}=(\mathbf Z'\mathbf X)^{-1}\mathbf Z'\mathbf y$ pela condição de plim | I1, I2, $L=K$ | ex. 65, P1 Q6 |
+| D10.6 | Consistência e $\operatorname{Asy.Var}(\mathbf b_{IV})=\sigma^2(\mathbf Z'\mathbf X)^{-1}\mathbf Z'\mathbf Z(\mathbf X'\mathbf Z)^{-1}$ | I1–I3 | D10.8, D10.9 |
+| D10.7 | MQ2E: três fórmulas iguais; $=$ MQO de $\mathbf y$ em $\widehat{\mathbf X}$ | I1–I3, $L\ge K$ | ex. 66, 67 |
 | D10.8 | Variância do MQ2E; por que o EP do 2º estágio ingênuo está errado | I1–I3 | ex. 66c |
-| D10.9 | MQ2E é o VI mais eficiente em $Z$; MQO tem variância menor | I1–I3, homocedasticidade | ex. 67c |
+| D10.9 | MQ2E é o VI mais eficiente em $\mathbf Z$; MQO tem variância menor | I1–I3, homocedasticidade | ex. 67c |
 | D10.10 | Instrumentos fracos: inconsistência amplificada, viés para o MQO | I1–I3 | ex. 67a |
 | D10.11 | Hausman ($\operatorname{Var}(d)=V_{2SLS}-V_{MQO}$) e Wu por função de controle | H0: exogeneidade | ex. 67b |
 | D10.12 | Sargan: $nR^2\to\chi^2(L-K)$; impossível com $L=K$ | I1–I3, homocedasticidade | ex. 67c |
-| D10.13 | GMM linear; MQ2E como caso particular | momentos $E[z_i\varepsilon_i]=0$ | ex. 66 |
+| D10.13 | GMM linear; MQ2E como caso particular | momentos $E(z_i\varepsilon_i)=0$ | ex. 66 |
 
 ## 1. Notação e hipóteses
 
 **Objetos.** Notação do Greene (CONVENCOES §2).
 
-- $y$ é $n\times 1$; $X$ é $n\times K$ com a coluna de 1s; $\beta$ é $K\times 1$; $\varepsilon$ é $n\times 1$. Linha $i$: $x_i'$ ($1\times K$).
+- $\mathbf y$ é $n\times 1$; $\mathbf X$ é $n\times K$ com a coluna de 1s; $\beta$ é $K\times 1$; $\varepsilon$ é $n\times 1$. Linha $i$: $\mathbf x_i'$ ($1\times K$).
 - $X=[X_1\;\;X_2]$: $X_1$ ($n\times K_1$) exógenas, $X_2$ ($n\times K_2$) endógenas, $K=K_1+K_2$.
-- $Z$ é $n\times L$, a matriz de instrumentos, com $L\ge K$. Ela contém as exógenas incluídas e os instrumentos excluídos: $Z=[X_1\;\;W]$, com $W$ de dimensão $n\times(L-K_1)$. As exógenas são instrumentos de si mesmas.
-- $P_Z=Z(Z'Z)^{-1}Z'$ e $M_Z=I_n-P_Z$ ($n\times n$, simétricas e idempotentes). $\hat X=P_ZX$ ($n\times K$) são os ajustados do 1º estágio. $\hat V=M_ZX$ são os resíduos do 1º estágio (nulos nas colunas de $X_1$).
-- Momentos-limite: $Q_{XX}=\operatorname{plim}X'X/n$, $Q_{ZZ}=\operatorname{plim}Z'Z/n$, $Q_{ZX}=\operatorname{plim}Z'X/n$ ($L\times K$), $Q_{XZ}=Q_{ZX}'$, $\gamma=\operatorname{plim}X'\varepsilon/n$ ($K\times 1$).
+- $\mathbf Z$ é $n\times L$, a matriz de instrumentos, com $L\ge K$. Ela contém as exógenas incluídas e os instrumentos excluídos: $\mathbf Z=[\mathbf X_1\;\;W]$, com $W$ de dimensão $n\times(L-K_1)$. As exógenas são instrumentos de si mesmas.
+- $\mathbf P_{\mathbf Z}=\mathbf Z(\mathbf Z'\mathbf Z)^{-1}\mathbf Z'$ e $\mathbf M_{\mathbf Z}=\mathbf I_n-\mathbf P_{\mathbf Z}$ ($n\times n$, simétricas e idempotentes). $\widehat{\mathbf X}=\mathbf P_{\mathbf Z}\mathbf X$ ($n\times K$) são os ajustados do 1º estágio. $\widehat V=\mathbf M_{\mathbf Z}\mathbf X$ são os resíduos do 1º estágio (nulos nas colunas de $\mathbf X_1$).
+- Momentos-limite: $\mathbf Q_{XX}=\operatorname{plim}\mathbf X'\mathbf X/n$, $\mathbf Q_{ZZ}=\operatorname{plim}\mathbf Z'\mathbf Z/n$, $\mathbf Q_{ZX}=\operatorname{plim}\mathbf Z'\mathbf X/n$ ($L\times K$), $\mathbf Q_{XZ}=\mathbf Q_{ZX}'$, $\gamma=\operatorname{plim}\mathbf X'\varepsilon/n$ ($K\times 1$).
 - $H\equiv Q_{XZ}Q_{ZZ}^{-1}Q_{ZX}$ ($K\times K$), a matriz que aparece no MQ2E.
 
-**Hipóteses.** Valem [A1], [A2], [A4] e [A5] de CONVENCOES §2. A [A3] é trocada:
+**Hipóteses.** Valem [H1], [H3] e [H4] de CONVENCOES §2. A exogeneidade [H2] é trocada:
 
 | Id | Hipótese | Forma |
 |---|---|---|
-| AI3 | Endogeneidade (Greene, "A.I3") | $E[\varepsilon\mid X]=\eta\neq 0$, logo, em geral, $\gamma=\operatorname{plim}X'\varepsilon/n\neq 0$ |
-| I1 | Exogeneidade dos instrumentos | $\operatorname{plim}Z'\varepsilon/n=0$ (implicada por $E[\varepsilon\mid Z]=0$) |
+| AI3 | Endogeneidade (Greene, "A.I3") | $E(\varepsilon\mid \mathbf X)=\eta\neq 0$, logo, em geral, $\gamma=\operatorname{plim}\mathbf X'\varepsilon/n\neq 0$ |
+| I1 | Exogeneidade dos instrumentos | $\operatorname{plim}\mathbf Z'\varepsilon/n=0$ (implicada por $E(\varepsilon\mid \mathbf Z)=0$) |
 | I2 | Relevância e condição de posto | $Q_{ZX}$ finita com posto $K$; exige $L\ge K$ (condição de ordem) |
-| I3 | Regularidade | $Q_{ZZ}$ finita e positiva definida; $Z'\varepsilon/\sqrt n\xrightarrow{d}N(0,\sigma^2Q_{ZZ})$, que vale com $E[\varepsilon\varepsilon'\mid Z]=\sigma^2I$ e o TLC |
+| I3 | Regularidade | $\mathbf Q_{ZZ}$ finita e positiva definida; $\mathbf Z'\varepsilon/\sqrt n\xrightarrow{d}N(0,\sigma^2\mathbf Q_{ZZ})$, que vale com $E(\varepsilon\varepsilon'\mid \mathbf Z)=\sigma^2\mathbf I$ e o TLC |
 
-**Regras de plim usadas** (Greene, Ap. D): (i) *Slutsky*: $\operatorname{plim}g(a_n)=g(\operatorname{plim}a_n)$ para $g$ contínua, em particular a inversa de uma matriz no ponto em que o limite é não singular; (ii) plim da soma, do produto e da razão (denominador com limite $\neq 0$); (iii) *LGN de Khinchine*: médias amostrais de observações i.i.d. com média finita convergem para a média populacional; (iv) *Cramér*: se $A_n\xrightarrow{p}A$ e $u_n\xrightarrow{d}N(0,\Sigma)$, então $A_nu_n\xrightarrow{d}N(0,A\Sigma A')$.
+**Regras de plim usadas** (Greene, Ap. D): (i) *Slutsky*: $\operatorname{plim}g(a_n)=g(\operatorname{plim}a_n)$ para $g$ contínua, em particular a inversa de uma matriz no ponto em que o limite é não singular; (ii) plim da soma, do produto e da razão (denominador com limite $\neq 0$); (iii) *LGN de Khinchine*: médias amostrais de observações i.i.d. com média finita convergem para a média populacional; (iv) *Cramér*: se $\mathbf A_n\xrightarrow{p}\mathbf A$ e $\mathbf u_n\xrightarrow{d}N(0,\Sigma)$, então $\mathbf A_n\mathbf u_n\xrightarrow{d}N(0,\mathbf A\Sigma \mathbf A')$.
 
 **Notação escalar (ex. 68–70).** Desvios $x_i=X_i-\bar X$, $S_{XX}=\sum x_i^2$, pesos $k_i=x_i/S_{XX}$ com $\sum k_i=0$, $\sum k_iX_i=1$ e $\sum k_i^2=1/S_{XX}$ (D9).
 
@@ -78,60 +78,60 @@ Hub do módulo: [README](README.md) · Exercícios: [10_lista1.md](10_lista1.md)
 
 > [!NOTE]
 > **O que se quer provar**
-> Sob [A1], [A2], [AI3], com $Q_{XX}$ positiva definida e $\gamma=\operatorname{plim}X'\varepsilon/n\neq 0$: (i) $E[b\mid X]=\beta+(X'X)^{-1}X'\eta$; (ii) $\operatorname{plim}b=\beta+Q_{XX}^{-1}\gamma\neq\beta$; (iii) se só o regressor $K$ é endógeno, $\operatorname{plim}(b-\beta)=\gamma_K\times$(coluna $K$ de $Q_{XX}^{-1}$), e o viés contamina **todos** os coeficientes.
+> Sob [H1], [H3], [AI3], com $\mathbf Q_{XX}$ positiva definida e $\gamma=\operatorname{plim}\mathbf X'\varepsilon/n\neq 0$: (i) $E(\mathbf b\mid \mathbf X)=\beta+(\mathbf X'\mathbf X)^{-1}\mathbf X'\eta$; (ii) $\operatorname{plim}\mathbf b=\beta+\mathbf Q_{XX}^{-1}\gamma\neq\beta$; (iii) se só o regressor $K$ é endógeno, $\operatorname{plim}(\mathbf b-\beta)=\gamma_K\times$(coluna $K$ de $\mathbf Q_{XX}^{-1}$), e o viés contamina **todos** os coeficientes.
 
 **Por que importa.** É o problema que o módulo inteiro resolve (SL10, p. 12, 24 e 29). D10.2–D10.4 são casos particulares, com $\gamma$ calculado.
 
 **Passo a passo.**
 
-1. Identidade fundamental, como em D14. *[A1; A2 garante a inversa]*
+1. Identidade fundamental, como em D14. *[H1; H3 garante a inversa]*
 
 $$
-b=(X'X)^{-1}X'(X\beta+\varepsilon)=\beta+(X'X)^{-1}X'\varepsilon .
+\mathbf b=(\mathbf X'\mathbf X)^{-1}\mathbf X'(\mathbf X\beta+\varepsilon)=\beta+(\mathbf X'\mathbf X)^{-1}\mathbf X'\varepsilon .
 $$
 
-2. Esperança condicional. $(X'X)^{-1}X'$ ($K\times n$) é função de $X$ e sai de $E[\cdot\mid X]$. *[linearidade de $E[\cdot\mid X]$; AI3]*
+2. Esperança condicional. $(\mathbf X'\mathbf X)^{-1}\mathbf X'$ ($K\times n$) é função de $\mathbf X$ e sai de $E(\cdot\mid \mathbf X)$. *[linearidade de $E(\cdot\mid \mathbf X)$; AI3]*
 
 $$
-E[b\mid X]=\beta+(X'X)^{-1}X'E[\varepsilon\mid X]=\beta+(X'X)^{-1}X'\eta .
+E(\mathbf b\mid \mathbf X)=\beta+(\mathbf X'\mathbf X)^{-1}\mathbf X'E(\varepsilon\mid \mathbf X)=\beta+(\mathbf X'\mathbf X)^{-1}\mathbf X'\eta .
 $$
 
-$X'\eta$ é $K\times 1$ e, em geral, não é nulo: o MQO é viesado e Gauss-Markov não se aplica.
+$\mathbf X'\eta$ é $K\times 1$ e, em geral, não é nulo: o MQO é viesado e Gauss-Markov não se aplica.
 
 3. Para o plim, divida cada fator por $n$ (o produto não muda):
 
 $$
-b=\beta+\Big(\frac{X'X}{n}\Big)^{-1}\Big(\frac{X'\varepsilon}{n}\Big).
+\mathbf b=\beta+\Big(\frac{\mathbf X'\mathbf X}{n}\Big)^{-1}\Big(\frac{\mathbf X'\varepsilon}{n}\Big).
 $$
 
-4. $\operatorname{plim}(X'X/n)^{-1}=Q_{XX}^{-1}$ *[Slutsky: a inversa é contínua em $Q_{XX}$ não singular]*. $\operatorname{plim}X'\varepsilon/n=\operatorname{plim}\tfrac1n\sum_ix_i\varepsilon_i=E[x_i\varepsilon_i]=\gamma$ *[Khinchine]*. Pelo produto de plims:
+4. $\operatorname{plim}(\mathbf X'\mathbf X/n)^{-1}=\mathbf Q_{XX}^{-1}$ *[Slutsky: a inversa é contínua em $\mathbf Q_{XX}$ não singular]*. $\operatorname{plim}\mathbf X'\varepsilon/n=\operatorname{plim}\tfrac1n\sum_ix_i\varepsilon_i=E(x_i\varepsilon_i)=\gamma$ *[Khinchine]*. Pelo produto de plims:
 
 $$
-\boxed{\operatorname{plim}b=\beta+Q_{XX}^{-1}\gamma\neq\beta .}
+\boxed{\operatorname{plim}\mathbf b=\beta+\mathbf Q_{XX}^{-1}\gamma\neq\beta .}
 $$
 
-5. Só o regressor $K$ endógeno: $\gamma=\gamma_Ke_K$, com $e_K$ a $K$-ésima coluna de $I_K$. Então $Q_{XX}^{-1}\gamma=\gamma_K\,Q_{XX}^{-1}e_K=\gamma_K\,(q^{1K},\dots,q^{KK})'$. O coeficiente $j$ é contaminado sempre que $q^{jK}\neq 0$, isto é, sempre que $x_j$ e $x_K$ são correlacionados após controlar pelos demais (SL10, p. 29).
+5. Só o regressor $K$ endógeno: $\gamma=\gamma_Ke_K$, com $\mathbf e_K$ a $K$-ésima coluna de $\mathbf I_K$. Então $\mathbf Q_{XX}^{-1}\gamma=\gamma_K\,\mathbf Q_{XX}^{-1}\mathbf e_K=\gamma_K\,(q^{1K},\dots,q^{KK})'$. O coeficiente $j$ é contaminado sempre que $q^{jK}\neq 0$, isto é, sempre que $x_j$ e $x_K$ são correlacionados após controlar pelos demais (SL10, p. 29).
 
-6. Exemplo mínimo: $X=[\iota\;\;x]$, só $x$ endógena, $E[\varepsilon]=0$. Então $Q_{XX}=\begin{bmatrix}1&\mu_x\\ \mu_x&E[x^2]\end{bmatrix}$, $\gamma=(0,\sigma_{x\varepsilon})'$ e
+6. Exemplo mínimo: $\mathbf X=[\iota\;\;x]$, só $x$ endógena, $E(\varepsilon)=0$. Então $\mathbf Q_{XX}=\begin{bmatrix}1&\mu_x\\ \mu_x&E(x^2)\end{bmatrix}$, $\gamma=(0,\sigma_{x\varepsilon})'$ e
 
 $$
-Q_{XX}^{-1}\gamma=\frac{1}{E[x^2]-\mu_x^2}\begin{bmatrix}E[x^2]&-\mu_x\\-\mu_x&1\end{bmatrix}\begin{bmatrix}0\\ \sigma_{x\varepsilon}\end{bmatrix}=\frac{\sigma_{x\varepsilon}}{\sigma_x^2}\begin{bmatrix}-\mu_x\\1\end{bmatrix}.
+Q_{XX}^{-1}\gamma=\frac{1}{E(x^2)-\mu_x^2}\begin{bmatrix}E(x^2)&-\mu_x\\-\mu_x&1\end{bmatrix}\begin{bmatrix}0\\ \sigma_{x\varepsilon}\end{bmatrix}=\frac{\sigma_{x\varepsilon}}{\sigma_x^2}\begin{bmatrix}-\mu_x\\1\end{bmatrix}.
 $$
 
 A inclinação erra por $\sigma_{x\varepsilon}/\sigma_x^2$ e o intercepto erra por $-\mu_x\sigma_{x\varepsilon}/\sigma_x^2$: o viés da inclinação "passa" ao intercepto pela média de $x$.
 
 > [!TIP]
 > **Como o professor pode torcer**
-> - "Viés ou inconsistência?" O item (i) é o viés, condicional a $X$ e em amostra finita. O item (ii) é a inconsistência. A lista pede um ou outro; responda com a ferramenta certa ($E[\cdot\mid X]$ ou plim).
-> - $E[\varepsilon_i\mid x_i]=c$, uma constante não nula, **não** é endogeneidade das inclinações: com constante no modelo, $c$ é absorvido pelo intercepto. O que estraga as inclinações é $\operatorname{Cov}(x_i,\varepsilon_i)\neq 0$.
+> - "Viés ou inconsistência?" O item (i) é o viés, condicional a $X$ e em amostra finita. O item (ii) é a inconsistência. A lista pede um ou outro; responda com a ferramenta certa ($E(\cdot\mid X)$ ou plim).
+> - $E(\varepsilon_i\mid x_i)=c$, uma constante não nula, **não** é endogeneidade das inclinações: com constante no modelo, $c$ é absorvido pelo intercepto. O que estraga as inclinações é $\operatorname{Cov}(x_i,\varepsilon_i)\neq 0$.
 > - Variável omitida é caso particular: $y=X_1\beta_1+x_2\beta_2+\varepsilon$ estimado sem $x_2$ tem erro $w=x_2\beta_2+\varepsilon$, logo $\gamma=\beta_2\operatorname{plim}X_1'x_2/n$ e $\operatorname{plim}b_1=\beta_1+Q_{11}^{-1}Q_{12}\beta_2$ (ex. 25, módulo 04).
-> - O MQO continua estimando **alguma coisa**: $\beta+Q^{-1}\gamma$ é o coeficiente da projeção linear de $y$ em $X$ (módulo 01). Ele só deixa de ser o parâmetro estrutural $\beta$.
+> - O MQO continua estimando **alguma coisa**: $\beta+\mathbf Q^{-1}\gamma$ é o coeficiente da projeção linear de $\mathbf y$ em $\mathbf X$ (módulo 01). Ele só deixa de ser o parâmetro estrutural $\beta$.
 
 ### D10.2 · Erro de medição no regressor: viés de atenuação
 
 > [!NOTE]
 > **O que se quer provar**
-> Modelo verdadeiro $Y_i=\alpha+\beta X_i^*+\mu_i$; observa-se $X_i=X_i^*+w_i$. Hipóteses: observações i.i.d. ($w$ serialmente independente); $E[\mu_i]=E[w_i]=0$; $\operatorname{Var}(w_i)=\sigma_w^2>0$; $\operatorname{Var}(X_i^*)=\sigma_{X^*}^2>0$; $\operatorname{Cov}(w_i,\mu_i)=0$; $\operatorname{Cov}(X_i^*,\mu_i)=0$; e **erro clássico**, $\operatorname{Cov}(X_i^*,w_i)=0$. Então (i) $\operatorname{Cov}(z_i,X_i)=-\beta\sigma_w^2$, com $z_i=\mu_i-\beta w_i$; (ii) o MQO é viesado (sob normalidade conjunta, $E[b]=\beta\lambda$ exatamente); (iii) $\operatorname{plim}b=\beta\lambda$ e $\operatorname{plim}a=\alpha+\beta(1-\lambda)\mu_{X^*}$, com
+> Modelo verdadeiro $Y_i=\alpha+\beta X_i^*+\mu_i$; observa-se $X_i=X_i^*+w_i$. Hipóteses: observações i.i.d. ($w$ serialmente independente); $E(\mu_i)=E(w_i)=0$; $\operatorname{Var}(w_i)=\sigma_w^2>0$; $\operatorname{Var}(X_i^*)=\sigma_{X^*}^2>0$; $\operatorname{Cov}(w_i,\mu_i)=0$; $\operatorname{Cov}(X_i^*,\mu_i)=0$; e **erro clássico**, $\operatorname{Cov}(X_i^*,w_i)=0$. Então (i) $\operatorname{Cov}(z_i,X_i)=-\beta\sigma_w^2$, com $z_i=\mu_i-\beta w_i$; (ii) o MQO é viesado (sob normalidade conjunta, $E(\mathbf b)=\beta\lambda$ exatamente); (iii) $\operatorname{plim}\mathbf b=\beta\lambda$ e $\operatorname{plim}a=\alpha+\beta(1-\lambda)\mu_{X^*}$, com
 >
 > $$\lambda=\frac{\sigma_{X^*}^2}{\sigma_{X^*}^2+\sigma_w^2}\in(0,1).$$
 
@@ -139,7 +139,7 @@ A inclinação erra por $\sigma_{x\varepsilon}/\sigma_x^2$ e o intercepto erra p
 
 **Passo a passo.**
 
-1. Substitua $X_i^*=X_i-w_i$ no modelo verdadeiro. *[A1 no modelo verdadeiro; álgebra]*
+1. Substitua $X_i^*=X_i-w_i$ no modelo verdadeiro. *[H1 no modelo verdadeiro; álgebra]*
 
 $$
 Y_i=\alpha+\beta(X_i-w_i)+\mu_i=\alpha+\beta X_i+\underbrace{(\mu_i-\beta w_i)}_{z_i}.
@@ -156,21 +156,21 @@ $$
 \boxed{\operatorname{Cov}(z_i,X_i)=-\beta\sigma_w^2\neq 0\quad(\beta\neq 0).}
 $$
 
-3. A exogeneidade cai. Se valesse $E[z_i\mid X_i]=0$, teríamos $\operatorname{Cov}(z_i,X_i)=E[X_iz_i]-E[X_i]E[z_i]=E\big[X_i\,E[z_i\mid X_i]\big]-0=0$ *[lei das expectativas iteradas; $E[z_i]=0$]*, o que contradiz o passo 2. Logo $E[z_i\mid X_i]\neq 0$ e a prova de não-viés de D9 não fecha: em $b=\beta+\sum_ik_iz_i$, o termo $\sum_ik_iE[z_i\mid X]$ não se anula.
+3. A exogeneidade cai. Se valesse $E(z_i\mid X_i)=0$, teríamos $\operatorname{Cov}(z_i,X_i)=E(X_iz_i)-E(X_i)E(z_i)=E\big(X_i\,E(z_i\mid X_i)\big)-0=0$ *[lei das expectativas iteradas; $E(z_i)=0$]*, o que contradiz o passo 2. Logo $E(z_i\mid X_i)\neq 0$ e a prova de não-viés de D9 não fecha: em $b=\beta+\sum_ik_iz_i$, o termo $\sum_ik_iE(z_i\mid X)$ não se anula.
 
 4. Viés exato sob normalidade conjunta. Suponha $(X_i^*,w_i,\mu_i)$ normais e independentes entre $i$. Então $(z_i,X_i)$ é normal bivariado, $\operatorname{Var}(X_i)=\sigma_{X^*}^2+\sigma_w^2$ (erro clássico) e a regressão condicional é linear *[propriedade da normal, Greene Ap. B]*:
 
 $$
-E[z_i\mid X]=E[z_i\mid X_i]=\frac{\operatorname{Cov}(z_i,X_i)}{\operatorname{Var}(X_i)}(X_i-\mu_{X^*})=-\beta(1-\lambda)(X_i-\mu_{X^*}).
+E(z_i\mid X)=E(z_i\mid X_i)=\frac{\operatorname{Cov}(z_i,X_i)}{\operatorname{Var}(X_i)}(X_i-\mu_{X^*})=-\beta(1-\lambda)(X_i-\mu_{X^*}).
 $$
 
 A primeira igualdade usa a independência entre observações. Então, com os pesos de D9 ($\sum k_i=0$, $\sum k_iX_i=1$):
 
 $$
-E[b\mid X]=\beta+\sum_ik_iE[z_i\mid X]=\beta-\beta(1-\lambda)\Big(\sum_ik_iX_i-\mu_{X^*}\sum_ik_i\Big)=\beta-\beta(1-\lambda)=\beta\lambda .
+E(b\mid X)=\beta+\sum_ik_iE(z_i\mid X)=\beta-\beta(1-\lambda)\Big(\sum_ik_iX_i-\mu_{X^*}\sum_ik_i\Big)=\beta-\beta(1-\lambda)=\beta\lambda .
 $$
 
-Pela lei das expectativas iteradas, $E[b]=\beta\lambda\neq\beta$: viesado, **em direção a zero**.
+Pela lei das expectativas iteradas, $E(b)=\beta\lambda\neq\beta$: viesado, **em direção a zero**.
 
 5. Inconsistência, sem precisar de normalidade. Escreva $b-\beta$ como razão de médias amostrais:
 
@@ -178,13 +178,13 @@ $$
 b-\beta=\frac{\tfrac1n\sum_i(X_i-\bar X)z_i}{\tfrac1n\sum_i(X_i-\bar X)^2}.
 $$
 
-O numerador é $\tfrac1n\sum X_iz_i-\bar X\bar z\xrightarrow{p}E[Xz]-E[X]E[z]=\operatorname{Cov}(X,z)=-\beta\sigma_w^2$. O denominador tende a $\operatorname{Var}(X)=\sigma_{X^*}^2+\sigma_w^2>0$ *[Khinchine; Slutsky]*. Pela regra da razão:
+O numerador é $\tfrac1n\sum X_iz_i-\bar X\bar z\xrightarrow{p}E(Xz)-E(X)E(z)=\operatorname{Cov}(X,z)=-\beta\sigma_w^2$. O denominador tende a $\operatorname{Var}(X)=\sigma_{X^*}^2+\sigma_w^2>0$ *[Khinchine; Slutsky]*. Pela regra da razão:
 
 $$
-\operatorname{plim}b=\beta-\frac{\beta\sigma_w^2}{\sigma_{X^*}^2+\sigma_w^2}=\beta\,\frac{\sigma_{X^*}^2}{\sigma_{X^*}^2+\sigma_w^2}=\beta\lambda .
+\operatorname{plim}\mathbf b=\beta-\frac{\beta\sigma_w^2}{\sigma_{X^*}^2+\sigma_w^2}=\beta\,\frac{\sigma_{X^*}^2}{\sigma_{X^*}^2+\sigma_w^2}=\beta\lambda .
 $$
 
-6. Intercepto: $a=\bar Y-b\bar X$, com $E[Y]=\alpha+\beta\mu_{X^*}$ e $E[X]=\mu_{X^*}$ (porque $E[w]=0$). *[Khinchine; Slutsky]*
+6. Intercepto: $a=\bar Y-b\bar X$, com $E(Y)=\alpha+\beta\mu_{X^*}$ e $E(X)=\mu_{X^*}$ (porque $E(w)=0$). *[Khinchine; Slutsky]*
 
 $$
 \operatorname{plim}a=\alpha+\beta\mu_{X^*}-\beta\lambda\mu_{X^*}=\alpha+\beta(1-\lambda)\mu_{X^*}.
@@ -193,7 +193,7 @@ $$
 Os **dois** estimadores de MQO são inconsistentes (o de $\alpha$ só escapa se $\mu_{X^*}=0$).
 
 $$
-\boxed{\operatorname{plim}b=\beta\lambda,\qquad \lvert\operatorname{plim}b\rvert\lt\lvert\beta\rvert,\qquad \operatorname{sinal}(\operatorname{plim}b)=\operatorname{sinal}(\beta).}
+\boxed{\operatorname{plim}\mathbf b=\beta\lambda,\qquad \lvert\operatorname{plim}\mathbf b\rvert\lt\lvert\beta\rvert,\qquad \operatorname{sinal}(\operatorname{plim}\mathbf b)=\operatorname{sinal}(\beta).}
 $$
 
 A simulação do script confirma o plim (figuras [atenuação por $n$](figuras/10_atenuacao_densidades.png) e [curva de confiabilidade](figuras/10_atenuacao_confiabilidade.png)); os números estão na tabela do ex. 68 em [10_lista1.md](10_lista1.md).
@@ -210,7 +210,7 @@ A simulação do script confirma o plim (figuras [atenuação por $n$](figuras/1
 
 > [!NOTE]
 > **O que se quer provar**
-> Modelo verdadeiro $Y_i^*=\alpha+\beta X_i+\mu_i$; observa-se $Y_i=Y_i^*+\varepsilon_i$, logo $Y_i=\alpha+\beta X_i+v_i$ com $v_i=\mu_i+\varepsilon_i$. Hipóteses do ex. 70: $X$ não estocástico; $E[\mu_i]=E[\varepsilon_i]=0$; $\operatorname{Var}(\mu_i)=\sigma_\mu^2$; $\operatorname{Var}(\varepsilon_i)=\sigma_\varepsilon^2$; $\operatorname{Cov}(\mu_i,\varepsilon_i)=0$. Acrescente o que a variância exige: $\operatorname{Cov}(v_i,v_j)=0$ para $i\neq j$. Então $E[b]=\beta$, $E[a]=\alpha$ e
+> Modelo verdadeiro $Y_i^*=\alpha+\beta X_i+\mu_i$; observa-se $Y_i=Y_i^*+\varepsilon_i$, logo $Y_i=\alpha+\beta X_i+v_i$ com $v_i=\mu_i+\varepsilon_i$. Hipóteses do ex. 70: $X$ não estocástico; $E(\mu_i)=E(\varepsilon_i)=0$; $\operatorname{Var}(\mu_i)=\sigma_\mu^2$; $\operatorname{Var}(\varepsilon_i)=\sigma_\varepsilon^2$; $\operatorname{Cov}(\mu_i,\varepsilon_i)=0$. Acrescente o que a variância exige: $\operatorname{Cov}(v_i,v_j)=0$ para $i\neq j$. Então $E(b)=\beta$, $E(a)=\alpha$ e
 >
 > $$\operatorname{Var}(b)=\frac{\sigma_\mu^2+\sigma_\varepsilon^2}{S_{XX}}\gt\frac{\sigma_\mu^2}{S_{XX}}=\operatorname{Var}(b^*).$$
 
@@ -223,10 +223,10 @@ A simulação do script confirma o plim (figuras [atenuação por $n$](figuras/1
 2. Com $X$ fixo, os $k_i$ são constantes. *[linearidade de $E$]*
 
 $$
-E[b]=\beta+\sum_ik_i\big(E[\mu_i]+E[\varepsilon_i]\big)=\beta .
+E(b)=\beta+\sum_ik_i\big(E(\mu_i)+E(\varepsilon_i)\big)=\beta .
 $$
 
-3. Intercepto: $a=\bar Y-b\bar X=\alpha+\beta\bar X+\bar v-b\bar X=\alpha-(b-\beta)\bar X+\bar v$, logo $E[a]=\alpha-0\cdot\bar X+0=\alpha$.
+3. Intercepto: $a=\bar Y-b\bar X=\alpha+\beta\bar X+\bar v-b\bar X=\alpha-(b-\beta)\bar X+\bar v$, logo $E(a)=\alpha-0\cdot\bar X+0=\alpha$.
 
 4. Variância. *[Var de forma linear; $\operatorname{Cov}(\mu_i,\varepsilon_i)=0$; $\operatorname{Cov}(v_i,v_j)=0$]*
 
@@ -244,27 +244,27 @@ $$
 \operatorname{Var}(b)-\operatorname{Var}(b^*)=\frac{\sigma_\varepsilon^2}{S_{XX}}\gt 0,\qquad \frac{\operatorname{Var}(b)}{\operatorname{Var}(b^*)}=1+\frac{\sigma_\varepsilon^2}{\sigma_\mu^2}.
 $$
 
-6. Consistência: se $S_{XX}\to\infty$ (por exemplo, $S_{XX}/n\to q\gt 0$), então $\operatorname{Var}(b)\to 0$; com $E[b]=\beta$, $b$ converge em média quadrática e, portanto, em probabilidade. O erro em $Y$ não afeta a consistência.
+6. Consistência: se $S_{XX}\to\infty$ (por exemplo, $S_{XX}/n\to q\gt 0$), então $\operatorname{Var}(b)\to 0$; com $E(b)=\beta$, $b$ converge em média quadrática e, portanto, em probabilidade. O erro em $Y$ não afeta a consistência.
 
-7. Inferência: $s^2=\sum\hat v_i^2/(n-2)$ é não viesado para $\sigma_\mu^2+\sigma_\varepsilon^2$ (é o $s^2$ de um MRLC com erro $v$). Os erros-padrão reportados estão **certos** para este modelo, só que maiores. Os $t$ ficam menores, o teste perde poder e o $R^2$ cai.
+7. Inferência: $s^2=\sum\widehat v_i^2/(n-2)$ é não viesado para $\sigma_\mu^2+\sigma_\varepsilon^2$ (é o $s^2$ de um MRLC com erro $v$). Os erros-padrão reportados estão **certos** para este modelo, só que maiores. Os $t$ ficam menores, o teste perde poder e o $R^2$ cai.
 
 $$
-\boxed{E[b]=\beta,\qquad \operatorname{Var}(b)=\frac{\sigma_\mu^2+\sigma_\varepsilon^2}{\sum_i(X_i-\bar X)^2}.}
+\boxed{E(b)=\beta,\qquad \operatorname{Var}(b)=\frac{\sigma_\mu^2+\sigma_\varepsilon^2}{\sum_i(X_i-\bar X)^2}.}
 $$
 
 > [!TIP]
 > **Como o professor pode torcer**
-> - **Erro correlacionado com $X$** (com $X$ aleatório e $\operatorname{Cov}(X,\varepsilon)=\sigma_{X\varepsilon}\neq 0$): $b=\beta+\sum k_i\mu_i+\sum k_i\varepsilon_i$ e $\operatorname{plim}b=\beta+\sigma_{X\varepsilon}/\sigma_X^2$. Fica viesado e inconsistente. Exemplo: renda declarada que sub-reporta mais quanto maior a escolaridade. Se $\varepsilon_i=\delta(X_i-\mu_X)+e_i$, o MQO estima $\beta+\delta$.
-> - **Erro com média não nula** ($E[\varepsilon_i]=c$): a inclinação continua não viesada e o intercepto estima $\alpha+c$.
-> - Hipótese redundante no enunciado: com $X$ não estocástico, $\operatorname{Cov}(X_i,v_i)=0$ e $\operatorname{Cov}(X_i,\varepsilon_i)=0$ valem automaticamente. A hipótese que falta, e que a variância usa, é a ausência de correlação entre observações.
+> - **Erro correlacionado com $\mathbf X$** (com $\mathbf X$ aleatório e $\operatorname{Cov}(\mathbf X,\varepsilon)=\sigma_{X\varepsilon}\neq 0$): $\mathbf b=\beta+\sum k_i\mu_i+\sum k_i\varepsilon_i$ e $\operatorname{plim}\mathbf b=\beta+\sigma_{X\varepsilon}/\sigma_{\mathbf X}^2$. Fica viesado e inconsistente. Exemplo: renda declarada que sub-reporta mais quanto maior a escolaridade. Se $\varepsilon_i=\delta(X_i-\mu_{\mathbf X})+e_i$, o MQO estima $\beta+\delta$.
+> - **Erro com média não nula** ($E(\varepsilon_i)=c$): a inclinação continua não viesada e o intercepto estima $\alpha+c$.
+> - Hipótese redundante no enunciado: com $\mathbf X$ não estocástico, $\operatorname{Cov}(X_i,v_i)=0$ e $\operatorname{Cov}(X_i,\varepsilon_i)=0$ valem automaticamente. A hipótese que falta, e que a variância usa, é a ausência de correlação entre observações.
 
 ### D10.4 · Simultaneidade no modelo keynesiano
 
 > [!NOTE]
 > **O que se quer provar**
-> $C_t=\beta_0+\beta_1Y_t+u_t$ e $Y_t=C_t+I_t$, com $0\lt\beta_1\lt 1$, $E[u_t]=0$, $E[u_t^2]=\sigma^2$, $E[u_tu_{t+j}]=0$ ($j\neq 0$), $\operatorname{Cov}(I_t,u_t)=0$ e momentos amostrais que convergem para os populacionais, com $\sigma_I^2=\operatorname{Var}(I_t)\gt 0$. Então
+> $C_t=\beta_0+\beta_1Y_t+u_t$ e $Y_t=C_t+I_t$, com $0\lt\beta_1\lt 1$, $E(u_t)=0$, $E(u_t^2)=\sigma^2$, $E(u_tu_{t+j})=0$ ($j\neq 0$), $\operatorname{Cov}(I_t,u_t)=0$ e momentos amostrais que convergem para os populacionais, com $\sigma_I^2=\operatorname{Var}(I_t)\gt 0$. Então
 >
-> $$\operatorname{plim}\hat\beta_1=\beta_1+\frac{(1-\beta_1)\,\sigma^2}{\sigma_I^2+\sigma^2}\gt\beta_1,$$
+> $$\operatorname{plim}\widehat\beta_1=\beta_1+\frac{(1-\beta_1)\,\sigma^2}{\sigma_I^2+\sigma^2}\gt\beta_1,$$
 >
 > e o estimador de VI que usa $I_t$ como instrumento é consistente.
 
@@ -284,7 +284,7 @@ $$
 \operatorname{Cov}(Y_t,u_t)=\frac{\operatorname{Cov}(I_t,u_t)+\operatorname{Var}(u_t)}{1-\beta_1}=\frac{\sigma^2}{1-\beta_1}\neq 0 .
 $$
 
-$Y_t$ é endógena: [A3] falha.
+$Y_t$ é endógena: [H2] falha.
 
 3. Variância do regressor. *[Var de forma linear; $\operatorname{Cov}(I,u)=0$]*
 
@@ -295,24 +295,24 @@ $$
 4. MQO em desvios ($y_t=Y_t-\bar Y$, $c_t=C_t-\bar C$): $c_t=\beta_1y_t+(u_t-\bar u)$, logo, como $\sum_ty_t=0$ *[D5]*,
 
 $$
-\hat\beta_1=\frac{\sum_ty_tc_t}{\sum_ty_t^2}=\beta_1+\frac{\sum_ty_tu_t}{\sum_ty_t^2}=\beta_1+\frac{\tfrac1n\sum_ty_tu_t}{\tfrac1n\sum_ty_t^2}.
+\widehat\beta_1=\frac{\sum_ty_tc_t}{\sum_ty_t^2}=\beta_1+\frac{\sum_ty_tu_t}{\sum_ty_t^2}=\beta_1+\frac{\tfrac1n\sum_ty_tu_t}{\tfrac1n\sum_ty_t^2}.
 $$
 
 5. Plim: o numerador tende a $\operatorname{Cov}(Y,u)$ e o denominador a $\operatorname{Var}(Y)\gt 0$ *[LGN; regra da razão de Slutsky]*. Usando os passos 2 e 3:
 
 $$
-\operatorname{plim}\hat\beta_1=\beta_1+\frac{\sigma^2/(1-\beta_1)}{(\sigma_I^2+\sigma^2)/(1-\beta_1)^2}=\beta_1+\frac{(1-\beta_1)\,\sigma^2}{\sigma_I^2+\sigma^2}.
+\operatorname{plim}\widehat\beta_1=\beta_1+\frac{\sigma^2/(1-\beta_1)}{(\sigma_I^2+\sigma^2)/(1-\beta_1)^2}=\beta_1+\frac{(1-\beta_1)\,\sigma^2}{\sigma_I^2+\sigma^2}.
 $$
 
-6. Sinal e tamanho: $1-\beta_1\gt 0$, $\sigma^2\gt 0$ e $\sigma^2/(\sigma_I^2+\sigma^2)\in(0,1)$. Logo $0\lt\operatorname{plim}\hat\beta_1-\beta_1\lt 1-\beta_1$, isto é, $\operatorname{plim}\hat\beta_1\in(\beta_1,1)$: o MQO **superestima** a propensão marginal a consumir.
+6. Sinal e tamanho: $1-\beta_1\gt 0$, $\sigma^2\gt 0$ e $\sigma^2/(\sigma_I^2+\sigma^2)\in(0,1)$. Logo $0\lt\operatorname{plim}\widehat\beta_1-\beta_1\lt 1-\beta_1$, isto é, $\operatorname{plim}\widehat\beta_1\in(\beta_1,1)$: o MQO **superestima** a propensão marginal a consumir.
 
 $$
-\boxed{\operatorname{plim}\hat\beta_1-\beta_1=\frac{(1-\beta_1)\,\sigma^2}{\sigma_I^2+\sigma^2}\gt 0 .}
+\boxed{\operatorname{plim}\widehat\beta_1-\beta_1=\frac{(1-\beta_1)\,\sigma^2}{\sigma_I^2+\sigma^2}\gt 0 .}
 $$
 
-7. Por que plim e não viés: $E[\hat\beta_1]$ é a esperança de uma razão de variáveis aleatórias, sem forma fechada. O plim passa pela razão (Slutsky); a esperança não passa. Por isso o enunciado pede **inconsistência**.
+7. Por que plim e não viés: $E(\widehat\beta_1)$ é a esperança de uma razão de variáveis aleatórias, sem forma fechada. O plim passa pela razão (Slutsky); a esperança não passa. Por isso o enunciado pede **inconsistência**.
 
-8. Remédio. $I_t$ é exógeno ($\operatorname{Cov}(I,u)=0$) e relevante ($\operatorname{Cov}(I,Y)=\sigma_I^2/(1-\beta_1)\neq 0$). O estimador de VI $\hat\beta_1^{IV}=\sum_ti_tc_t/\sum_ti_ty_t$ (D10.5 bivariado) satisfaz $\operatorname{plim}\hat\beta_1^{IV}=\beta_1+\operatorname{Cov}(I,u)/\operatorname{Cov}(I,Y)=\beta_1$. Ele coincide com os mínimos quadrados indiretos: a forma reduzida $C_t=\pi_0+\pi_1I_t+\cdots$ tem $\pi_1=\beta_1/(1-\beta_1)$; como $\sum i_ty_t=\sum i_tc_t+\sum i_t^2$, vale $\hat\pi_1/(1+\hat\pi_1)=\sum i_tc_t/\sum i_ty_t$.
+8. Remédio. $I_t$ é exógeno ($\operatorname{Cov}(I,u)=0$) e relevante ($\operatorname{Cov}(I,Y)=\sigma_I^2/(1-\beta_1)\neq 0$). O estimador de VI $\widehat\beta_1^{IV}=\sum_ti_tc_t/\sum_ti_ty_t$ (D10.5 bivariado) satisfaz $\operatorname{plim}\widehat\beta_1^{IV}=\beta_1+\operatorname{Cov}(I,u)/\operatorname{Cov}(I,Y)=\beta_1$. Ele coincide com os mínimos quadrados indiretos: a forma reduzida $C_t=\pi_0+\pi_1I_t+\cdots$ tem $\pi_1=\beta_1/(1-\beta_1)$; como $\sum i_ty_t=\sum i_tc_t+\sum i_t^2$, vale $\widehat\pi_1/(1+\widehat\pi_1)=\sum i_tc_t/\sum i_ty_t$.
 
 Monte Carlo no script, com os números na tabela do ex. 69 em [10_lista1.md](10_lista1.md) e a [figura MQO × VI](figuras/10_keynes_mqo_vs_vi.png).
 
@@ -320,25 +320,25 @@ Monte Carlo no script, com os números na tabela do ex. 69 em [10_lista1.md](10_
 > **Como o professor pode torcer**
 > - Pedir só $\operatorname{Cov}(Y_t,u_t)$: é o passo 2, e a forma reduzida é obrigatória.
 > - Com governo, $Y=C+I+G$: troque $I$ por $I+G$ em tudo.
-> - Quanto maior $\sigma_I^2$ (mais variação exógena na renda), menor a inconsistência. Com $\sigma_I^2\to 0$, $\operatorname{plim}\hat\beta_1\to 1$.
+> - Quanto maior $\sigma_I^2$ (mais variação exógena na renda), menor a inconsistência. Com $\sigma_I^2\to 0$, $\operatorname{plim}\widehat\beta_1\to 1$.
 > - Demanda e oferta (SL10, p. 7): o mesmo argumento dá $\operatorname{Cov}(P,\varepsilon_D)\neq 0$, porque o preço de equilíbrio depende dos dois choques.
 
 ### D10.5 · Estimador de VI no caso exatamente identificado
 
 > [!NOTE]
 > **O que se quer provar**
-> $y=X\beta+\varepsilon$ com $E[\varepsilon\mid X]=\eta\neq 0$; $Z$ é $n\times L$ com $L=K$; variâncias finitas; [I1] $\operatorname{plim}Z'\varepsilon/n=0$; [I2] $Q_{ZX}$ ($K\times K$) não singular. Derivar
+> $\mathbf y=\mathbf X\beta+\varepsilon$ com $E(\varepsilon\mid \mathbf X)=\eta\neq 0$; $\mathbf Z$ é $n\times L$ com $L=K$; variâncias finitas; [I1] $\operatorname{plim}\mathbf Z'\varepsilon/n=0$; [I2] $\mathbf Q_{ZX}$ ($K\times K$) não singular. Derivar
 >
-> $$b_{IV}=(Z'X)^{-1}Z'y .$$
+> $$\mathbf b_{IV}=(\mathbf Z'\mathbf X)^{-1}\mathbf Z'\mathbf y .$$
 
 **Por que importa.** Ex. 65 e Q6 da P1 2025/2 (versão curta na prova resolvida). A versão rigorosa separa três coisas: **identificação** (o parâmetro é função de momentos populacionais), **estimação** (princípio da analogia) e **existência** da inversa.
 
 **Passo a passo.**
 
-1. Parta de [I1] e substitua $\varepsilon=y-X\beta$ *[A1]*. Como $Z'y/n=(Z'X/n)\beta+Z'\varepsilon/n\xrightarrow{p}Q_{ZX}\beta$, o limite $q_{Zy}\equiv\operatorname{plim}Z'y/n$ existe. Pela linearidade do plim ($\beta$ é constante):
+1. Parta de [I1] e substitua $\varepsilon=\mathbf y-\mathbf X\beta$ *[H1]*. Como $\mathbf Z'\mathbf y/n=(\mathbf Z'\mathbf X/n)\beta+\mathbf Z'\varepsilon/n\xrightarrow{p}\mathbf Q_{ZX}\beta$, o limite $q_{Zy}\equiv\operatorname{plim}\mathbf Z'\mathbf y/n$ existe. Pela linearidade do plim ($\beta$ é constante):
 
 $$
-0=\operatorname{plim}\frac{Z'(y-X\beta)}{n}=q_{Zy}-Q_{ZX}\beta .
+0=\operatorname{plim}\frac{\mathbf Z'(\mathbf y-\mathbf X\beta)}{n}=q_{Zy}-\mathbf Q_{ZX}\beta .
 $$
 
 2. São $K$ equações lineares em $K$ incógnitas. Por [I2], $Q_{ZX}$ é inversível. Então $\beta$ fica **identificado**, escrito só com momentos de variáveis observáveis:
@@ -350,20 +350,20 @@ $$
 3. Princípio da analogia (método dos momentos): troque os momentos populacionais pelos amostrais. O estimador é o vetor que zera a condição de momento **amostral**:
 
 $$
-\frac1nZ'(y-Xb_{IV})=0\;\Longleftrightarrow\;Z'X\,b_{IV}=Z'y .
+\frac1nZ'(\mathbf y-\mathbf X\mathbf b_{IV})=0\;\Longleftrightarrow\;\mathbf Z'\mathbf X\,\mathbf b_{IV}=\mathbf Z'\mathbf y .
 $$
 
-Dimensões: $Z'$ é $K\times n$, $X$ é $n\times K$, $Z'X$ é $K\times K$, $Z'y$ é $K\times 1$.
+Dimensões: $\mathbf Z'$ é $K\times n$, $\mathbf X$ é $n\times K$, $\mathbf Z'\mathbf X$ é $K\times K$, $\mathbf Z'\mathbf y$ é $K\times 1$.
 
-4. Como $Z'X/n\xrightarrow{p}Q_{ZX}$ não singular, $Z'X$ é inversível com probabilidade tendendo a 1 *[Slutsky: o determinante é contínuo]*. Os $n$ se cancelam:
+4. Como $\mathbf Z'\mathbf X/n\xrightarrow{p}\mathbf Q_{ZX}$ não singular, $\mathbf Z'\mathbf X$ é inversível com probabilidade tendendo a 1 *[Slutsky: o determinante é contínuo]*. Os $n$ se cancelam:
 
 $$
-\boxed{b_{IV}=\Big(\frac{Z'X}{n}\Big)^{-1}\frac{Z'y}{n}=(Z'X)^{-1}Z'y .}
+\boxed{\mathbf b_{IV}=\Big(\frac{\mathbf Z'\mathbf X}{n}\Big)^{-1}\frac{\mathbf Z'\mathbf y}{n}=(\mathbf Z'\mathbf X)^{-1}\mathbf Z'\mathbf y .}
 $$
 
-5. Por que $L=K$: com $L\gt K$, $Z'X$ é $L\times K$, não é quadrada, e o sistema $Z'Xb=Z'y$ tem $L$ equações para $K$ incógnitas, em geral sem solução exata na amostra. Aí entram o MQ2E (D10.7) e o GMM (D10.13), que combinam as $L$ condições.
+5. Por que $L=K$: com $L\gt K$, $\mathbf Z'\mathbf X$ é $L\times K$, não é quadrada, e o sistema $\mathbf Z'\mathbf X\mathbf b=\mathbf Z'\mathbf y$ tem $L$ equações para $K$ incógnitas, em geral sem solução exata na amostra. Aí entram o MQ2E (D10.7) e o GMM (D10.13), que combinam as $L$ condições.
 
-6. Caso bivariado (SL10, p. 26): $X=[\iota\;\;x]$ e $Z=[\iota\;\;z]$. O sistema $Z'Xb=Z'y$ é
+6. Caso bivariado (SL10, p. 26): $\mathbf X=[\iota\;\;x]$ e $\mathbf Z=[\iota\;\;z]$. O sistema $\mathbf Z'\mathbf X\mathbf b=\mathbf Z'\mathbf y$ é
 
 $$
 \begin{bmatrix}n&\sum x_i\\ \sum z_i&\sum z_ix_i\end{bmatrix}\begin{bmatrix}a\\ b\end{bmatrix}=\begin{bmatrix}\sum y_i\\ \sum z_iy_i\end{bmatrix}.
@@ -379,62 +379,62 @@ O script confere essa fórmula com o `ivreg` (chave `m10_biv_dif` em [10_lista1.
 
 > [!TIP]
 > **Como o professor pode torcer**
-> - "Mostre que $b_{IV}$ é não viesado": **não dá**. $b_{IV}-\beta=(Z'X)^{-1}Z'\varepsilon$, e $X$ continua aleatório e correlacionado com $\varepsilon$ mesmo condicionando em $Z$. O resultado correto é consistência (D10.6). Sob normalidade, o VI exatamente identificado nem tem média finita (Kinal, 1980).
-> - "E se $Z=X$?" Então $b_{IV}=(X'X)^{-1}X'y=b$: o MQO é o VI em que cada regressor é instrumento de si mesmo (SL10, p. 28). Só é válido se [A3] valer.
-> - Cuidado com a ordem: é $(Z'X)^{-1}Z'y$, não $(X'Z)^{-1}Z'y$. As dimensões até batem, mas o sistema resolvido não é o mesmo.
+> - "Mostre que $\mathbf b_{IV}$ é não viesado": **não dá**. $\mathbf b_{IV}-\beta=(\mathbf Z'\mathbf X)^{-1}\mathbf Z'\varepsilon$, e $\mathbf X$ continua aleatório e correlacionado com $\varepsilon$ mesmo condicionando em $\mathbf Z$. O resultado correto é consistência (D10.6). Sob normalidade, o VI exatamente identificado nem tem média finita (Kinal, 1980).
+> - "E se $\mathbf Z=\mathbf X$?" Então $\mathbf b_{IV}=(\mathbf X'\mathbf X)^{-1}\mathbf X'\mathbf y=\mathbf b$: o MQO é o VI em que cada regressor é instrumento de si mesmo (SL10, p. 28). Só é válido se [H2] valer.
+> - Cuidado com a ordem: é $(\mathbf Z'\mathbf X)^{-1}\mathbf Z'\mathbf y$, não $(\mathbf X'\mathbf Z)^{-1}\mathbf Z'\mathbf y$. As dimensões até batem, mas o sistema resolvido não é o mesmo.
 > - Relevância é o que garante a inversa. Com $Q_{ZX}$ singular (instrumento irrelevante), $\beta$ não é identificado.
 
 ### D10.6 · Consistência e variância assintótica do estimador de VI
 
 > [!NOTE]
 > **O que se quer provar**
-> Sob [A1], [I1]–[I3] com $L=K$: (i) $\operatorname{plim}b_{IV}=\beta$; (ii) $\sqrt n(b_{IV}-\beta)\xrightarrow{d}N\big(0,\sigma^2Q_{ZX}^{-1}Q_{ZZ}Q_{XZ}^{-1}\big)$; (iii) $\operatorname{Est.Asy.Var}(b_{IV})=\hat\sigma^2(Z'X)^{-1}Z'Z(X'Z)^{-1}$, com $\hat\sigma^2=\tfrac1n\sum_i(y_i-x_i'b_{IV})^2$ consistente para $\sigma^2$.
+> Sob [H1], [I1]–[I3] com $L=K$: (i) $\operatorname{plim}\mathbf b_{IV}=\beta$; (ii) $\sqrt n(\mathbf b_{IV}-\beta)\xrightarrow{d}N\big(0,\sigma^2\mathbf Q_{ZX}^{-1}\mathbf Q_{ZZ}\mathbf Q_{XZ}^{-1}\big)$; (iii) $\operatorname{Est.Asy.Var}(\mathbf b_{IV})=\widehat\sigma^2(\mathbf Z'\mathbf X)^{-1}\mathbf Z'\mathbf Z(\mathbf X'\mathbf Z)^{-1}$, com $\widehat\sigma^2=\tfrac1n\sum_i(y_i-\mathbf x_i'\mathbf b_{IV})^2$ consistente para $\sigma^2$.
 
 **Por que importa.** Completa o ex. 65 (o professor pode pedir "e mostre que é consistente") e dá a fórmula do SL10, p. 30. É daqui que saem os erros-padrão do `ivreg` e a comparação de eficiência de D10.9.
 
 **Passo a passo.**
 
-1. Substitua $y=X\beta+\varepsilon$ *[A1]*: $b_{IV}=(Z'X)^{-1}Z'X\beta+(Z'X)^{-1}Z'\varepsilon=\beta+(Z'X)^{-1}Z'\varepsilon$.
+1. Substitua $\mathbf y=\mathbf X\beta+\varepsilon$ *[H1]*: $\mathbf b_{IV}=(\mathbf Z'\mathbf X)^{-1}\mathbf Z'\mathbf X\beta+(\mathbf Z'\mathbf X)^{-1}\mathbf Z'\varepsilon=\beta+(\mathbf Z'\mathbf X)^{-1}\mathbf Z'\varepsilon$.
 
 2. Consistência. Divida por $n$ e tome o plim. *[Slutsky para a inversa; I2; I1; produto de plims]*
 
 $$
-\operatorname{plim}(b_{IV}-\beta)=\Big[\operatorname{plim}\frac{Z'X}{n}\Big]^{-1}\operatorname{plim}\frac{Z'\varepsilon}{n}=Q_{ZX}^{-1}\cdot 0=0 .
+\operatorname{plim}(\mathbf b_{IV}-\beta)=\Big[\operatorname{plim}\frac{\mathbf Z'\mathbf X}{n}\Big]^{-1}\operatorname{plim}\frac{\mathbf Z'\varepsilon}{n}=\mathbf Q_{ZX}^{-1}\cdot 0=0 .
 $$
 
-$X'\varepsilon$ não aparece em lugar nenhum: o $\gamma\neq 0$ de D10.1 é irrelevante para o VI.
+$\mathbf X'\varepsilon$ não aparece em lugar nenhum: o $\gamma\neq 0$ de D10.1 é irrelevante para o VI.
 
 3. Distribuição. Multiplique por $\sqrt n$:
 
 $$
-\sqrt n(b_{IV}-\beta)=\Big(\frac{Z'X}{n}\Big)^{-1}\frac{Z'\varepsilon}{\sqrt n}.
+\sqrt n(\mathbf b_{IV}-\beta)=\Big(\frac{\mathbf Z'\mathbf X}{n}\Big)^{-1}\frac{\mathbf Z'\varepsilon}{\sqrt n}.
 $$
 
-Por [I3], $Z'\varepsilon/\sqrt n=\tfrac1{\sqrt n}\sum_iz_i\varepsilon_i\xrightarrow{d}N(0,\sigma^2Q_{ZZ})$: os termos têm média $E[z_i\varepsilon_i]=0$ e variância $E[\varepsilon_i^2z_iz_i']=E\big[E[\varepsilon_i^2\mid z_i]z_iz_i'\big]=\sigma^2E[z_iz_i']$ *[LEI; homocedasticidade dado $z$; TLC]*. Por Cramér, com $(Q_{ZX}^{-1})'=(Q_{ZX}')^{-1}=Q_{XZ}^{-1}$:
+Por [I3], $\mathbf Z'\varepsilon/\sqrt n=\tfrac1{\sqrt n}\sum_iz_i\varepsilon_i\xrightarrow{d}N(0,\sigma^2\mathbf Q_{ZZ})$: os termos têm média $E(z_i\varepsilon_i)=0$ e variância $E(\varepsilon_i^2z_iz_i')=E\big(E(\varepsilon_i^2\mid z_i)z_iz_i'\big)=\sigma^2E(z_iz_i')$ *[LEI; homocedasticidade dado $z$; TLC]*. Por Cramér, com $(\mathbf Q_{ZX}^{-1})'=(\mathbf Q_{ZX}')^{-1}=\mathbf Q_{XZ}^{-1}$:
 
 $$
 \sqrt n(b_{IV}-\beta)\xrightarrow{d}N\big(0,\;\sigma^2Q_{ZX}^{-1}Q_{ZZ}Q_{XZ}^{-1}\big).
 $$
 
-4. Variância assintótica: divida por $n$ e troque os $Q$ pelos momentos amostrais. Os $n$ se cancelam: $\tfrac{\sigma^2}{n}(Z'X/n)^{-1}(Z'Z/n)(X'Z/n)^{-1}=\sigma^2(Z'X)^{-1}Z'Z(X'Z)^{-1}$. Dimensões: $(K\times K)(K\times K)(K\times K)$.
+4. Variância assintótica: divida por $n$ e troque os $\mathbf Q$ pelos momentos amostrais. Os $n$ se cancelam: $\tfrac{\sigma^2}{n}(\mathbf Z'\mathbf X/n)^{-1}(\mathbf Z'\mathbf Z/n)(\mathbf X'\mathbf Z/n)^{-1}=\sigma^2(\mathbf Z'\mathbf X)^{-1}\mathbf Z'\mathbf Z(\mathbf X'\mathbf Z)^{-1}$. Dimensões: $(K\times K)(K\times K)(K\times K)$.
 
 $$
-\boxed{\operatorname{Asy.Var}(b_{IV})=\sigma^2(Z'X)^{-1}Z'Z(X'Z)^{-1}.}
+\boxed{\operatorname{Asy.Var}(\mathbf b_{IV})=\sigma^2(\mathbf Z'\mathbf X)^{-1}\mathbf Z'\mathbf Z(\mathbf X'\mathbf Z)^{-1}.}
 $$
 
-5. $\hat\sigma^2$ é consistente. Com $e_{IV}=y-Xb_{IV}=\varepsilon-X(b_{IV}-\beta)$:
+5. $\widehat\sigma^2$ é consistente. Com $e_{IV}=y-Xb_{IV}=\varepsilon-X(b_{IV}-\beta)$:
 
 $$
-\frac{e_{IV}'e_{IV}}{n}=\frac{\varepsilon'\varepsilon}{n}-2(b_{IV}-\beta)'\frac{X'\varepsilon}{n}+(b_{IV}-\beta)'\frac{X'X}{n}(b_{IV}-\beta)\xrightarrow{p}\sigma^2-2\cdot 0'\gamma+0'Q_{XX}0=\sigma^2 .
+\frac{\mathbf e_{IV}'\mathbf e_{IV}}{n}=\frac{\varepsilon'\varepsilon}{n}-2(\mathbf b_{IV}-\beta)'\frac{\mathbf X'\varepsilon}{n}+(\mathbf b_{IV}-\beta)'\frac{\mathbf X'\mathbf X}{n}(\mathbf b_{IV}-\beta)\xrightarrow{p}\sigma^2-2\cdot 0'\gamma+0'\mathbf Q_{XX}0=\sigma^2 .
 $$
 
-O detalhe fino: $X'\varepsilon/n\to\gamma\neq 0$, mas $\gamma$ é finito e vem multiplicado por $b_{IV}-\beta\to 0$. O resíduo usa $X$, **não** $Z$ nem $\hat X$ (D10.8).
+O detalhe fino: $\mathbf X'\varepsilon/n\to\gamma\neq 0$, mas $\gamma$ é finito e vem multiplicado por $\mathbf b_{IV}-\beta\to 0$. O resíduo usa $\mathbf X$, **não** $\mathbf Z$ nem $\widehat{\mathbf X}$ (D10.8).
 
-6. Sem homocedasticidade, $\operatorname{Var}(Z'\varepsilon/\sqrt n)\to S=\operatorname{plim}\tfrac1n\sum\varepsilon_i^2z_iz_i'$ e a variância vira o sanduíche $(Z'X)^{-1}\big(\sum_ie_i^2z_iz_i'\big)(X'Z)^{-1}$. É o que `summary(iv, vcov = sandwich)` usa no ex. 67.
+6. Sem homocedasticidade, $\operatorname{Var}(\mathbf Z'\varepsilon/\sqrt n)\to S=\operatorname{plim}\tfrac1n\sum\varepsilon_i^2z_iz_i'$ e a variância vira o sanduíche $(\mathbf Z'\mathbf X)^{-1}\big(\sum_ie_i^2z_iz_i'\big)(\mathbf X'\mathbf Z)^{-1}$. É o que `summary(iv, vcov = sandwich)` usa no ex. 67.
 
 > [!WARNING]
 > **Leia a fórmula como assintótica**
-> O SL10 (p. 30) escreve a matriz como $E[(b_{IV}-\beta)(b_{IV}-\beta)'\mid X,Z]$. Não faça essa conta condicionando em $X$ na prova: com $X$ endógeno, $E[\varepsilon\mid X]=\eta\neq 0$, e $b_{IV}$ pode nem ter momentos finitos. O resultado rigoroso é o do passo 3. Escreva "Asy.Var".
+> O SL10 (p. 30) escreve a matriz como $E((\mathbf b_{IV}-\beta)(\mathbf b_{IV}-\beta)'\mid \mathbf X,\mathbf Z)$. Não faça essa conta condicionando em $\mathbf X$ na prova: com $\mathbf X$ endógeno, $E(\varepsilon\mid \mathbf X)=\eta\neq 0$, e $\mathbf b_{IV}$ pode nem ter momentos finitos. O resultado rigoroso é o do passo 3. Escreva "Asy.Var".
 
 > [!TIP]
 > **Como o professor pode torcer**
@@ -445,40 +445,40 @@ O detalhe fino: $X'\varepsilon/n\to\gamma\neq 0$, mas $\gamma$ é finito e vem m
 
 > [!NOTE]
 > **O que se quer provar**
-> Com $L\ge K$ instrumentos em $Z$ e $P_Z=Z(Z'Z)^{-1}Z'$,
-> $$\hat\beta_{MQ2E}=\big[X'Z(Z'Z)^{-1}Z'X\big]^{-1}X'Z(Z'Z)^{-1}Z'y=(\hat X'\hat X)^{-1}\hat X'y,\qquad \hat X=P_ZX.$$
+> Com $L\ge K$ instrumentos em $\mathbf Z$ e $\mathbf P_{\mathbf Z}=\mathbf Z(\mathbf Z'\mathbf Z)^{-1}\mathbf Z'$,
+> $$\widehat\beta_{MQ2E}=\big[\mathbf X'\mathbf Z(\mathbf Z'\mathbf Z)^{-1}\mathbf Z'\mathbf X\big]^{-1}\mathbf X'\mathbf Z(\mathbf Z'\mathbf Z)^{-1}\mathbf Z'\mathbf y=(\widehat{\mathbf X}'\widehat{\mathbf X})^{-1}\widehat{\mathbf X}'\mathbf y,\qquad \widehat{\mathbf X}=\mathbf P_{\mathbf Z}\mathbf X.$$
 
-**Por que importa.** Com mais instrumentos que regressores endógenos, $(Z'X)$ deixa de ser quadrada e o VI simples não existe. A saída é projetar $X$ no espaço de $Z$: fica-se com a parte de $X$ **explicada pelos instrumentos**, que é exógena por construção.
+**Por que importa.** Com mais instrumentos que regressores endógenos, $(\mathbf Z'\mathbf X)$ deixa de ser quadrada e o VI simples não existe. A saída é projetar $\mathbf X$ no espaço de $\mathbf Z$: fica-se com a parte de $\mathbf X$ **explicada pelos instrumentos**, que é exógena por construção.
 
 **Passo a passo.**
 
-1. Primeiro estágio: regrida cada coluna de $X$ em $Z$ e guarde os ajustados, $\hat X=Z(Z'Z)^{-1}Z'X=P_ZX$.
+1. Primeiro estágio: regrida cada coluna de $\mathbf X$ em $\mathbf Z$ e guarde os ajustados, $\widehat{\mathbf X}=\mathbf Z(\mathbf Z'\mathbf Z)^{-1}\mathbf Z'\mathbf X=\mathbf P_{\mathbf Z}\mathbf X$.
 
-2. Segundo estágio: MQO de $y$ em $\hat X$:
-$$\hat\beta=(\hat X'\hat X)^{-1}\hat X'y.$$
+2. Segundo estágio: MQO de $\mathbf y$ em $\widehat{\mathbf X}$:
+$$\widehat\beta=(\widehat{\mathbf X}'\widehat{\mathbf X})^{-1}\widehat{\mathbf X}'\mathbf y.$$
 
-3. Use que $P_Z$ é simétrica e idempotente: $\hat X'\hat X=X'P_Z'P_ZX=X'P_ZX$ e $\hat X'y=X'P_Zy$. Logo
-$$\hat\beta=(X'P_ZX)^{-1}X'P_Zy=\big[X'Z(Z'Z)^{-1}Z'X\big]^{-1}X'Z(Z'Z)^{-1}Z'y.\qquad\blacksquare$$
+3. Use que $\mathbf P_{\mathbf Z}$ é simétrica e idempotente: $\widehat{\mathbf X}'\widehat{\mathbf X}=\mathbf X'\mathbf P_{\mathbf Z}'\mathbf P_{\mathbf Z}\mathbf X=\mathbf X'\mathbf P_{\mathbf Z}\mathbf X$ e $\widehat{\mathbf X}'\mathbf y=\mathbf X'\mathbf P_{\mathbf Z}\mathbf y$. Logo
+$$\widehat\beta=(\mathbf X'\mathbf P_{\mathbf Z}\mathbf X)^{-1}\mathbf X'\mathbf P_{\mathbf Z}\mathbf y=\big[\mathbf X'\mathbf Z(\mathbf Z'\mathbf Z)^{-1}\mathbf Z'\mathbf X\big]^{-1}\mathbf X'\mathbf Z(\mathbf Z'\mathbf Z)^{-1}\mathbf Z'\mathbf y.\qquad\blacksquare$$
 
-4. Se $L=K$, $Z'X$ é quadrada e inversível, e a expressão colapsa em $(Z'X)^{-1}Z'y$ — o VI da D10.5.
+4. Se $L=K$, $\mathbf Z'\mathbf X$ é quadrada e inversível, e a expressão colapsa em $(\mathbf Z'\mathbf X)^{-1}\mathbf Z'\mathbf y$ — o VI da D10.5.
 
 > [!WARNING]
 > **Os erros-padrão do segundo estágio ingênuo estão errados**
-> Se você rodar o segundo estágio "na mão" com `lm`, o software calcula os resíduos como $y-\hat X\hat\beta$, quando o correto é $y-X\hat\beta$. Os coeficientes saem certos, os erros-padrão não. Use `ivreg` (ou corrija $s^2$). Verificado no script: os coeficientes batem até $10^{-13}$ e o erro-padrão correto do preço é 0,26320.
+> Se você rodar o segundo estágio "na mão" com `lm`, o software calcula os resíduos como $y-\widehat X\widehat\beta$, quando o correto é $y-X\widehat\beta$. Os coeficientes saem certos, os erros-padrão não. Use `ivreg` (ou corrija $s^2$). Verificado no script: os coeficientes batem até $10^{-13}$ e o erro-padrão correto do preço é 0,26320.
 
-### D10.8 · Quando $Z=X$, o VI é o MQO
+### D10.8 · Quando $\mathbf Z=\mathbf X$, o VI é o MQO
 
-Substituindo $Z=X$ em $\hat\beta_{IV}=(Z'X)^{-1}Z'y$:
-$$\hat\beta_{IV}=(X'X)^{-1}X'y=b.$$
-Interpretação: se o regressor é exógeno, ele é o melhor instrumento de si mesmo. Toda a perda de precisão do VI vem de usar apenas a parte de $X$ que o instrumento consegue explicar.
+Substituindo $\mathbf Z=\mathbf X$ em $\widehat\beta_{IV}=(\mathbf Z'\mathbf X)^{-1}\mathbf Z'\mathbf y$:
+$$\widehat\beta_{IV}=(\mathbf X'\mathbf X)^{-1}\mathbf X'\mathbf y=\mathbf b.$$
+Interpretação: se o regressor é exógeno, ele é o melhor instrumento de si mesmo. Toda a perda de precisão do VI vem de usar apenas a parte de $\mathbf X$ que o instrumento consegue explicar.
 
 ### D10.9 · Variância assintótica e o custo do instrumento fraco
 
 Para o VI exatamente identificado,
-$$\operatorname{Asy.Var}(\hat\beta_{IV})=\sigma^2\big(Q_{ZX}\big)^{-1}Q_{ZZ}\big(Q_{XZ}\big)^{-1}\Big/n .$$
+$$\operatorname{Asy.Var}(\widehat\beta_{IV})=\sigma^2\big(\mathbf Q_{ZX}\big)^{-1}\mathbf Q_{ZZ}\big(\mathbf Q_{XZ}\big)^{-1}\Big/n .$$
 
 No caso de uma variável, isso vira
-$$\operatorname{Asy.Var}(\hat\beta_{IV})=\frac{\sigma^2}{n\,\sigma_x^2\,\rho_{zx}^2}=\underbrace{\frac{\sigma^2}{n\,\sigma_x^2}}_{\text{variância do MQO}}\times\frac{1}{\rho_{zx}^2}.$$
+$$\operatorname{Asy.Var}(\widehat\beta_{IV})=\frac{\sigma^2}{n\,\sigma_x^2\,\rho_{zx}^2}=\underbrace{\frac{\sigma^2}{n\,\sigma_x^2}}_{\text{variância do MQO}}\times\frac{1}{\rho_{zx}^2}.$$
 
 Como $\rho_{zx}^2\le 1$, o VI é **sempre menos preciso** que o MQO. Com instrumento fraco ($\rho_{zx}\approx 0$), a variância explode: o remédio fica pior que a doença — e ainda com viés na direção do MQO em amostra finita. Daí a regra prática de $F\gt 10$ no primeiro estágio.
 
@@ -486,21 +486,21 @@ Como $\rho_{zx}^2\le 1$, o VI é **sempre menos preciso** que o MQO. Com instrum
 
 A forma prática do teste, e a que o `ivreg` reporta:
 
-1. Estime o primeiro estágio, $X_{end}=Z\pi+v$, e guarde $\hat v$.
-2. Estime a equação original **acrescentando** $\hat v$ como regressor extra:
-$$y=X\beta+\gamma\hat v+\text{erro}.$$
+1. Estime o primeiro estágio, $X_{end}=Z\pi+v$, e guarde $\widehat v$.
+2. Estime a equação original **acrescentando** $\widehat v$ como regressor extra:
+$$y=X\beta+\gamma\widehat v+\text{erro}.$$
 3. Teste $H_0:\gamma=0$ por $t$ ou $F$.
 
-Sob exogeneidade, $\hat v$ não carrega informação sobre $y$ e $\gamma=0$; sob endogeneidade, $\hat v$ captura justamente a parte de $X$ correlacionada com o erro, então $\gamma\neq 0$. Rejeitar $H_0$ é concluir pela endogeneidade e pelo MQ2E.
+Sob exogeneidade, $\widehat v$ não carrega informação sobre $y$ e $\gamma=0$; sob endogeneidade, $\widehat v$ captura justamente a parte de $X$ correlacionada com o erro, então $\gamma\neq 0$. Rejeitar $H_0$ é concluir pela endogeneidade e pelo MQ2E.
 
 A forma original de Hausman compara os dois vetores de estimativas:
-$$H=(b_{MQ2E}-b_{MQO})'\big[\operatorname{Var}(b_{MQ2E})-\operatorname{Var}(b_{MQO})\big]^{-1}(b_{MQ2E}-b_{MQO})\ \sim\ \chi^2_J .$$
+$$H=(\mathbf b_{MQ2E}-\mathbf b_{MQO})'\big[\operatorname{Var}(\mathbf b_{MQ2E})-\operatorname{Var}(\mathbf b_{MQO})\big]^{-1}(\mathbf b_{MQ2E}-\mathbf b_{MQO})\ \sim\ \chi^2_J .$$
 A subtração das variâncias só é válida porque, sob $H_0$, o MQO é **eficiente** — é isso que a hipótese nula afirma além da consistência.
 
 ### D10.11 · O teste de Sargan
 
-1. Estime por MQ2E e guarde os resíduos $\hat\varepsilon=y-X\hat\beta_{MQ2E}$.
-2. Regrida $\hat\varepsilon$ em **todos** os instrumentos (os externos e os exógenos do modelo).
+1. Estime por MQ2E e guarde os resíduos $\widehat\varepsilon=y-X\widehat\beta_{MQ2E}$.
+2. Regrida $\widehat\varepsilon$ em **todos** os instrumentos (os externos e os exógenos do modelo).
 3. A estatística é $nR^2\sim\chi^2_{L-K}$ sob $H_0$ de que todos os instrumentos são exógenos.
 
 A intuição: se os instrumentos são válidos, não devem explicar o que sobrou. Verificado no script: o cálculo manual devolve 0,332622, idêntico ao reportado pelo `ivreg`, com 1 grau de liberdade.
@@ -513,9 +513,9 @@ A intuição: se os instrumentos são válidos, não devem explicar o que sobrou
 
 | Formato | O que fazer |
 |---|---|
-| "Derive $\hat\beta_{IV}$" (Q6 de 2025/2) | D10.5: parta de $\operatorname{plim}(Z'\varepsilon/n)=0$, substitua $\varepsilon=y-X\beta$, isole e passe ao análogo amostral. |
+| "Derive $\widehat\beta_{IV}$" (Q6 de 2025/2) | D10.5: parta de $\operatorname{plim}(\mathbf Z'\varepsilon/n)=0$, substitua $\varepsilon=\mathbf y-\mathbf X\beta$, isole e passe ao análogo amostral. |
 | "Prove que o MQO é inconsistente" | D10.1 no caso geral, D10.2 para erro de medição, D10.4 para simultaneidade. Sempre pelo plim, nunca pela esperança. |
-| "Erro de medição vicia?" (Q4) | Separe: em $Y$ não vicia, infla variância (D10.3); em $X$ vicia e atenua (D10.2). |
+| "Erro de medição vicia?" (Q4) | Separe: em $Y$ não vicia, infla variância (D10.3); em $\mathbf X$ vicia e atenua (D10.2). |
 | "Leia este output de `ivreg`" (Q2) | Os três testes na ordem: fracos → Wu-Hausman → Sargan, cada um com as quatro linhas. |
 | "Quais as duas propriedades de um instrumento?" | Relevância $\operatorname{Cov}(Z,X)\neq 0$ (testável) e exogeneidade $\operatorname{Cov}(Z,\varepsilon)=0$ (não testável sem sobreidentificação). |
 | "MQ2E ou VI?" | Com $L\gt K$, MQ2E usa toda a informação e permite Sargan. |
@@ -524,13 +524,11 @@ A intuição: se os instrumentos são válidos, não devem explicar o que sobrou
 
 Bloco de diagnóstico do `ivreg`, na ordem em que aparece:
 
-```text
-Diagnostic tests:
-                 df1 df2 statistic p-value
-Weak instruments   2  44   228,738  0,0000   -> H0: instrumentos fracos; rejeitar é bom
-Wu-Hausman         1  44     3,823  0,0569   -> H0: regressor exógeno; rejeitar manda usar MQ2E
-Sargan             1  NA     0,333  0,5641   -> H0: instrumentos válidos; rejeitar é ruim
-```
+| Teste de diagnóstico | $df_1$ | $df_2$ | Estatística | $p$-value | $H_0$ | Rejeitar significa |
+|---|---|---|---|---|---|---|
+| Instrumentos fracos | 2 | 44 | 228,738 | 0,0000 | instrumentos fracos | **bom**: instrumentos relevantes |
+| Wu-Hausman | 1 | 44 | 3,823 | 0,0569 | regressor exógeno | usar MQ2E |
+| Sargan | 1 | — | 0,333 | 0,5641 | instrumentos válidos | **ruim**: algum instrumento inválido |
 
 Três leituras que valem ponto:
 1. `df1` do Sargan é $L-K$: ele só existe com sobreidentificação (por isso `df2 = NA`).
@@ -543,7 +541,7 @@ No formato NLOGIT da P2 2024/2, o mesmo conteúdo aparece como "Mínimos quadrad
 
 > [!WARNING]
 > **Seis erros que custam caro**
-> 1. Usar esperança em vez de plim nas provas de inconsistência: $E[(X'X)^{-1}X'\varepsilon]$ não se separa.
+> 1. Usar esperança em vez de plim nas provas de inconsistência: $E((\mathbf X'\mathbf X)^{-1}\mathbf X'\varepsilon)$ não se separa.
 > 2. Dizer que o VI é não viesado. Ele é **consistente**; em amostra finita é viesado (e nem sempre tem momentos).
 > 3. Inverter a hipótese nula do teste de instrumentos fracos: rejeitar é o **bom** resultado.
 > 4. Inverter a do Sargan: rejeitar é o **mau** resultado.
@@ -552,9 +550,9 @@ No formato NLOGIT da P2 2024/2, o mesmo conteúdo aparece como "Mínimos quadrad
 
 ## 6. Checklist
 
-- [ ] Derivo $\hat\beta_{IV}=(Z'X)^{-1}Z'y$ em até 6 minutos (D10.5).
-- [ ] Derivo $\hat\beta_{MQ2E}$ e mostro que colapsa no VI quando $L=K$ (D10.7, D10.8).
-- [ ] Provo a atenuação por erro de medição em $X$ e a não distorção em $Y$ (D10.2, D10.3).
+- [ ] Derivo $\widehat\beta_{IV}=(\mathbf Z'\mathbf X)^{-1}\mathbf Z'\mathbf y$ em até 6 minutos (D10.5).
+- [ ] Derivo $\widehat\beta_{MQ2E}$ e mostro que colapsa no VI quando $L=K$ (D10.7, D10.8).
+- [ ] Provo a atenuação por erro de medição em $\mathbf X$ e a não distorção em $Y$ (D10.2, D10.3).
 - [ ] Derivo a inconsistência do modelo keynesiano até o número final (D10.4).
 - [ ] Leio o bloco de diagnóstico do `ivreg` com as quatro linhas por teste, a 5% e a 10%.
 - [ ] Digo de cor as duas propriedades do instrumento e qual delas é testável.

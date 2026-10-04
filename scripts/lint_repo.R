@@ -65,9 +65,11 @@ for (md in mds) {
     }
   }
 
-  em_codigo <- FALSE
+  em_codigo <- FALSE; em_comentario <- FALSE
   for (i in seq_along(txt)) {
     ln <- txt[i]
+    if (!em_codigo && !legado && grepl("^\\s*```text", ln) && !(rel %in% c("README.md", "CONVENCOES.md")))
+      E("%s:%d: bloco ```text em nota de estudo; diagrame a resposta ou o output (CONVENCOES §11-12)", rel, i)
     if (grepl("^\\s*```", ln)) { em_codigo <- !em_codigo; next }
     if (em_codigo) next
 
@@ -87,6 +89,23 @@ for (md in mds) {
     if (grepl("^#{2,4}\\s+D[0-9]+(\\.[0-9]+)?\\s*[·:-]", ln)) {
       id <- sub("^#{2,4}\\s+(D[0-9]+(\\.[0-9]+)?)\\s*[·:-].*$", "\\1", ln)
       ids_D[[id]] <- c(ids_D[[id]], rel)
+    }
+
+    # notação do professor (CONVENCOES §2): formas recusadas fora de código
+    if (!legado && rel != "CONVENCOES.md") {
+      lc <- gsub("`[^`]*`", "", ln)
+      if (grepl("<!--", lc)) em_comentario <- TRUE
+      if (grepl("^\\|\\s*chave_R\\s*\\|", lc) && !em_comentario)
+        E("%s:%d: tabela chave_R visível; ponha-a dentro de <!-- ... --> (CONVENCOES §7)", rel, i)
+      if (grepl("-->", lc)) em_comentario <- FALSE
+      proib <- c("\\\\hat(?![a-z])" = "\\hat (use \\widehat)",
+                 "(?<![A-Za-z\\\\])E\\[" = "E[·] (use E(·))",
+                 "SQR_\\{?(IR|ir)\\b" = "SQR_IR (use SQR_UR)",
+                 "\\bFIV\\b" = "FIV (use VIF)",
+                 "(?<![A-Za-z])E\\.p\\." = "E.p. (use ep)",
+                 "\\[A[1-6]\\]" = "[A1]–[A6] do Greene (use H1–H5 da chave)")
+      for (p in names(proib)) if (grepl(p, lc, perl = TRUE))
+        E("%s:%d: notação fora do padrão do professor: %s", rel, i, proib[[p]])
     }
 
     if (!legado) {

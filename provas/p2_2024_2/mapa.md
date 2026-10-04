@@ -26,11 +26,11 @@ aliases:
 
 | Q. | Tipo (paráfrase) | Formato | Módulo |
 |---|---|---|---|
-| 1a | Modelo de regressão generalizado com $E[\varepsilon\varepsilon'\mid X]=\sigma^2\Omega$, $\Omega$ diagonal (pesos da heterocedasticidade): derivar a variância do estimador de MQO | derivação matricial | [11](../../11_mqg_heterosk_autocorr/) (P2); a base é D14 de P1, com $\sigma^2\Omega$ no lugar de $\sigma^2I$ |
-| 1b | Mesmo modelo, com a decomposição espectral $\Omega=C\Lambda C'$ e a matriz de transformação $P$ tal que $\Omega^{-1}=P'P$: derivar o estimador de MQG | derivação matricial | [11](../../11_mqg_heterosk_autocorr/) (P2) |
+| 1a | Modelo de regressão generalizado com $E(\varepsilon\varepsilon'\mid X)=\sigma^2\Omega$, $\Omega$ diagonal (pesos da heterocedasticidade): derivar a variância do estimador de MQO | derivação matricial | [11](../../11_mqg_heterosk_autocorr/) (P2); a base é D14 de P1, com $\sigma^2\Omega$ no lugar de $\sigma^2I$ |
+| 1b | Mesmo modelo, com a decomposição espectral $\Omega=\mathbf C\Lambda \mathbf C'$ e a matriz de transformação $\mathbf P$ tal que $\Omega^{-1}=\mathbf P'\mathbf P$: derivar o estimador de MQG | derivação matricial | [11](../../11_mqg_heterosk_autocorr/) (P2) |
 | 1c | Provar que os erros do modelo transformado ($Py=PX\beta+P\varepsilon$) são homocedásticos. Com $\Omega$ diagonal, é o MQP (mínimos quadrados ponderados) | derivação | [11](../../11_mqg_heterosk_autocorr/) (P2) |
 | 2 | Erro AR(1) estacionário, $\varepsilon_t=\rho\varepsilon_{t-1}+\mu_t$ com $\lvert\rho\rvert\lt 1$: provar que a correlação entre $\varepsilon_t$ e $\varepsilon_{t-1}$ é $\rho$ | derivação | [11](../../11_mqg_heterosk_autocorr/) (P2); usa o kit D0 |
-| 3 | Efeitos aleatórios, $\eta_{it}=\varepsilon_{it}+\mu_i$: significado de $E[\eta_{it}\eta_{is}\mid X]=\sigma_\mu^2$ para $t\neq s$ e se MQO serve para estimar o modelo | derivação + conceito | [13](../../13_painel_II/) (P2) |
+| 3 | Efeitos aleatórios, $\eta_{it}=\varepsilon_{it}+\mu_i$: significado de $E(\eta_{it}\eta_{is}\mid X)=\sigma_\mu^2$ para $t\neq s$ e se MQO serve para estimar o modelo | derivação + conceito | [13](../../13_painel_II/) (P2) |
 | 4 | Teste F de efeitos fixos contra *pooling* (PIB industrial × financiamentos, municípios do ES): conclusão a partir do output | interpretação | [12](../../12_painel_I/) (P2); a lógica do F restrito é a de [05](../../05_ajuste_restricoes/05_teoria.md) (D05.12) |
 | 5 | Teste de Hausman, efeitos fixos contra aleatórios, mesmos dados: conclusão | interpretação | [13](../../13_painel_II/) (P2); mesma lógica do Wu-Hausman de [10](../../10_endogeneidade_iv/) |
 | 6a | Output MQ2E de LWAGE (dados de Cornwell e Rupert): pelo teste adequado a 5%, MQO ou MQ2E? | interpretação | [10](../../10_endogeneidade_iv/) (**P1**) |
@@ -47,8 +47,9 @@ aliases:
 
 ## A regressão MQ2E da Q6, reproduzida
 
-A tabela da Q6 sai exatamente com `AER::PSID7682` (os dados de Cornwell e Rupert), LWAGE com 5 casas decimais (como no arquivo do Greene), **WKS endógena** e **UNION e FEM como instrumentos excluídos**. O NLOGIT usa $s^2=e'e/n$ no MQ2E, sem correção de graus de liberdade. Com essa convenção, coeficientes e erros padrão batem nas 8 casas. O output está em [banco/outputs/psid_mq2e_wks.txt](../banco/outputs/psid_mq2e_wks.txt).
+A tabela da Q6 sai exatamente com `AER::PSID7682` (os dados de Cornwell e Rupert), LWAGE com 5 casas decimais (como no arquivo do Greene), **WKS endógena** e **UNION e FEM como instrumentos excluídos**. O NLOGIT usa $s^2=\mathbf e'\mathbf e/n$ no MQ2E, sem correção de graus de liberdade. Com essa convenção, coeficientes e erros padrão batem nas 8 casas. O output está em [banco/outputs/psid_mq2e_wks.txt](../banco/outputs/psid_mq2e_wks.txt).
 
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R
 | chave_R | nota |
 |---|---|
 | bnc_p2_r2 | 0,3192467 |
@@ -60,13 +61,15 @@ A tabela da Q6 sai exatamente com `AER::PSID7682` (os dados de Cornwell e Rupert
 | bnc_p2_ssr | 603,7634 |
 | bnc_p2_ssr_nlogit | 602,3138 |
 | bnc_p2_expstar | 30,83 |
+-->
 
-O NLOGIT imprime como "soma dos quadrados" o valor $s^2(n-K)$ com $s^2=e'e/n$, e não o $e'e$ verdadeiro. Por isso a linha da prova difere da soma de quadrados que o R calcula.
+O NLOGIT imprime como "soma dos quadrados" o valor $s^2(n-K)$ com $s^2=\mathbf e'\mathbf e/n$, e não o $\mathbf e'\mathbf e$ verdadeiro. Por isso a linha da prova difere da soma de quadrados que o R calcula.
 
 > [!CAUTION]
 > **O bloco de diagnósticos da Q6 foi colado de outro exemplo**
 > Os diagnósticos impressos sob a regressão de LWAGE são Weak instruments 228,738 (gl 2 e 44, p 0,0000), Wu-Hausman 3,823 (gl 1 e 44, p 0,0369) e Sargan 0,333 (gl 1, p 0,5641). Os graus de liberdade **44** são os da demanda por cigarros ($n=48$), não os de uma regressão com $n=4165$, que teria gl2 = 4154. As estatísticas coincidem com as da Lista 1, ex. 67, só o p-valor do Wu-Hausman foi editado (lá, 0,0569). Os diagnósticos verdadeiros da regressão de LWAGE, calculados pelo R, estão abaixo. Na prova, **responda com o que está impresso**: a 5%, instrumentos fortes, rejeita-se a exogeneidade (MQ2E) e os instrumentos são válidos. Os números verdadeiros levariam à conclusão oposta no Sargan.
 
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R
 | chave_R | nota |
 |---|---|
 | bnc_p2_df2 | 4154 |
@@ -75,6 +78,7 @@ O NLOGIT imprime como "soma dos quadrados" o valor $s^2(n-K)$ com $s^2=e'e/n$, e
 | bnc_p2_wh_p | 0,0105 |
 | bnc_p2_sargan | 502,98 |
 | bnc_p2_sargan_p | 0 |
+-->
 
 Com os números verdadeiros, o Sargan rejeita a validade dos instrumentos com folga. UNION e FEM afetam o salário por outros canais além de WKS (prêmio sindical, diferencial por gênero), e por isso não são exógenos na equação de salário. É um bom exemplo de por que a exogeneidade do instrumento é a hipótese mais frágil.
 

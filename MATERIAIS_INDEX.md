@@ -19,7 +19,7 @@ Os PDFs ficam em `materiais/`, que é **ignorada pelo git** (repositório públi
 | SL02 | `materiais/slides/sl02_projecao_regressao.pdf` | Relações estatísticas, projeção × média condicional, MRL | caps. 2 e 4 | 33 | P1 |
 | SL03 | `materiais/slides/sl03_algebra_mqo.pdf` | Álgebra de MQ: equações normais, CSO, *residual maker* | cap. 3 | 28 | P1 |
 | SL04 | `materiais/slides/sl04_regressao_parcial_fwl.pdf` | Regressão particionada, Frisch–Waugh–Lovell, efeitos fixos | cap. 3 | 23 | P1 |
-| SL05 | `materiais/slides/sl05_ajuste_mq_restrito.pdf` | $\min e'e$, incluir e excluir variáveis, $R^2$, $\bar R^2$, critérios de informação, MQ restrito | caps. 3 e 5 | 45 | P1 |
+| SL05 | `materiais/slides/sl05_ajuste_mq_restrito.pdf` | $\min \mathbf e'\mathbf e$, incluir e excluir variáveis, $R^2$, $\bar R^2$, critérios de informação, MQ restrito | caps. 3 e 5 | 45 | P1 |
 | SL06 | `materiais/slides/sl06_amostra_finita_multicol.pdf` | Não-viés, variância, Gauss-Markov, $s^2$, multicolinearidade, componentes principais | cap. 4 | 63 | P1 |
 | SL07 | `materiais/slides/sl07_testes_hipoteses.pdf` | Hipótese linear geral, F, Wald, LM, LR, normalidade, modelos não aninhados | caps. 5 e 14 | 66 | P1 |
 | SL08 | `materiais/slides/sl08_assintotica.pdf` | Consistência, distribuição assintótica, covariância robusta, bootstrap | cap. 4 | 29 | P1 |
@@ -34,12 +34,14 @@ Os PDFs ficam em `materiais/`, que é **ignorada pelo git** (repositório públi
 
 | Id | Arquivo local | Conteúdo |
 |---|---|---|
-| L1 | `materiais/listas/lista1.pdf` | Lista 1: 74 exercícios, conteúdo da P1. Mapa em [LISTA1_MAPA.md](LISTA1_MAPA.md) |
+| L1v1 | `materiais/listas/lista1_v1.pdf` | **Lista 1 v.1 (Parte I): 79 exercícios — a referência da P1.** Feita junto com a prova. Mapa e leitura em [provas/lista1_v1/](provas/lista1_v1/README.md) |
+| L1v1K | `materiais/listas/lista1_v1_chave.pdf` | Chave de correção da v.1 (20 págs.). Conferida: ver a seção v.1 da [errata](formulario/errata_chave_lista1.md) |
+| L1 | `materiais/listas/lista1.pdf` | Lista 1 antiga: 74 exercícios. Mapa em [LISTA1_MAPA.md](LISTA1_MAPA.md) |
 | L1K | `materiais/listas/lista1_chave.pdf` | Chave de correção da Lista 1 (34 págs.). **Tem erros**: ver [errata](formulario/errata_chave_lista1.md) |
 | L2 | `materiais/listas/lista2.pdf` | Lista 2: 57 exercícios, conteúdo da P2 |
 | P1-25 | `materiais/provas/p1_2025_2/` | **1ª prova de 2025/2 (03/10/2025) completa**: `p1_2025_2_pag1/2/3.jpeg` (enunciado, 3 páginas) e `gabarito_q1`, `gabarito_q2`, `gabarito_q3_q4a`, `gabarito_q4b_q5`, `gabarito_q6` (resolução manuscrita). Mapa e conferência em [provas/p1_2025_2/README.md](provas/p1_2025_2/README.md) |
 | P2-24 | `materiais/provas/p2_2024_2.pdf` | 2ª prova de 2024/2 (29/11/2024), em scan de celular |
-| CAD | `materiais/caderno/` | **Caderno de aula**: 15 fotos das aulas de 14/08 e 21/08. Mapa página a página, notação h1–h5 e vocabulário do professor em [demonstracoes/caderno_aulas.md](demonstracoes/caderno_aulas.md) |
+| CAD | `materiais/caderno/` | **Caderno de aula**: 15 fotos das aulas de 14/08 e 21/08. Mapa página a página, notação h1–h5 do caderno (e a ponte para H1–H5 da chave) e vocabulário do professor em [demonstracoes/caderno_aulas.md](demonstracoes/caderno_aulas.md) |
 
 ## Livros
 

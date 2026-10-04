@@ -26,14 +26,14 @@ Sessenta perguntas curtas para as revisões de +1, +3 e +7 dias do [cronograma](
 
 ## Fundamentos e hipóteses
 
-**1.** Quais são as cinco hipóteses na numeração do professor (h1 a h5)?
+**1.** Quais são as cinco hipóteses do MRLC na numeração da chave da Lista 1 v.1 (H1 a H5)?
 <details><summary>resposta</summary>
-h1 parâmetros lineares · h2 amostra aleatória · h3 variação em X · h4 exogeneidade estrita, E[ε|X]=0 · h5 ausência de multicolinearidade. Homocedasticidade e ausência de autocorrelação entram junto com a variância; normalidade, só na inferência exata.
+H1 linearidade, $\mathbf y=\mathbf X\beta+\varepsilon$ · H2 exogeneidade estrita, $E(\varepsilon\mid\mathbf X)=\mathbf 0$ · H3 posto completo, $\operatorname{posto}(\mathbf X)=K$ · H4 esfericidade, $E(\varepsilon\varepsilon'\mid\mathbf X)=\sigma^2\mathbf I_n$ · H5 normalidade (opcional). No caderno de agosto a numeração era outra (h4 = exogeneidade, h5 = sem multicolinearidade): escreva sempre o nome junto do número.
 </details>
 
 **2.** Qual hipótese garante o não-viés, e qual garante a eficiência?
 <details><summary>resposta</summary>
-Não-viés: h4 (A3), $E[\varepsilon\mid X]=0$. Eficiência: A4, erros esféricos $E[\varepsilon\varepsilon'\mid X]=\sigma^2I$, que é o que sustenta Gauss-Markov.
+Não-viés: exogeneidade estrita (H2), $E(\varepsilon\mid X)=0$. Eficiência: H4, erros esféricos $E(\varepsilon\varepsilon'\mid X)=\sigma^2I$, que é o que sustenta Gauss-Markov.
 </details>
 
 **3.** O que a normalidade do erro acrescenta?
@@ -43,12 +43,12 @@ Nada para não-viés ou Gauss-Markov. Ela dá a distribuição **exata** de $t$ 
 
 **4.** Diferença entre erro e resíduo.
 <details><summary>resposta</summary>
-Erro $\varepsilon_i$ é populacional e não observável; resíduo $\hat u_i$ é amostral e calculado a partir da reta estimada.
+Erro $\varepsilon_i$ é populacional e não observável; resíduo $\widehat u_i$ é amostral e calculado a partir da reta estimada.
 </details>
 
-**5.** $EQM(\hat\theta)$ em função de variância e viés.
+**5.** $EQM(\widehat\theta)$ em função de variância e viés.
 <details><summary>resposta</summary>
-$EQM=\operatorname{Var}(\hat\theta)+[\text{viés}(\hat\theta)]^2$. É o que permite preferir um estimador viesado, se ele for bem mais preciso.
+$EQM=\operatorname{Var}(\widehat\theta)+[\text{viés}(\widehat\theta)]^2$. É o que permite preferir um estimador viesado, se ele for bem mais preciso.
 </details>
 
 **6.** Covariância zero implica independência?
@@ -58,39 +58,39 @@ Não — só mede associação linear. Contraexemplo: $X$ simétrica em zero e $
 
 **7.** Prove em uma linha que a média amostral é consistente.
 <details><summary>resposta</summary>
-$E[\bar X]=\mu$ e $\operatorname{Var}(\bar X)=\sigma^2/n\to 0$; por Chebyshev, $\Pr(\lvert\bar X-\mu\rvert\ge\delta)\le\sigma^2/(n\delta^2)\to 0$.
+$E(\bar X)=\mu$ e $\operatorname{Var}(\bar X)=\sigma^2/n\to 0$; por Chebyshev, $\Pr(\lvert\bar X-\mu\rvert\ge\delta)\le\sigma^2/(n\delta^2)\to 0$.
 </details>
 
 ## MQO escalar
 
 **8.** As duas equações normais.
 <details><summary>resposta</summary>
-$\sum\hat u_i=0$ e $\sum X_i\hat u_i=0$ — são as condições de primeira ordem, não hipóteses.
+$\sum\widehat u_i=0$ e $\sum X_i\widehat u_i=0$ — são as condições de primeira ordem, não hipóteses.
 </details>
 
-**9.** $\hat\beta_2$ em três formas equivalentes.
+**9.** $\widehat\beta_2$ em três formas equivalentes.
 <details><summary>resposta</summary>
 $\dfrac{S_{XY}}{S_{XX}}=\dfrac{\sum(X_i-\bar X)(Y_i-\bar Y)}{\sum(X_i-\bar X)^2}=\dfrac{\widehat{\operatorname{Cov}}(X,Y)}{\widehat{\operatorname{Var}}(X)}$.
 </details>
 
-**10.** As três propriedades dos pesos $k_i$.
+**10.** As três propriedades dos pesos $w_i$.
 <details><summary>resposta</summary>
-$\sum k_i=0$, $\sum k_iX_i=1$, $\sum k_i^2=1/S_{XX}$, com $k_i=(X_i-\bar X)/S_{XX}$.
+$\sum w_i=0$, $\sum w_iX_i=1$, $\sum w_i^2=1/S_{XX}$, com $w_i=(X_i-\bar X)/S_{XX}$.
 </details>
 
-**11.** Por que $\hat\beta_2=\beta_2+\sum k_i u_i$ resolve o não-viés?
+**11.** Por que $\widehat\beta_2=\beta_2+\sum w_i u_i$ resolve o não-viés?
 <details><summary>resposta</summary>
-Porque, condicionando em $X$, os $k_i$ são constantes e $E[u_i\mid X]=0$, então a soma some.
+Porque, condicionando em $X$, os $w_i$ são constantes e $E(u_i\mid X)=0$, então a soma some.
 </details>
 
-**12.** $\operatorname{Var}(\hat\beta_1)$ e $\operatorname{Cov}(\hat\beta_1,\hat\beta_2)$.
+**12.** $\operatorname{Var}(\widehat\beta_1)$ e $\operatorname{Cov}(\widehat\beta_1,\widehat\beta_2)$.
 <details><summary>resposta</summary>
-$\operatorname{Var}(\hat\beta_1)=\sigma^2\left(\frac1n+\frac{\bar X^2}{S_{XX}}\right)$ e $\operatorname{Cov}=-\bar X\sigma^2/S_{XX}$ — negativa quando $\bar X\gt0$, porque a reta passa por $(\bar X,\bar Y)$.
+$\operatorname{Var}(\widehat\beta_1)=\sigma^2\left(\frac1n+\frac{\bar X^2}{S_{XX}}\right)$ e $\operatorname{Cov}=-\bar X\sigma^2/S_{XX}$ — negativa quando $\bar X\gt0$, porque a reta passa por $(\bar X,\bar Y)$.
 </details>
 
-**13.** Por que $\hat\sigma^2$ divide por $n-2$?
+**13.** Por que $\widehat\sigma^2$ divide por $n-2$?
 <details><summary>resposta</summary>
-Porque dois parâmetros foram estimados: $E[\sum\hat u_i^2]=(n-2)\sigma^2$. Dividir por $n$ daria estimador viesado para baixo.
+Porque dois parâmetros foram estimados: $E(\sum\widehat u_i^2)=(n-2)\sigma^2$. Dividir por $n$ daria estimador viesado para baixo.
 </details>
 
 **14.** Fórmula do viés de variável omitida (escalar).
@@ -105,24 +105,24 @@ Se $\beta_3=0$ (variável irrelevante) ou se $X_2$ e $X_3$ forem ortogonais na a
 
 **16.** Prove $t^2=F$ na regressão simples.
 <details><summary>resposta</summary>
-$t^2=\hat\beta_2^2S_{XX}/\hat\sigma^2$; como $SQE=\hat\beta_2^2S_{XX}$ e o numerador tem 1 gl, isso é $\frac{SQE/1}{SQR/(n-2)}=F$.
+$t^2=\widehat\beta_2^2S_{XX}/\widehat\sigma^2$; como $SQE=\widehat\beta_2^2S_{XX}$ e o numerador tem 1 gl, isso é $\frac{SQE/1}{SQR/(n-2)}=F$.
 </details>
 
 **17.** Maior dispersão de $X$: melhor ou pior?
 <details><summary>resposta</summary>
-Melhor. $\operatorname{Var}(\hat\beta_2)=\sigma^2/S_{XX}$ cai quando $S_{XX}$ cresce — mais precisão.
+Melhor. $\operatorname{Var}(\widehat\beta_2)=\sigma^2/S_{XX}$ cai quando $S_{XX}$ cresce — mais precisão.
 </details>
 
 ## MQO matricial
 
-**18.** Derive $b$ em três passos.
+**18.** Derive $\mathbf b$ em três passos.
 <details><summary>resposta</summary>
-Minimize $e'e=(y-Xb)'(y-Xb)$; a CPO dá $-2X'y+2X'Xb=0$; com posto completo, $b=(X'X)^{-1}X'y$.
+Minimize $\mathbf e'\mathbf e=(\mathbf y-\mathbf X\mathbf b)'(\mathbf y-\mathbf X\mathbf b)$; a CPO dá $-2\mathbf X'\mathbf y+2\mathbf X'\mathbf X\mathbf b=0$; com posto completo, $\mathbf b=(\mathbf X'\mathbf X)^{-1}\mathbf X'\mathbf y$.
 </details>
 
-**19.** Por que $X'X$ é definida positiva?
+**19.** Por que $\mathbf X'\mathbf X$ é definida positiva?
 <details><summary>resposta</summary>
-$v'X'Xv=\lVert Xv\rVert^2\gt0$ para todo $v\neq0$, desde que $X$ tenha posto completo (h5).
+$v'\mathbf X'Xv=\lVert Xv\rVert^2\gt0$ para todo $v\neq0$, desde que $\mathbf X$ tenha posto completo (H3).
 </details>
 
 **20.** Propriedades de $P$ e $M$.
@@ -130,46 +130,46 @@ $v'X'Xv=\lVert Xv\rVert^2\gt0$ para todo $v\neq0$, desde que $X$ tenha posto com
 Simétricas e idempotentes; $PX=X$, $MX=0$, $PM=0$, $P+M=I$, $\operatorname{tr}P=K$, $\operatorname{tr}M=n-K$.
 </details>
 
-**21.** Prove $e'e=y'y-b'X'y$.
+**21.** Prove $\mathbf e'\mathbf e=\mathbf y'\mathbf y-\mathbf b'\mathbf X'\mathbf y$.
 <details><summary>resposta</summary>
-Abra $(y-Xb)'(y-Xb)=y'y-2b'X'y+b'X'Xb$ e use $X'Xb=X'y$.
+Abra $(\mathbf y-\mathbf X\mathbf b)'(\mathbf y-\mathbf X\mathbf b)=\mathbf y'\mathbf y-2\mathbf b'\mathbf X'\mathbf y+\mathbf b'\mathbf X'\mathbf X\mathbf b$ e use $\mathbf X'\mathbf X\mathbf b=\mathbf X'\mathbf y$.
 </details>
 
-**22.** O que $X'e=0$ implica quando há intercepto?
+**22.** O que $\mathbf X'\mathbf e=0$ implica quando há intercepto?
 <details><summary>resposta</summary>
-A primeira linha dá $\sum e_i=0$, logo $\overline{\hat y}=\bar y$ e a covariância amostral entre regressores e resíduos é zero.
+A primeira linha dá $\sum e_i=0$, logo $\overline{\widehat y}=\bar y$ e a covariância amostral entre regressores e resíduos é zero.
 </details>
 
 **23.** Como o professor pede a inversa de uma matriz 2×2?
 <details><summary>resposta</summary>
-Pela adjunta: $(X'X)^{-1}=\frac{1}{\det(X'X)}\operatorname{adj}(X'X)$. Troque a diagonal principal, inverta o sinal da secundária, divida pelo determinante.
+Pela adjunta: $(\mathbf X'\mathbf X)^{-1}=\frac{1}{\det(\mathbf X'\mathbf X)}\operatorname{adj}(\mathbf X'\mathbf X)$. Troque a diagonal principal, inverta o sinal da secundária, divida pelo determinante.
 </details>
 
 **24.** Colinearidade perfeita: o que acontece?
 <details><summary>resposta</summary>
-Posto de $X$ menor que $K$, $\det(X'X)=0$, inversa não existe, parâmetros não identificados. Viola h5 (A2).
+Posto de $\mathbf X$ menor que $K$, $\det(\mathbf X'\mathbf X)=0$, inversa não existe, parâmetros não identificados. Viola o posto completo (H3).
 </details>
 
 ## Amostra finita
 
-**25.** Demonstre $\operatorname{Var}(b\mid X)=\sigma^2(X'X)^{-1}$.
+**25.** Demonstre $\operatorname{Var}(\mathbf b\mid \mathbf X)=\sigma^2(\mathbf X'\mathbf X)^{-1}$.
 <details><summary>resposta</summary>
-$b-\beta=(X'X)^{-1}X'\varepsilon$; a variância é $(X'X)^{-1}X'E[\varepsilon\varepsilon'\mid X]X(X'X)^{-1}$; com $\sigma^2I$ no meio, sobra $\sigma^2(X'X)^{-1}$.
+$\mathbf b-\beta=(\mathbf X'\mathbf X)^{-1}\mathbf X'\varepsilon$; a variância é $(\mathbf X'\mathbf X)^{-1}\mathbf X'E(\varepsilon\varepsilon'\mid \mathbf X)\mathbf X(\mathbf X'\mathbf X)^{-1}$; com $\sigma^2\mathbf I$ no meio, sobra $\sigma^2(\mathbf X'\mathbf X)^{-1}$.
 </details>
 
-**26.** Prove $E[e'e\mid X]=\sigma^2(n-K)$.
+**26.** Prove $E(\mathbf e'\mathbf e\mid \mathbf X)=\sigma^2(n-K)$.
 <details><summary>resposta</summary>
-$e'e=\varepsilon'M\varepsilon$; a esperança de forma quadrática é $\sigma^2\operatorname{tr}(M)$; e $\operatorname{tr}(M)=n-K$.
+$\mathbf e'\mathbf e=\varepsilon'\mathbf M\varepsilon$; a esperança de forma quadrática é $\sigma^2\operatorname{tr}(\mathbf M)$; e $\operatorname{tr}(\mathbf M)=n-K$.
 </details>
 
 **27.** Gauss-Markov: qual condição o competidor precisa satisfazer?
 <details><summary>resposta</summary>
-Com $b^*=[(X'X)^{-1}X'+C]y$, o não-viés exige $CX=0$; então $\operatorname{Var}(b^*)=\sigma^2(X'X)^{-1}+\sigma^2CC'$, maior ou igual.
+Com $\mathbf b^*=[(\mathbf X'\mathbf X)^{-1}\mathbf X'+\mathbf C]\mathbf y$, o não-viés exige $\mathbf C\mathbf X=0$; então $\operatorname{Var}(\mathbf b^*)=\sigma^2(\mathbf X'\mathbf X)^{-1}+\sigma^2\mathbf C\mathbf C'$, maior ou igual.
 </details>
 
-**28.** Var de um coeficiente com FIV.
+**28.** Var de um coeficiente com VIF.
 <details><summary>resposta</summary>
-$\operatorname{Var}(b_k)=\dfrac{\sigma^2}{(1-R_k^2)S_{kk}}$, com $FIV_k=1/(1-R_k^2)$ e $R_k^2$ da auxiliar de $x_k$ nos demais.
+$\operatorname{Var}(b_k)=\dfrac{\sigma^2}{(1-R_k^2)S_{kk}}$, com $VIF_k=1/(1-R_k^2)$ e $R_k^2$ da auxiliar de $x_k$ nos demais.
 </details>
 
 **29.** Multicolinearidade alta viola alguma hipótese?
@@ -184,24 +184,24 @@ Viés de omissão, que não some com mais dados. Troca-se imprecisão por incons
 
 ## Testes
 
-**31.** Escreva $H_0$ de retornos constantes de escala em forma $R\beta=q$.
+**31.** Escreva $H_0$ de retornos constantes de escala em forma $R\beta=r$.
 <details><summary>resposta</summary>
-$R=[0\ 1\ 1\ 0\dots]$, $q=1$, testando $\beta_2+\beta_3=1$ com $J=1$.
+$R=[0\ 1\ 1\ 0\dots]$, $q=1$, testando $\beta_2+\beta_3=1$ com $q=1$.
 </details>
 
 **32.** As três formas equivalentes do $F$.
 <details><summary>resposta</summary>
-Wald com $(Rb-q)$; duas somas de quadrados $\frac{(SQR_R-SQR_{IR})/J}{SQR_{IR}/(n-K)}$; e via $R^2$, quando a dependente é a mesma.
+Wald com $(Rb-r)$; duas somas de quadrados $\frac{(SQR_R-SQR_{UR})/q}{SQR_{UR}/(n-K)}$; e via $R^2$, quando a dependente é a mesma.
 </details>
 
 **33.** Por que o $F$ tem distribuição $F$?
 <details><summary>resposta</summary>
-Numerador $\chi^2_J$ e denominador $\chi^2_{n-K}$, independentes porque $b$ e $e$ são não correlacionados ($X'M=0$) e normais.
+Numerador $\chi^2_q$ e denominador $\chi^2_{n-K}$, independentes porque $\mathbf b$ e $\mathbf e$ são não correlacionados ($\mathbf X'\mathbf M=0$) e normais.
 </details>
 
 **34.** Wald, LM e LR: o que cada um estima?
 <details><summary>resposta</summary>
-Wald só o irrestrito; LM só o restrito; LR os dois. Todos $\chi^2_J$, com $W\ge LR\ge LM$.
+Wald só o irrestrito; LM só o restrito; LR os dois. Todos $\chi^2_q$, com $W\ge LR\ge LM$.
 </details>
 
 **35.** Fórmula do Jarque-Bera e seus graus de liberdade.
@@ -211,7 +211,7 @@ $JB=n[S^2/6+(C-3)^2/24]\sim\chi^2_2$ — dois gl porque são duas restrições (
 
 **36.** RESET: passos e direção da decisão.
 <details><summary>resposta</summary>
-Regride $y$ nos $X$ mais $\hat y^2$ e $\hat y^3$; testa se esses coeficientes são nulos. **Rejeitar** indica má especificação.
+Regride $y$ nos $X$ mais $\widehat y^2$ e $\widehat y^3$; testa se esses coeficientes são nulos. **Rejeitar** indica má especificação.
 </details>
 
 **37.** Omitir variável relevante × incluir irrelevante.
@@ -238,17 +238,17 @@ $d\approx2$. Se $d\gt2$, o lado testado é o negativo: compare com $4-d_U$ e $4-
 
 **41.** Demonstre a consistência do MQO.
 <details><summary>resposta</summary>
-$b=\beta+(X'X/n)^{-1}(X'\varepsilon/n)$; com $\operatorname{plim}(X'X/n)=Q$ e $\operatorname{plim}(X'\varepsilon/n)=0$, o produto dá zero.
+$\mathbf b=\beta+(\mathbf X'\mathbf X/n)^{-1}(\mathbf X'\varepsilon/n)$; com $\operatorname{plim}(\mathbf X'\mathbf X/n)=\mathbf Q$ e $\operatorname{plim}(\mathbf X'\varepsilon/n)=0$, o produto dá zero.
 </details>
 
-**42.** Por que $\operatorname{plim}(X'\varepsilon/n)=0$?
+**42.** Por que $\operatorname{plim}(\mathbf X'\varepsilon/n)=0$?
 <details><summary>resposta</summary>
 Média zero por exogeneidade e variância $\sigma^2Q/n\to0$: converge em média quadrática, logo em probabilidade.
 </details>
 
 **43.** Enuncie a normalidade assintótica.
 <details><summary>resposta</summary>
-$\sqrt n(b-\beta)\xrightarrow{d}N(0,\sigma^2Q^{-1})$, via TLC em $X'\varepsilon/\sqrt n$ e Slutsky no outro fator.
+$\sqrt n(\mathbf b-\beta)\xrightarrow{d}N(0,\sigma^2\mathbf Q^{-1})$, via TLC em $\mathbf X'\varepsilon/\sqrt n$ e Slutsky no outro fator.
 </details>
 
 **44.** Consistência implica não-viés?
@@ -263,7 +263,7 @@ Porque $b$ é soma ponderada dos erros; pelo TLC é assintoticamente normal, e a
 
 **46.** Fórmula do HC0.
 <details><summary>resposta</summary>
-$(X'X)^{-1}\left(\sum_i e_i^2x_ix_i'\right)(X'X)^{-1}$ — consistente sob heterocedasticidade de forma desconhecida.
+$(\mathbf X'\mathbf X)^{-1}\left(\sum_i e_i^2\mathbf x_i\mathbf x_i'\right)(\mathbf X'\mathbf X)^{-1}$ — consistente sob heterocedasticidade de forma desconhecida.
 </details>
 
 **47.** Método delta para $X^*=-a_3/(2a_4)$: qual o gradiente?
@@ -290,7 +290,7 @@ $X^*=-\beta_2/(2\beta_3)$; é máximo se $\beta_3\lt0$, porque a segunda derivad
 
 **51.** Armadilha da dummy: o que exatamente quebra?
 <details><summary>resposta</summary>
-Com intercepto e todas as dummies, as colunas somam a constante: posto incompleto, $X'X$ singular, parâmetros não identificados.
+Com intercepto e todas as dummies, as colunas somam a constante: posto incompleto, $\mathbf X'\mathbf X$ singular, parâmetros não identificados.
 </details>
 
 **52.** Condição para linearizar a Cobb-Douglas.
@@ -315,9 +315,9 @@ Somem na primeira diferença ($\Delta x=0$) e sobra $\beta_3$ puro: não precisa
 
 ## Endogeneidade e VI
 
-**56.** Derive $\hat\beta_{IV}$ em quatro passos.
+**56.** Derive $\widehat\beta_{IV}$ em quatro passos.
 <details><summary>resposta</summary>
-$\operatorname{plim}(Z'\varepsilon/n)=0$ → substitui $\varepsilon=y-X\beta$ → distribui → isola: $\hat\beta_{IV}=(Z'X)^{-1}Z'y$.
+$\operatorname{plim}(\mathbf Z'\varepsilon/n)=0$ → substitui $\varepsilon=\mathbf y-\mathbf X\beta$ → distribui → isola: $\widehat\beta_{IV}=(\mathbf Z'\mathbf X)^{-1}\mathbf Z'\mathbf y$.
 </details>
 
 **57.** As duas propriedades de um instrumento e qual é testável.
@@ -327,7 +327,7 @@ Relevância $\operatorname{Cov}(Z,X)\neq0$ (testável pelo $F$ do 1º estágio) 
 
 **58.** Atenuação por erro de medição no regressor.
 <details><summary>resposta</summary>
-$\operatorname{plim}\hat\beta=\beta\dfrac{\sigma^2_{X^*}}{\sigma^2_{X^*}+\sigma^2_w}$, sempre em direção a zero. Não some com mais dados.
+$\operatorname{plim}\widehat\beta=\beta\dfrac{\sigma^2_{X^*}}{\sigma^2_{X^*}+\sigma^2_w}$, sempre em direção a zero. Não some com mais dados.
 </details>
 
 **59.** Erro de medição na dependente: o que muda?

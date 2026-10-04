@@ -137,7 +137,7 @@ capa <- function(volume, subtitulo, arquivo) {
     sprintf("{\\sffamily\\large\\color{fxeixo}%s\\par}", subtitulo),
     "\\vspace{1.4cm}",
     "{\\color{fxteal}\\rule{3cm}{2pt}}\\par\\vspace{8pt}",
-    "{\\large Caderno de estudo para a P1 de 02/10/2026\\par}",
+    "{\\large Caderno de estudo para a P1\\par}",
     "\\vspace{3pt}",
     "{\\color{fxeixo}Prof. Edson Zambon Monte · livro-base: Greene, \\emph{Econometric Analysis}\\par}",
     "\\vfill",
@@ -225,6 +225,8 @@ volume_teoria <- function() {
 
 volume_exercicios <- function() {
   partes <- list(
+    "Lista 1 v.1: a base da prova" = c("provas/lista1_v1/README.md", "provas/lista1_v1/mapa.md",
+                                       "provas/lista1_v1/novos.md"),
     "Lista 1 resolvida" = c("00_fundamentos/00_lista1.md", "01_paradigma_projecao/01_lista1.md",
                             "02_mqo_simples/02_lista1.md", "03_mqo_matricial/03_lista1.md",
                             "04_fwl_particionada/04_lista1.md", "05_ajuste_restricoes/05_lista1.md",
@@ -241,6 +243,40 @@ volume_exercicios <- function() {
   md <- file.path(BUILD, "volume2.md"); montar_md(partes, md)
   capa("Volume 2", "Lista 1, provas, bancos de questões e gabaritos", file.path(BUILD, "capa2.tex"))
   compilar("caderno_volume2_exercicios", md, file.path(BUILD, "capa2.tex"), OPC_LIVRO, passes = 3)
+}
+
+volume_reta_final <- function() {
+  # Intercala o material socrático e o algoritmo, seção a seção, para leitura em conjunto.
+  le_corpo <- function(rel) {
+    l <- readLines(file.path(RAIZ, rel), encoding = "UTF-8", warn = FALSE)
+    if (l[1] == "---") l <- l[-(1:which(l == "---")[2])]
+    l[!grepl("^# ", l)]
+  }
+  secoes <- function(l) {
+    ini <- grep("^## [0-9]+ · ", l)
+    intro <- l[seq_len(ini[1] - 1)]
+    corpo <- lapply(seq_along(ini), function(k) {
+      fim <- if (k < length(ini)) ini[k + 1] - 1 else length(l)
+      s <- l[(ini[k] + 1):fim]
+      while (length(s) && grepl("^\\s*(---)?\\s*$", s[length(s)])) s <- s[-length(s)]
+      s
+    })
+    names(corpo) <- sub("^## ", "", l[ini])
+    list(intro = intro[!grepl("^\\s*---\\s*$", intro)], corpo = corpo)
+  }
+  alg <- secoes(le_corpo("provas/lista1_v1/algoritmo.md"))
+  soc <- secoes(le_corpo("provas/lista1_v1/socratico.md"))
+  if (!identical(names(alg$corpo), names(soc$corpo))) stop("algoritmo.md e socratico.md com seções diferentes")
+  linhas <- c(bloco_latex("\\part{Como ler}"), "# Como ler este volume", "", alg$intro, "", soc$intro, "")
+  linhas <- c(linhas, bloco_latex("\\part{Perguntas e algoritmos}"))
+  for (s in names(alg$corpo)) {
+    linhas <- c(linhas, paste("#", s), "", "## Perguntas que levam à demonstração", "", soc$corpo[[s]], "",
+                "## O algoritmo", "", alg$corpo[[s]], "", "")
+  }
+  md <- file.path(BUILD, "volume3.md")
+  writeLines(enc2utf8(linhas), md, useBytes = TRUE)
+  capa("Volume 3", "Reta final: perguntas e algoritmos das resoluções", file.path(BUILD, "capa3.tex"))
+  compilar("caderno_volume3_reta_final", md, file.path(BUILD, "capa3.tex"), OPC_LIVRO, passes = 3)
 }
 
 simulados <- function() {
@@ -264,9 +300,10 @@ simulados <- function() {
 
 ## ---- execução ------------------------------------------------------------------------
 alvos <- commandArgs(trailingOnly = TRUE)
-if (!length(alvos)) alvos <- c("teoria", "exercicios", "simulados")
+if (!length(alvos)) alvos <- c("teoria", "exercicios", "reta", "simulados")
 cat("pandoc:  ", PANDOC, "\nlualatex:", LUALATEX, "\n")
 if ("teoria" %in% alvos) volume_teoria()
 if ("exercicios" %in% alvos) volume_exercicios()
+if ("reta" %in% alvos) volume_reta_final()
 if ("simulados" %in% alvos) simulados()
 cat("\nPDFs em caderno/pdf/\n")

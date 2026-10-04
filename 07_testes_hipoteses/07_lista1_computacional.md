@@ -54,8 +54,7 @@ Mantendo só os significativos, a equação reestimada tem $\bar R^2=0{,}5016$ �
 
 **(e) $R^2$ e $\bar R^2$.** 82,5% da variação das vendas é explicada; ajustando pelos graus de liberdade (só 10 sobram), 73,8%. A diferença é grande porque há 6 parâmetros para 16 observações. O $R^2$ nunca cai com mais regressores; o ajustado pode cair — e cai aqui quando se removem variáveis úteis.
 
-**Conferência numérica**
-
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R — 
 | chave_R | nota |
 |---|---|
 | m07a_ex38_b2 | 2,6347 |
@@ -68,6 +67,7 @@ Mantendo só os significativos, a equação reestimada tem $\bar R^2=0{,}5016$ �
 | m07a_ex38_tcrit10 | 1,8125 |
 | m07a_ex38r_r2adj | 0,50164 |
 | m07a_ex38_Fconj | 6,4091 |
+-->
 
 ## Ex. 39 — Diagnósticos do mesmo modelo
 
@@ -79,20 +79,18 @@ Mantendo só os significativos, a equação reestimada tem $\bar R^2=0{,}5016$ �
 
 **(g) RESET.**
 
-```text
-Hipóteses:   H0: modelo corretamente especificado   vs   H1: má especificação
-Estatística: F = 0,1311 (2 e 8 gl), p = 0,8790
-Decisão:     0,1311 < 3,113 = F crítico a 10%   ⇒   não se rejeita H0
-Conclusão:   não há evidência de má especificação (forma funcional ou variável omitida).
-```
+- **Hipóteses:** $H_0$: o modelo está corretamente especificado vs. $H_1$: há má especificação.
+- **Estatística:** $F_{cal}=0{,}1311$, com 2 e 8 graus de liberdade; $p=0{,}8790$.
+- **Decisão:** como $F_{cal}=0{,}1311<F_{tab}=3{,}113$ (10%), não se rejeita $H_0$.
+- **Conclusão:** não há evidência de má especificação (forma funcional ou variável omitida).
 
 **(h) Matriz de correlação.** Os pares mais fortes são juros e % de linhas ($-0{,}800$) e desemprego com PIB ($0{,}727$). O determinante da matriz de correlação é 0,00538 (perto de zero) e o número de condição, 65,9: indícios de colinearidade relevante.
 
 **(i) Fontes e consequências da multicolinearidade.** Fontes: variáveis que compartilham tendência comum (PIB, desemprego e juros movem-se juntos no ciclo), amostra pequena, especificação com proxies do mesmo conceito. Consequências: os estimadores continuam **não viesados e MELNV**, mas as variâncias explodem — $t$ pequenos, $F$ grande, sinais instáveis e sensibilidade a pequenas mudanças na amostra. Foi o que apareceu no ex. 38.
 
-**(j) e (k) Regressões auxiliares e FIV.**
+**(j) e (k) Regressões auxiliares e VIF.**
 
-| Regressor | $R^2$ auxiliar | $F$ | FIV |
+| Regressor | $R^2$ auxiliar | $F$ | VIF |
 |---|---|---|---|
 | $X_1$ moradias | 0,8315 | 13,571 ($p=0{,}00031$) | 5,935 |
 | $X_2$ desemprego | — | — | 4,292 |
@@ -100,34 +98,28 @@ Conclusão:   não há evidência de má especificação (forma funcional ou var
 | $X_4$ % linhas | — | — | 4,899 |
 | $X_5$ PIB | — | — | 9,457 |
 
-Para $X_1$, a 10%: $F=13{,}571$ contra $F_{crit}\approx 3{,}36$ ⇒ rejeita-se $H_0$ de que $X_1$ não é explicada pelas demais — há colinearidade. Pelo FIV, o caso grave é o dos **juros** (18,1 > 10), seguido do PIB (9,5).
+Para $X_1$, a 10%: $F=13{,}571$ contra $F_{crit}\approx 3{,}36$ ⇒ rejeita-se $H_0$ de que $X_1$ não é explicada pelas demais — há colinearidade. Pelo VIF, o caso grave é o dos **juros** (18,1 > 10), seguido do PIB (9,5).
 
 **(l) Autocorrelação.**
 
-```text
-Durbin-Watson
-Hipóteses:   H0: ρ = 0   vs   H1: ρ ≠ 0
-Estatística: d = 2,4207  (n = 16, k' = 5)
-Decisão:     d > 2 ⇒ lado negativo. Com dL = 0,562 e dU = 2,220 (α = 10%, bilateral por
-             conveniência), 4 − dU = 1,780 e 4 − dL = 3,438; como 1,780 < 2,4207 < 3,438,
-             o teste cai na região INCONCLUSIVA/limítrofe.
-Conclusão:   o DW não permite decidir; recorra ao Breusch-Godfrey.
+**Durbin-Watson**
 
-Breusch-Godfrey
-Hipóteses:   H0: sem autocorrelação até a ordem p   vs   H1: há autocorrelação
-Ordem 1:     LM = 2,002 (p = 0,157)            ⇒ não rejeita a 10%
-Ordem 2:     LM = 7,030 (p = 0,0297)           ⇒ rejeita a 10% e a 5%
-Ordem 3:     LM = 10,364 (p = 0,0157)          ⇒ rejeita
-Conclusão:   há indício de autocorrelação de ordem superior a 1. A escolha de p deve seguir
-             o critério de informação; com p = 2 já se rejeita a ausência de autocorrelação.
-```
+- **Hipóteses:** $H_0:\rho=0$ vs. $H_1:\rho\neq 0$.
+- **Estatística:** $d=2{,}4207$, com $n=16$ e $k'=5$ regressores.
+- **Decisão:** $d>2$ aponta para o lado negativo. Com $d_L=0{,}562$ e $d_U=2{,}220$ (10%, bilateral por conveniência), $4-d_U=1{,}780$ e $4-d_L=3{,}438$; como $1{,}780<2{,}4207<3{,}438$, o teste cai na região **inconclusiva**.
+- **Conclusão:** o DW não permite decidir; recorra ao Breusch-Godfrey.
 
-**(m) e (n) White.** Passos: (1) estimar o modelo e obter $\hat u$; (2) regredir $\hat u^2$ nos regressores, seus quadrados e produtos cruzados; (3) calcular $nR^2 \sim \chi^2$ com graus de liberdade iguais ao número de regressores da auxiliar; (4) rejeitar indica heterocedasticidade.
+**Breusch-Godfrey**
+
+- **Hipóteses:** $H_0$: ausência de autocorrelação até a ordem $p$ vs. $H_1$: há autocorrelação.
+- **Estatísticas:** ordem 1, $LM=2{,}002$ ($p=0{,}157$): não rejeita a 10%. Ordem 2, $LM=7{,}030$ ($p=0{,}0297$): rejeita a 10% e a 5%. Ordem 3, $LM=10{,}364$ ($p=0{,}0157$): rejeita.
+- **Conclusão:** há indício de autocorrelação de ordem superior a 1. A escolha de $p$ deve seguir um critério de informação; com $p=2$ já se rejeita a ausência de autocorrelação.
+
+**(m) e (n) White.** Passos: (1) estimar o modelo e obter $\widehat u$; (2) regredir $\widehat u^2$ nos regressores, seus quadrados e produtos cruzados; (3) calcular $nR^2 \sim \chi^2$ com graus de liberdade iguais ao número de regressores da auxiliar; (4) rejeitar indica heterocedasticidade.
 
 Aqui aparece o limite prático: a versão **completa** exigiria 21 parâmetros para 16 observações (posto 16) — impossível. Usando a versão só com quadrados: $nR^2=5{,}650$ ($p=0{,}342$) ⇒ **não se rejeita** homocedasticidade. Com quadrados e produtos cruzados parciais, $nR^2=14{,}009$ ($p=0{,}173$) ⇒ mesma conclusão.
 
-**Conferência numérica**
-
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R — 
 | chave_R | nota |
 |---|---|
 | m07a_ex39_reset_F | 0,13110 |
@@ -144,6 +136,7 @@ Aqui aparece o limite prático: a versão **completa** exigiria 21 parâmetros p
 | m07a_ex39_bg2_pLM | 0,029749 |
 | m07a_ex39_white_q_LM | 5,6495 |
 | m07a_ex39_white_q_p | 0,34183 |
+-->
 
 ## Ex. 74 — Regressão múltipla livre
 
@@ -165,8 +158,7 @@ $R^2=0{,}4361$; $\bar R^2=0{,}4296$; $F=66{,}906$.
 
 **Interpretação.** Todos os coeficientes são significativos a 1% e têm os sinais da teoria de capital humano. O termo quadrático confirma a concavidade do perfil experiência-salário. O diferencial por sexo é grande e persiste mesmo controlando educação, experiência e tempo de casa — é a versão do curso do "gap de gênero condicional". O modelo explica 43,6% da variação do log-salário, ajuste típico de microdados.
 
-**Conferência numérica**
-
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R — 
 | chave_R | nota |
 |---|---|
 | m07a_ex74_n | 526 |
@@ -176,3 +168,4 @@ $R^2=0{,}4361$; $\bar R^2=0{,}4296$; $F=66{,}906$.
 | m07a_ex74_r2 | 0,43614 |
 | m07a_ex74_r2adj | 0,42962 |
 | m07a_ex74_F | 66,906 |
+-->

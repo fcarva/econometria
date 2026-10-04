@@ -25,9 +25,9 @@ O que acontece com o MQO quando $n\to\infty$: consistência, normalidade assint�
 
 ## O essencial
 
-$$b=\beta+\left(\frac{X'X}{n}\right)^{-1}\left(\frac{X'\varepsilon}{n}\right)\ \Longrightarrow\ \operatorname{plim}b=\beta,\qquad \sqrt n\,(b-\beta)\xrightarrow{d}N(0,\sigma^2Q^{-1})$$
+$$\mathbf b=\beta+\left(\frac{\mathbf X'\mathbf X}{n}\right)^{-1}\left(\frac{\mathbf X'\varepsilon}{n}\right)\ \Longrightarrow\ \operatorname{plim}\mathbf b=\beta,\qquad \sqrt n\,(\mathbf b-\beta)\xrightarrow{d}N(0,\sigma^2\mathbf Q^{-1})$$
 
-Ponto de máximo da P1 2025/2, com erro-padrão pelo método delta: $X^*=30{,}31$ anos, E.p. $=0{,}71$.
+Ponto de máximo da P1 2025/2, com erro-padrão pelo método delta: $X^*=30{,}31$ anos, ep $=0{,}71$.
 
 ## Como estudar
 

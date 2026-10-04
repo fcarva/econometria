@@ -27,7 +27,7 @@ aliases:
 
 > [!NOTE]
 > **O que é, por que importa, onde cai**
-> Antes de estimar, é preciso saber **o que** se está estimando. Este módulo separa três objetos que costumam ser confundidos: a **função de regressão populacional** $E[y\mid x]$, a **projeção linear** (a melhor aproximação linear de $y$ por $x$) e a **reta ajustada** na amostra. As hipóteses A1 a A6 aparecem aqui pela primeira vez, e é delas que sai tudo o mais. Na prova, cai como item conceitual de abertura e como a lista de hipóteses que qualquer demonstração precisa citar.
+> Antes de estimar, é preciso saber **o que** se está estimando. Este módulo separa três objetos que costumam ser confundidos: a **função de regressão populacional** $E(y\mid x)$, a **projeção linear** (a melhor aproximação linear de $y$ por $x$) e a **reta ajustada** na amostra. As hipóteses H1–H5 aparecem aqui pela primeira vez, e é delas que sai tudo o mais. Na prova, cai como item conceitual de abertura e como a lista de hipóteses que qualquer demonstração precisa citar.
 
 ## 1. O paradigma econométrico
 
@@ -46,52 +46,51 @@ A econometria junta três ingredientes: **teoria econômica** (que dá a relaç�
 
 | Objeto | Definição | Natureza |
 |---|---|---|
-| Função de regressão populacional | $E[y\mid x]$ | populacional, pode ser não linear |
-| Projeção linear | $\alpha+\beta'x$ que minimiza $E[(y-\alpha-\beta'x)^2]$ | populacional, linear por construção |
-| Reta ajustada | $\hat y=x'b$ | amostral, calculada dos dados |
+| Função de regressão populacional | $E(y\mid x)$ | populacional, pode ser não linear |
+| Projeção linear | $\alpha+\beta'x$ que minimiza $E((y-\alpha-\beta'x)^2)$ | populacional, linear por construção |
+| Reta ajustada | $\widehat y=x'b$ | amostral, calculada dos dados |
 
 ### D01.1 · A projeção linear populacional
 
 > [!NOTE]
 > **O que se quer provar**
 > Os coeficientes da melhor aproximação linear de $y$ por $x$ são
-> $$\beta=\operatorname{Var}(x)^{-1}\operatorname{Cov}(x,y),\qquad \alpha=E[y]-\beta'E[x].$$
+> $$\beta=\operatorname{Var}(x)^{-1}\operatorname{Cov}(x,\mathbf y),\qquad \alpha=E(\mathbf y)-\beta'E(x).$$
 
 **Passo a passo.**
 
-1. Minimize $S(\alpha,\beta)=E\big[(y-\alpha-\beta'x)^2\big]$ em relação a $\alpha$:
-$$\frac{\partial S}{\partial\alpha}=-2E[y-\alpha-\beta'x]=0\ \Longrightarrow\ \alpha=E[y]-\beta'E[x].$$
+1. Minimize $S(\alpha,\beta)=E\big((y-\alpha-\beta'x)^2\big)$ em relação a $\alpha$:
+$$\frac{\partial S}{\partial\alpha}=-2E(y-\alpha-\beta'x)=0\ \Longrightarrow\ \alpha=E(y)-\beta'E(x).$$
 
 2. Substitua e derive em relação a $\beta$:
-$$\frac{\partial S}{\partial\beta}=-2E\big[x\,(y-\alpha-\beta'x)\big]=0\ \Longrightarrow\ \operatorname{Cov}(x,y)=\operatorname{Var}(x)\beta .$$
+$$\frac{\partial S}{\partial\beta}=-2E\big(x\,(y-\alpha-\beta'x)\big)=0\ \Longrightarrow\ \operatorname{Cov}(x,y)=\operatorname{Var}(x)\beta .$$
 
 3. Com $\operatorname{Var}(x)$ não singular,
-$$\beta=\operatorname{Var}(x)^{-1}\operatorname{Cov}(x,y).\qquad\blacksquare$$
+$$\beta=\operatorname{Var}(x)^{-1}\operatorname{Cov}(x,\mathbf y).\qquad\blacksquare$$
 
-**Leitura.** São as **condições de momento** $E[\varepsilon]=0$ e $E[x\varepsilon]=0$ que definem a projeção — e o MQO é o análogo amostral exato dessas condições. Por isso o MQO sempre estima **alguma coisa** (a projeção), mesmo quando a esperança condicional não é linear; o que se perde, nesse caso, é a interpretação causal ou estrutural.
+**Leitura.** São as **condições de momento** $E(\varepsilon)=0$ e $E(x\varepsilon)=0$ que definem a projeção — e o MQO é o análogo amostral exato dessas condições. Por isso o MQO sempre estima **alguma coisa** (a projeção), mesmo quando a esperança condicional não é linear; o que se perde, nesse caso, é a interpretação causal ou estrutural.
 
 ### D01.2 · Quando a projeção coincide com a esperança condicional
 
-Se $E[y\mid x]$ **é** linear em $x$, projeção e esperança condicional coincidem. Isso acontece, por exemplo, quando $(y,x)$ têm distribuição normal conjunta. Caso contrário, a projeção é a melhor aproximação linear, e a diferença $E[y\mid x]-(\alpha+\beta'x)$ é o erro de especificação funcional — o que o RESET detecta ([módulo 07](../07_testes_hipoteses/07_teoria.md)).
+Se $E(y\mid x)$ **é** linear em $x$, projeção e esperança condicional coincidem. Isso acontece, por exemplo, quando $(y,x)$ têm distribuição normal conjunta. Caso contrário, a projeção é a melhor aproximação linear, e a diferença $E(y\mid x)-(\alpha+\beta'x)$ é o erro de especificação funcional — o que o RESET detecta ([módulo 07](../07_testes_hipoteses/07_teoria.md)).
 
-**Verificação.** Simulando $E[y\mid x]=x^2$ com $x$ uniforme, a projeção linear ajusta uma reta com inclinação positiva que não é a média condicional em ponto nenhum; o gráfico [figuras/](figuras/) mostra as duas curvas lado a lado.
+**Verificação.** Simulando $E(y\mid x)=x^2$ com $x$ uniforme, a projeção linear ajusta uma reta com inclinação positiva que não é a média condicional em ponto nenhum; o gráfico [figuras/](figuras/) mostra as duas curvas lado a lado.
 
 ## 3. As hipóteses do modelo clássico
 
-| Id | Hipótese | O que garante | O que quebra sem ela |
+| Id | Hipótese (chave da Lista 1 v.1, ex. 15) | O que garante | O que quebra sem ela |
 |---|---|---|---|
-| A1 | linearidade nos parâmetros | o modelo é $y=X\beta+\varepsilon$ | especificação errada, viés |
-| A2 | posto completo de $X$ | identificação e existência de $(X'X)^{-1}$ | parâmetros não identificados (ex. 35, 61) |
-| A3 | $E[\varepsilon\mid X]=0$ | não-viés e consistência | viés e inconsistência ([módulo 10](../10_endogeneidade_iv/10_teoria.md)) |
-| A4 | $E[\varepsilon\varepsilon'\mid X]=\sigma^2I$ | $\operatorname{Var}(b)=\sigma^2(X'X)^{-1}$ e Gauss-Markov | erros-padrão errados, MQO ineficiente |
-| A5 | $X$ gerado exogenamente | condicionamento em $X$ é legítimo | inferência condicional inválida |
-| A6 | normalidade do erro | inferência **exata** ($t$ e $F$) | só resta a inferência assintótica ([módulo 08](../08_assintotica/08_teoria.md)) |
+| H1 | linearidade nos parâmetros: $\mathbf y=\mathbf X\beta+\varepsilon$ | a álgebra do MQO se aplica | especificação errada, viés |
+| H2 | exogeneidade estrita: $E(\varepsilon\mid\mathbf X)=\mathbf 0$ ($\mathbf X$ fixo ou independente de $\varepsilon$) | não-viés e consistência | viés e inconsistência ([módulo 10](../10_endogeneidade_iv/10_teoria.md)) |
+| H3 | posto completo: $\operatorname{posto}(\mathbf X)=K$ | identificação e existência de $(\mathbf X'\mathbf X)^{-1}$ | parâmetros não identificados (ex. 19 e 65 da v.1) |
+| H4 | esfericidade: $E(\varepsilon\varepsilon'\mid\mathbf X)=\sigma^2\mathbf I_n$ | $\operatorname{Var}(\mathbf b\mid\mathbf X)=\sigma^2(\mathbf X'\mathbf X)^{-1}$ e Gauss-Markov | erros-padrão errados, MQO ineficiente |
+| H5 | normalidade (opcional): $\varepsilon\mid\mathbf X\sim N(\mathbf 0,\sigma^2\mathbf I_n)$ | inferência **exata** ($t$ e $F$) | só resta a inferência assintótica ([módulo 08](../08_assintotica/08_teoria.md)) |
 
-**Na numeração do professor.** Em aula essas hipóteses são **h1 a h5** (h4 é a exogeneidade estrita e h5 a ausência de multicolinearidade); homocedasticidade e ausência de autocorrelação vêm junto com a variância. Ver [caderno_aulas.md](../demonstracoes/caderno_aulas.md) §2 e responda na numeração dele.
+**Correspondência.** Greene: H1 = A1, H2 = A3 (com A5), H3 = A2, H4 = A4, H5 = A6. Caderno de agosto: h1 = H1, h4 = H2, h5 e h3 = H3, h2 (amostra aleatória) sem número na chave. Ver [caderno_aulas.md](../demonstracoes/caderno_aulas.md) §2.
 
 > [!IMPORTANT]
 > **A hierarquia que vale ponto**
-> A3 é a hipótese crítica: sem ela não há não-viés nem consistência. A4 afeta **eficiência e inferência**, não o não-viés. A6 afeta só a inferência exata em amostra pequena. Saber dizer **qual propriedade cai com qual hipótese** é o que separa uma resposta boa de uma decorada.
+> H2 é a hipótese crítica: sem ela não há não-viés nem consistência. H4 afeta **eficiência e inferência**, não o não-viés. H5 afeta só a inferência exata em amostra pequena. Saber dizer **qual propriedade cai com qual hipótese** é o que separa uma resposta boa de uma decorada.
 
 ## 4. A aplicação que atravessa o curso
 
@@ -104,7 +103,7 @@ Médias que aparecem na coluna "Média de X" do output da prova, reproduzidas ex
 | Formato | O que fazer |
 |---|---|
 | "Cite e explique as etapas da análise econométrica" | a lista da §1, com uma frase por etapa |
-| "Quais as hipóteses do MRL?" | A1 a A6 (ou as cinco da versão simples), cada uma com o que garante |
+| "Quais as hipóteses do MRL?" | H1–H5 (ou as cinco da versão simples), cada uma com o que garante |
 | "Quais as propriedades ótimas do MQO?" | linear, não viesado, eficiente: MELNV, por Gauss-Markov |
 | "O que é o termo de erro?" | tudo o que afeta $y$ e não está no modelo, mais erro de medida e aleatoriedade intrínseca |
 
@@ -118,13 +117,12 @@ Médias que aparecem na coluna "Média de X" do output da prova, reproduzidas ex
 
 ## 7. Checklist
 
-- [ ] Explico a diferença entre $E[y\mid x]$, projeção linear e reta ajustada.
-- [ ] Derivo $\beta=\operatorname{Var}(x)^{-1}\operatorname{Cov}(x,y)$ (D01.1).
-- [ ] Listo A1 a A6 dizendo o que cada uma garante e o que cai sem ela.
+- [ ] Explico a diferença entre $E(y\mid x)$, projeção linear e reta ajustada.
+- [ ] Derivo $\beta=\operatorname{Var}(x)^{-1}\operatorname{Cov}(x,\mathbf y)$ (D01.1).
+- [ ] Listo H1–H5 dizendo o que cada uma garante e o que cai sem ela.
 - [ ] Digo as etapas da análise econométrica sem travar.
 
-## 8. Conferência numérica
-
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R
 | chave_R | nota |
 |---|---|
 | m01_psid_n | 4165 |
@@ -135,8 +133,9 @@ Médias que aparecem na coluna "Média de X" do output da prova, reproduzidas ex
 | m01_psid_media_south | 0,290276 |
 | m01_psid_media_smsa | 0,653782 |
 | m01_psid_media_lwage | 6,67635 |
+-->
 
-## 9. Referências
+## 8. Referências
 
 - Greene, *Econometric Analysis*, cap. 1 (paradigma), cap. 2 (o modelo de regressão), §4.1–4.2.
 - Slides SL01 e SL02.

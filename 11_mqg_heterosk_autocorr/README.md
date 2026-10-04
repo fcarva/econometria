@@ -33,16 +33,16 @@ aliases:
 
 ## O essencial (para não esquecer)
 
-$$\hat\beta_{MQG}=(X'\Omega^{-1}X)^{-1}X'\Omega^{-1}y,\qquad \operatorname{Var}(\hat\beta_{MQG})=\sigma^2(X'\Omega^{-1}X)^{-1}$$
+$$\widehat\beta_{MQG}=(\mathbf X'\Omega^{-1}\mathbf X)^{-1}\mathbf X'\Omega^{-1}\mathbf y,\qquad \operatorname{Var}(\widehat\beta_{MQG})=\sigma^2(\mathbf X'\Omega^{-1}\mathbf X)^{-1}$$
 
-Com $\Omega=TT'$ e $P'=T^{-1}$, o MQG é MQO nas variáveis transformadas $Py$ e $PX$ — é o teorema de Aitken: o MQG é MELNV quando $\Omega$ é conhecida.
+Com $\Omega=TT'$ e $\mathbf P'=T^{-1}$, o MQG é MQO nas variáveis transformadas $\mathbf P\mathbf y$ e $\mathbf P\mathbf X$ — é o teorema de Aitken: o MQG é MELNV quando $\Omega$ é conhecida.
 
 ## Exercícios da Lista 2 deste módulo
 
 | Bloco | Exercícios | Assunto |
 |---|---|---|
 | Consequências e testes | 1, 2, 3, 9, 18, 19 | heterocedasticidade e autocorrelação: efeitos sobre MQO, IC e testes |
-| Correção por MQP e MQG | 4, 7e, 25, 26, 28, 30 | ponderação, derivação de $\hat\beta_{MQG}$ e sua variância |
+| Correção por MQP e MQG | 4, 7e, 25, 26, 28, 30 | ponderação, derivação de $\widehat\beta_{MQG}$ e sua variância |
 | Leitura de testes | 5, 6, 8, 10 a 17, 20 a 23 | RESET, White, Park, Breusch-Pagan, BG e DW em outputs |
 | Autocorrelação teórica | 29 | provar $\operatorname{Corr}(\varepsilon_t,\varepsilon_{t-1})=\rho$ no AR(1) |
 | Matricial | 24, 27 | $E(\mu\mu'\mid X)=\sigma^2I$ e violação das hipóteses |

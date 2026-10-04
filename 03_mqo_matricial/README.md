@@ -24,9 +24,9 @@ A mesma dedução do [módulo 02](../02_mqo_simples/README.md), agora em vetores
 
 ## O essencial
 
-$$b=(X'X)^{-1}X'y,\qquad P=X(X'X)^{-1}X',\qquad M=I-P$$
+$$\mathbf b=(\mathbf X'\mathbf X)^{-1}\mathbf X'\mathbf y,\qquad \mathbf P=\mathbf X(\mathbf X'\mathbf X)^{-1}\mathbf X',\qquad \mathbf M=\mathbf I-\mathbf P$$
 
-$$e=My,\qquad \hat y=Py,\qquad X'e=0,\qquad e'e=y'y-b'X'y,\qquad \operatorname{tr}(M)=n-K$$
+$$\mathbf e=\mathbf M\mathbf y,\qquad \widehat{\mathbf y}=\mathbf P\mathbf y,\qquad \mathbf X'\mathbf e=0,\qquad \mathbf e'\mathbf e=\mathbf y'\mathbf y-\mathbf b'\mathbf X'\mathbf y,\qquad \operatorname{tr}(\mathbf M)=n-K$$
 
 > [!TIP]
 > **Intuição visual antes da álgebra**

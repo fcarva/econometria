@@ -1,5 +1,5 @@
 ---
-title: "Cronograma até a P1 (15/09 a 02/10/2026)"
+title: "Cronograma até a P1"
 disciplina: Econometria I (PECO-5021/6021)
 professor: Edson Zambon Monte
 periodo: 2026/2
@@ -14,22 +14,39 @@ aliases:
 
 # Cronograma até a P1
 
+## Reta final pela Lista 1 v.1
+
+O professor soltou a [Lista 1 v.1](provas/lista1_v1/README.md) (79 exercícios, com chave) e montou a prova junto. Ela absorveu as seis questões da P1 2025/2, então passa a ser o roteiro. O plano abaixo conta os dias para trás a partir da prova (D−0); cada dia cabe em 3 a 4 horas. Para cada demonstração, a sequência é: perguntas da seção no [material socrático](provas/lista1_v1/socratico.md), depois o [algoritmo](provas/lista1_v1/algoritmo.md) de mesmo número, depois escrever de cabeça.
+
+- [ ] **D−5 — os dois outputs.** Ex. 44, 45, 62 e 61 em [novos.md](provas/lista1_v1/novos.md), escrevendo as quatro linhas sem olhar; depois o ex. 77 a 5% contra a [resolução do `ivreg`](10_endogeneidade_iv/10_lista1.md). Cronometre 12 min por output. · flashcards de testes
+- [ ] **D−4 — F e contas à mão.** Ex. 4, 6, 50, 64, 26, 31 e 73a, cada um em até 4 min. Depois as derivações de MQO simples (ex. 2, 28, 33, 36: D02.1–D02.7), de cabeça, no papel.
+- [ ] **D−3 — amostra finita e álgebra.** Ex. 35, 37, 38, 39 e ex. 16, 17, 18, 20, 22: seções 2 a 7 do algoritmo. Regra dos 20 minutos por demonstração.
+- [ ] **D−2 — assintótica e endogeneidade.** Ex. 51–54 e 56 (D08.1–D08.3, D08.7); ex. 71, 73b, 74 e 75 (D10.1–D10.5). Feche com o quadro do ex. 14 e os ex. 8–11 da seção 1.
+- [ ] **D−1 — simulado e descanso.** Manhã: refaça a [P1 2025/2](provas/p1_2025_2/econometria-i-prova-2025-2-resolvida.md) inteira em 2 h, sem consulta — ela está toda dentro da lista nova. Tarde: só o log de erros e a [folha de última revisão](formulario/ultima_revisao.md). Pare cedo.
+- [ ] **D−0 — prova.** 15 min com a folha. Outputs primeiro; nas demonstrações, hipóteses antes da álgebra; defina SQR na primeira linha de todo teste F.
+
+Se só houver dois dias: D−5 e D−4 juntos num dia (outputs e contas de F), e D−3 e D−2 no outro, só com as derivações marcadas ★★★ no [mapa](provas/lista1_v1/mapa.md).
+
+---
+
+## Plano original (15/09 a 02/10)
+
 17 dias, duas aulas pela frente (18/09 e 25/09) e dois simulados cronometrados. A regra que sustenta o plano: **revisão espaçada em +1, +3 e +7 dias**, usando os [flashcards](provas/banco/flashcards.md) — dez cartões por sessão, seis minutos. Revisar aqui significa derivar duas demonstrações de cabeça, em papel, e resolver três itens de interpretação — anotando tudo o que sair errado em [provas/log_erros.md](provas/log_erros.md).
 
 > [!IMPORTANT]
 > **A regra dos 20 minutos**
 > Nenhuma demonstração pode levar mais de 20 minutos na primeira vez. Se travar, olhe o passo seguinte na nota, feche e refaça do zero. O objetivo é reconstruir, não reconhecer.
 
-## Semana 1
+### Semana 1
 
 - [x] **Ter 15/09 — diagnóstico.** Resolva as Q3 a Q6 da [P1 2025/2](provas/p1_2025_2/econometria-i-prova-2025-2-resolvida.md) sem consulta, cronometrando (90 min). Corrija com a nota e registre cada erro no log. É esse diagnóstico que define onde você vai gastar os 17 dias.
 - [ ] **Qua 16/09 — módulo 02, MQO simples.** [Teoria](02_mqo_simples/02_teoria.md) e [lista](02_mqo_simples/02_lista1.md) (ex. 13–22 e 40). Meta: escrever D0 a D8 de cabeça. É a Q3 da prova.
 - [ ] **Qui 17/09 — módulos 03 e 04.** [Matricial](03_mqo_matricial/03_teoria.md) (ex. 23, 24, 28–31, 34, 35) e [FWL](04_fwl_particionada/04_teoria.md) (ex. 25). · revisão do 02 (+1)
-- [ ] **Sex 18/09 — módulo 06 + aula.** Manhã: não-viés, $\operatorname{Var}(b)=\sigma^2(X'X)^{-1}$, Gauss-Markov e $E[e'e]=\sigma^2(n-K)$ (ex. 26, 32, 33, 36, 37). Aula à noite. Depois da aula, 20 min consolidando o que foi dado: se for conteúdo de P2, uma nota curta no esqueleto do [módulo 11](11_mqg_heterosk_autocorr/README.md) basta.
+- [ ] **Sex 18/09 — módulo 06 + aula.** Manhã: não-viés, $\operatorname{Var}(\mathbf b)=\sigma^2(\mathbf X'\mathbf X)^{-1}$, Gauss-Markov e $E(\mathbf e'\mathbf e)=\sigma^2(n-K)$ (ex. 26, 32, 33, 36, 37). Aula à noite. Depois da aula, 20 min consolidando o que foi dado: se for conteúdo de P2, uma nota curta no esqueleto do [módulo 11](11_mqg_heterosk_autocorr/README.md) basta.
 - [ ] **Sáb 19/09 — multicolinearidade e ajuste.** Módulo 06 (ex. 53, 54, 63, 64) e [módulo 05](05_ajuste_restricoes/05_teoria.md) (ex. 27, 55, 56, 62). · revisão do 02 (+3) e do 03 (+2)
 - [ ] **Dom 20/09 — meio período.** [Módulo 07](07_testes_hipoteses/07_teoria.md): teoria dos testes e interpretação de output (ex. 41–46, 49–52). Treine o [vocabulário](formulario/vocabulario_interpretacao.md) escrevendo as quatro linhas para cada teste, sem olhar.
 
-## Semana 2
+### Semana 2
 
 - [ ] **Seg 21/09 — 07 em R e módulo 08.** Exercícios computacionais 38 e 39 ([parte computacional](07_testes_hipoteses/07_lista1_computacional.md)) e [assintótica](08_assintotica/08_teoria.md) (ex. 73). · revisão de 03/04 (+4) e do 06 (+3)
 - [ ] **Ter 22/09 — módulo 09.** [Dummies, forma funcional, Chow e DiD](09_dummies_forma_funcional/09_teoria.md) (ex. 43, 47, 48, 57–61, 71, 72). · revisão de 05 e 07
@@ -39,7 +56,7 @@ aliases:
 - [ ] **Sáb 26/09 — Simulado 1.** [Simulado 01](provas/simulados/simulado_01.md) cronometrado, sem consulta, no tempo real da prova. Corrija pelo [gabarito](provas/simulados/simulado_01_gabarito.md) usando a rubrica e registre tudo no log.
 - [ ] **Dom 27/09 — dia leve.** Ataque só os três pontos mais fracos do simulado. Nada de matéria nova. · revisão de 06/07 (+7)
 
-## Reta final
+### Reta final (plano original)
 
 - [ ] **Seg 28/09 — banco, bloco 2.** VI, erro de medição, viés de omissão, consistência e Gauss-Markov, mais seis outputs. · revisão de 09/10
 - [ ] **Ter 29/09 — Simulado 2.** [Simulado 02](provas/simulados/simulado_02.md) cronometrado + correção. Compare a nota com a do S1: o que subiu, o que não.
@@ -47,7 +64,7 @@ aliases:
 - [ ] **Qui 01/10 — descanso.** No máximo 45 min com a [folha de última revisão](formulario/ultima_revisao.md). Durma cedo: rendimento na prova depende mais disso do que de mais uma hora de estudo.
 - [ ] **Sex 02/10 — P1.** Leia a [folha de última revisão](formulario/ultima_revisao.md) por 15 min antes. Na prova: **resolva primeiro as questões de output**, que são pontos rápidos, e deixe as demonstrações para depois, com as hipóteses sempre escritas.
 
-## Se o tempo apertar
+### Se o tempo apertar
 
 A ordem de prioridade, do que mais cai para o que menos cai:
 

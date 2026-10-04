@@ -217,7 +217,7 @@ xs <- seq(0, 8, length.out = 200)
 lines(xs, beta51[1] + beta51[2] * xs + beta51[3] * xs^2, lwd = 3, col = "navy")
 abline(m51c, lwd = 3, col = "firebrick", lty = 2)
 legend("top", bty = "n", lwd = 3, lty = c(1, 2), col = c("navy", "firebrick"),
-       legend = c("Linha 1: E[Y|X] = 20 - 4X + 0,4X² (bem especificado)",
+       legend = c("Linha 1: E(Y|X) = 20 - 4X + 0,4X² (bem especificado)",
                   "Linha 2: reta de MQO sem X² (mal especificado)"), cex = 0.8)
 dev.off()
 

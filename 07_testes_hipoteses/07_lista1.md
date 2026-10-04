@@ -31,9 +31,9 @@ Estes exercícios são o treino direto da Q1 da prova. O padrão de resposta est
 
 **Tipo:** interpretação · **Chave:** ⏳ · **Cai como:** Q1
 
-Regressão com 27 observações (estados, 2010): constante $-27{,}23964$ (E.p. 9,805189) e INVESTIMENTO $107{,}7422$ (E.p. 9,581670), com $R^2=0{,}834920$.
+Regressão com 27 observações (estados, 2010): constante $-27{,}23964$ (ep 9,805189) e INVESTIMENTO $107{,}7422$ (ep 9,581670), com $R^2=0{,}834920$.
 
-**(a) Sinais.** $\hat\beta_2=107{,}74 \gt 0$: mais investimento, mais PIB — coerente com a teoria. O intercepto negativo ($-27{,}24$) não tem leitura econômica direta (PIB negativo com investimento zero é extrapolação fora do domínio dos dados); é apenas a âncora da reta.
+**(a) Sinais.** $\widehat\beta_2=107{,}74 \gt 0$: mais investimento, mais PIB — coerente com a teoria. O intercepto negativo ($-27{,}24$) não tem leitura econômica direta (PIB negativo com investimento zero é extrapolação fora do domínio dos dados); é apenas a âncora da reta.
 
 **(b) $R^2$.** 83,49% da variação do PIB estadual é explicada pela variação do investimento público.
 
@@ -45,8 +45,7 @@ Regressão com 27 observações (estados, 2010): constante $-27{,}23964$ (E.p. 9
 
 **(f) Outros fatores.** Sim — capital humano, infraestrutura, estrutura produtiva. Eles estão no termo de erro. Se forem **perfeitamente correlacionados** com o investimento, há multicolinearidade perfeita e os parâmetros não são identificáveis; se forem apenas correlacionados e ficarem de fora, o MQO é **viesado** por omissão de variável relevante (ex. 15).
 
-**Conferência numérica**
-
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R — 
 | chave_R | nota |
 |---|---|
 | m07b_ex41_t2 | 11,2446 |
@@ -54,6 +53,7 @@ Regressão com 27 observações (estados, 2010): constante $-27{,}23964$ (E.p. 9
 | m07b_ex41_r | 0,913740 |
 | m07b_ex41_r2_via_t | 0,834920 |
 | m07b_ex41_dpib_2 | 215,4844 |
+-->
 
 ## Ex. 42 — Intervalo de confiança e teste t (dados do ex. 41)
 
@@ -65,32 +65,30 @@ Em 95 de cada 100 amostras, intervalos assim conteriam o verdadeiro $\beta_2$. (
 
 **(b) Teste t.**
 
-```text
-Hipóteses:   H0: β2 = 0   vs   H1: β2 ≠ 0
-Estatística: t = 107,7422 / 9,58167 = 11,2446  (t com 25 gl)
-Decisão:     |11,2446| > 2,0595   (p = 0,0000 < 0,05)   ⇒   rejeita-se H0
-Conclusão:   o investimento público tem efeito estatisticamente significativo sobre o PIB estadual.
-```
+- **Hipóteses:** $H_0:\beta_2=0$ vs. $H_1:\beta_2\neq 0$.
+- **Estatística:** $t_{cal}=107{,}7422/9{,}58167=11{,}2446$, com 25 graus de liberdade.
+- **Decisão:** como $\lvert t_{cal}\rvert=11{,}2446>t_{tab}=2{,}0595$ (ou $p=0{,}0000<0{,}05$), rejeita-se $H_0$ ao nível de 5%.
+- **Conclusão:** o investimento público tem efeito estatisticamente significativo sobre o PIB estadual.
 
 O IC não contém zero — é a mesma conclusão, por outro caminho.
 
-**Conferência numérica**
-
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R — 
 | chave_R | nota |
 |---|---|
 | m07b_ex42_ic_lo | 88,0084 |
 | m07b_ex42_ic_hi | 127,4760 |
 | m07b_ex42_ic_z_lo | 88,9625 |
 | m07b_ex42_ic_z_hi | 126,5219 |
+-->
 
 ## Ex. 44 — Função de custo total
 
 **Tipo:** interpretação · **Chave:** ⏳
 
-Output: constante 791,0120 (E.p. 225,7354), QUANTIDADE 11,06105 (E.p. 2,160396); $R^2=0{,}867609$, $\bar R^2=0{,}834511$, S.E. 118,1225, $SQR=55\,811{,}69$, $F=26{,}21$, média da dependente 2389,333, DW 3,072.
+Output: constante 791,0120 (ep 225,7354), QUANTIDADE 11,06105 (ep 2,160396); $R^2=0{,}867609$, $\bar R^2=0{,}834511$, S.E. 118,1225, $SQR=55\,811{,}69$, $F=26{,}21$, média da dependente 2389,333, DW 3,072.
 
 **(a) Elasticidade custo no ponto médio.** Dos graus de liberdade implícitos ($\bar R^2$ e $R^2$ dão $n-K=4$, logo $n=6$) e da média do custo (2389,333), a quantidade média implícita é $\bar Q=144{,}50$:
-$$\hat\eta=\hat\beta_2\frac{\bar Q}{\overline{CT}}=11{,}06105\times\frac{144{,}50}{2389{,}333}=0{,}6689 .$$
+$$\widehat\eta=\widehat\beta_2\frac{\bar Q}{\overline{CT}}=11{,}06105\times\frac{144{,}50}{2389{,}333}=0{,}6689 .$$
 Elasticidade menor que 1: o custo cresce **menos que proporcionalmente** à produção — economias de escala no ponto médio.
 
 **(b) Testes com $t_{tab}=2{,}776$ ($\alpha=5\%$, 4 gl).** Constante: $t=791{,}0120/225{,}7354=3{,}504\gt 2{,}776$ ⇒ significativa. Quantidade: $t=11{,}06105/2{,}160396=5{,}120\gt 2{,}776$ ⇒ significativa. (Hipóteses: $H_0:\beta_j=0$ contra $H_1:\beta_j\neq 0$.)
@@ -101,15 +99,11 @@ Elasticidade menor que 1: o custo cresce **menos que proporcionalmente** à prod
 
 **(e) Jarque-Bera com $JB=1{,}53$ e $\chi^2_{tab}=2{,}54$.**
 
-```text
-Hipóteses:   H0: resíduos normais   vs   H1: não normais
-Decisão:     1,53 < 2,54   ⇒   não se rejeita H0
-Conclusão:   não há evidência contra a normalidade; a inferência exata (t e F) está justificada,
-             o que é importante aqui porque n = 6 é minúsculo.
-```
+- **Hipóteses:** $H_0$: os resíduos seguem distribuição normal vs. $H_1$: não seguem.
+- **Decisão:** como $JB=1{,}53<\chi^2_{tab}=2{,}54$, não se rejeita $H_0$.
+- **Conclusão:** não há evidência contra a normalidade; a inferência exata ($t$ e $F$) está justificada, o que importa aqui porque $n=6$ é minúsculo.
 
-**Conferência numérica**
-
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R — 
 | chave_R | nota |
 |---|---|
 | m07b_ex44_n_impl | 6 |
@@ -122,6 +116,7 @@ Conclusão:   não há evidência contra a normalidade; a inferência exata (t e
 | m07b_ex44_ic_lo | 5,0638 |
 | m07b_ex44_ic_hi | 17,0583 |
 | m07b_ex44_sqt_r2 | 421567,1 |
+-->
 
 ## Ex. 45 — Custo em log: tendência e elasticidade
 
@@ -131,20 +126,20 @@ Conclusão:   não há evidência contra a normalidade; a inferência exata (t e
 
 **(b) $\ln(CT)=0{,}857+0{,}246\ln(Q)$.** Agora é **elasticidade** custo-produção: 1% a mais de quantidade eleva o custo em 0,246%. Bem menor que 1, indicando fortes economias de escala (10% a mais de produção elevam o custo em cerca de 2,37%).
 
-**Conferência numérica**
-
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R — 
 | chave_R | nota |
 |---|---|
 | m07b_ex45_pct_exato | 5,7598 |
 | m07b_ex45_t_ano | 18,667 |
 | m07b_ex45_anos_dobrar | 12,378 |
 | m07b_ex45b_pct10 | 2,3723 |
+-->
 
 ## Ex. 46 — PIB e crédito nos municípios capixabas
 
 **Tipo:** interpretação · **Chave:** ⚠️ diverge (item f) · **Cai como:** Q1 completa
 
-Modelo log-log com 78 municípios: constante 4,664838 (E.p. 0,702390), LOG(CRED) 0,727858 (E.p. 0,069224); $R^2=0{,}633353$, $\bar R^2=0{,}627624$, S.E. 0,767296, $SQR=37{,}67959$, $F=110{,}555$.
+Modelo log-log com 78 municípios: constante 4,664838 (ep 0,702390), LOG(CRED) 0,727858 (ep 0,069224); $R^2=0{,}633353$, $\bar R^2=0{,}627624$, S.E. 0,767296, $SQR=37{,}67959$, $F=110{,}555$.
 
 **(a) Interpretação.** Elasticidade: 1% a mais de crédito associa-se a 0,728% a mais de PIB municipal. O intercepto, em nível, é $e^{4{,}664838}=106{,}15$ (o valor do PIB quando o crédito é 1, em R\$ 1,00 — extrapolação sem sentido econômico prático).
 
@@ -158,12 +153,10 @@ Modelo log-log com 78 municípios: constante 4,664838 (E.p. 0,702390), LOG(CRED)
 
 **(f) Jarque-Bera.**
 
-```text
-Hipóteses:   H0: resíduos normais   vs   H1: não normais
-Estatística: JB = 18,8707 (valor do enunciado da lista)  ~ χ²(2)
-Decisão:     18,8707 > 9,21 = χ² crítico a 1%   ⇒   rejeita-se H0
-Conclusão:   há evidência de não normalidade dos resíduos.
-```
+- **Hipóteses:** $H_0$: os resíduos seguem distribuição normal vs. $H_1$: não seguem.
+- **Estatística:** $JB=18{,}8707$ (valor do enunciado da lista), que sob $H_0$ segue $\chi^2(2)$.
+- **Decisão:** como $JB=18{,}8707>\chi^2_{tab}=9{,}21$ (1%), rejeita-se $H_0$.
+- **Conclusão:** há evidência de não normalidade dos resíduos.
 
 > [!CAUTION]
 > **Divergência entre lista e chave**
@@ -180,11 +173,10 @@ Conclusão:   há evidência de não normalidade dos resíduos.
 Com $F_{tab}=3{,}96$: rejeita-se $H_0$. (O $F$ do output, 110,555, foi calculado com o $R^2$ arredondado; reconstruído a partir das somas de quadrados dá 131,28 — cite a sua conta.)
 
 **(h) Elasticidade do modelo linear.** Com $\widehat{PIB}=15{.}000{.}000+25\,CRED$ avaliado em $CRED=1{.}000{.}000$: $\widehat{PIB}=40$ milhões e
-$$\hat\eta=25\times\frac{1{.}000{.}000}{40{.}000{.}000}=0{,}625 .$$
+$$\widehat\eta=25\times\frac{1{.}000{.}000}{40{.}000{.}000}=0{,}625 .$$
 No modelo linear a elasticidade **muda em cada ponto**; no log-log é constante (0,728).
 
-**Conferência numérica**
-
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R — 
 | chave_R | nota |
 |---|---|
 | m07b_ex46_exp_b1 | 106,148 |
@@ -197,6 +189,7 @@ No modelo linear a elasticidade **muda em cada ponto**; no log-log é constante 
 | m07b_ex46_qmres | 0,495784 |
 | m07b_ex46_F_anova | 131,284 |
 | m07b_ex46h_elast | 0,625 |
+-->
 
 ## Ex. 49 — Modelo mal especificado e os passos do RESET
 
@@ -205,8 +198,8 @@ No modelo linear a elasticidade **muda em cada ponto**; no log-log é constante 
 Um modelo está **mal especificado** quando a forma funcional está errada, quando faltam variáveis relevantes ou quando sobram variáveis irrelevantes. As consequências variam: omitir relevante gera viés; forma funcional errada também; incluir irrelevante "só" infla a variância.
 
 **Passos do RESET:**
-1. estimar o modelo original e guardar $\hat y$;
-2. estimar a regressão aumentada com $\hat y^2$ e $\hat y^3$ como regressores extras;
+1. estimar o modelo original e guardar $\widehat y$;
+2. estimar a regressão aumentada com $\widehat y^2$ e $\widehat y^3$ como regressores extras;
 3. testar $H_0$ de que os coeficientes desses termos são nulos, por $F$;
 4. rejeitar indica má especificação; não rejeitar não prova que o modelo está correto.
 
@@ -214,12 +207,10 @@ Um modelo está **mal especificado** quando a forma funcional está errada, quan
 
 **Tipo:** interpretação · **Chave:** ❌ chave errada
 
-```text
-Hipóteses:   H0: modelo corretamente especificado   vs   H1: má especificação
-Estatística: F = 2,284568, com F tabelado = 4,10 (α = 5%) e p = 0,20267
-Decisão:     2,284568 < 4,10  e  p = 0,20267 > 0,05   ⇒   NÃO se rejeita H0
-Conclusão:   não há evidência de má especificação do modelo.
-```
+- **Hipóteses:** $H_0$: o modelo está corretamente especificado vs. $H_1$: há má especificação da forma funcional.
+- **Estatística:** $F_{cal}=2{,}284568$, com $F_{tab}=4{,}10$ (5%) e $p=0{,}20267$.
+- **Decisão:** como $F_{cal}=2{,}284568<F_{tab}=4{,}10$ (e $p=0{,}20267>0{,}05$), **não** se rejeita $H_0$.
+- **Conclusão:** não há evidência de má especificação do modelo.
 
 > [!CAUTION]
 > **A chave erra aqui**
@@ -231,35 +222,31 @@ Conclusão:   não há evidência de má especificação do modelo.
 
 Com o modelo verdadeiro $Y=\beta_1+\beta_2X+\beta_3X^2+u$ ($\beta_2\lt0$, $\beta_3\gt0$), a curva em U é a **linha bem especificada**; a reta é a **mal especificada**. A reta ajustada tem a forma $Y=a+bX+v$, com $v$ contendo $\beta_3X^2$ — ou seja, **erro correlacionado com o regressor**.
 
-A propriedade perdida é o **não-viés**: o estimador da reta é viesado e inconsistente, porque $E[v\mid X]\neq 0$. Numa simulação com $\beta_1=20$, $\beta_2=-4$ e $\beta_3=0{,}4$ no intervalo estudado, o MQO da reta converge para uma inclinação de $-0{,}661$ (valor teórico $-0{,}661$), que não corresponde ao efeito marginal em ponto nenhum de interesse — a derivada verdadeira na média é $-0{,}650$, e muda de sinal ao longo do domínio. O RESET detecta facilmente: $F=68{,}11$, $p\approx 0$.
+A propriedade perdida é o **não-viés**: o estimador da reta é viesado e inconsistente, porque $E(v\mid X)\neq 0$. Numa simulação com $\beta_1=20$, $\beta_2=-4$ e $\beta_3=0{,}4$ no intervalo estudado, o MQO da reta converge para uma inclinação de $-0{,}661$ (valor teórico $-0{,}661$), que não corresponde ao efeito marginal em ponto nenhum de interesse — a derivada verdadeira na média é $-0{,}650$, e muda de sinal ao longo do domínio. O RESET detecta facilmente: $F=68{,}11$, $p\approx 0$.
 
-**Conferência numérica**
-
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R — 
 | chave_R | nota |
 |---|---|
 | m07b_ex51_b2_teorico | -0,66125 |
 | m07b_ex51_b2_medio_sim | -0,66171 |
 | m07b_ex51_derivada_media | -0,65025 |
 | m07b_ex51_reset_F | 68,107 |
+-->
 
 ## Ex. 52 — Teste LM entre restrita e irrestrita
 
 **Tipo:** interpretação · **Chave:** ✅ confere
 
-```text
-Hipóteses:   H0: λ2 = λ3 = λ4 = 0 (a regressão restrita é adequada)
-             H1: ao menos um ≠ 0 (a irrestrita, com X², X³, é a correta)
-Estatística: LM = n·R² da auxiliar dos resíduos restritos = 5,28  ~ χ²(3)
-Decisão:     5,28 < 9,21 = χ² crítico (3 gl, 5%)   ⇒   não se rejeita H0
-Conclusão:   escolhe-se a regressão RESTRITA; não há evidência de que os termos
-             não lineares pertençam ao modelo.
-```
+- **Hipóteses:** $H_0:\lambda_2=\lambda_3=\lambda_4=0$ (a regressão restrita é adequada) vs. $H_1$: pelo menos um $\neq 0$ (a irrestrita, com $X^2$ e $X^3$, é a correta).
+- **Estatística:** $LM=nR^2_{aux}=5{,}28$, com os resíduos do modelo restrito; sob $H_0$, $\chi^2(3)$.
+- **Decisão:** como $LM=5{,}28<\chi^2_{tab}(3)=9{,}21$, não se rejeita $H_0$.
+- **Conclusão:** fica a regressão **restrita**; não há evidência de que os termos não lineares pertençam ao modelo.
 
 O menor $\alpha$ que levaria à rejeição é 0,0714: a 10% a conclusão se inverteria. Vale escrever isso — mostra domínio do p-valor.
 
-**Conferência numérica**
-
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R — 
 | chave_R | nota |
 |---|---|
 | m07b_ex52_p | 0,071361 |
 | m07b_ex50_p_2_10 | 0,152346 |
+-->

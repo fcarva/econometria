@@ -36,15 +36,19 @@ Gerado por `scripts/indice_D.R`. Não edite à mão.
 | **D02.14** | Erro de medição na variável dependente | [02_mqo_simples/02_teoria.md](../02_mqo_simples/02_teoria.md) |
 | **D02.15** | Previsão e elasticidade no ponto médio | [02_mqo_simples/02_teoria.md](../02_mqo_simples/02_teoria.md) |
 | **D02.16** | Gauss-Markov escalar para o intercepto e combinações lineares | [02_mqo_simples/02_teoria.md](../02_mqo_simples/02_teoria.md) |
+| **D02.17** | Mudança de escala de Y e de X (ex. 12) | [provas/lista1_v1/novos.md](../provas/lista1_v1/novos.md) |
+| **D02.18** | Cauchy-Schwarz, $\lvert r\rvert\le 1$ e $R^2=r^2$ (ex. 23) | [provas/lista1_v1/novos.md](../provas/lista1_v1/novos.md) |
+| **D02.19** | Regressão pela origem (ex. 32) | [provas/lista1_v1/novos.md](../provas/lista1_v1/novos.md) |
+| **D02.20** | Coeficiente padronizado (ex. 69) | [provas/lista1_v1/novos.md](../provas/lista1_v1/novos.md) |
 | **D03.1** | Derivadas de formas lineares e quadráticas | [03_mqo_matricial/03_teoria.md](../03_mqo_matricial/03_teoria.md) |
 | **D03.2** | Equações normais com checagem de dimensões | [03_mqo_matricial/03_teoria.md](../03_mqo_matricial/03_teoria.md) |
-| **D03.3** | Condição de 2ª ordem: X'X é positiva definida sob A2 | [03_mqo_matricial/03_teoria.md](../03_mqo_matricial/03_teoria.md) |
+| **D03.3** | Condição de 2ª ordem: X'X é positiva definida sob H3 | [03_mqo_matricial/03_teoria.md](../03_mqo_matricial/03_teoria.md) |
 | **D03.4** | Propriedades de P e M | [03_mqo_matricial/03_teoria.md](../03_mqo_matricial/03_teoria.md) |
 | **D04.1** | A solução particionada | [04_fwl_particionada/04_teoria.md](../04_fwl_particionada/04_teoria.md) |
 | **D04.2** | O teorema de Frisch-Waugh-Lovell | [04_fwl_particionada/04_teoria.md](../04_fwl_particionada/04_teoria.md) |
 | **D04.3** | Incluir constante é centrar as variáveis | [04_fwl_particionada/04_teoria.md](../04_fwl_particionada/04_teoria.md) |
 | **D04.4** | Viés de omissão em forma matricial (ex. 25) | [04_fwl_particionada/04_teoria.md](../04_fwl_particionada/04_teoria.md) |
-| **D04.5** | Variância, FIV e correlação parcial | [04_fwl_particionada/04_teoria.md](../04_fwl_particionada/04_teoria.md) |
+| **D04.5** | Variância, VIF e correlação parcial | [04_fwl_particionada/04_teoria.md](../04_fwl_particionada/04_teoria.md) |
 | **D04.6** | Efeitos fixos: within é FWL | [04_fwl_particionada/04_teoria.md](../04_fwl_particionada/04_teoria.md) |
 | **D05.1** | b minimiza e'e: prova sem cálculo | [05_ajuste_restricoes/05_teoria.md](../05_ajuste_restricoes/05_teoria.md) |
 | **D05.2** | Decomposição da variação: SQT = SQE + SQR | [05_ajuste_restricoes/05_teoria.md](../05_ajuste_restricoes/05_teoria.md) |
@@ -64,16 +68,16 @@ Gerado por `scripts/indice_D.R`. Não edite à mão.
 | **D06.4** | Erros esféricos elemento a elemento (ex. 32, 36, 37) | [06_amostra_finita_multicol/06_teoria.md](../06_amostra_finita_multicol/06_teoria.md) |
 | **D06.5** | Gauss-Markov matricial com b* = [(X'X)^{-1}X' + C]y (ex. 33) | [06_amostra_finita_multicol/06_teoria.md](../06_amostra_finita_multicol/06_teoria.md) |
 | **D06.6** | Propriedades da matriz M | [06_amostra_finita_multicol/06_teoria.md](../06_amostra_finita_multicol/06_teoria.md) |
-| **D06.7** | E[s²] = σ² pelo truque do traço | [06_amostra_finita_multicol/06_teoria.md](../06_amostra_finita_multicol/06_teoria.md) |
+| **D06.7** | E(s²) = σ² pelo truque do traço | [06_amostra_finita_multicol/06_teoria.md](../06_amostra_finita_multicol/06_teoria.md) |
 | **D06.8** | Distribuição de b e de s² sob normalidade | [06_amostra_finita_multicol/06_teoria.md](../06_amostra_finita_multicol/06_teoria.md) |
-| **D06.9** | Variância de um coeficiente e FIV (partição e FWL) | [06_amostra_finita_multicol/06_teoria.md](../06_amostra_finita_multicol/06_teoria.md) |
+| **D06.9** | Variância de um coeficiente e VIF (partição e FWL) | [06_amostra_finita_multicol/06_teoria.md](../06_amostra_finita_multicol/06_teoria.md) |
 | **D06.10** | Omitir variável: viés, variância e EQM (ex. 53) | [06_amostra_finita_multicol/06_teoria.md](../06_amostra_finita_multicol/06_teoria.md) |
 | **D06.11** | Colinearidade perfeita e quase colinearidade | [06_amostra_finita_multicol/06_teoria.md](../06_amostra_finita_multicol/06_teoria.md) |
-| **D06.12** | Teste F da regressão auxiliar e FIV por pares (ex. 54, 63, 64) | [06_amostra_finita_multicol/06_teoria.md](../06_amostra_finita_multicol/06_teoria.md) |
+| **D06.12** | Teste F da regressão auxiliar e VIF por pares (ex. 54, 63, 64) | [06_amostra_finita_multicol/06_teoria.md](../06_amostra_finita_multicol/06_teoria.md) |
 | **D06.13** | Componentes principais | [06_amostra_finita_multicol/06_teoria.md](../06_amostra_finita_multicol/06_teoria.md) |
 | **D07.1** | Os três fatos que sustentam o teste exato | [07_testes_hipoteses/07_teoria.md](../07_testes_hipoteses/07_teoria.md) |
 | **D07.2** | A estatística F da hipótese linear geral | [07_testes_hipoteses/07_teoria.md](../07_testes_hipoteses/07_teoria.md) |
-| **D07.3** | O teste t é o caso $J=1$, e $t^2=F$ | [07_testes_hipoteses/07_teoria.md](../07_testes_hipoteses/07_teoria.md) |
+| **D07.3** | O teste t é o caso $q=1$, e $t^2=F$ | [07_testes_hipoteses/07_teoria.md](../07_testes_hipoteses/07_teoria.md) |
 | **D07.4** | As três formas equivalentes do F | [07_testes_hipoteses/07_teoria.md](../07_testes_hipoteses/07_teoria.md) |
 | **D07.5** | Três caminhos para a mesma pergunta | [07_testes_hipoteses/07_teoria.md](../07_testes_hipoteses/07_teoria.md) |
 | **D07.6** | A estatística JB | [07_testes_hipoteses/07_teoria.md](../07_testes_hipoteses/07_teoria.md) |
@@ -84,6 +88,7 @@ Gerado por `scripts/indice_D.R`. Não edite à mão.
 | **D08.4** | Método delta | [08_assintotica/08_teoria.md](../08_assintotica/08_teoria.md) |
 | **D08.5** | Covariância robusta de White (HC0) | [08_assintotica/08_teoria.md](../08_assintotica/08_teoria.md) |
 | **D08.6** | Bootstrap de pares | [08_assintotica/08_teoria.md](../08_assintotica/08_teoria.md) |
+| **D08.7** | Exogeneidade estrita × contemporânea; AR(1) viesado mas consistente (ex. 56) | [provas/lista1_v1/novos.md](../provas/lista1_v1/novos.md) |
 | **D09.1** | O que a dummy faz com o intercepto e com a inclinação | [09_dummies_forma_funcional/09_teoria.md](../09_dummies_forma_funcional/09_teoria.md) |
 | **D09.2** | A armadilha da variável dummy | [09_dummies_forma_funcional/09_teoria.md](../09_dummies_forma_funcional/09_teoria.md) |
 | **D09.3** | Efeito exato de uma dummy em modelo log | [09_dummies_forma_funcional/09_teoria.md](../09_dummies_forma_funcional/09_teoria.md) |
@@ -93,6 +98,7 @@ Gerado por `scripts/indice_D.R`. Não edite à mão.
 | **D09.7** | Chow e o modelo interagido são o mesmo teste | [09_dummies_forma_funcional/09_teoria.md](../09_dummies_forma_funcional/09_teoria.md) |
 | **D09.8** | O estimador de diferenças em diferenças | [09_dummies_forma_funcional/09_teoria.md](../09_dummies_forma_funcional/09_teoria.md) |
 | **D09.9** | Regressão descontínua e regressão em rampa (visão rápida) | [09_dummies_forma_funcional/09_teoria.md](../09_dummies_forma_funcional/09_teoria.md) |
+| **D09.10** | Spline linear: duas inclinações sem salto (ex. 70) | [provas/lista1_v1/novos.md](../provas/lista1_v1/novos.md) |
 | **D10.1** | Inconsistência do MQO sob endogeneidade | [10_endogeneidade_iv/10_teoria.md](../10_endogeneidade_iv/10_teoria.md) |
 | **D10.2** | Erro de medição no regressor: viés de atenuação | [10_endogeneidade_iv/10_teoria.md](../10_endogeneidade_iv/10_teoria.md) |
 | **D10.3** | Erro de medição na variável dependente | [10_endogeneidade_iv/10_teoria.md](../10_endogeneidade_iv/10_teoria.md) |
@@ -100,26 +106,27 @@ Gerado por `scripts/indice_D.R`. Não edite à mão.
 | **D10.5** | Estimador de VI no caso exatamente identificado | [10_endogeneidade_iv/10_teoria.md](../10_endogeneidade_iv/10_teoria.md) |
 | **D10.6** | Consistência e variância assintótica do estimador de VI | [10_endogeneidade_iv/10_teoria.md](../10_endogeneidade_iv/10_teoria.md) |
 | **D10.7** | Mínimos quadrados em dois estágios | [10_endogeneidade_iv/10_teoria.md](../10_endogeneidade_iv/10_teoria.md) |
-| **D10.8** | Quando $Z=X$, o VI é o MQO | [10_endogeneidade_iv/10_teoria.md](../10_endogeneidade_iv/10_teoria.md) |
+| **D10.8** | Quando $\mathbf Z=\mathbf X$, o VI é o MQO | [10_endogeneidade_iv/10_teoria.md](../10_endogeneidade_iv/10_teoria.md) |
 | **D10.9** | Variância assintótica e o custo do instrumento fraco | [10_endogeneidade_iv/10_teoria.md](../10_endogeneidade_iv/10_teoria.md) |
 | **D10.10** | O teste de Wu-Hausman como função de controle | [10_endogeneidade_iv/10_teoria.md](../10_endogeneidade_iv/10_teoria.md) |
 | **D10.11** | O teste de Sargan | [10_endogeneidade_iv/10_teoria.md](../10_endogeneidade_iv/10_teoria.md) |
+| **D10.12** | A lógica da estatística de Hausman (ex. 78) | [provas/lista1_v1/novos.md](../provas/lista1_v1/novos.md) |
 | **D0** | O kit de operadores | [demonstracoes/econometria-i-demonstracoes-mes-1-1.md](../demonstracoes/econometria-i-demonstracoes-mes-1-1.md) |
 | **D1** | A Função de Regressão Populacional como esperança condicional | [demonstracoes/econometria-i-demonstracoes-mes-1-1.md](../demonstracoes/econometria-i-demonstracoes-mes-1-1.md) |
 | **D2** | Parâmetros populacionais por condições de momento | [demonstracoes/econometria-i-demonstracoes-mes-1-1.md](../demonstracoes/econometria-i-demonstracoes-mes-1-1.md) |
 | **D3** | As duas equações normais (condições de 1ª ordem) | [demonstracoes/econometria-i-demonstracoes-mes-1-1.md](../demonstracoes/econometria-i-demonstracoes-mes-1-1.md) |
-| **D4** | O intercepto: $\hat\beta_0 = \bar y - \hat\beta_1 \bar x$ | [demonstracoes/econometria-i-demonstracoes-mes-1-1.md](../demonstracoes/econometria-i-demonstracoes-mes-1-1.md) |
+| **D4** | O intercepto: $\widehat\beta_0 = \bar y - \widehat\beta_1 \bar x$ | [demonstracoes/econometria-i-demonstracoes-mes-1-1.md](../demonstracoes/econometria-i-demonstracoes-mes-1-1.md) |
 | **D5** | As identidades de somatório (as quatro formas) | [demonstracoes/econometria-i-demonstracoes-mes-1-1.md](../demonstracoes/econometria-i-demonstracoes-mes-1-1.md) |
-| **D6** | O estimador de inclinação: $\hat\beta_1 = \widehat{\operatorname{Cov}}(x,y)/\widehat{\operatorname{Var}}(x)$ | [demonstracoes/econometria-i-demonstracoes-mes-1-1.md](../demonstracoes/econometria-i-demonstracoes-mes-1-1.md) |
+| **D6** | O estimador de inclinação: $\widehat\beta_1 = \widehat{\operatorname{Cov}}(x,y)/\widehat{\operatorname{Var}}(x)$ | [demonstracoes/econometria-i-demonstracoes-mes-1-1.md](../demonstracoes/econometria-i-demonstracoes-mes-1-1.md) |
 | **D7** | Condição de 2ª ordem (a que garante que é mínimo) | [demonstracoes/econometria-i-demonstracoes-mes-1-1.md](../demonstracoes/econometria-i-demonstracoes-mes-1-1.md) |
 | **D8** | Propriedades algébricas dos resíduos | [demonstracoes/econometria-i-demonstracoes-mes-1-1.md](../demonstracoes/econometria-i-demonstracoes-mes-1-1.md) |
-| **D9** | Não-viés: $E[\hat\beta_1 \mid X] = \beta_1$ | [demonstracoes/econometria-i-demonstracoes-mes-1-1.md](../demonstracoes/econometria-i-demonstracoes-mes-1-1.md) |
-| **D10** | Variância: $\operatorname{Var}(\hat\beta_1 \mid X) = \dfrac{\sigma^2}{\sum_i (x_i - \bar x)^2}$ | [demonstracoes/econometria-i-demonstracoes-mes-1-1.md](../demonstracoes/econometria-i-demonstracoes-mes-1-1.md) |
+| **D9** | Não-viés: $E(\widehat\beta_1 \mid X) = \beta_1$ | [demonstracoes/econometria-i-demonstracoes-mes-1-1.md](../demonstracoes/econometria-i-demonstracoes-mes-1-1.md) |
+| **D10** | Variância: $\operatorname{Var}(\widehat\beta_1 \mid X) = \dfrac{\sigma^2}{\sum_i (x_i - \bar x)^2}$ | [demonstracoes/econometria-i-demonstracoes-mes-1-1.md](../demonstracoes/econometria-i-demonstracoes-mes-1-1.md) |
 | **D11** | Teorema de Gauss–Markov: MQO é BLUE | [demonstracoes/econometria-i-demonstracoes-mes-1-1.md](../demonstracoes/econometria-i-demonstracoes-mes-1-1.md) |
 | **D12** | Forma matricial e as cinco hipóteses | [demonstracoes/econometria-i-demonstracoes-mes-1-1.md](../demonstracoes/econometria-i-demonstracoes-mes-1-1.md) |
-| **D13** | O estimador de MQO matricial: $\hat\beta = (X'X)^{-1}X'y$ | [demonstracoes/econometria-i-demonstracoes-mes-1-1.md](../demonstracoes/econometria-i-demonstracoes-mes-1-1.md) |
-| **D14** | Variância do estimador matricial: $\operatorname{Var}(\hat\beta \mid X) = \sigma^2 (X'X)^{-1}$ | [demonstracoes/econometria-i-demonstracoes-mes-1-1.md](../demonstracoes/econometria-i-demonstracoes-mes-1-1.md) |
-| **D15** | Multicolinearidade: efeito na variância e o FIV | [demonstracoes/econometria-i-demonstracoes-mes-1-1.md](../demonstracoes/econometria-i-demonstracoes-mes-1-1.md) |
+| **D13** | O estimador de MQO matricial: $\widehat\beta = (\mathbf X'\mathbf X)^{-1}\mathbf X'\mathbf y$ | [demonstracoes/econometria-i-demonstracoes-mes-1-1.md](../demonstracoes/econometria-i-demonstracoes-mes-1-1.md) |
+| **D14** | Variância do estimador matricial: $\operatorname{Var}(\widehat\beta \mid \mathbf X) = \sigma^2 (\mathbf X'\mathbf X)^{-1}$ | [demonstracoes/econometria-i-demonstracoes-mes-1-1.md](../demonstracoes/econometria-i-demonstracoes-mes-1-1.md) |
+| **D15** | Multicolinearidade: efeito na variância e o VIF | [demonstracoes/econometria-i-demonstracoes-mes-1-1.md](../demonstracoes/econometria-i-demonstracoes-mes-1-1.md) |
 | **D16** | Gauss–Markov matricial: MQO é BLUE | [demonstracoes/econometria-i-demonstracoes-mes-1-1.md](../demonstracoes/econometria-i-demonstracoes-mes-1-1.md) |
 
-Total: **105** demonstrações em 12 arquivos.
+Total: **112** demonstrações em 13 arquivos.

@@ -47,7 +47,7 @@ A P1 2025/2 (03/10/2025) é o melhor retrato do que vem. A estrutura é estável
 
 | Bloco | O que aparece | O que o professor cobra |
 |---|---|---|
-| Q1: output de MQO no layout do NLOGIT (Coeficientes, Erro padrão, b/E.p., P[\|Z\|>z], Média de X) | equação de log-salário com quadrático em EXP e dummies | precisa de Jarque-Bera com $n$ grande?; teste $t$ com $z=1{,}96$; ponto de máximo do quadrático; IC de 95%; efeito percentual de dummy; $\bar R^2$ |
+| Q1: output de MQO no layout do NLOGIT (Coeficientes, Erro padrão, b/ep, P[\|Z\|>z], Média de X) | equação de log-salário com quadrático em EXP e dummies | precisa de Jarque-Bera com $n$ grande?; teste $t$ com $z=1{,}96$; ponto de máximo do quadrático; IC de 95%; efeito percentual de dummy; $\bar R^2$ |
 | Q2: output de VI/MQ2E (R `ivreg` com `diagnostics = TRUE` ou NLOGIT MQ2E) | demanda por cigarros, log-salário | qual variável é endógena e quais são instrumentos; relevância e exogeneidade; instrumentos fracos; Wu-Hausman; Sargan; Wald $\chi^2$ conjunto; elasticidade |
 | Q3–Q6: derivações | escalar e matricial | equações normais e $b_1,b_2$; (não-)viés, inclusive com erro de medição; variância; consistência via $\operatorname{plim}$; estimador de VI via $\operatorname{plim}$ |
 
@@ -61,7 +61,7 @@ A P1 2025/2 (03/10/2025) é o melhor retrato do que vem. A estrutura é estável
 > Conclusão:   o que isso significa para o modelo e para a economia do problema
 > ```
 >
-> E toda derivação começa pelas hipóteses que serão usadas e termina com o resultado em destaque. Cada linha algébrica leva a sua justificativa: hipótese *[A1]–[A6]*, linearidade de $E$, variância de forma linear, truque do traço, lei das expectativas iteradas, regras de $\operatorname{plim}$/Slutsky.
+> E toda derivação começa pelas hipóteses que serão usadas e termina com o resultado em destaque. Cada linha algébrica leva a sua justificativa: hipótese *H1–H5*, linearidade de $E$, variância de forma linear, truque do traço, lei das expectativas iteradas, regras de $\operatorname{plim}$/Slutsky.
 
 ## 2. Estratégia no dia
 
@@ -117,6 +117,7 @@ O professor reaproveita o **mesmo output** em provas e listas diferentes e **edi
 
 O que o R dá de fato, rodando o exemplo do Stock e Watson com `AER::CigarettesSW` (ver [reproducao.R](p1_2025_2/reproducao.R)):
 
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R
 | chave_R | nota |
 |---|---|
 | prv_q2_rob_wh | 3,823 |
@@ -124,6 +125,7 @@ O que o R dá de fato, rodando o exemplo do Stock e Watson com `AER::CigarettesS
 | prv_q2_rob_sargan_p | 0,5641 |
 | prv_q2_cla_wh | 3,068 |
 | prv_q2_cla_wh_p | 0,0868 |
+-->
 
 A versão da Lista 1 é a verdadeira com matriz robusta (`vcov = sandwich`). Com a matriz clássica, o p-valor do Wu-Hausman é outro.
 
@@ -136,16 +138,18 @@ Mais dois avisos do mesmo tipo:
 - Na P2 2024/2, o bloco de diagnósticos colado sob a regressão MQ2E de LWAGE ($n=4165$) tem **gl2 = 44**, que é o grau de liberdade do exemplo dos cigarros ($n=48$). Os diagnósticos verdadeiros daquela regressão são outros (ver [p2_2024_2/mapa.md](p2_2024_2/mapa.md)). Na prova, responda com o que está impresso. Se sobrar tempo, uma frase apontando a incoerência mostra domínio.
 - A nota resolvida da P1 2025/2 registra, no item do Wald conjunto, o $\chi^2$ crítico 11,07. Esse é o crítico de 5% com **5** graus de liberdade. O Wald do output tem **2** graus de liberdade, com crítico 5,99. A decisão não muda (34,51 supera os dois), mas saiba de onde vem cada número.
 
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R
 | chave_R | nota |
 |---|---|
 | bnc_chi2_2gl_5 | 5,99 |
 | bnc_chi2_5gl_5 | 11,07 |
+-->
 
 A chave da Lista 1 também tem erros (ex. 50 e ex. 46f, ver a [errata](../formulario/errata_chave_lista1.md)). Trate a chave como algo "a conferir", nunca como gabarito.
 
 ## 7. Regenerar os outputs
 
-```text
+```powershell
 powershell -ExecutionPolicy Bypass -File scripts\r.ps1 provas\banco\gerar_outputs.R
 powershell -ExecutionPolicy Bypass -File scripts\r.ps1 provas\p1_2025_2\reproducao.R
 ```

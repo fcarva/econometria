@@ -30,7 +30,7 @@ Nove demonstrações curtas que são a caixa de ferramentas do curso inteiro. Te
 
 **Tipo:** derivação · **Chave:** ➖
 
-$$\operatorname{Var}(aX)=E\big[(aX-E[aX])^2\big]=E\big[(aX-aE[X])^2\big]=E\big[a^2(X-E[X])^2\big]=a^2\operatorname{Var}(X).$$
+$$\operatorname{Var}(aX)=E\big((aX-E(aX))^2\big)=E\big((aX-aE(X))^2\big)=E\big(a^2(X-E(X))^2\big)=a^2\operatorname{Var}(X).$$
 
 A constante sai **ao quadrado** porque a definição de variância é quadrática. Consequência prática: mudar a unidade de medida de $X$ (de reais para milhares de reais) divide a variância por $1000^2$.
 
@@ -40,7 +40,7 @@ A constante sai **ao quadrado** porque a definição de variância é quadrátic
 
 Com $X_1,\dots,X_n$ independentes, todas com média $\mu$ e variância $\sigma^2$, e $\bar X=\frac1n\sum_i X_i$:
 
-$$E[\bar X]=\frac1n\sum_{i=1}^n E[X_i]=\frac{n\mu}{n}=\mu \qquad \text{(só linearidade; independência não é necessária)}$$
+$$E(\bar X)=\frac1n\sum_{i=1}^n E(X_i)=\frac{n\mu}{n}=\mu \qquad \text{(só linearidade; independência não é necessária)}$$
 
 $$\operatorname{Var}(\bar X)=\frac{1}{n^2}\operatorname{Var}\Big(\sum_i X_i\Big)=\frac{1}{n^2}\sum_i\operatorname{Var}(X_i)=\frac{n\sigma^2}{n^2}=\frac{\sigma^2}{n}$$
 
@@ -54,14 +54,14 @@ Aqui a independência **é** necessária: ela zera as covariâncias cruzadas.
 | 100 | 0,039688 | 0,04 |
 | 500 | 0,0079795 | 0,008 |
 
-**Conferência numérica**
-
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R — 
 | chave_R | nota |
 |---|---|
 | m00_ex2_var_n5 | 0,80493 |
 | m00_ex2_varteo_n5 | 0,8 |
 | m00_ex2_var_n500 | 0,0079795 |
 | m00_ex2_varteo_n500 | 0,008 |
+-->
 
 ## Ex. 3 — A média amostral é consistente
 
@@ -69,7 +69,7 @@ Aqui a independência **é** necessária: ela zera as covariâncias cruzadas.
 
 **Passo a passo.**
 
-1. Do ex. 2: $E[\bar X]=\mu$ (não viesada) e $\operatorname{Var}(\bar X)=\sigma^2/n$.
+1. Do ex. 2: $E(\bar X)=\mu$ (não viesada) e $\operatorname{Var}(\bar X)=\sigma^2/n$.
 2. Por Chebyshev, para qualquer $\delta\gt 0$:
 $$\Pr\big(\lvert\bar X-\mu\rvert\ge\delta\big)\le\frac{\operatorname{Var}(\bar X)}{\delta^2}=\frac{\sigma^2}{n\delta^2}.$$
 3. Quando $n\to\infty$, o lado direito vai a zero, logo a probabilidade também:
@@ -79,30 +79,30 @@ $$\operatorname{plim}\bar X=\mu .\qquad\blacksquare$$
 
 > [!TIP]
 > **É o mesmo argumento da Q5**
-> Trocando $\bar X$ por $X'\varepsilon/n$, essa é exatamente a prova de que o MQO é consistente ([módulo 08](../08_assintotica/08_teoria.md), D08.1). Aprenda aqui e reaproveite lá.
+> Trocando $\bar X$ por $\mathbf X'\varepsilon/n$, essa é exatamente a prova de que o MQO é consistente ([módulo 08](../08_assintotica/08_teoria.md), D08.1). Aprenda aqui e reaproveite lá.
 
-**Conferência numérica**
-
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R — 
 | chave_R | nota |
 |---|---|
 | m00_ex3_prob_n20 | 0,25125 |
 | m00_ex3_cheb_n20 | 0,8 |
 | m00_ex3_prob_n100 | 0,01245 |
 | m00_ex3_tlc_n100 | 0,012419 |
+-->
 
-## Ex. 4 — $\operatorname{Var}(X)=E[X^2]-\mu^2$
-
-**Tipo:** derivação · **Chave:** ➖
-
-$$\operatorname{Var}(X)=E\big[(X-\mu)^2\big]=E\big[X^2-2\mu X+\mu^2\big]=E[X^2]-2\mu E[X]+\mu^2=E[X^2]-\mu^2 .$$
-
-O passo-chave é lembrar que $\mu=E[X]$ é **constante** e sai da esperança.
-
-## Ex. 5 — $\operatorname{Cov}(X,Y)=E[XY]-\mu_x\mu_y$
+## Ex. 4 — $\operatorname{Var}(X)=E(X^2)-\mu^2$
 
 **Tipo:** derivação · **Chave:** ➖
 
-$$\operatorname{Cov}(X,Y)=E\big[(X-\mu_x)(Y-\mu_y)\big]=E[XY]-\mu_yE[X]-\mu_xE[Y]+\mu_x\mu_y=E[XY]-\mu_x\mu_y .$$
+$$\operatorname{Var}(X)=E\big((X-\mu)^2\big)=E\big(X^2-2\mu X+\mu^2\big)=E(X^2)-2\mu E(X)+\mu^2=E(X^2)-\mu^2 .$$
+
+O passo-chave é lembrar que $\mu=E(X)$ é **constante** e sai da esperança.
+
+## Ex. 5 — $\operatorname{Cov}(X,Y)=E(XY)-\mu_x\mu_y$
+
+**Tipo:** derivação · **Chave:** ➖
+
+$$\operatorname{Cov}(X,Y)=E\big((X-\mu_x)(Y-\mu_y)\big)=E(XY)-\mu_yE(X)-\mu_xE(Y)+\mu_x\mu_y=E(XY)-\mu_x\mu_y .$$
 
 Mesma mecânica do ex. 4. Note que $\operatorname{Var}(X)=\operatorname{Cov}(X,X)$: as duas identidades são a mesma.
 
@@ -111,28 +111,28 @@ Mesma mecânica do ex. 4. Note que $\operatorname{Var}(X)=\operatorname{Cov}(X,X
 **Tipo:** derivação · **Chave:** ➖
 
 Se $X$ e $Y$ são independentes, $f(x,y)=f(x)f(y)$ e a esperança do produto fatora:
-$$E[XY]=\int\!\!\int xy\,f(x)f(y)\,dx\,dy=\Big(\int x f(x)dx\Big)\Big(\int y f(y)dy\Big)=E[X]E[Y].$$
-Pelo ex. 5, $\operatorname{Cov}(X,Y)=E[XY]-E[X]E[Y]=0$. $\blacksquare$
+$$E(XY)=\int\!\!\int xy\,f(x)f(y)\,dx\,dy=\Big(\int x f(x)dx\Big)\Big(\int y f(y)dy\Big)=E(X)E(Y).$$
+Pelo ex. 5, $\operatorname{Cov}(X,Y)=E(XY)-E(X)E(Y)=0$. $\blacksquare$
 
 ## Ex. 7 — Covariância zero implica independência?
 
 **Tipo:** conceitual · **Chave:** ✅ confere
 
 **Não.** A covariância mede apenas associação **linear**. O contraexemplo padrão: $X$ simétrica em torno de zero (por exemplo, $-1$, $0$ e $1$ com probabilidades iguais) e $Y=X^2$. Então
-$$E[XY]=E[X^3]=0,\qquad E[X]=0 \ \Longrightarrow\ \operatorname{Cov}(X,Y)=0,$$
+$$E(XY)=E(X^3)=0,\qquad E(X)=0 \ \Longrightarrow\ \operatorname{Cov}(X,Y)=0,$$
 mas $Y$ é **função determinística** de $X$: saber $X$ determina $Y$ por completo. Dependência perfeita, correlação nula.
 
-Verificado no script: $E[X]=0$, $E[Y]=0{,}6667$, $E[XY]=0$, covariância 0, enquanto $\Pr(X=0,Y=0)=1/3\neq \Pr(X=0)\Pr(Y=0)=1/9$.
+Verificado no script: $E(X)=0$, $E(Y)=0{,}6667$, $E(XY)=0$, covariância 0, enquanto $\Pr(X=0,Y=0)=1/3\neq \Pr(X=0)\Pr(Y=0)=1/9$.
 
 **A exceção.** Sob normalidade **conjunta**, covariância zero implica independência — é o que sustenta o argumento de independência entre $b$ e $s^2$ no [módulo 07](../07_testes_hipoteses/07_teoria.md), D07.1.
 
-**Conferência numérica**
-
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R — 
 | chave_R | nota |
 |---|---|
 | m00_ex7_disc_EY | 0,66667 |
 | m00_ex7_disc_cov | 0 |
 | m00_ex7_disc_pconj | 0,33333 |
+-->
 
 ## Ex. 8 — A soma dos desvios em relação à média é zero
 
@@ -141,19 +141,19 @@ Verificado no script: $E[X]=0$, $E[Y]=0{,}6667$, $E[XY]=0$, covariância 0, enqu
 $$\sum_{i=1}^n (X_i-\bar X)=\sum_i X_i-n\bar X=n\bar X-n\bar X=0,$$
 usando $\sum_i X_i=n\bar X$, que é a própria definição de média.
 
-É uma identidade **amostral** (vale sempre, sem hipótese nenhuma), e é ela que garante $\sum k_i=0$ nos pesos do MQO e $\sum\hat u_i=0$ nos resíduos.
+É uma identidade **amostral** (vale sempre, sem hipótese nenhuma), e é ela que garante $\sum w_i=0$ nos pesos do MQO e $\sum\widehat u_i=0$ nos resíduos.
 
 ## Ex. 9 — $EQM=\operatorname{Var}+\text{viés}^2$
 
 **Tipo:** derivação · **Chave:** ➖ · **Cai como:** base da comparação entre estimadores
 
-Some e subtraia $E[\hat\theta]$ dentro do quadrado:
-$$EQM(\hat\theta)=E\big[(\hat\theta-\theta)^2\big]=E\Big[\big((\hat\theta-E[\hat\theta])+(E[\hat\theta]-\theta)\big)^2\Big].$$
+Some e subtraia $E(\widehat\theta)$ dentro do quadrado:
+$$EQM(\widehat\theta)=E\big((\widehat\theta-\theta)^2\big)=E\Big(\big((\widehat\theta-E(\widehat\theta))+(E(\widehat\theta)-\theta)\big)^2\Big).$$
 
 Abrindo:
-$$=\underbrace{E\big[(\hat\theta-E[\hat\theta])^2\big]}_{\operatorname{Var}(\hat\theta)}+\underbrace{\big(E[\hat\theta]-\theta\big)^2}_{\text{viés}^2}+2\big(E[\hat\theta]-\theta\big)\underbrace{E\big[\hat\theta-E[\hat\theta]\big]}_{=0}.$$
+$$=\underbrace{E\big((\widehat\theta-E(\widehat\theta))^2\big)}_{\operatorname{Var}(\widehat\theta)}+\underbrace{\big(E(\widehat\theta)-\theta\big)^2}_{\text{viés}^2}+2\big(E(\widehat\theta)-\theta\big)\underbrace{E\big(\widehat\theta-E(\widehat\theta)\big)}_{=0}.$$
 
-Logo $EQM(\hat\theta)=\operatorname{Var}(\hat\theta)+[\text{viés}(\hat\theta)]^2$. $\blacksquare$
+Logo $EQM(\widehat\theta)=\operatorname{Var}(\widehat\theta)+[\text{viés}(\widehat\theta)]^2$. $\blacksquare$
 
 > [!IMPORTANT]
 > **Para que serve**

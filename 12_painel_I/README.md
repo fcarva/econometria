@@ -34,7 +34,7 @@ aliases:
 
 ## O essencial
 
-$$\tilde y_{it}=y_{it}-\bar y_i,\qquad \hat\beta_{EF}=\Big(\sum_i \tilde X_i'\tilde X_i\Big)^{-1}\sum_i \tilde X_i'\tilde y_i$$
+$$\tilde y_{it}=y_{it}-\bar y_i,\qquad \widehat\beta_{EF}=\Big(\sum_i \tilde X_i'\tilde X_i\Big)^{-1}\sum_i \tilde X_i'\tilde y_i$$
 
 Efeitos fixos controlam toda heterogeneidade **fixa no tempo**, observada ou não — e, em troca, não identificam o efeito de nada que não varie no tempo.
 

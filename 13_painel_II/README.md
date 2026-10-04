@@ -22,7 +22,7 @@ aliases:
 
 ## O que o slide SL13 cobre
 
-1. O modelo de efeitos aleatórios: $c_i$ como componente do erro, com $E[c_i\mid X_i]=0$.
+1. O modelo de efeitos aleatórios: $c_i$ como componente do erro, com $E(c_i\mid X_i)=0$.
 2. Estimação por MQO, MQG e MQG factível.
 3. Teste de Breusch-Pagan para efeitos aleatórios (pooling contra EA).
 4. Efeitos fixos contra efeitos aleatórios: teste de Hausman.
@@ -33,7 +33,7 @@ aliases:
 
 $$\operatorname{Var}(\eta_{it})=\sigma^2_\mu+\sigma^2_\varepsilon,\qquad \operatorname{Cov}(\eta_{it},\eta_{is})=\sigma^2_\mu\ (t\neq s)$$
 
-$$H=(b_{EF}-b_{EA})'\big[\operatorname{Var}(b_{EF})-\operatorname{Var}(b_{EA})\big]^{-1}(b_{EF}-b_{EA})\sim\chi^2_J$$
+$$H=(\mathbf b_{EF}-\mathbf b_{EA})'\big[\operatorname{Var}(\mathbf b_{EF})-\operatorname{Var}(\mathbf b_{EA})\big]^{-1}(\mathbf b_{EF}-\mathbf b_{EA})\sim\chi^2_J$$
 
 Rejeitar Hausman ⇒ $c_i$ é correlacionado com os regressores ⇒ **efeitos fixos**. Não rejeitar ⇒ efeitos aleatórios, que é eficiente e ainda estima coeficientes de variáveis invariantes no tempo.
 

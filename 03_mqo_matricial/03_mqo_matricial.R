@@ -253,7 +253,7 @@ lab <- function(p, txt, ...) { q <- pt(p); text(q$x, q$y, txt, ...) }
 lab(X1c + c(0.1, -0.3, 0), expression(x[1] == iota), col = "grey20")
 lab(X2c + c(0, 0.3, 0), expression(x[2]), col = "grey20")
 lab(Y + c(0, 0, 0.08), "y", font = 2)
-lab(YH + c(0.3, 0.35, 0), expression(hat(y) == P * y), col = "steelblue4")
+lab(YH + c(0.3, 0.35, 0), expression(widehat(y) == P * y), col = "steelblue4")
 lab((Y + YH) / 2 + c(0.5, 0, 0), "e = My", col = "firebrick", font = 2)
 lab(c(3.4, 2.1, 0), "col(X)", col = "grey40")
 dev.off()
@@ -268,8 +268,8 @@ segments(x, y, x, yhat, col = "firebrick", lwd = 2, lty = 2)
 points(mean(x), mean(y), pch = 4, cex = 2, lwd = 2)
 fmt2 <- function(v) formatC(v, format = "f", digits = 2, decimal.mark = ",")
 legend("topleft", bty = "n",
-       legend = c(as.expression(bquote(hat(y) == .(fmt2(b[1])) + .(fmt2(b[2])) ~ X)),
-                  expression("resíduos" ~ e == y - hat(y)),
+       legend = c(as.expression(bquote(widehat(y) == .(fmt2(b[1])) + .(fmt2(b[2])) ~ X)),
+                  expression("resíduos" ~ e == y - widehat(y)),
                   expression("ponto médio" ~ (bar(X) * "," ~ bar(Y)))),
        col = c("steelblue4", "firebrick", "black"), lty = c(1, 2, NA), pch = c(NA, NA, 4), lwd = 2)
 dev.off()

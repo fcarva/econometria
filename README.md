@@ -53,6 +53,8 @@ Primeira vez nesta máquina: `scripts\r.ps1 R\00_setup.R` instala o que faltar.
 | Para… | Abra |
 |---|---|
 | Saber o que fazer hoje | [CRONOGRAMA.md](CRONOGRAMA.md) |
+| **Estudar pela lista nova (v.1), que é a base da prova** | [provas/lista1_v1/](provas/lista1_v1/README.md) — leitura da prova, mapa dos 79, resoluções novas |
+| **Entender e reproduzir cada demonstração** | [algoritmo](provas/lista1_v1/algoritmo.md) e [perguntas socráticas](provas/lista1_v1/socratico.md), as mesmas 16 seções; no papel, o volume 3 do caderno intercala os dois |
 | Entender a lógica do plano | [PLANO_ESTUDO.md](PLANO_ESTUDO.md) |
 | Revisar fórmulas | [formulario/formulario.md](formulario/formulario.md) |
 | Revisar na véspera e antes da prova | [formulario/ultima_revisao.md](formulario/ultima_revisao.md) |
@@ -66,7 +68,7 @@ Primeira vez nesta máquina: `scripts\r.ps1 R\00_setup.R` instala o que faltar.
 | Saber de onde veio cada resultado | [fontes/fontes_primarias.md](fontes/fontes_primarias.md) — artigos originais, onde o livro simplifica, 104 referências com DOI |
 | Ler além do Greene | [fontes/cursos_e_livros.md](fontes/cursos_e_livros.md) — seção de cada livro por módulo, cursos de Stanford e do MIT |
 | Estudar no papel | `caderno/` — o caderno de estudo em PDF (ver [caderno/README.md](caderno/README.md)) |
-| Achar um exercício da Lista 1 | [LISTA1_MAPA.md](LISTA1_MAPA.md) |
+| Achar um exercício da Lista 1 | [mapa da v.1](provas/lista1_v1/mapa.md) (79 exercícios) ou [LISTA1_MAPA.md](LISTA1_MAPA.md) (lista antiga, 74) |
 | Ver onde a chave do professor erra | [formulario/errata_chave_lista1.md](formulario/errata_chave_lista1.md) |
 
 ## Módulos da P1
@@ -74,7 +76,7 @@ Primeira vez nesta máquina: `scripts\r.ps1 R\00_setup.R` instala o que faltar.
 | Módulo | Tema | Slides | Lista 1 |
 |---|---|---|---|
 | [00](00_fundamentos/README.md) | Fundamentos de probabilidade e estimadores | Greene Ap. B–D | 1–9 |
-| [01](01_paradigma_projecao/README.md) | Paradigma, projeção × média condicional, hipóteses A1–A6 | SL01, SL02 | 10–12 |
+| [01](01_paradigma_projecao/README.md) | Paradigma, projeção × média condicional, hipóteses H1–H5 | SL01, SL02 | 10–12 |
 | [02](02_mqo_simples/README.md) | MQO na regressão simples | SL03 | 13–22, 40 |
 | [03](03_mqo_matricial/README.md) | Álgebra matricial do MQO, P e M | SL03 | 23, 24, 28–31, 34, 35 |
 | [04](04_fwl_particionada/README.md) | Regressão particionada e Frisch–Waugh–Lovell | SL04 | 25 |

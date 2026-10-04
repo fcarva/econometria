@@ -1,5 +1,5 @@
 ---
-title: "Folha de última revisão — 01 e 02 de outubro"
+title: "Folha de última revisão — véspera e dia da prova"
 disciplina: Econometria I (PECO-5021/6021)
 professor: Edson Zambon Monte
 periodo: 2026/2
@@ -20,29 +20,27 @@ Uma página. É o que você lê na véspera e nos 15 minutos antes da prova — 
 
 ## 1. As sete fórmulas que abrem qualquer questão
 
-$$\hat\beta_2=\frac{S_{XY}}{S_{XX}},\qquad \hat\beta_1=\bar Y-\hat\beta_2\bar X,\qquad \operatorname{Var}(\hat\beta_2)=\frac{\sigma^2}{S_{XX}}$$
+$$\widehat\beta_2=\frac{S_{XY}}{S_{XX}},\qquad \widehat\beta_1=\bar Y-\widehat\beta_2\bar X,\qquad \operatorname{Var}(\widehat\beta_2)=\frac{\sigma^2}{S_{XX}}$$
 
-$$b=(X'X)^{-1}X'y,\qquad \operatorname{Var}(b\mid X)=\sigma^2(X'X)^{-1},\qquad s^2=\frac{e'e}{n-K}$$
+$$\mathbf b=(\mathbf X'\mathbf X)^{-1}\mathbf X'\mathbf y,\qquad \operatorname{Var}(\mathbf b\mid \mathbf X)=\sigma^2(\mathbf X'\mathbf X)^{-1},\qquad s^2=\frac{\mathbf e'\mathbf e}{n-K}$$
 
-$$\hat\beta_{IV}=(Z'X)^{-1}Z'y$$
+$$\widehat\beta_{IV}=(\mathbf Z'\mathbf X)^{-1}\mathbf Z'\mathbf y$$
 
 ## 2. As quatro identidades que salvam contas
 
 | Identidade | Serve para |
 |---|---|
-| $b=\beta+(X'X)^{-1}X'\varepsilon$ | não-viés, variância e consistência saem daqui |
-| $\hat\beta_2=\beta_2+\sum k_iu_i$, com $\sum k_i=0$, $\sum k_iX_i=1$, $\sum k_i^2=1/S_{XX}$ | toda a rota escalar |
-| $e=M\varepsilon$, $\operatorname{tr}(M)=n-K$ | $E[e'e]=\sigma^2(n-K)$ |
+| $\mathbf b=\beta+(\mathbf X'\mathbf X)^{-1}\mathbf X'\varepsilon$ | não-viés, variância e consistência saem daqui |
+| $\widehat\beta_2=\beta_2+\sum w_iu_i$, com $\sum w_i=0$, $\sum w_iX_i=1$, $\sum w_i^2=1/S_{XX}$ | toda a rota escalar |
+| $\mathbf e=\mathbf M\varepsilon$, $\operatorname{tr}(\mathbf M)=n-K$ | $E(\mathbf e'\mathbf e)=\sigma^2(n-K)$ |
 | $SQT=SQE+SQR$ e $SQT=SQR/(1-R^2)$ | reconstruir ANOVA de qualquer output |
 
 ## 3. O molde de resposta (vale metade dos pontos)
 
-```text
-Hipóteses:   H0: ...   vs   H1: ...
-Estatística: valor, distribuição e graus de liberdade
-Decisão:     comparação explícita com o crítico OU com o α  ⇒  rejeita / não rejeita
-Conclusão:   uma frase em português, econômica
-```
+- **Hipóteses:** $H_0:\dots$ vs. $H_1:\dots$
+- **Estatística:** valor calculado ($t_{cal}$, $F_{cal}$, $nR^2_{aux}$), distribuição e graus de liberdade.
+- **Decisão:** "como $t_{cal}=\dots>t_{tab}=\dots$, rejeita-se $H_0$ ao nível de 5%" — ou a comparação do $p$ com o nível.
+- **Conclusão:** uma frase em português, com conteúdo econômico.
 
 ## 4. As seis decisões que mais caem
 
@@ -74,6 +72,18 @@ $\chi^2_2$: 4,61 · 5,99 · 9,21
 > [!TIP]
 > **O enunciado quase sempre dá o crítico**
 > Use o número que está no papel, mesmo que difira do que você lembra, e diga qual usou.
+
+## 6b. O que a Lista 1 v.1 avisa
+
+A prova sai da [lista nova](../provas/lista1_v1/README.md). Quatro lembretes que vêm dela:
+
+1. **F por SQR**, sempre com a sigla definida na primeira linha ("SQR = soma dos quadrados dos resíduos"):
+
+$$F=\frac{(SQR_R-SQR_{UR})/q}{SQR_{UR}/(n-k)}$$
+
+2. **Wu-Hausman a 5%**: decida pelo p impresso e escreva a comparação ("0,0469 < 0,05 ⇒ rejeita"). O p verdadeiro daquela estatística é 0,0569.
+3. **Pico do quadrático em log**: $EXP^*=-\widehat\beta_2/(2\widehat\beta_3)$ e efeito marginal $\widehat\beta_2+2\widehat\beta_3EXP$, em pontos percentuais vezes 100.
+4. **O quadro do ex. 14**: só a violação da exogeneidade estrita, H2 ($E(\varepsilon\mid X)=0$) tira não-viés e consistência; heterocedasticidade e autocorrelação tiram eficiência e os ep usuais.
 
 ## 7. Estratégia no dia
 

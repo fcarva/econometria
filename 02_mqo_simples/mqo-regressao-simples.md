@@ -47,31 +47,31 @@ A estrutura é:
 Para uma variável aleatória $X$, a **esperança** (média populacional) é
 
 $$
-E[X] \;=\;
+E(X) \;=\;
 \begin{cases}
 \displaystyle\sum_{x} x\,p(x) & \text{(caso discreto)}\\[2mm]
 \displaystyle\int_{-\infty}^{\infty} x\,f(x)\,dx & \text{(caso contínuo)}
 \end{cases}
 $$
 
-Pense em $E[\cdot]$ como um **operador** que "pesa pela probabilidade". As duas propriedades que você usa o tempo todo:
+Pense em $E(\cdot)$ como um **operador** que "pesa pela probabilidade". As duas propriedades que você usa o tempo todo:
 
 **Linearidade.** Para constantes $a,b$ e variáveis $X,Y$:
 
 $$
-E[aX + b] = a\,E[X] + b, \qquad E[X + Y] = E[X] + E[Y].
+E(aX + b) = a\,E(X) + b, \qquad E(X + Y) = E(X) + E(Y).
 $$
 
-> A linearidade é o que permite "puxar somatório para dentro/fora" no mundo amostral, porque a média amostral $\bar{x}=\frac1n\sum x_i$ é o análogo empírico de $E[X]$.
+> A linearidade é o que permite "puxar somatório para dentro/fora" no mundo amostral, porque a média amostral $\bar{x}=\frac1n\sum x_i$ é o análogo empírico de $E(X)$.
 
 ### 1.2 Variância e covariância
 
 $$
-\operatorname{Var}(X) = E\!\big[(X-\mu_X)^2\big] = E[X^2] - \mu_X^2, \qquad \mu_X \equiv E[X].
+\operatorname{Var}(X) = E\!\big[(X-\mu_X)^2\big] = E(X^2) - \mu_X^2, \qquad \mu_X \equiv E(X).
 $$
 
 $$
-\operatorname{Cov}(X,Y) = E\!\big[(X-\mu_X)(Y-\mu_Y)\big] = E[XY] - \mu_X\mu_Y.
+\operatorname{Cov}(X,Y) = E\!\big[(X-\mu_X)(Y-\mu_Y)\big] = E(XY) - \mu_X\mu_Y.
 $$
 
 Propriedades que serão usadas na §3 e na §7:
@@ -85,31 +85,31 @@ $$
 
 ### 1.3 O conceito central: esperança condicional (Greene, Ap. B.8)
 
-Essa é a peça que **falta nas suas notas** e que amarra tudo. A **esperança condicional** $E[Y\mid X=x]$ é a média de $Y$ *entre as observações em que $X=x$*. Vista como função de $x$, ela é a **Função de Regressão Populacional (FRP)**:
+Essa é a peça que **falta nas suas notas** e que amarra tudo. A **esperança condicional** $E(Y\mid X=x)$ é a média de $Y$ *entre as observações em que $X=x$*. Vista como função de $x$, ela é a **Função de Regressão Populacional (FRP)**:
 
 $$
-m(x) \;\equiv\; E[Y \mid X = x].
+m(x) \;\equiv\; E(Y \mid X = x).
 $$
 
 Dois resultados que você deve ter na ponta da língua:
 
 **Lei das Expectativas Iteradas (LIE).**
 $$
-E\big[\,E[Y\mid X]\,\big] = E[Y].
+E\big(\,E(Y\mid X)\,\big) = E(Y).
 $$
 
 **Propriedade de "puxar o que é conhecido".** Se $g$ é função de $X$:
 $$
-E[\,g(X)\,Y \mid X] = g(X)\,E[Y\mid X].
+E(\,g(X)\,Y \mid X) = g(X)\,E(Y\mid X).
 $$
 
 Dessas duas sai a consequência que usaremos:
 
 $$
-E[Y\mid X]=0 \;\Longrightarrow\; E[Y]=0 \;\text{ e }\; E[g(X)\,Y]=0 \;\text{ para toda } g.
+E(Y\mid X)=0 \;\Longrightarrow\; E(Y)=0 \;\text{ e }\; E(g(X)\,Y)=0 \;\text{ para toda } g.
 $$
 
-*(Prova da segunda: $E[g(X)Y] = E\big[E[g(X)Y\mid X]\big] = E\big[g(X)\underbrace{E[Y\mid X]}_{=0}\big] = 0$.)*
+*(Prova da segunda: $E(g(X)Y) = E\big(E(g(X)Y\mid X)\big) = E\big(g(X)\underbrace{E(Y\mid X)}_{=0}\big) = 0$.)*
 
 ### 1.4 Análogos amostrais — a tradução população ↔ amostra
 
@@ -117,11 +117,11 @@ Toda a mágica do MQO é **substituir esperanças populacionais por médias amos
 
 | Mundo populacional (desconhecido) | Mundo amostral (calculável com dados) |
 |---|---|
-| $E[X]$ | $\bar{x} = \dfrac{1}{n}\sum_{i=1}^n x_i$ |
+| $E(X)$ | $\bar{x} = \dfrac{1}{n}\sum_{i=1}^n x_i$ |
 | $\operatorname{Var}(X)$ | $\dfrac{1}{n}\sum (x_i-\bar{x})^2$  (ou com $n-1$) |
 | $\operatorname{Cov}(X,Y)$ | $\dfrac{1}{n}\sum (x_i-\bar{x})(y_i-\bar{y})$ |
-| $E[Y\mid X]=\beta_0+\beta_1 X$ | reta ajustada $\hat{y}_i = \hat\beta_0 + \hat\beta_1 x_i$ |
-| erro $u$ (não-observável) | resíduo $\hat{u}_i$ (observável) |
+| $E(Y\mid X)=\beta_0+\beta_1 X$ | reta ajustada $\widehat{y}_i = \widehat\beta_0 + \widehat\beta_1 x_i$ |
+| erro $u$ (não-observável) | resíduo $\widehat{u}_i$ (observável) |
 
 > **Nota de notação:** nas suas páginas o tamanho da amostra aparece como $m$. O padrão em econometria é $n$ (ou $N$). Vou usar $n$ daqui em diante — é a mesma coisa, só para você não estranhar ao comparar com Greene/Wooldridge.
 
@@ -144,53 +144,53 @@ $$
 O que dá sentido a $\beta_0,\beta_1$ é a hipótese de **exogeneidade em média condicional**:
 
 $$
-\boxed{\,E[u \mid x] = 0\,}
+\boxed{\,E(u \mid x) = 0\,}
 $$
 
 Ela diz que, dado $x$, o erro não tem tendência sistemática. Por §1.3, ela implica as duas **condições de momento** que vão gerar os estimadores:
 
 $$
-E[u] = 0 \qquad\text{e}\qquad E[x\,u] = 0 \;\;\Longleftrightarrow\;\; \operatorname{Cov}(x,u)=0.
+E(u) = 0 \qquad\text{e}\qquad E(x\,u) = 0 \;\;\Longleftrightarrow\;\; \operatorname{Cov}(x,u)=0.
 $$
 
 Sob essa hipótese, a FRP é exatamente a reta:
 
 $$
-E[y\mid x] = \beta_0 + \beta_1 x.
+E(y\mid x) = \beta_0 + \beta_1 x.
 $$
 
 > Guarde a diferença conceitual:
-> - $E[u\mid x]=0$ (média condicional) é **mais forte** e é o que justifica interpretar $\beta_1$ como efeito causal;
-> - $E[u]=0$ e $\operatorname{Cov}(x,u)=0$ (ortogonalidade) é **mais fraca** e é o mínimo necessário para *identificar* $\beta_0,\beta_1$ como na §3. O MQO só precisa da versão fraca.
+> - $E(u\mid x)=0$ (média condicional) é **mais forte** e é o que justifica interpretar $\beta_1$ como efeito causal;
+> - $E(u)=0$ e $\operatorname{Cov}(x,u)=0$ (ortogonalidade) é **mais fraca** e é o mínimo necessário para *identificar* $\beta_0,\beta_1$ como na §3. O MQO só precisa da versão fraca.
 
 ### 2.3 Erro × resíduo — não confundir
 
 Depois de estimar, escrevemos a **versão amostral**:
 
 $$
-y_i = \hat\beta_0 + \hat\beta_1 x_i + \hat{u}_i,
+y_i = \widehat\beta_0 + \widehat\beta_1 x_i + \widehat{u}_i,
 \qquad
-\hat{y}_i = \hat\beta_0 + \hat\beta_1 x_i,
+\widehat{y}_i = \widehat\beta_0 + \widehat\beta_1 x_i,
 \qquad
-\hat{u}_i = y_i - \hat{y}_i.
+\widehat{u}_i = y_i - \widehat{y}_i.
 $$
 
 | | símbolo | observável? | natureza |
 |---|---|---|---|
 | erro | $u_i$ | ❌ | populacional, teórico |
-| resíduo | $\hat{u}_i$ | ✔️ | amostral, calculado |
+| resíduo | $\widehat{u}_i$ | ✔️ | amostral, calculado |
 
-O resíduo é a **estimativa** do erro. A reta da sua figura (imagem 5) é $\hat{y}_i=\hat\beta_0+\hat\beta_1 x_i$, e cada $\hat u_i$ é a distância **vertical** de um ponto até essa reta.
+O resíduo é a **estimativa** do erro. A reta da sua figura (imagem 5) é $\widehat{y}_i=\widehat\beta_0+\widehat\beta_1 x_i$, e cada $\widehat u_i$ é a distância **vertical** de um ponto até essa reta.
 
 ---
 
 ## 3. De onde vêm os parâmetros (mundo populacional)
 
-Antes de olhar para qualquer amostra, os próprios $\beta_0,\beta_1$ já estão definidos pelas condições de momento. Partindo de $y=\beta_0+\beta_1 x+u$ com $E[u]=0$ e $\operatorname{Cov}(x,u)=0$:
+Antes de olhar para qualquer amostra, os próprios $\beta_0,\beta_1$ já estão definidos pelas condições de momento. Partindo de $y=\beta_0+\beta_1 x+u$ com $E(u)=0$ e $\operatorname{Cov}(x,u)=0$:
 
 **Intercepto** — tomando esperança dos dois lados:
 $$
-E[y] = \beta_0 + \beta_1 E[x] \;\Longrightarrow\; \boxed{\beta_0 = E[y] - \beta_1 E[x]}.
+E(y) = \beta_0 + \beta_1 E(x) \;\Longrightarrow\; \boxed{\beta_0 = E(y) - \beta_1 E(x)}.
 $$
 
 **Inclinação** — tomando covariância com $x$:
@@ -211,7 +211,7 @@ $$
 
 ### 4.1 A função objetivo (SQR)
 
-Escolhemos a reta que minimiza a soma dos quadrados dos resíduos. Para **candidatos genéricos** $b_0, b_1$ (uso $b$, não $\hat\beta$, para deixar claro que estamos otimizando *sobre* eles; o minimizador ganhará o chapéu):
+Escolhemos a reta que minimiza a soma dos quadrados dos resíduos. Para **candidatos genéricos** $b_0, b_1$ (uso $b$, não $\widehat\beta$, para deixar claro que estamos otimizando *sobre* eles; o minimizador ganhará o chapéu):
 
 $$
 \operatorname{SQR}(b_0,b_1) = \sum_{i=1}^n \big(y_i - b_0 - b_1 x_i\big)^2.
@@ -223,7 +223,7 @@ $$
 \min_{b_0,\,b_1}\ \sum_{i=1}^n \big(y_i - b_0 - b_1 x_i\big)^2 .
 $$
 
-> **Por que quadrados, e não valor absoluto?** Duas razões práticas: (i) o quadrado é diferenciável em toda parte, então o cálculo das condições de primeira ordem é limpo; (ii) penaliza mais os desvios grandes. (Minimizar $\sum|\hat u_i|$ existe — é a regressão na mediana / LAD — mas não tem solução fechada.)
+> **Por que quadrados, e não valor absoluto?** Duas razões práticas: (i) o quadrado é diferenciável em toda parte, então o cálculo das condições de primeira ordem é limpo; (ii) penaliza mais os desvios grandes. (Minimizar $\sum|\widehat u_i|$ existe — é a regressão na mediana / LAD — mas não tem solução fechada.)
 
 ### 4.2 Condições de primeira ordem (as equações normais)
 
@@ -234,7 +234,7 @@ $$
 \frac{\partial\operatorname{SQR}}{\partial b_0}
 = \sum 2\big(y_i - b_0 - b_1 x_i\big)(-1) = 0
 \;\Longrightarrow\;
-\sum \big(y_i - \hat\beta_0 - \hat\beta_1 x_i\big) = 0.
+\sum \big(y_i - \widehat\beta_0 - \widehat\beta_1 x_i\big) = 0.
 \tag{EN-1}
 $$
 
@@ -243,14 +243,14 @@ $$
 \frac{\partial\operatorname{SQR}}{\partial b_1}
 = \sum 2\big(y_i - b_0 - b_1 x_i\big)(-x_i) = 0
 \;\Longrightarrow\;
-\sum \big(y_i - \hat\beta_0 - \hat\beta_1 x_i\big)x_i = 0.
+\sum \big(y_i - \widehat\beta_0 - \widehat\beta_1 x_i\big)x_i = 0.
 \tag{EN-2}
 $$
 
-Como o termo entre parênteses é o resíduo $\hat u_i$, as duas equações normais dizem, em uma frase:
+Como o termo entre parênteses é o resíduo $\widehat u_i$, as duas equações normais dizem, em uma frase:
 
 $$
-\boxed{\sum \hat{u}_i = 0} \qquad\text{e}\qquad \boxed{\sum \hat{u}_i x_i = 0}.
+\boxed{\sum \widehat{u}_i = 0} \qquad\text{e}\qquad \boxed{\sum \widehat{u}_i x_i = 0}.
 $$
 
 > Estas são **as duas propriedades algébricas fundamentais** do MQO. Elas valem *por construção*, sem precisar de nenhuma hipótese estatística. Tudo na §8 sai daqui.
@@ -259,48 +259,48 @@ $$
 
 Abrindo (EN-1):
 $$
-\sum y_i - \sum \hat\beta_0 - \hat\beta_1 \sum x_i = 0
+\sum y_i - \sum \widehat\beta_0 - \widehat\beta_1 \sum x_i = 0
 \;\Longrightarrow\;
-\sum y_i - n\hat\beta_0 - \hat\beta_1 \sum x_i = 0.
+\sum y_i - n\widehat\beta_0 - \widehat\beta_1 \sum x_i = 0.
 $$
 
 Dividindo por $n$ (usando $\bar{y}=\frac1n\sum y_i$ e $\bar{x}=\frac1n\sum x_i$):
 $$
-\bar{y} - \hat\beta_0 - \hat\beta_1 \bar{x} = 0
+\bar{y} - \widehat\beta_0 - \widehat\beta_1 \bar{x} = 0
 \;\Longrightarrow\;
-\boxed{\hat\beta_0 = \bar{y} - \hat\beta_1 \bar{x}}
+\boxed{\widehat\beta_0 = \bar{y} - \widehat\beta_1 \bar{x}}
 \quad\Longleftrightarrow\quad
-\bar{y} = \hat\beta_0 + \hat\beta_1\bar{x}.
+\bar{y} = \widehat\beta_0 + \widehat\beta_1\bar{x}.
 $$
 
 **Consequência geométrica imediata:** a reta ajustada **passa pelo ponto médio** $(\bar{x},\bar{y})$. (É a última linha da sua imagem 1.)
 
 ### 4.4 Resolvendo (EN-2) → a inclinação
 
-Substituímos $\hat\beta_0 = \bar{y} - \hat\beta_1\bar{x}$ em (EN-2):
+Substituímos $\widehat\beta_0 = \bar{y} - \widehat\beta_1\bar{x}$ em (EN-2):
 
 $$
-\sum \Big(y_i - (\bar{y} - \hat\beta_1\bar{x}) - \hat\beta_1 x_i\Big)x_i = 0.
+\sum \Big(y_i - (\bar{y} - \widehat\beta_1\bar{x}) - \widehat\beta_1 x_i\Big)x_i = 0.
 $$
 
-Reorganizando dentro do parêntese $\big(y_i - \bar{y}\big) - \hat\beta_1\big(x_i - \bar{x}\big)$:
+Reorganizando dentro do parêntese $\big(y_i - \bar{y}\big) - \widehat\beta_1\big(x_i - \bar{x}\big)$:
 
 $$
-\sum \Big[(y_i-\bar{y}) - \hat\beta_1(x_i-\bar{x})\Big]x_i = 0
+\sum \Big[(y_i-\bar{y}) - \widehat\beta_1(x_i-\bar{x})\Big]x_i = 0
 \;\Longrightarrow\;
-\sum (y_i-\bar{y})x_i \;=\; \hat\beta_1 \sum (x_i-\bar{x})x_i .
+\sum (y_i-\bar{y})x_i \;=\; \widehat\beta_1 \sum (x_i-\bar{x})x_i .
 $$
 
 Agora usamos as identidades da §5 — a saber, $\sum(x_i-\bar x)x_i=\sum(x_i-\bar x)^2$ e $\sum(y_i-\bar y)x_i=\sum(y_i-\bar y)(x_i-\bar x)$ — para reescrever ambos os lados em forma centrada:
 
 $$
-\sum (y_i-\bar{y})(x_i-\bar{x}) = \hat\beta_1 \sum (x_i-\bar{x})^2 .
+\sum (y_i-\bar{y})(x_i-\bar{x}) = \widehat\beta_1 \sum (x_i-\bar{x})^2 .
 $$
 
 Isolando:
 
 $$
-\boxed{\ \hat\beta_1 = \dfrac{\displaystyle\sum_{i=1}^n (x_i-\bar{x})(y_i-\bar{y})}{\displaystyle\sum_{i=1}^n (x_i-\bar{x})^2} \ }
+\boxed{\ \widehat\beta_1 = \dfrac{\displaystyle\sum_{i=1}^n (x_i-\bar{x})(y_i-\bar{y})}{\displaystyle\sum_{i=1}^n (x_i-\bar{x})^2} \ }
 \;=\; \frac{S_{xy}}{S_{xx}}
 \;=\; \frac{\widehat{\operatorname{Cov}}(x,y)}{\widehat{\operatorname{Var}}(x)} .
 $$
@@ -358,7 +358,7 @@ $$
 
 ## 6. Condição de segunda ordem — a prova de que é mínimo
 
-Aqui está a lacuna das suas notas. Você chamou a segunda FOC de "2ª condição", mas ela ainda é uma condição de *primeira* ordem (é a derivada em $b_1$). Falta mostrar que o ponto crítico $(\hat\beta_0,\hat\beta_1)$ é de fato um **mínimo**, e não um máximo ou sela. Isso é a **condição de segunda ordem (CSO)** e se checa via a **matriz Hessiana**.
+Aqui está a lacuna das suas notas. Você chamou a segunda FOC de "2ª condição", mas ela ainda é uma condição de *primeira* ordem (é a derivada em $b_1$). Falta mostrar que o ponto crítico $(\widehat\beta_0,\widehat\beta_1)$ é de fato um **mínimo**, e não um máximo ou sela. Isso é a **condição de segunda ordem (CSO)** e se checa via a **matriz Hessiana**.
 
 As segundas derivadas da SQR:
 $$
@@ -386,24 +386,24 @@ $$
 
 **Interpretação.** A SQR é uma função **estritamente convexa** de $(b_0,b_1)$ desde que haja **variação em $x$**. Nesse caso o ponto crítico é o **mínimo global único** — a solução da §4 está garantida.
 
-> Essa condição $S_{xx}>0$ é o análogo, no caso simples, da **condição de posto** ($X$ com posto cheio) no caso multivariado. Se $x$ fosse constante, $\hat\beta_1$ seria uma divisão por zero: você não pode medir inclinação sem variação no regressor. É a **hipótese de identificação** aparecendo de forma concreta.
+> Essa condição $S_{xx}>0$ é o análogo, no caso simples, da **condição de posto** ($X$ com posto cheio) no caso multivariado. Se $x$ fosse constante, $\widehat\beta_1$ seria uma divisão por zero: você não pode medir inclinação sem variação no regressor. É a **hipótese de identificação** aparecendo de forma concreta.
 
 ---
 
 ## 7. Mesma resposta pelo Método dos Momentos (fechando o ciclo)
 
-Volte à §2.2: as condições populacionais são $E[u]=0$ e $E[xu]=0$. O **método dos momentos** manda substituir cada esperança pela média amostral e resolver. Com $\hat u_i = y_i - \hat\beta_0 - \hat\beta_1 x_i$:
+Volte à §2.2: as condições populacionais são $E(u)=0$ e $E(xu)=0$. O **método dos momentos** manda substituir cada esperança pela média amostral e resolver. Com $\widehat u_i = y_i - \widehat\beta_0 - \widehat\beta_1 x_i$:
 
 $$
-\frac{1}{n}\sum \hat{u}_i = 0
+\frac{1}{n}\sum \widehat{u}_i = 0
 \qquad\text{e}\qquad
-\frac{1}{n}\sum x_i\,\hat{u}_i = 0 .
+\frac{1}{n}\sum x_i\,\widehat{u}_i = 0 .
 $$
 
 Multiplique por $n$ e essas são **exatamente** (EN-1) e (EN-2). Ou seja:
 
 $$
-\text{MQO} \;=\; \text{Método dos Momentos aplicado a } E[u]=0,\ E[xu]=0.
+\text{MQO} \;=\; \text{Método dos Momentos aplicado a } E(u)=0,\ E(xu)=0.
 $$
 
 Isso conecta a §3 (parâmetros populacionais) à §4 (minimização) sem passar por otimização nenhuma — os dois caminhos chegam ao mesmo estimador. É a leitura "moderna" (Hansen): MQO estima os parâmetros que satisfazem as condições de ortogonalidade da população.
@@ -416,49 +416,49 @@ Tudo abaixo é **algébrico** (vale por construção, sem hipótese estatística
 
 ### 8.1 Os resíduos somam zero
 $$
-\sum \hat{u}_i = 0 \;\Longrightarrow\; \bar{\hat{u}} = 0.
+\sum \widehat{u}_i = 0 \;\Longrightarrow\; \bar{\widehat{u}} = 0.
 $$
-Em particular, das suas notas: $y_i - \bar{y}$ centrado corresponde à parte "explicável", e $\sum\hat u_i=0$ é o que garante que a reta passa por $(\bar x,\bar y)$.
+Em particular, das suas notas: $y_i - \bar{y}$ centrado corresponde à parte "explicável", e $\sum\widehat u_i=0$ é o que garante que a reta passa por $(\bar x,\bar y)$.
 
 ### 8.2 Resíduos ortogonais ao regressor
 $$
-\sum x_i\hat{u}_i = 0.
+\sum x_i\widehat{u}_i = 0.
 $$
 
 ### 8.3 Covariância amostral resíduo–regressor é zero
 
-Aqui um ponto de rigor: para concluir $\widehat{\operatorname{Cov}}(\hat u, x)=0$ você precisa **das duas** condições juntas, não só de $\sum x_i \hat u_i=0$:
+Aqui um ponto de rigor: para concluir $\widehat{\operatorname{Cov}}(\widehat u, x)=0$ você precisa **das duas** condições juntas, não só de $\sum x_i \widehat u_i=0$:
 
 $$
-\widehat{\operatorname{Cov}}(\hat{u},x)
-= \frac{1}{n}\sum (\hat{u}_i - \bar{\hat u})(x_i - \bar{x})
-\overset{\bar{\hat u}=0}{=} \frac{1}{n}\sum \hat{u}_i (x_i-\bar{x})
-= \frac{1}{n}\Big[\underbrace{\sum \hat{u}_i x_i}_{=0} - \bar{x}\underbrace{\sum \hat{u}_i}_{=0}\Big] = 0.
+\widehat{\operatorname{Cov}}(\widehat{u},x)
+= \frac{1}{n}\sum (\widehat{u}_i - \bar{\widehat u})(x_i - \bar{x})
+\overset{\bar{\widehat u}=0}{=} \frac{1}{n}\sum \widehat{u}_i (x_i-\bar{x})
+= \frac{1}{n}\Big[\underbrace{\sum \widehat{u}_i x_i}_{=0} - \bar{x}\underbrace{\sum \widehat{u}_i}_{=0}\Big] = 0.
 $$
 
-Ou seja: $\sum\hat u_i=0$ **e** $\sum x_i\hat u_i=0$ ⟹ $\widehat{\operatorname{Cov}}(\hat u,x)=0$. As suas notas escrevem "$\widehat{\operatorname{Cov}}(\hat u_i,x_i)=0$" logo após $\sum\hat u_i x_i=0$ — está certo, mas é bom saber que a passagem usa *silenciosamente* a primeira condição também.
+Ou seja: $\sum\widehat u_i=0$ **e** $\sum x_i\widehat u_i=0$ ⟹ $\widehat{\operatorname{Cov}}(\widehat u,x)=0$. As suas notas escrevem "$\widehat{\operatorname{Cov}}(\widehat u_i,x_i)=0$" logo após $\sum\widehat u_i x_i=0$ — está certo, mas é bom saber que a passagem usa *silenciosamente* a primeira condição também.
 
-### 8.4 ⚠️ Correção: o denominador de $\hat\beta_1$ **não** leva raiz
+### 8.4 ⚠️ Correção: o denominador de $\widehat\beta_1$ **não** leva raiz
 
 Na imagem 4 aparece
 $$
-\hat\beta_1 = \frac{\widehat{\operatorname{Cov}}(y,x)}{\sqrt{\widehat{\operatorname{Var}}(x)}}. \quad\text{❌}
+\widehat\beta_1 = \frac{\widehat{\operatorname{Cov}}(y,x)}{\sqrt{\widehat{\operatorname{Var}}(x)}}. \quad\text{❌}
 $$
 O correto é **sem** raiz:
 $$
-\hat\beta_1 = \frac{\widehat{\operatorname{Cov}}(y,x)}{\widehat{\operatorname{Var}}(x)}. \quad\text{✔️}
+\widehat\beta_1 = \frac{\widehat{\operatorname{Cov}}(y,x)}{\widehat{\operatorname{Var}}(x)}. \quad\text{✔️}
 $$
 
 Dois jeitos rápidos de nunca mais errar isso:
 
-- **Sai da própria derivação (§4.4):** $\hat\beta_1 = S_{xy}/S_{xx}$, e $S_{xx}=\sum(x_i-\bar x)^2$ é a soma de quadrados **inteira** (o denominador da variância), não a raiz dela.
-- **Checagem dimensional (sanity check):** $\hat\beta_1$ tem unidade $[\,y\,]/[\,x\,]$ (é "quanto $y$ muda por unidade de $x$"). Confira:
+- **Sai da própria derivação (§4.4):** $\widehat\beta_1 = S_{xy}/S_{xx}$, e $S_{xx}=\sum(x_i-\bar x)^2$ é a soma de quadrados **inteira** (o denominador da variância), não a raiz dela.
+- **Checagem dimensional (sanity check):** $\widehat\beta_1$ tem unidade $[\,y\,]/[\,x\,]$ (é "quanto $y$ muda por unidade de $x$"). Confira:
   $$
   \frac{\operatorname{Cov}(y,x)}{\operatorname{Var}(x)} \sim \frac{[y][x]}{[x]^2} = \frac{[y]}{[x]} \;\checkmark
   \qquad\text{vs}\qquad
   \frac{\operatorname{Cov}(y,x)}{\sqrt{\operatorname{Var}(x)}} \sim \frac{[y][x]}{[x]} = [y]\;\text{✗ (unidade errada)}.
   $$
-  A versão com raiz daria a unidade errada — logo não pode ser $\hat\beta_1$. (A raiz de fato aparece, mas no **coeficiente de correlação** $r=\dfrac{\widehat{\operatorname{Cov}}(x,y)}{\sqrt{\widehat{\operatorname{Var}}(x)}\,\sqrt{\widehat{\operatorname{Var}}(y)}}$, e na relação $\hat\beta_1 = r\cdot \dfrac{s_y}{s_x}$ — talvez seja daí que veio a confusão.)
+  A versão com raiz daria a unidade errada — logo não pode ser $\widehat\beta_1$. (A raiz de fato aparece, mas no **coeficiente de correlação** $r=\dfrac{\widehat{\operatorname{Cov}}(x,y)}{\sqrt{\widehat{\operatorname{Var}}(x)}\,\sqrt{\widehat{\operatorname{Var}}(y)}}$, e na relação $\widehat\beta_1 = r\cdot \dfrac{s_y}{s_x}$ — talvez seja daí que veio a confusão.)
 
 > Fica como hábito de conferência: sempre que fechar uma fórmula, faça a checagem de unidades. É barato e pega esse tipo de deslize antes de virar erro de prova.
 
@@ -477,10 +477,10 @@ $$
 $$
 \boxed{\;
 \begin{aligned}
-&\text{Equações normais:} && \sum \hat{u}_i = 0, \qquad \sum \hat{u}_i x_i = 0 \;\Rightarrow\; \widehat{\operatorname{Cov}}(\hat u, x)=0\\[2mm]
-&\text{Inclinação:} && \hat\beta_1 = \frac{\sum (x_i-\bar{x})(y_i-\bar{y})}{\sum (x_i-\bar{x})^2} = \frac{S_{xy}}{S_{xx}} = \frac{\widehat{\operatorname{Cov}}(x,y)}{\widehat{\operatorname{Var}}(x)}\\[2mm]
-&\text{Intercepto:} && \hat\beta_0 = \bar{y} - \hat\beta_1\bar{x}\\[2mm]
-&\text{Ponto médio:} && \bar{y} = \hat\beta_0 + \hat\beta_1\bar{x} \quad (\text{a reta passa por } (\bar x,\bar y))\\[2mm]
+&\text{Equações normais:} && \sum \widehat{u}_i = 0, \qquad \sum \widehat{u}_i x_i = 0 \;\Rightarrow\; \widehat{\operatorname{Cov}}(\widehat u, x)=0\\[2mm]
+&\text{Inclinação:} && \widehat\beta_1 = \frac{\sum (x_i-\bar{x})(y_i-\bar{y})}{\sum (x_i-\bar{x})^2} = \frac{S_{xy}}{S_{xx}} = \frac{\widehat{\operatorname{Cov}}(x,y)}{\widehat{\operatorname{Var}}(x)}\\[2mm]
+&\text{Intercepto:} && \widehat\beta_0 = \bar{y} - \widehat\beta_1\bar{x}\\[2mm]
+&\text{Ponto médio:} && \bar{y} = \widehat\beta_0 + \widehat\beta_1\bar{x} \quad (\text{a reta passa por } (\bar x,\bar y))\\[2mm]
 &\text{Identificação:} && S_{xx} > 0 \;\;(x \text{ não é constante})
 \end{aligned}
 \;}
@@ -492,14 +492,14 @@ $$
 
 Tudo até aqui é **álgebra**: dado qualquer conjunto de pontos, essas fórmulas produzem *a* reta de melhor ajuste. Nenhuma hipótese estatística foi usada (a única exigência foi $S_{xx}>0$).
 
-O **próximo passo** — que vai exigir as hipóteses de Gauss–Markov — é tratar $\hat\beta_0,\hat\beta_1$ como **variáveis aleatórias** (funções da amostra) e perguntar:
+O **próximo passo** — que vai exigir as hipóteses de Gauss–Markov — é tratar $\widehat\beta_0,\widehat\beta_1$ como **variáveis aleatórias** (funções da amostra) e perguntar:
 
-- **Não-viés:** $E[\hat\beta_1] = \beta_1$? — precisa de $E[u\mid x]=0$.
-- **Variância dos estimadores:** $\operatorname{Var}(\hat\beta_1) = \dfrac{\sigma^2}{S_{xx}}$? — precisa de homocedasticidade $\operatorname{Var}(u\mid x)=\sigma^2$ e não-autocorrelação.
+- **Não-viés:** $E(\widehat\beta_1) = \beta_1$? — precisa de $E(u\mid x)=0$.
+- **Variância dos estimadores:** $\operatorname{Var}(\widehat\beta_1) = \dfrac{\sigma^2}{S_{xx}}$? — precisa de homocedasticidade $\operatorname{Var}(u\mid x)=\sigma^2$ e não-autocorrelação.
 - **Eficiência (Gauss–Markov):** MQO é o melhor estimador linear não-viesado (BLUE)?
-- **Inferência:** distribuição de $\hat\beta_1$, testes $t$, intervalos — aí entram as distribuições do **Apêndice B.4/B.9 do Greene** (normal, $t$, $\chi^2$, $F$) e a Teoria Assintótica (Apêndice D).
+- **Inferência:** distribuição de $\widehat\beta_1$, testes $t$, intervalos — aí entram as distribuições do **Apêndice B.4/B.9 do Greene** (normal, $t$, $\chi^2$, $F$) e a Teoria Assintótica (Apêndice D).
 
-Note a mudança de status de $S_{xx}$: aqui ele foi só a **condição de existência**; lá ele vira o **denominador da variância** — quanto mais variação em $x$, mais preciso é $\hat\beta_1$. É a mesma quantidade cumprindo dois papéis.
+Note a mudança de status de $S_{xx}$: aqui ele foi só a **condição de existência**; lá ele vira o **denominador da variância** — quanto mais variação em $x$, mais preciso é $\widehat\beta_1$. É a mesma quantidade cumprindo dois papéis.
 
 ---
 
@@ -509,23 +509,23 @@ Note a mudança de status de $S_{xx}$: aqui ele foi só a **condição de exist�
 |---|---|---|
 | $\beta_0,\ \beta_1$ | intercepto e inclinação populacionais | fixos, desconhecidos |
 | $u_i$ | erro / perturbação | populacional, **não-observável** |
-| $E[\,\cdot\,]$ | operador esperança | populacional |
-| $E[y\mid x]$ | esperança condicional = FRP | populacional |
-| $\hat\beta_0,\ \hat\beta_1$ | estimadores de MQO | amostrais, **aleatórios** |
-| $\hat{u}_i$ | resíduo $=y_i-\hat y_i$ | amostral, **observável** |
-| $\hat{y}_i$ | valor ajustado $=\hat\beta_0+\hat\beta_1 x_i$ | amostral |
+| $E(\,\cdot\,)$ | operador esperança | populacional |
+| $E(y\mid x)$ | esperança condicional = FRP | populacional |
+| $\widehat\beta_0,\ \widehat\beta_1$ | estimadores de MQO | amostrais, **aleatórios** |
+| $\widehat{u}_i$ | resíduo $=y_i-\widehat y_i$ | amostral, **observável** |
+| $\widehat{y}_i$ | valor ajustado $=\widehat\beta_0+\widehat\beta_1 x_i$ | amostral |
 | $\bar{x},\ \bar{y}$ | médias amostrais | amostrais |
 | $S_{xx}$ | $\sum(x_i-\bar x)^2$ | amostral |
 | $S_{xy}$ | $\sum(x_i-\bar x)(y_i-\bar y)$ | amostral |
 | $n$ | tamanho da amostra (o seu "$m$") | — |
 
-Convenção usada na §4: $b_0,b_1$ são os **candidatos** sobre os quais minimizamos; o minimizador recebe chapéu ($\hat\beta_0,\hat\beta_1$). Muitos livros já derivam direto no $\hat\beta$ (como suas notas) — é aceito, mas separar deixa a lógica da otimização mais nítida.
+Convenção usada na §4: $b_0,b_1$ são os **candidatos** sobre os quais minimizamos; o minimizador recebe chapéu ($\widehat\beta_0,\widehat\beta_1$). Muitos livros já derivam direto no $\widehat\beta$ (como suas notas) — é aceito, mas separar deixa a lógica da otimização mais nítida.
 
 ---
 
 ## Apêndice B — Intuição geométrica em Python
 
-Reproduz a figura das suas imagens 1 e 5 (nuvem de pontos, reta ajustada, resíduos verticais, e o ponto médio por onde a reta passa). Útil para "ver" $\hat u_i$ e a propriedade $\bar y = \hat\beta_0+\hat\beta_1\bar x$.
+Reproduz a figura das suas imagens 1 e 5 (nuvem de pontos, reta ajustada, resíduos verticais, e o ponto médio por onde a reta passa). Útil para "ver" $\widehat u_i$ e a propriedade $\bar y = \widehat\beta_0+\widehat\beta_1\bar x$.
 
 ```python
 import numpy as np
@@ -569,7 +569,7 @@ plt.show()
 ## Materiais complementares (por objetivo)
 
 - **Revisar esperança, momentos, distribuições conjuntas e esperança condicional** → **Greene, *Econometric Analysis*, Apêndice B** (*Probability and Distribution Theory*): B.3 (esperanças e momentos), B.7 (distribuições conjuntas, covariância), **B.8 (condicionamento — a média condicional é a função de regressão)**. Para inferência depois: B.4/B.9 (normal, $t$, $\chi^2$, $F$).
-- **A derivação de MQO no estilo destas notas, com bastante intuição** → **Wooldridge, *Introductory Econometrics*, cap. 2** (praticamente a mesma sequência: SQR, equações normais, $\hat\beta_1=S_{xy}/S_{xx}$, propriedades algébricas).
+- **A derivação de MQO no estilo destas notas, com bastante intuição** → **Wooldridge, *Introductory Econometrics*, cap. 2** (praticamente a mesma sequência: SQR, equações normais, $\widehat\beta_1=S_{xy}/S_{xx}$, propriedades algébricas).
 - **A leitura "por condições de momento / esperança condicional"** (que amarra a §3 e §7) → **Hansen, *Econometrics*, cap. 2–4** (disponível gratuitamente online; abordagem moderna, muito boa para mestrado).
-- **Intuição causal de $E[u\mid x]=0$ vs. ortogonalidade** → **Angrist & Pischke, *Mostly Harmless Econometrics*, cap. 3** (a "regression anatomy").
+- **Intuição causal de $E(u\mid x)=0$ vs. ortogonalidade** → **Angrist & Pischke, *Mostly Harmless Econometrics*, cap. 3** (a "regression anatomy").
 - **Tratamento matricial rigoroso** (para quando generalizar a regressão múltipla) → **Hayashi, *Econometrics*, cap. 1**; Greene, cap. 2–3; Apêndice A do Greene para a álgebra matricial.

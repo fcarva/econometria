@@ -60,4 +60,4 @@ Atualize no fim de cada semana. A causa com mais linhas vira o foco da semana se
 > **Os três erros que mais custam ponto neste professor**
 > 1. Decidir pelo p-valor de memória em vez do p-valor impresso na questão. O professor recicla outputs e troca os p-valores entre versões (ver [provas/README.md](README.md), seção 6).
 > 2. Escrever só "rejeita-se $H_0$" sem a conclusão econômica. A resposta de teste tem sempre quatro linhas: hipóteses, estatística, decisão e conclusão.
-> 3. Em derivação, pular a hipótese que zera um termo. Cada $E[\cdot\mid X]=0$, cada covariância nula e cada $\operatorname{plim}$ precisa vir com a sua justificativa.
+> 3. Em derivação, pular a hipótese que zera um termo. Cada $E(\cdot\mid X)=0$, cada covariância nula e cada $\operatorname{plim}$ precisa vir com a sua justificativa.

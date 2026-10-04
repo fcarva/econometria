@@ -79,10 +79,10 @@ plot(x[id], y[id], pch = 16, cex = 0.45, col = adjustcolor("grey40", 0.5),
      xlab = "x", ylab = "y", main = "CEF côncava x projeção linear")
 curve(cef(x), 0, a, add = TRUE, col = "firebrick", lwd = 2.5)
 abline(alfa_teo, beta_teo, col = "steelblue", lwd = 2.5, lty = 2)
-legend("bottomright", legend = c("E[y | x] = 2√x", "Projeção α + βx"),
+legend("bottomright", legend = c("E(Y | X) = 2√X", "Projeção α + βx"),
        col = c("firebrick", "steelblue"), lwd = 2.5, lty = c(1, 2), bty = "n", cex = 0.85)
 curve(cef(x) - alfa_teo - beta_teo * x, 0, a, col = "darkgreen", lwd = 2.5,
-      xlab = "x", ylab = "E[v | x] = CEF − projeção",
+      xlab = "x", ylab = "E(v | X) = CEF − projeção",
       main = "Erro de projeção: média zero,\nmas não condicionalmente")
 abline(h = 0, lty = 2)
 abline(v = x_cruz, lty = 3, col = "grey40")

@@ -37,7 +37,7 @@ Todas as figuras são geradas por [didatica.R](didatica.R) e existem em PNG e SV
 
 ![A reta de MQO e os resíduos verticais](figuras/dtc_01_reta_residuos.png)
 
-**O que olhar.** Os segmentos vermelhos são **verticais**, não perpendiculares à reta. E o ponto amarelo: a reta passa exatamente pela média conjunta $(\bar X,\bar Y)$ — consequência direta de $\hat\beta_1=\bar Y-\hat\beta_2\bar X$.
+**O que olhar.** Os segmentos vermelhos são **verticais**, não perpendiculares à reta. E o ponto amarelo: a reta passa exatamente pela média conjunta $(\bar X,\bar Y)$ — consequência direta de $\widehat\beta_1=\bar Y-\widehat\beta_2\bar X$.
 
 **A metáfora.** A reta é uma **vara de equilíbrio**: ela se apoia no centro de massa da nuvem e gira até que os puxões de cima e de baixo se anulem. Os resíduos somam zero porque é exatamente essa a condição de equilíbrio.
 
@@ -45,11 +45,13 @@ Todas as figuras são geradas por [didatica.R](didatica.R) e existem em PNG e SV
 
 → [Módulo 02](../02_mqo_simples/02_teoria.md), D02.1 e D02.2.
 
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R
 | chave_R | nota |
 |---|---|
 | dtc_f1_b2 | 0,7543 |
 | dtc_f1_xbar | 5,8384 |
 | dtc_f1_ybar | 6,2526 |
+-->
 
 ## 2. Por que o quadrado da distância vertical
 
@@ -99,10 +101,12 @@ Todas as figuras são geradas por [didatica.R](didatica.R) e existem em PNG e SV
 
 → [Módulo 02](../02_mqo_simples/02_teoria.md) D02.5; [módulo 06](../06_amostra_finita_multicol/06_teoria.md).
 
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R
 | chave_R | nota |
 |---|---|
 | dtc_f5_media_b2 | 0,7518 |
 | dtc_f5_dp_b2 | 0,10722 |
+-->
 
 ## 6. Gauss-Markov em uma imagem
 
@@ -112,25 +116,27 @@ Todas as figuras são geradas por [didatica.R](didatica.R) e existem em PNG e SV
 
 **A metáfora.** Duas testemunhas honestas: uma viu o filme inteiro, a outra só o primeiro e o último minuto. Nenhuma mente — mas uma é muito mais confiável.
 
-**Onde quebra.** Honestidade aqui é **não-viés**, que depende de hipótese, não de caráter: basta $E[\varepsilon\mid X]\neq0$ e a testemunha "mente" sem saber. E Gauss-Markov só compara dentro da classe **linear e não viesada**; fora dela pode existir estimador com erro quadrático médio menor.
+**Onde quebra.** Honestidade aqui é **não-viés**, que depende de hipótese, não de caráter: basta $E(\varepsilon\mid X)\neq0$ e a testemunha "mente" sem saber. E Gauss-Markov só compara dentro da classe **linear e não viesada**; fora dela pode existir estimador com erro quadrático médio menor.
 
 → [Módulo 06](../06_amostra_finita_multicol/06_lista1.md), ex. 33.
 
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R
 | chave_R | nota |
 |---|---|
 | dtc_f6_var_mqo | 0,008186 |
 | dtc_f6_var_extremos | 0,029967 |
 | dtc_f6_razao | 3,661 |
+-->
 
 ## 7. A geometria da projeção
 
 ![y, o ajustado e o resíduo](figuras/dtc_07_projecao.png)
 
-**O que olhar.** O vetor $y$ sai do plano; o ajustado é a **sombra** dele no plano gerado pelas colunas de $X$; o resíduo é o pedaço que sobra, formando ângulo reto com o plano.
+**O que olhar.** O vetor $\mathbf y$ sai do plano; o ajustado é a **sombra** dele no plano gerado pelas colunas de $\mathbf X$; o resíduo é o pedaço que sobra, formando ângulo reto com o plano.
 
-**A metáfora.** **Sombra ao meio-dia.** O plano é o chão — tudo o que $X$ consegue construir. A sombra é a melhor representação de $y$ usando apenas o que existe no chão. O resíduo é a altura: a parte de $y$ que nenhum arranjo de $X$ alcança.
+**A metáfora.** **Sombra ao meio-dia.** O plano é o chão — tudo o que $\mathbf X$ consegue construir. A sombra é a melhor representação de $\mathbf y$ usando apenas o que existe no chão. O resíduo é a altura: a parte de $\mathbf y$ que nenhum arranjo de $\mathbf X$ alcança.
 
-**Onde quebra.** Sombra depende do ângulo do sol; a projeção do MQO é única e **ortogonal** por construção — é isso que $X'e=0$ diz. E o "chão" não é o espaço das variáveis, é o espaço das **observações**: cada eixo é uma unidade amostral, não uma variável.
+**Onde quebra.** Sombra depende do ângulo do sol; a projeção do MQO é única e **ortogonal** por construção — é isso que $\mathbf X'\mathbf e=0$ diz. E o "chão" não é o espaço das variáveis, é o espaço das **observações**: cada eixo é uma unidade amostral, não uma variável.
 
 → [Módulo 03](../03_mqo_matricial/03_teoria.md).
 
@@ -146,11 +152,13 @@ Todas as figuras são geradas por [didatica.R](didatica.R) e existem em PNG e SV
 
 → [Módulo 04](../04_fwl_particionada/04_teoria.md), D04.2.
 
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R
 | chave_R | nota |
 |---|---|
 | dtc_f8_b_bruta | 1,8631 |
 | dtc_f8_b_longa | 0,84002 |
 | dtc_f8_b_fwl | 0,84002 |
+-->
 
 ## 9. Viés de variável omitida
 
@@ -164,10 +172,12 @@ Todas as figuras são geradas por [didatica.R](didatica.R) e existem em PNG e SV
 
 → [Módulo 02](../02_mqo_simples/02_lista1.md) ex. 15; [módulo 04](../04_fwl_particionada/04_lista1.md) ex. 25.
 
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R
 | chave_R | nota |
 |---|---|
 | dtc_f9_b_curta | 1,4781 |
 | dtc_f9_b_longa | 0,40348 |
+-->
 
 ## 10. Multicolinearidade
 
@@ -181,11 +191,13 @@ Todas as figuras são geradas por [didatica.R](didatica.R) e existem em PNG e SV
 
 → [Módulo 06](../06_amostra_finita_multicol/06_lista1.md), ex. 53, 54, 63 e 64.
 
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R
 | chave_R | nota |
 |---|---|
 | dtc_f10_cor_colinear | 0,97813 |
 | dtc_f10_fiv_colinear | 23,115 |
 | dtc_f10_fiv_independente | 1,0074 |
+-->
 
 ## 11. Erro de medição: a atenuação
 
@@ -199,11 +211,13 @@ Todas as figuras são geradas por [didatica.R](didatica.R) e existem em PNG e SV
 
 → [Módulo 10](../10_endogeneidade_iv/10_teoria.md), D10.2 e D10.3.
 
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R
 | chave_R | nota |
 |---|---|
 | dtc_f11_b_sem_erro | 0,98345 |
 | dtc_f11_b_com_erro | 0,63493 |
 | dtc_f11_lambda_teorico | 0,66667 |
+-->
 
 ## 12. O que o instrumento faz
 
@@ -217,10 +231,12 @@ Todas as figuras são geradas por [didatica.R](didatica.R) e existem em PNG e SV
 
 → [Módulo 10](../10_endogeneidade_iv/10_teoria.md), D10.5 e D10.7.
 
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R
 | chave_R | nota |
 |---|---|
 | dtc_f12_b_mqo | 2,0224 |
 | dtc_f12_b_iv | 0,83560 |
+-->
 
 ## 13. Heterocedasticidade
 
@@ -246,10 +262,12 @@ Todas as figuras são geradas por [didatica.R](didatica.R) e existem em PNG e SV
 
 → [Módulo 09](../09_dummies_forma_funcional/09_teoria.md), D09.1 e D09.3.
 
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R
 | chave_R | nota |
 |---|---|
 | dtc_f14_salto_intercepto | 3,3558 |
 | dtc_f14_dif_inclinacao | 0,39192 |
+-->
 
 ## 15. O perfil quadrático da experiência
 
@@ -263,9 +281,11 @@ Todas as figuras são geradas por [didatica.R](didatica.R) e existem em PNG e SV
 
 → [Módulo 09](../09_dummies_forma_funcional/09_teoria.md) D09.5; é a Q1c da [P1 2025/2](../provas/p1_2025_2/README.md).
 
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R
 | chave_R | nota |
 |---|---|
 | dtc_f15_xstar | 30,307 |
+-->
 
 ## 16. Alavancagem
 
@@ -277,15 +297,17 @@ Todas as figuras são geradas por [didatica.R](didatica.R) e existem em PNG e SV
 
 **Onde quebra.** Na gangorra, peso é peso. Aqui a influência depende de **duas** coisas: distância em $X$ (alavancagem) e tamanho do resíduo. Um ponto distante que cai exatamente sobre a reta tem alavancagem alta e influência nula.
 
-E o detalhe elegante: é a mesma propriedade que torna a dispersão em $X$ desejável ($\operatorname{Var}(\hat\beta_2)=\sigma^2/S_{XX}$). Dispersão dá precisão — e concentra poder em quem está nas pontas.
+E o detalhe elegante: é a mesma propriedade que torna a dispersão em $X$ desejável ($\operatorname{Var}(\widehat\beta_2)=\sigma^2/S_{XX}$). Dispersão dá precisão — e concentra poder em quem está nas pontas.
 
 → [Módulo 02](../02_mqo_simples/02_teoria.md) D02.13; [módulo 06](../06_amostra_finita_multicol/06_teoria.md).
 
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R
 | chave_R | nota |
 |---|---|
 | dtc_f16_b_sem | 0,67799 |
 | dtc_f16_b_com | 0,11648 |
 | dtc_f16_alavancagem | 0,70805 |
+-->
 
 ---
 
@@ -299,7 +321,7 @@ E o detalhe elegante: é a mesma propriedade que torna a dispersão em $X$ desej
 | 7 | geometria da projeção, $P$ e $M$ | [03](../03_mqo_matricial/README.md) |
 | 8 | Frisch-Waugh-Lovell | [04](../04_fwl_particionada/README.md) |
 | 9 | viés de variável omitida | [02](../02_mqo_simples/README.md), [04](../04_fwl_particionada/README.md) |
-| 10 | multicolinearidade e FIV | [06](../06_amostra_finita_multicol/README.md) |
+| 10 | multicolinearidade e VIF | [06](../06_amostra_finita_multicol/README.md) |
 | 11, 12 | erro de medição, endogeneidade e VI | [10](../10_endogeneidade_iv/README.md) |
 | 13 | heterocedasticidade | [06](../06_amostra_finita_multicol/README.md), [11](../11_mqg_heterosk_autocorr/README.md) |
 | 14, 15 | dummies, interação, forma funcional | [09](../09_dummies_forma_funcional/README.md) |

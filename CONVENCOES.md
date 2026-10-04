@@ -31,49 +31,69 @@ Ids dos slides: `SL01` … `SL14`. Arquivos em `materiais/slides/`, texto em `ma
 
 ## 2. Notação
 
-A notação base é a do **Greene**, também usada nos slides.
+A notação é a **do professor**, tirada da Lista 1 v.1 e da sua chave (`materiais/listas/lista1_v1*.pdf`), que seguem o Greene. Quando a lista e o Greene divergem, vale a lista: foi escrita junto com a prova. O `scripts/lint_repo.R` recusa as formas da coluna "não usar".
 
-**Matricial:**
-- $y$ é $n\times 1$; $X$ é $n\times K$, **com** a coluna de 1s; $\beta$ é $K\times 1$; $\varepsilon$ é $n\times 1$.
-- Estimador de MQO: $b=(X'X)^{-1}X'y$. Resíduos: $e=y-Xb$.
-- $P=X(X'X)^{-1}X'$, $M=I-P$, $M^0=I-\tfrac1n\iota\iota'$.
-- $s^2=e'e/(n-K)$ e $Q=\operatorname{plim} X'X/n$.
+**Escalar (seções 1, 3 e 4 da lista):**
 
-**Escalar (notação da Lista 1):**
-- $Y_i=\beta_1+\beta_2X_i+u_i$, com **$\beta_1$ = intercepto**.
-- Desvios: $x_i=X_i-\bar X$ e $y_i=Y_i-\bar Y$.
-- $S_{XX}=\sum x_i^2$ e pesos $k_i=x_i/S_{XX}$. Resíduos: $\hat u_i$.
-
-Nas questões de prova, preservar a notação do enunciado ($a_1,a_2,\dots$; $\varepsilon$; $\mu$).
-
-**Hipóteses do Greene.** Nos passos de uma demonstração, citar entre colchetes, por exemplo *[A3]*.
-
-| Id | Hipótese |
-|---|---|
-| A1 | Linearidade: $y=X\beta+\varepsilon$ |
-| A2 | Posto completo: $\operatorname{posto}(X)=K$ |
-| A3 | Exogeneidade: $E[\varepsilon\mid X]=0$ |
-| A4 | Erros esféricos: $E[\varepsilon\varepsilon'\mid X]=\sigma^2I$ (homocedasticidade e ausência de autocorrelação) |
-| A5 | $X$ gerado independentemente do processo de $\varepsilon$ (fixo ou aleatório) |
-| A6 | Normalidade: $\varepsilon\mid X\sim N(0,\sigma^2I)$ |
-
-**Como o professor numera em aula.** No caderno as hipóteses aparecem como **h1 a h5**; escreva assim na prova. A tradução completa está em [caderno_aulas.md](demonstracoes/caderno_aulas.md) §2.
-
-| Professor | Greene | Enunciado |
+| Objeto | Escrever | Não usar |
 |---|---|---|
-| h1 | A1 | parâmetros lineares |
-| h2 | A5 | amostra aleatória |
-| h3 | A2 (escalar) | variação em $X$ |
-| h4 | A3 | exogeneidade estrita, $E[arepsilon\mid X]=0$ |
-| h5 | A2 (matricial) | ausência de multicolinearidade |
+| Modelo simples | $Y_i=\beta_1+\beta_2X_i+u_i$, com **$\beta_1$ = intercepto** | $\beta_0$ para o intercepto |
+| FRP e FRA | $E(Y\mid X_i)=\beta_1+\beta_2X_i$ e $\widehat Y_i=\widehat\beta_1+\widehat\beta_2X_i$ | |
+| Estimadores, ajustados, resíduos | $\widehat\beta_2$, $\widehat Y_i$, $\widehat u_i$ (chapéu largo) | `\hat` |
+| Desvios em relação à média | $x_i=X_i-\bar X$ e $y_i=Y_i-\bar Y$ | |
+| Somas de quadrados de $X$ | $S_{XX}=\sum_{i=1}^n(X_i-\bar X)^2$ | |
+| Pesos do estimador linear | $w_i=(X_i-\bar X)/S_{XX}$, com $\widehat\beta_2=\beta_2+\sum w_iu_i$ | $k_i$ |
+| Esperança, variância, covariância | $E(\cdot)$, $\operatorname{Var}(\cdot)$, $\operatorname{Cov}(\cdot,\cdot)$, **com parênteses**: $E(u_i\mid X_i)=0$ | $E[\cdot]$ |
+| Erro-padrão | $ep(\widehat\beta_2)$ | E.p., se |
+| Elasticidade | $\eta=\dfrac{dY}{dX}\cdot\dfrac{X}{Y}$ | |
 
-Homocedasticidade e ausência de autocorrelação (A4) não entram na lista numerada dele: aparecem junto da variância. Normalidade (A6) só surge na inferência exata.
+**Matricial (seções 2, 3, 4, 7 e 9):** vetores e matrizes em **negrito**; $\beta$ e $\varepsilon$ ficam sem negrito, como na lista.
 
-**Graus de liberdade.**
-- Greene: $n-K$, com $K$ incluindo a constante.
-- Wooldridge: $n-k-1$, o mesmo número, com $k$ inclinações.
-- Lista: $n-2$ na regressão simples.
-- Deixar explícito qual convenção está em uso.
+| Objeto | Escrever |
+|---|---|
+| Modelo | $\mathbf y=\mathbf X\beta+\varepsilon$, com $\mathbf y$ $(n\times 1)$, $\mathbf X$ $(n\times K)$ **com** a coluna de uns, $\beta$ $(K\times 1)$ |
+| MQO e resíduos | $\mathbf b=(\mathbf X'\mathbf X)^{-1}\mathbf X'\mathbf y$ e $\mathbf e=\mathbf y-\mathbf X\mathbf b$ |
+| Projeção e *residual maker* | $\mathbf P=\mathbf X(\mathbf X'\mathbf X)^{-1}\mathbf X'$, $\mathbf M=\mathbf I-\mathbf P$; partição $\mathbf X=[\mathbf X_1\ \mathbf X_2]$, $\mathbf M_1$ |
+| Variância do erro | $s^2=\mathbf e'\mathbf e/(n-K)$ |
+| Assintótica | $\operatorname{plim}(\mathbf X'\mathbf X/n)=\mathbf Q$, $\xrightarrow{p}$, $\xrightarrow{d}$, $\sqrt n(\mathbf b-\beta)\xrightarrow{d}N(\mathbf 0,\sigma^2\mathbf Q^{-1})$ |
+| Restrições lineares | $\mathbf R\beta=\mathbf r$, com $q$ restrições; MQ restrito $\mathbf b_R$ (não $Rb-q$, $J$ ou $b_*$) |
+| Variáveis instrumentais | $\widehat\beta_{IV}=(\mathbf Z'\mathbf X)^{-1}\mathbf Z'\mathbf y$, com $L$ instrumentos e $K$ regressores; no simples, $\widehat\beta_1^{IV}$ |
+
+**Testes, como a chave escreve:**
+
+| Objeto | Escrever | Não usar |
+|---|---|---|
+| Hipóteses | $H_0:\beta_2=0$ vs. $H_1:\beta_2\neq 0$ | H0/H1 sem subscrito |
+| Estatística e crítico | $t_{cal}$, $t_{tab}$; $F_{cal}$, $F_{tab}(q,\,n-k)$; $\chi^2_{tab}(1)$; $nR^2_{aux}$ | "t crítico", "F crítico" |
+| Decisão | "Como $\lvert t_{cal}\rvert=4{,}20>t_{tab}=2{,}101$, rejeita-se $H_0$ ao nível de 5%" | |
+| Intervalo de confiança | $IC_{95\%}(\beta_2)=\widehat\beta_2\pm t_{tab}\cdot ep(\widehat\beta_2)$ | |
+| Somas de quadrados | $SQT=SQE+SQR$: **E** = explicada, **R** = resíduos; $SQR_R$ e $SQR_{UR}$, $k_{UR}$ | $SQR_{IR}$ |
+| Multicolinearidade | $VIF_k=1/(1-R_k^2)$ | FIV |
+| Propriedade ótima | MELNV (BLUE) | |
+
+> [!WARNING]
+> **A sigla SQR muda nos ex. 41 e 42 da lista**
+> Lá o enunciado chama de SQR a soma da regressão e de SQE a dos resíduos. Em todo o resto (ex. 29, 43, 45, 50, 64) é o contrário, e é o que usamos. Nas respostas, defina a sigla na primeira linha.
+
+Nas questões de prova reproduzidas, preservar a notação do enunciado ($a_1,a_2,\dots$; $\mu$).
+
+**Hipóteses do MRLC.** A chave v.1 (ex. 15) numera assim; nos passos de uma demonstração, cite entre colchetes, por exemplo *[H2]*. Na prova, escreva o nome junto do número ("pela exogeneidade estrita, H2").
+
+| Id | Hipótese | Greene |
+|---|---|---|
+| H1 | Linearidade: $\mathbf y=\mathbf X\beta+\varepsilon$ | A1 |
+| H2 | Exogeneidade estrita: $E(\varepsilon\mid\mathbf X)=\mathbf 0$ | A3 (e A5: $\mathbf X$ fixo ou independente de $\varepsilon$) |
+| H3 | Posto completo: $\operatorname{posto}(\mathbf X)=K$ | A2 |
+| H4 | Esfericidade: $E(\varepsilon\varepsilon'\mid\mathbf X)=\sigma^2\mathbf I_n$ (homocedasticidade e ausência de autocorrelação) | A4 |
+| H5 | Normalidade (opcional): $\varepsilon\mid\mathbf X\sim N(\mathbf 0,\sigma^2\mathbf I_n)$ | A6 |
+
+No modelo simples, a chave (ex. 3) lista as hipóteses por extenso, de (i) a (vi): linearidade, $X_i$ fixo ou independente de $u_i$, $E(u_i\mid X_i)=0$, homocedasticidade, ausência de autocorrelação e variação amostral de $X$.
+
+> [!CAUTION]
+> **O caderno de aula numera de outro jeito**
+> Nas aulas de agosto (ver [caderno_aulas.md](demonstracoes/caderno_aulas.md) §2) o professor usou h1–h5 na ordem do Wooldridge: h1 parâmetros lineares, h2 amostra aleatória, h3 variação em $X$, h4 exogeneidade, h5 ausência de multicolinearidade. A chave v.1 é posterior e foi feita junto com a prova; por isso o repositório segue a chave. Escrever o nome da hipótese ao lado do número elimina a ambiguidade.
+
+**Graus de liberdade.** Seções 1, 5 e 8 da lista: $n-k$, com $k$ parâmetros **incluindo** o intercepto ($n-2$ na simples). Seções matriciais: $n-K$, o mesmo número. Escreva "graus de liberdade" por extenso ou "gl".
 
 ## 3. Frontmatter
 
@@ -144,7 +164,8 @@ Regras:
 - Dentro de tabela: nada de `|` na matemática; use `\mid`, `\lvert`, `\rvert`, `\lVert`.
 - Sinal de menor seguido de letra: use `\lt`.
 - Vírgula decimal: no texto `0,05`; na matemática `0{,}05`.
-- Vetores e matrizes sem negrito obrigatório. Transposta com `'`. Esperança condicional como $E[\cdot\mid X]$.
+- Vetores e matrizes **em negrito** nos trechos matriciais (`\mathbf X`, `\mathbf b`; em índice, `_{\mathbf X}`); escalares, $\beta$ e $\varepsilon$ sem negrito. Transposta com `'`. Esperança condicional como $E(\cdot\mid\mathbf X)$.
+- Nada de bloco de código para resposta ou output: teste em quatro itens com matemática (§11) e output como tabela Markdown no formato da lista (§12). Bloco de código é só para código.
 
 ## 6. Demonstrações (padrão D)
 
@@ -165,7 +186,7 @@ Estrutura de cada D:
 
 **Passo a passo.**
 
-1. Frase dizendo o que se faz. *[A3]*
+1. Frase dizendo o que se faz. *[H2]*
 
 $$ \dots $$
 
@@ -195,11 +216,11 @@ Regras:
 > **Como escrever na prova**
 > Versão curta que vale nota cheia: hipóteses → passos → conclusão.
 
-**Conferência numérica** (só se houver número)
-
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R
 | chave_R | nota |
 |---|---|
 | m02_ex40_b1 | 0,4656 |
+-->
 ````
 
 - **Enunciado: nunca copiar.** Use título-paráfrase de uma linha e, se preciso, 1–2 frases próprias descrevendo o que é pedido.
@@ -215,7 +236,7 @@ Regras:
 | ➖ | chave sem resposta, só remete a livro |
 | ⏳ | não conferido |
 
-**Tabela `chave_R | nota`.** O `scripts/check_numbers.R` compara a coluna `nota` com o valor em `resultados/*.csv`.
+**Tabela `chave_R | nota`.** O `scripts/check_numbers.R` compara a coluna `nota` com o valor em `resultados/*.csv`. A tabela fica **dentro de um comentário HTML**, como no modelo acima: é conferência, não leitura, e não aparece no GitHub, no Obsidian nem no PDF.
 - A tolerância é meia unidade da última casa decimal escrita.
 - Escreva o número sem separador de milhar. A vírgula decimal é aceita.
 
@@ -254,11 +275,21 @@ source(file.path(.d, "R", "raiz.R"))
 
 ## 11. Modelo de resposta de teste (vale ponto na prova)
 
-```text
-Hipóteses:  H0: a3 = 0  (EXP não afeta LWAGE)   vs   H1: a3 ≠ 0
-Estatística: t = b/E.p. = 18,677  (≈ N(0,1) com n = 4165)
-Decisão:    |18,677| > 1,96 = z crítico (α = 5%)  ⇒  rejeita-se H0   [ou: p = 0,0000 < 0,05]
-Conclusão:  EXP é estatisticamente significativo; mais experiência está associada a maior salário.
-```
+Quatro itens, com a matemática diagramada e as palavras da chave:
 
-Sempre as quatro linhas. A decisão pode vir pelo valor crítico **ou** pelo p-valor, com o α que o enunciado der. **Decida pelo número impresso no enunciado:** o professor reaproveita outputs e troca os p-valores entre versões.
+- **Hipóteses:** $H_0:a_3=0$ (EXP não afeta LWAGE) vs. $H_1:a_3\neq 0$.
+- **Estatística:** $t_{cal}=b/ep=18{,}677$, aproximadamente $N(0,1)$, pois $n=4165$.
+- **Decisão:** como $\lvert t_{cal}\rvert=18{,}677>t_{tab}=1{,}96$, rejeita-se $H_0$ ao nível de 5% (ou: $p=0{,}0000<0{,}05$).
+- **Conclusão:** EXP é estatisticamente significativa; mais experiência está associada a salário maior.
+
+Sempre os quatro itens. A decisão pode vir pelo valor tabelado **ou** pelo p-valor, com o nível que o enunciado der. **Decida pelo número impresso no enunciado:** o professor reaproveita outputs e troca os p-valores entre versões.
+
+## 12. Outputs
+
+Outputs entram como tabela Markdown no formato das tabelas da Lista 1 v.1 (ex. 44 e 77): uma linha em negrito com a variável dependente e o método, a tabela de coeficientes e, embaixo, uma linha com $n$, $K$, $R^2$, $\bar R^2$, $SQR$, erro-padrão da regressão e $F$. Diagnósticos em tabela própria.
+
+| Variável | Coeficiente | Erro padrão | Estatística $t$ | Prob. |
+|---|---|---|---|---|
+| C | 0,4656190 | 0,1175147 | 3,962 | 0,0016 |
+
+Para MQ2E, a coluna da estatística é "Valor $z$". O layout cru do NLOGIT, que a P1 2025/2 imprimiu, fica nos arquivos gerados em `provas/banco/outputs/*.txt`, para treinar a leitura.

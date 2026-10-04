@@ -62,8 +62,7 @@ medias <- replicate(1000, mean(rnorm(1000, mean = 0, sd = 1)))
 
 A assimetria cai na direção de zero conforme $n$ cresce: é o TLC funcionando. Figura: [figuras/08_ex73_tlc_exponencial.png](figuras/08_ex73_tlc_exponencial.png).
 
-**Conferência numérica**
-
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R — 
 | chave_R | nota |
 |---|---|
 | m08_ex73_media_das_medias | -0,000179 |
@@ -75,6 +74,7 @@ A assimetria cai na direção de zero conforme $n$ cresce: é o TLC funcionando.
 | m08_ex73_exp_assim_n5 | 0,8964 |
 | m08_ex73_exp_assim_n30 | 0,4159 |
 | m08_ex73_exp_assim_n200 | 0,1907 |
+-->
 
 > [!TIP]
 > **Como isso vira resposta de prova**

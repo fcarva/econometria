@@ -22,12 +22,10 @@ Metade da P1 é ler um output e decidir. O que vale ponto não é a conta: é **
 > **O molde de quatro linhas**
 > Escreva sempre assim, em qualquer teste: **Hipóteses** → **Estatística** (valor e distribuição) → **Decisão** (comparação explícita com o valor crítico ou com o $\alpha$) → **Conclusão** (frase em português, econômica).
 
-```text
-Hipóteses:   H0: a3 = 0 (EXP não afeta LWAGE)   vs   H1: a3 ≠ 0
-Estatística: t = b/E.p. = 18,677  (~ N(0,1), pois n = 4165)
-Decisão:     |18,677| > 1,96 = z crítico (α = 5%)  ⇒  rejeita-se H0   [ou: p = 0,0000 < 0,05]
-Conclusão:   EXP é estatisticamente significativa; mais experiência está associada a salário maior.
-```
+- **Hipóteses:** $H_0:a_3=0$ (EXP não afeta LWAGE) vs. $H_1:a_3\neq 0$.
+- **Estatística:** $t_{cal}=b/ep=18{,}677$, aproximadamente $N(0,1)$, pois $n=4165$.
+- **Decisão:** como $\lvert t_{cal}\rvert=18{,}677>t_{tab}=1{,}96$ (5%), rejeita-se $H_0$ ao nível de 5% (ou: $p=0{,}0000<0{,}05$).
+- **Conclusão:** EXP é estatisticamente significativa; mais experiência está associada a salário maior.
 
 > [!CAUTION]
 > **O professor recicla outputs e troca os p-valores**
@@ -49,7 +47,7 @@ Conclusão:   EXP é estatisticamente significativa; mais experiência está ass
 | --------------- | -------------------------------------------------------------------------------------------- |
 | **H0**          | $\beta_k = 0$ (o regressor não afeta $y$)                                                    |
 | **H1**          | $\beta_k \neq 0$                                                                             |
-| **Estatística** | $t = \hat\beta_k/\text{E.p.}(\hat\beta_k) \sim t_{n-K}$; com $n$ grande, $\approx N(0,1)$    |
+| **Estatística** | $t = \widehat\beta_k/ep(\widehat\beta_k) \sim t_{n-K}$; com $n$ grande, $\approx N(0,1)$    |
 | **Decisão**     | rejeita H0 se $\lvert t\rvert > t_{crit}$ (ou $p \lt \alpha$)                                |
 | **Conclusão**   | "o coeficiente é estatisticamente significativo a $\alpha$; a variável se relaciona com $y$" |
 |                 |                                                                                              |
@@ -72,17 +70,17 @@ Conclusão:   EXP é estatisticamente significativa; mais experiência está ass
 
 | | |
 |---|---|
-| **H0** | $R\beta = q$ (ex.: $\beta_2+\beta_3=1$, retornos constantes de escala) |
+| **H0** | $R\beta = r$ (ex.: $\beta_2+\beta_3=1$, retornos constantes de escala) |
 | **H1** | $R\beta \neq q$ |
-| **Estatística** | $F=\dfrac{(SQR_R-SQR_{IR})/J}{SQR_{IR}/(n-K)}\sim F_{J,\,n-K}$, com $J$ restrições |
+| **Estatística** | $F=\dfrac{(SQR_R-SQR_{UR})/q}{SQR_{UR}/(n-K)}\sim F_{q,\,n-K}$, com $q$ restrições |
 | **Decisão** | rejeita H0 se $F \gt F_{crit}$ |
 | **Conclusão** | "os dados rejeitam (ou não) a restrição; há (ou não) retornos constantes de escala" |
 
-**Armadilha.** $SQR_R \ge SQR_{IR}$ sempre: diferença negativa significa que você trocou os modelos. Com $J=1$, $F=t^2$.
+**Armadilha.** $SQR_R \ge SQR_{UR}$ sempre: diferença negativa significa que você trocou os modelos. Com $q=1$, $F=t^2$.
 
 ## 4. Intervalo de confiança
 
-$$IC_{1-\alpha}(\beta_k) = \left[\hat\beta_k \pm t_{\alpha/2}\cdot \text{E.p.}(\hat\beta_k)\right].$$
+$$IC_{1-\alpha}(\beta_k) = \left[\widehat\beta_k \pm t_{\alpha/2}\cdot ep(\widehat\beta_k)\right].$$
 
 **Conclusão.** "Em 95 de cada 100 amostras, intervalos construídos assim conteriam o verdadeiro $\beta_k$."
 
@@ -104,9 +102,9 @@ $$IC_{1-\alpha}(\beta_k) = \left[\hat\beta_k \pm t_{\alpha/2}\cdot \text{E.p.}(\
 
 | | |
 |---|---|
-| **H0** | o modelo está corretamente especificado (os termos $\hat y^2,\hat y^3$ não entram) |
+| **H0** | o modelo está corretamente especificado (os termos $\widehat y^2,\widehat y^3$ não entram) |
 | **H1** | há má especificação (forma funcional ou variável omitida) |
-| **Estatística** | $F$ da significância conjunta de $\hat y^2,\hat y^3$ na regressão aumentada |
+| **Estatística** | $F$ da significância conjunta de $\widehat y^2,\widehat y^3$ na regressão aumentada |
 | **Decisão** | rejeita H0 se $F \gt F_{crit}$ |
 | **Conclusão** | "há (ou não) indício de má especificação" |
 
@@ -118,7 +116,7 @@ $$IC_{1-\alpha}(\beta_k) = \left[\hat\beta_k \pm t_{\alpha/2}\cdot \text{E.p.}(\
 |---|---|
 | **H0** | homocedasticidade, $E(u_i^2)=\sigma^2$ |
 | **H1** | heterocedasticidade |
-| **Estatística** | $nR^2$ da auxiliar de $\hat u_i^2$ nos regressores, seus quadrados e produtos cruzados; $\sim \chi^2_{gl}$, $gl$ = número de regressores da auxiliar |
+| **Estatística** | $nR^2$ da auxiliar de $\widehat u_i^2$ nos regressores, seus quadrados e produtos cruzados; $\sim \chi^2_{gl}$, $gl$ = número de regressores da auxiliar |
 | **Decisão** | rejeita H0 se $nR^2 \gt \chi^2_{crit}$ |
 | **Conclusão** | "há (ou não) heterocedasticidade; com ela, os erros-padrão de MQO ficam viesados" |
 
@@ -126,7 +124,7 @@ $$IC_{1-\alpha}(\beta_k) = \left[\hat\beta_k \pm t_{\alpha/2}\cdot \text{E.p.}(\
 
 ## 8. Heterocedasticidade: Breusch-Pagan-Godfrey
 
-Mesmas hipóteses; a auxiliar regride $\hat u_i^2$ apenas nos regressores. Estatística $nR^2\sim\chi^2_{K-1}$.
+Mesmas hipóteses; a auxiliar regride $\widehat u_i^2$ apenas nos regressores. Estatística $nR^2\sim\chi^2_{K-1}$.
 
 **Armadilha.** É sensível à não normalidade; White é mais geral.
 
@@ -136,7 +134,7 @@ Mesmas hipóteses; a auxiliar regride $\hat u_i^2$ apenas nos regressores. Estat
 |---|---|
 | **H0** | $\rho=0$ (sem autocorrelação de 1ª ordem) |
 | **H1** | $\rho \neq 0$ |
-| **Estatística** | $d=\dfrac{\sum_{t=2}^n(\hat u_t-\hat u_{t-1})^2}{\sum_t \hat u_t^2}\approx 2(1-\hat\rho)$, com $0\le d\le 4$ |
+| **Estatística** | $d=\dfrac{\sum_{t=2}^n(\widehat u_t-\widehat u_{t-1})^2}{\sum_t \widehat u_t^2}\approx 2(1-\widehat\rho)$, com $0\le d\le 4$ |
 
 | Faixa de $d$ | Decisão |
 |---|---|
@@ -154,7 +152,7 @@ Mesmas hipóteses; a auxiliar regride $\hat u_i^2$ apenas nos regressores. Estat
 |---|---|
 | **H0** | $\rho_1=\dots=\rho_p=0$ (sem autocorrelação até a ordem $p$) |
 | **H1** | ao menos um $\rho_j\neq 0$ |
-| **Estatística** | $nR^2$ da auxiliar de $\hat u_t$ nos regressores e em $\hat u_{t-1},\dots,\hat u_{t-p}$; $\sim\chi^2_p$ |
+| **Estatística** | $nR^2$ da auxiliar de $\widehat u_t$ nos regressores e em $\widehat u_{t-1},\dots,\widehat u_{t-p}$; $\sim\chi^2_p$ |
 
 **Armadilha.** A escolha de $p$ vai pelo critério de informação (o menor SIC). Aceita defasagem da dependente, ao contrário do DW.
 
@@ -172,11 +170,11 @@ Mesmas hipóteses; a auxiliar regride $\hat u_i^2$ apenas nos regressores. Estat
 
 | Teste | Estatística | Distribuição | O que precisa estimar |
 |---|---|---|---|
-| Wald | $W=(Rb-q)'[R\,\widehat{\operatorname{Var}}(b)\,R']^{-1}(Rb-q)$ | $\chi^2_J$ | só o modelo irrestrito |
-| LM (escore) | $nR^2$ da auxiliar dos resíduos restritos | $\chi^2_J$ | só o modelo restrito |
-| LR | $-2\ln\lambda = n\ln(SQR_R/SQR_{IR})$ | $\chi^2_J$ | os dois |
+| Wald | $W=(\mathbf R\mathbf b-\mathbf r)'[R\,\widehat{\operatorname{Var}}(\mathbf b)\,\mathbf R']^{-1}(\mathbf R\mathbf b-\mathbf r)$ | $\chi^2_q$ | só o modelo irrestrito |
+| LM (escore) | $nR^2$ da auxiliar dos resíduos restritos | $\chi^2_q$ | só o modelo restrito |
+| LR | $-2\ln\lambda = n\ln(SQR_R/SQR_{UR})$ | $\chi^2_q$ | os dois |
 
-Todos testam $H_0: R\beta=q$. No modelo linear normal vale $W \ge LR \ge LM$, então podem discordar na fronteira; e $W = J\cdot F$.
+Todos testam $H_0: R\beta=r$. No modelo linear normal vale $W \ge LR \ge LM$, então podem discordar na fronteira; e $W = q\cdot F$.
 
 **Armadilha.** São testes **assintóticos**: compare com $\chi^2$, não com $F$. Atenção ao que o enunciado chama de $\lambda$: a razão de verossimilhanças ou já o $-2\ln\lambda$.
 
@@ -216,9 +214,9 @@ Todos testam $H_0: R\beta=q$. No modelo linear normal vale $W \ge LR \ge LM$, en
 
 **Armadilha.** Só existe com $L \gt K$ (sobreidentificação). No caso exatamente identificado não há teste — por isso vale usar dois instrumentos e MQ2E.
 
-## 16. Multicolinearidade: FIV e regressão auxiliar
+## 16. Multicolinearidade: VIF e regressão auxiliar
 
-- $FIV_k = \dfrac{1}{1-R_k^2}$, com $R_k^2$ da regressão de $X_k$ nos demais regressores. Regra prática: $FIV \gt 10$, isto é $R_k^2 \gt 0,9$.
+- $VIF_k = \dfrac{1}{1-R_k^2}$, com $R_k^2$ da regressão de $X_k$ nos demais regressores. Regra prática: $VIF \gt 10$, isto é $R_k^2 \gt 0,9$.
 - Regressão auxiliar: H0 "$X_k$ não é explicada pelas demais" contra H1 "é"; estatística $F$ da auxiliar.
 
 **Armadilha.** Multicolinearidade não perfeita **não viola** hipótese nenhuma do MRLC, e o MQO continua MELNV: o problema é variância grande. Correlação baixa entre pares não descarta multicolinearidade envolvendo três ou mais variáveis. Excluir variável para "curar" gera viés de omissão: troca-se variância por viés.
@@ -233,7 +231,7 @@ Todos testam $H_0: R\beta=q$. No modelo linear normal vale $W \ge LR \ge LM$, en
 
 ## 18. Interpretação do coeficiente por forma funcional
 
-| Modelo | Papel de $\hat\beta_2$ | Leitura |
+| Modelo | Papel de $\widehat\beta_2$ | Leitura |
 |---|---|---|
 | $Y=\beta_1+\beta_2X$ | efeito marginal | $X$ sobe 1 unidade ⇒ $Y$ varia $\beta_2$ unidades |
 | $\ln Y=\beta_1+\beta_2X$ | semi-elasticidade | $X$ sobe 1 unidade ⇒ $Y$ varia $100\beta_2\%$ |
@@ -243,7 +241,7 @@ Todos testam $H_0: R\beta=q$. No modelo linear normal vale $W \ge LR \ge LM$, en
 | dummy em modelo log | semi-elasticidade | aproximado $100\beta\%$; **exato** $100(e^{\beta}-1)\%$ |
 | quadrático $\beta_2X+\beta_3X^2$ | efeito marginal $\beta_2+2\beta_3X$ | máximo (se $\beta_3\lt 0$) em $X^*=-\beta_2/(2\beta_3)$ |
 
-Elasticidade no ponto médio, no modelo linear: $\hat\eta = \hat\beta_2\,\bar X/\bar Y$.
+Elasticidade no ponto médio, no modelo linear: $\widehat\eta = \widehat\beta_2\,\bar X/\bar Y$.
 
 **Armadilha.** No log-log a elasticidade é constante; no linear ela muda em cada ponto, e o enunciado precisa dizer **onde** calcular — quase sempre na média.
 

@@ -15,7 +15,7 @@ aliases:
 
 # Módulo 10 — Endogeneidade e variáveis instrumentais
 
-O módulo que mais cai: na P1 2025/2 rendeu **três** questões (Q2 output de VI, Q4 erro de medição, Q6 derivação de $\hat\beta_{IV}$).
+O módulo que mais cai: na P1 2025/2 rendeu **três** questões (Q2 output de VI, Q4 erro de medição, Q6 derivação de $\widehat\beta_{IV}$).
 
 | Arquivo | Conteúdo |
 |---|---|
@@ -25,7 +25,7 @@ O módulo que mais cai: na P1 2025/2 rendeu **três** questões (Q2 output de VI
 
 ## O essencial
 
-$$\operatorname{plim}b=\beta+Q^{-1}\gamma \quad\text{(MQO inconsistente)},\qquad \hat\beta_{IV}=(Z'X)^{-1}Z'y,\qquad \hat\beta_{MQ2E}=(\hat X'\hat X)^{-1}\hat X'y$$
+$$\operatorname{plim}\mathbf b=\beta+\mathbf Q^{-1}\gamma \quad\text{(MQO inconsistente)},\qquad \widehat\beta_{IV}=(\mathbf Z'\mathbf X)^{-1}\mathbf Z'\mathbf y,\qquad \widehat\beta_{MQ2E}=(\widehat{\mathbf X}'\widehat{\mathbf X})^{-1}\widehat{\mathbf X}'\mathbf y$$
 
 Instrumento válido: **relevante** ($\operatorname{Cov}(Z,X)\neq 0$, testável pelo $F$ do primeiro estágio) e **exógeno** ($\operatorname{Cov}(Z,\varepsilon)=0$, só testável com sobreidentificação, via Sargan).
 

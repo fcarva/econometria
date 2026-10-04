@@ -1,0 +1,97 @@
+chave,valor
+l1v_ex4_ttab,2.10092204024
+l1v_ex4_ic_inf,       0.4198
+l1v_ex4_ic_sup,       1.2602
+l1v_ex4_t,          4.2
+l1v_ex4_p,0.000538218659003
+l1v_ex5_r2aj,0.765652173913
+l1v_ex6_Ftab,2.80684492881
+l1v_ex6_p,2.60720718968e-13
+l1v_ex6_F_do_r2,54.3636363636
+l1v_ex8_r2,       0.9025
+l1v_ex8_vif,10.2564102564
+l1v_ex9_chi2tab,3.84145882069
+l1v_ex9_p,0.00418903897336
+l1v_ex10_rho,        0.575
+l1v_ex12_t_original,2.14426411436
+l1v_ex12_t_Y_escalado,2.14426411436
+l1v_ex19_posto,            2
+l1v_ex19_det,            0
+l1v_ex24_vif_X1,5.93506156197
+l1v_ex24_vif_X2,4.29218454498
+l1v_ex24_vif_X3,18.1074659297
+l1v_ex24_vif_X4,4.89856557671
+l1v_ex24_vif_X5,9.45711014276
+l1v_ex26_b0,         9.75
+l1v_ex26_b1,         1.05
+l1v_ex26_b2,         1.25
+l1v_ex26_e1,         0.15
+l1v_ex26_e2,        -0.45
+l1v_ex26_e3,         0.45
+l1v_ex26_e4,        -0.15
+l1v_ex27_det,          200
+l1v_ex27_b1,          1.3
+l1v_ex27_b2,         0.45
+l1v_ex31_b1,          2.7
+l1v_ex31_b2,          1.5
+l1v_ex31_sxy,           15
+l1v_ex32_b_origem,2.23636363636
+l1v_ex32_soma_res,2.45454545455
+l1v_ex32_vies_termo,0.272727272727
+l1v_ex41_t,           15
+l1v_ex41_F,          225
+l1v_ex69_bpad,0.993399267799
+l1v_ex40_menor_autovalor,-3.58843533243e-18
+l1v_ex40_posto,            2
+l1v_ex42_F,9.44667746254
+l1v_ex44_ttab,2.05953855275
+l1v_ex44_ic_inf,88.0083812352
+l1v_ex44_ic_sup,127.476018765
+l1v_ex44_t,11.2446160221
+l1v_ex44_r,0.913739569024
+l1v_ex44_t_vs_1,0.808021983642
+l1v_ex45_t_fem,         -3.6
+l1v_ex45_p_fem,0.000318217180315
+l1v_ex45_F,          6.5
+l1v_ex45_Ftab, 3.0422298969
+l1v_ex45_pF,0.00185011808738
+l1v_ex45_t_educ,          8.5
+l1v_ex45_t_exp2,         -3.5
+l1v_ex62_fem_exato,-16.4729788589
+l1v_ex62_educ_exato,8.87170666984
+l1v_ex62_efeito_exp10,        0.031
+l1v_ex62_pico,32.1428571429
+l1v_ex45_r2aj,0.408102564103
+l1v_ex46_chi2_5pct,5.99146454711
+l1v_ex46_alfa_do_254,0.280831621778
+l1v_ex46_p,0.465333930974
+l1v_ex49_F,4.47382227224
+l1v_ex50_F,          3.7
+l1v_ex50_Ftab,3.25192384639
+l1v_ex50_p,0.0342883785266
+l1v_ex64_F,8.28571428571
+l1v_ex64_Ftab,3.07444726417
+l1v_ex64_p,0.000432979241499
+l1v_ex59_el_lin,-0.219710066955
+l1v_ex59_el_linlog,-0.250212037049
+l1v_ex59_el_loglin,-0.222681034038
+l1v_ex59_el_loglog,-0.253046124957
+l1v_ex59_el_inv,-0.259569306528
+l1v_ex59_inv_errado,-0.26240097169
+l1v_ex61_t_ano,18.6666666667
+l1v_ex61_pct_exato,5.75976837366
+l1v_ex63_Ftab_2_10,4.10282101513
+l1v_ex63_p_2_10,0.152345985011
+l1v_ex73_b1,            4
+l1v_ex73_b0,           18
+l1v_ex77_wu_p_correto,0.0569237075601
+l1v_ex77_sargan_p_gl1,0.563897896327
+l1v_ex77_sargan_p_gl2,0.846622816935
+l1v_ex77_t_elast_1, -1.147703765
+l1v_ex77_ic_inf,-1.75112329506
+l1v_ex77_ic_sup,-0.803676704937
+l1v_ex77_t_renda,1.14076484947
+l1v_ex79_J,0.332622141937
+l1v_ex79_J_com_n_extra, 15.965862813
+l1v_ex79_n,           48
+l1v_ex79_nR2,0.332622141937

@@ -33,13 +33,13 @@ Teoria em [09_teoria.md](09_teoria.md); números em [09_dummies_forma_funcional.
 
 Onze observações (2000–2010) de quantidade (xícaras) e preço (dólares); médias $\bar Q=2{,}20636$ e $\bar P=1{,}01091$.
 
-| Forma | Equação estimada | $\hat\beta_2$ | $R^2$ | Elasticidade no ponto médio |
+| Forma | Equação estimada | $\widehat\beta_2$ | $R^2$ | Elasticidade no ponto médio |
 |---|---|---|---|---|
-| Linear | $Q=\beta_1+\beta_2P$ | $-0{,}47953$ | 0,66276 | $\hat\beta_2\bar P/\bar Q=-0{,}21971$ |
-| Lin-log | $Q=\alpha+\beta_2\ln P$ | $-0{,}55206$ | 0,71121 | $\hat\beta_2/\bar Q=-0{,}25021$ |
-| Log-lin | $\ln Q=\alpha+\beta_2P$ | $-0{,}22028$ | 0,69708 | $\hat\beta_2\bar P=-0{,}22268$ |
-| Log-log | $\ln Q=\alpha+\beta_2\ln P$ | $-0{,}25305$ | 0,74480 | $\hat\beta_2=-0{,}25305$ (constante) |
-| Inversa | $Q=\beta_1+\beta_2(1/P)$ | $0{,}57895$ | 0,73089 | $-\hat\beta_2/(\bar P\bar Q)=-0{,}25957$ |
+| Linear | $Q=\beta_1+\beta_2P$ | $-0{,}47953$ | 0,66276 | $\widehat\beta_2\bar P/\bar Q=-0{,}21971$ |
+| Lin-log | $Q=\alpha+\beta_2\ln P$ | $-0{,}55206$ | 0,71121 | $\widehat\beta_2/\bar Q=-0{,}25021$ |
+| Log-lin | $\ln Q=\alpha+\beta_2P$ | $-0{,}22028$ | 0,69708 | $\widehat\beta_2\bar P=-0{,}22268$ |
+| Log-log | $\ln Q=\alpha+\beta_2\ln P$ | $-0{,}25305$ | 0,74480 | $\widehat\beta_2=-0{,}25305$ (constante) |
+| Inversa | $Q=\beta_1+\beta_2(1/P)$ | $0{,}57895$ | 0,73089 | $-\widehat\beta_2/(\bar P\bar Q)=-0{,}25957$ |
 
 **Interpretação.** As cinco especificações contam a mesma história: demanda **inelástica**, com elasticidade-preço entre $-0{,}22$ e $-0{,}26$. Um aumento de 10% no preço reduz o consumo em cerca de 2,2% a 2,6%. Cafeína é o exemplo clássico de bem com demanda pouco sensível a preço.
 
@@ -55,8 +55,7 @@ $$\frac{\partial Y}{\partial X}=\beta_1\beta_2X^{\beta_2-1}\ \Longrightarrow\ \e
 No modelo lin-log $Y=\alpha+\beta_2\ln X$:
 $$\frac{\partial Y}{\partial X}=\frac{\beta_2}{X}\ \Longrightarrow\ \eta=\frac{\beta_2}{X}\cdot\frac XY=\frac{\beta_2}{Y}.$$
 
-**Conferência numérica**
-
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R — 
 | chave_R | nota |
 |---|---|
 | m09_ex43_lin_b2 | -0,47953 |
@@ -66,6 +65,7 @@ $$\frac{\partial Y}{\partial X}=\frac{\beta_2}{X}\ \Longrightarrow\ \eta=\frac{\
 | m09_ex43_elast_loglin | -0,22268 |
 | m09_ex43_elast_inv | -0,25957 |
 | m09_ex43_loglog_r2 | 0,74480 |
+-->
 
 ## Ex. 47 — Estimar uma Cobb-Douglas por MQO
 
@@ -73,11 +73,11 @@ $$\frac{\partial Y}{\partial X}=\frac{\beta_2}{X}\ \Longrightarrow\ \eta=\frac{\
 
 Direto, não: $Y=Ax_1^{\alpha}x_2^{\beta}$ é não linear nos parâmetros. Em logs, sim:
 $$\ln Y=\ln A+\alpha\ln x_1+\beta\ln x_2+u,$$
-que é linear nos parâmetros $(\ln A,\alpha,\beta)$ — e o MQO se aplica normalmente. Os coeficientes já são as **elasticidades**-produto dos fatores, e $\hat A=e^{\widehat{\ln A}}$. A soma $\alpha+\beta$ mede os retornos de escala (teste em [módulo 05](../05_ajuste_restricoes/05_lista1.md), ex. 55).
+que é linear nos parâmetros $(\ln A,\alpha,\beta)$ — e o MQO se aplica normalmente. Os coeficientes já são as **elasticidades**-produto dos fatores, e $\widehat A=e^{\widehat{\ln A}}$. A soma $\alpha+\beta$ mede os retornos de escala (teste em [módulo 05](../05_ajuste_restricoes/05_lista1.md), ex. 55).
 
 > [!WARNING]
 > **A condição escondida**
-> Só funciona com erro **multiplicativo**, $Y=Ax_1^{\alpha}x_2^{\beta}e^{u}$. Com erro aditivo, o log não separa nada. Simulação com $\alpha=0{,}6$: erro multiplicativo dá $\hat\alpha=0{,}610$; erro aditivo dá $\hat\alpha=1{,}087$.
+> Só funciona com erro **multiplicativo**, $Y=Ax_1^{\alpha}x_2^{\beta}e^{u}$. Com erro aditivo, o log não separa nada. Simulação com $\alpha=0{,}6$: erro multiplicativo dá $\widehat\alpha=0{,}610$; erro aditivo dá $\widehat\alpha=1{,}087$.
 
 ## Ex. 48 — Exportações e renda mundial: relação exponencial
 
@@ -85,7 +85,7 @@ que é linear nos parâmetros $(\ln A,\alpha,\beta)$ — e o MQO se aplica norma
 
 Mesma receita: de $EXPES_t=\beta_1\,RMUND_t^{\beta_2}e^{\mu_t}$,
 $$\ln EXPES_t=\ln\beta_1+\beta_2\ln RMUND_t+\mu_t,$$
-estimável por MQO, com $\hat\beta_2$ sendo a elasticidade-renda das exportações e $\hat\beta_1=e^{\widehat{\ln\beta_1}}$. O modelo é **intrinsecamente linear**: não linear nas variáveis, linear nos parâmetros depois da transformação.
+estimável por MQO, com $\widehat\beta_2$ sendo a elasticidade-renda das exportações e $\widehat\beta_1=e^{\widehat{\ln\beta_1}}$. O modelo é **intrinsecamente linear**: não linear nas variáveis, linear nos parâmetros depois da transformação.
 
 ## Ex. 57 — Poupança e renda com dummies (1946–1963)
 
@@ -96,19 +96,19 @@ $D_t=1$ de 1946 a 1951, $0$ de 1952 a 1963.
 **(a) O que é variável binária.** Variável que assume 1 quando o atributo está presente e 0 caso contrário. Serve para trazer informação **qualitativa** (regime, sexo, região, período) para dentro do modelo, deslocando o intercepto e, com interação, a inclinação.
 
 **(b) Sem dummy.**
-$$\hat Y_t=-1{,}08207+0{,}117845\,X_t,\qquad R^2=0{,}91854.$$
+$$\widehat Y_t=-1{,}08207+0{,}117845\,X_t,\qquad R^2=0{,}91854.$$
 A propensão marginal a poupar é 0,1178: cada milhão a mais de renda eleva a poupança em 0,118 milhão.
 
 **(c) Dummy de intercepto.**
-$$\hat Y_t=-1{,}33113+0{,}172512\,D_t+0{,}130012\,X_t,\qquad R^2=0{,}92569.$$
+$$\widehat Y_t=-1{,}33113+0{,}172512\,D_t+0{,}130012\,X_t,\qquad R^2=0{,}92569.$$
 $t_{D}=1{,}202$ ($p=0{,}248$): **não** significativo a 5%.
 
 **(d) Dummy de inclinação.**
-$$\hat Y_t=-1{,}22107+0{,}0094989\,(X_tD_t)+0{,}124606\,X_t,\qquad R^2=0{,}92103.$$
+$$\widehat Y_t=-1{,}22107+0{,}0094989\,(X_tD_t)+0{,}124606\,X_t,\qquad R^2=0{,}92103.$$
 $t=0{,}688$ ($p=0{,}502$) contra $t_{15;0{,}025}=2{,}131$: também **não** significativo a 5%.
 
 **(e) Intercepto e inclinação juntos.**
-$$\hat Y_t=-1{,}45086+2{,}30485\,D_t-0{,}202196\,(X_tD_t)+0{,}136492\,X_t,\qquad R^2=0{,}96112,$$
+$$\widehat Y_t=-1{,}45086+2{,}30485\,D_t-0{,}202196\,(X_tD_t)+0{,}136492\,X_t,\qquad R^2=0{,}96112,$$
 com $t_D=3{,}799$ ($p=0{,}0020$) e $t_{XD}=-3{,}572$ ($p=0{,}0031$): agora **os dois** são significativos.
 
 > [!IMPORTANT]
@@ -157,7 +157,7 @@ Modelo original para o Brasil, 1970–2010: $PIB_t=\beta_1+\beta_2C_t+\beta_3G_t
 2. **Equação aumentada** (quebra no intercepto e no efeito marginal das exportações):
 $$PIB_t=\beta_1+\alpha_1D_t+\beta_2C_t+\beta_3G_t+\beta_4I_t+\beta_5X_t+\alpha_2(D_tX_t)+\beta_6M_t+\mu_t.$$
 3. **Hipóteses.** Quebra no intercepto: $H_0:\alpha_1=0$ contra $H_1:\alpha_1\neq 0$. Quebra na inclinação das exportações: $H_0:\alpha_2=0$ contra $H_1:\alpha_2\neq 0$. Quebra conjunta: $H_0:\alpha_1=\alpha_2=0$.
-4. **Estatísticas.** $t=\hat\alpha_j/\text{E.p.}(\hat\alpha_j)$, com $n-K$ graus de liberdade, para cada teste individual; $F$ com $J=2$ e $n-K$ para o conjunto.
+4. **Estatísticas.** $t=\widehat\alpha_j/ep(\widehat\alpha_j)$, com $n-K$ graus de liberdade, para cada teste individual; $F$ com $J=2$ e $n-K$ para o conjunto.
 5. **Conclusão.** Rejeitar $\alpha_1=0$ indica mudança de nível; rejeitar $\alpha_2=0$ indica que o efeito marginal das exportações mudou depois de 1999.
 
 Equivalência com Chow em D09.7.
@@ -170,7 +170,7 @@ Com $Y_i=\alpha_1+\alpha_2D_{1i}+\alpha_3D_{2i}+u_i$, $D_1$ homem e $D_2$ mulher
 
 $$X=\begin{pmatrix}1&1&0\\1&0&1\\1&1&0\\1&0&1\\1&1&0\end{pmatrix},\qquad \text{coluna 1}=\text{coluna 2}+\text{coluna 3}.$$
 
-O posto de $X$ é **2**, menor que $K=3$: viola-se a hipótese A2 (posto completo), $X'X$ é singular (determinante numérico $-4\times10^{-15}$) e $b=(X'X)^{-1}X'y$ **não existe** — os parâmetros não são identificados.
+O posto de $X$ é **2**, menor que $K=3$: viola-se a hipótese H3 (posto completo), $\mathbf X'\mathbf X$ é singular (determinante numérico $-4\times10^{-15}$) e $\mathbf b=(\mathbf X'\mathbf X)^{-1}\mathbf X'\mathbf y$ **não existe** — os parâmetros não são identificados.
 
 **Como corrigir.** Ou retire uma dummy (a categoria omitida vira base, e $\alpha_2$ passa a medir a diferença entre os grupos), ou retire o intercepto (cada coeficiente vira a média do grupo). Nas duas correções o posto volta a ser completo.
 
@@ -188,14 +188,13 @@ Verificação: numa simulação com efeito verdadeiro 1,5, a diferença das dife
 **Tipo:** derivação · **Chave:** ➖
 
 Se $x_{it}=x_i$, então $\Delta x_i=0$ e o colchete desaparece:
-$$E[\Delta y\mid D=1]-E[\Delta y\mid D=0]=\beta_3 .$$
+$$E(\Delta y\mid D=1)-E(\Delta y\mid D=0)=\beta_3 .$$
 
 **Conclusão.** Em DiD, controles que não variam no tempo são **irrelevantes para a identificação**: a primeira diferença já os elimina, observados ou não. Isso é uma força — o viés por heterogeneidade fixa não observada some — e uma limitação: o efeito dessas características não pode ser estimado. É o mesmo mecanismo dos efeitos fixos em painel ([módulo 12](../12_painel_I/README.md)).
 
 Confirmado na simulação: incluir o controle invariante no tempo muda o coeficiente da interação em $10^{-15}$.
 
-**Conferência numérica**
-
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R — 
 | chave_R | nota |
 |---|---|
 | m09_ex57b_b_X | 0,117845 |
@@ -208,3 +207,4 @@ Confirmado na simulação: incluir o controle invariante no tempo muda o coefici
 | m09_ex61_posto | 2 |
 | m09_did_medias | 1,59000 |
 | m09_did_com_x | 1,59000 |
+-->

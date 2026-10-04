@@ -18,15 +18,15 @@ Medidas de ajuste ($R^2$, $\bar R^2$, AIC, SC), o que acontece ao incluir ou exc
 
 | Arquivo | Conteúdo |
 |---|---|
-| [05_teoria.md](05_teoria.md) | $b$ minimiza $e'e$, $R^2$ e suas armadilhas, $\bar R^2$ e a regra do $\lvert t\rvert \gt 1$, critérios de informação, MQ restrito e as três formas do $F$ |
+| [05_teoria.md](05_teoria.md) | $\mathbf b$ minimiza $\mathbf e'\mathbf e$, $R^2$ e suas armadilhas, $\bar R^2$ e a regra do $\lvert t\rvert \gt 1$, critérios de informação, MQ restrito e as três formas do $F$ |
 | [05_lista1.md](05_lista1.md) | ex. 27, 55, 56 e 62 |
 | [05_ajuste_restricoes.R](05_ajuste_restricoes.R) | identidade do MQ restrito, equivalência das três formas do $F$, ANOVA reconstruída, critérios de informação em várias convenções |
 
 ## O essencial
 
-$$b_*=b-(X'X)^{-1}R'\big[R(X'X)^{-1}R'\big]^{-1}(Rb-q)$$
+$$\mathbf b_R=\mathbf b-(\mathbf X'\mathbf X)^{-1}\mathbf R'\big[\mathbf R(\mathbf X'\mathbf X)^{-1}\mathbf R'\big]^{-1}(\mathbf R\mathbf b-\mathbf r)$$
 
-$$F=\frac{(SQR_R-SQR_{IR})/J}{SQR_{IR}/(n-K)}=\frac{(R^2_{IR}-R^2_R)/J}{(1-R^2_{IR})/(n-K)},\qquad \bar R^2=1-\frac{n-1}{n-K}(1-R^2)$$
+$$F=\frac{(SQR_R-SQR_{UR})/q}{SQR_{UR}/(n-K)}=\frac{(R^2_{UR}-R^2_R)/q}{(1-R^2_{UR})/(n-K)},\qquad \bar R^2=1-\frac{n-1}{n-K}(1-R^2)$$
 
 > [!TIP]
 > **Intuição visual antes da álgebra**

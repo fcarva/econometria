@@ -46,29 +46,29 @@ Testar $\alpha_2=0$ é testar diferença de nível; $\beta_2=0$, diferença de e
 ### D09.1 · O que a dummy faz com o intercepto e com a inclinação
 
 Basta tomar a esperança condicional em cada grupo:
-$$E[Y\mid X,D=0]=\alpha_1+\beta_1X,\qquad E[Y\mid X,D=1]=(\alpha_1+\alpha_2)+(\beta_1+\beta_2)X.$$
+$$E(Y\mid X,D=0)=\alpha_1+\beta_1X,\qquad E(Y\mid X,D=1)=(\alpha_1+\alpha_2)+(\beta_1+\beta_2)X.$$
 A diferença entre as duas retas é $\alpha_2+\beta_2X$: **depende de $X$** quando há interação. Por isso, com interação, não existe "o efeito da dummy": existe o efeito avaliado em um ponto (em geral, na média de $X$).
 
 ### D09.2 · A armadilha da variável dummy
 
 > [!NOTE]
 > **O que se quer provar**
-> Com intercepto e as **duas** dummies complementares ($D_1$ homem, $D_2$ mulher), a matriz $X'X$ é singular.
+> Com intercepto e as **duas** dummies complementares ($D_1$ homem, $D_2$ mulher), a matriz $\mathbf X'\mathbf X$ é singular.
 
 **Passo a passo.**
 
 1. Por construção, $D_{1i}+D_{2i}=1$ para todo $i$, isto é, $D_1+D_2=\iota$, a própria coluna de 1s.
 2. Existe então $v=(1,-1,-1)'\neq 0$ com $Xv=\iota-D_1-D_2=0$: as colunas são linearmente dependentes.
-3. Logo $\operatorname{posto}(X)\lt K$, violando **A2**, e $X'X$ não é inversível: $b=(X'X)^{-1}X'y$ não existe. Os parâmetros não são identificados — há infinitas combinações $(\alpha_1,\alpha_2,\alpha_3)$ com o mesmo ajuste. $\blacksquare$
+3. Logo $\operatorname{posto}(X)\lt K$, violando **H3**, e $\mathbf X'\mathbf X$ não é inversível: $\mathbf b=(\mathbf X'\mathbf X)^{-1}\mathbf X'\mathbf y$ não existe. Os parâmetros não são identificados — há infinitas combinações $(\alpha_1,\alpha_2,\alpha_3)$ com o mesmo ajuste. $\blacksquare$
 
-**Verificação com $n=5$:** posto de $X$ igual a 2 com $K=3$; determinante de $X'X$ igual a $-4\times10^{-15}$ (zero numérico) e menor autovalor igual a $-2{,}7\times10^{-15}$.
+**Verificação com $n=5$:** posto de $X$ igual a 2 com $K=3$; determinante de $\mathbf X'\mathbf X$ igual a $-4\times10^{-15}$ (zero numérico) e menor autovalor igual a $-2{,}7\times10^{-15}$.
 
 **Soluções:** (i) $m-1$ dummies mais intercepto — o grupo omitido vira a base de comparação; (ii) $m$ dummies **sem** intercepto — cada coeficiente é a média do próprio grupo. Nunca as duas coisas juntas.
 
 ### D09.3 · Efeito exato de uma dummy em modelo log
 
 Com $\ln Y=\beta_1+\beta_2D+\dots$, o efeito percentual exato de passar de $D=0$ para $D=1$ é
-$$\frac{E[Y\mid D=1]}{E[Y\mid D=0]}-1=e^{\beta_2}-1,$$
+$$\frac{E(Y\mid D=1)}{E(Y\mid D=0)}-1=e^{\beta_2}-1,$$
 logo o efeito em porcentagem é $100(e^{\beta_2}-1)$, e não $100\beta_2$ — esta é a aproximação de primeira ordem, boa só para $\beta_2$ pequeno.
 
 **Exemplo da P1 2025/2 (coeficiente de SOUTH $=-0{,}07629$):** aproximação $-7{,}63\%$; exato $-7{,}35\%$; diferença de 0,28 ponto percentual. Ambos são aceitos, mas citar o exato mostra domínio.
@@ -101,11 +101,11 @@ Na P1 2025/2, com $a_3=0{,}04292$ e $a_4=-0{,}00070803$: $X^*=30{,}31$ anos de e
 
 **Cobb-Douglas (ex. 47).** $Y=AX_1^{\alpha}X_2^{\beta}e^{u}$ não é linear nos parâmetros, mas o log é:
 $$\ln Y=\ln A+\alpha\ln X_1+\beta\ln X_2+u,$$
-estimável por MQO, com os coeficientes já sendo elasticidades e $\hat A=e^{\hat\beta_1}$. **Exponencial (ex. 48):** $EXP=\beta_1 RMUND^{\beta_2}e^{u}$ segue a mesma receita.
+estimável por MQO, com os coeficientes já sendo elasticidades e $\widehat A=e^{\widehat\beta_1}$. **Exponencial (ex. 48):** $EXP=\beta_1 RMUND^{\beta_2}e^{u}$ segue a mesma receita.
 
 > [!WARNING]
 > **A condição que quase todo mundo esquece**
-> A linearização só funciona com erro **multiplicativo** ($e^u$). Com erro aditivo, $Y=AX_1^\alpha X_2^\beta+u$, tomar log não separa nada e o MQO fica viesado. Na simulação: com erro multiplicativo, $\hat\alpha=0{,}610$ para $\alpha=0{,}6$; com erro aditivo, $\hat\alpha=1{,}087$.
+> A linearização só funciona com erro **multiplicativo** ($e^u$). Com erro aditivo, $Y=AX_1^\alpha X_2^\beta+u$, tomar log não separa nada e o MQO fica viesado. Na simulação: com erro multiplicativo, $\widehat\alpha=0{,}610$ para $\alpha=0{,}6$; com erro aditivo, $\widehat\alpha=1{,}087$.
 
 ### D09.7 · Chow e o modelo interagido são o mesmo teste
 
@@ -117,7 +117,7 @@ estimável por MQO, com os coeficientes já sendo elasticidades e $\hat A=e^{\ha
 
 1. Estime o modelo **pooled** e guarde $SQR_P$ (é o modelo restrito: coeficientes iguais nos dois períodos).
 2. Estime separadamente em cada subperíodo: $SQR_1+SQR_2$ é exatamente o $SQR$ do modelo com **todas** as variáveis interagidas com a dummy (é o irrestrito, que permite tudo diferente).
-3. Aplique o $F$ de restrições ($J=K$ restrições, $n_1+n_2-2K$ graus de liberdade no denominador):
+3. Aplique o $F$ de restrições ($q=K$ restrições, $n_1+n_2-2K$ graus de liberdade no denominador):
 $$F=\frac{(SQR_P-(SQR_1+SQR_2))/K}{(SQR_1+SQR_2)/(n_1+n_2-2K)}.$$
 Como as duas somas de quadrados coincidem com as do par restrito/irrestrito, as duas estatísticas são a mesma. $\blacksquare$
 
@@ -130,7 +130,7 @@ Como as duas somas de quadrados coincidem com as do par restrito/irrestrito, as 
 > [!NOTE]
 > **O que se quer provar (ex. 71)**
 > No modelo $y_{it}=\beta_0+\beta_1D_{it}+\beta_2T_t+\beta_3D_{it}T_t+\beta'x_{it}+\varepsilon_{it}$, com $t=1,2$,
-> $$E[\Delta y_{it}\mid x,D=1]-E[\Delta y_{it}\mid x,D=0]=\beta_3+\beta'\big[(\Delta x\mid D=1)-(\Delta x\mid D=0)\big].$$
+> $$E(\Delta y_{it}\mid x,D=1)-E(\Delta y_{it}\mid x,D=0)=\beta_3+\beta'\big[(\Delta x\mid D=1)-(\Delta x\mid D=0)\big].$$
 
 **Passo a passo.**
 
@@ -139,13 +139,13 @@ $$\Delta y_i=\beta_2+\beta_3D_i+\beta'\Delta x_i+\Delta\varepsilon_i.$$
 Note que $\beta_0$ e $\beta_1$ desaparecem: qualquer coisa fixa no tempo some na diferença.
 
 2. Tome a esperança dentro de cada grupo:
-$$E[\Delta y\mid D=1]=\beta_2+\beta_3+\beta'E[\Delta x\mid D=1],\qquad E[\Delta y\mid D=0]=\beta_2+\beta'E[\Delta x\mid D=0].$$
+$$E(\Delta y\mid D=1)=\beta_2+\beta_3+\beta'E(\Delta x\mid D=1),\qquad E(\Delta y\mid D=0)=\beta_2+\beta'E(\Delta x\mid D=0).$$
 
 3. Subtraia: $\beta_2$ cancela e sobra
 $$\beta_3+\beta'\big[E(\Delta x\mid D=1)-E(\Delta x\mid D=0)\big].\qquad\blacksquare$$
 
 **Ex. 72: controles invariantes no tempo.** Se $x_{it}=x_i$, então $\Delta x_i=0$ e o colchete some:
-$$E[\Delta y\mid D=1]-E[\Delta y\mid D=0]=\beta_3.$$
+$$E(\Delta y\mid D=1)-E(\Delta y\mid D=0)=\beta_3.$$
 Ou seja, características fixas no tempo **não precisam ser observadas nem controladas** — é a força do DiD, a mesma da transformação within com efeitos fixos. Em compensação, seus efeitos também não são identificáveis.
 
 **Verificação numérica:** as três vias dão exatamente o mesmo número — diferença de médias das diferenças, coeficiente da interação e regressão em primeiras diferenças: 1,58999746 (com $\beta_3=1{,}5$ verdadeiro e erro-padrão 0,1750). Incluir o controle invariante no tempo não muda nada (diferença de $10^{-15}$).
@@ -168,7 +168,7 @@ Na P1, é conteúdo de reconhecimento: saber o que é e qual a hipótese de iden
 | "Depois de quantos anos atinge o máximo?" | $X^*=-\beta_2/(2\beta_3)$; confirme o sinal da segunda derivada e diga o que acontece depois. |
 | "Escreva a equação com efeito da crise no intercepto e na inclinação" | $Y=\alpha_1+\alpha_2D+\beta_1X+\beta_2(DX)+u$, com os valores de $D$ por período explicitados. |
 | "Como testar quebra estrutural?" | Chow com três regressões **ou** modelo interagido com $F$ conjunto. Dê hipóteses, estatística e gl. |
-| "Por que não posso usar as duas dummies com intercepto?" | D09.2: dependência linear exata, A2 violada, $X'X$ singular. |
+| "Por que não posso usar as duas dummies com intercepto?" | D09.2: dependência linear exata, H3 violada, $\mathbf X'\mathbf X$ singular. |
 | "Derive o estimador DiD" | D09.8, em três passos, terminando na condição de tendências paralelas. |
 | "Posso estimar essa Cobb-Douglas por MQO?" | Não diretamente; sim em logs, se o erro for multiplicativo. |
 
@@ -200,8 +200,7 @@ Numa regressão com dummy de crise interagida (ex. 59), a leitura é:
 - [ ] Monto o teste de Chow pelas duas vias e sei dizer por que dão o mesmo $F$.
 - [ ] Derivo o DiD (D09.8) e explico o que acontece com controles invariantes no tempo.
 
-## 7. Conferência numérica
-
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R
 | chave_R | nota |
 |---|---|
 | m09_ex43_elast_loglog | -0,25305 |
@@ -220,8 +219,9 @@ Numa regressão com dummy de crise interagida (ex. 59), a leitura é:
 | m09_did_medias | 1,59000 |
 | m09_did_regressao | 1,59000 |
 | m09_did_primeiras_dif | 1,59000 |
+-->
 
-## 8. Referências
+## 7. Referências
 
 - Greene, *Econometric Analysis*, cap. 6 (dummies, interações, forma funcional, quebra estrutural, DiD e regressão descontínua).
 - Slides SL09.

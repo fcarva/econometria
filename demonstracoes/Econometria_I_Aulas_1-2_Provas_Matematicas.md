@@ -64,7 +64,7 @@ $$\boxed{\;\mathbf{b} = (\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'\mathbf{y}\;}$$
 
 **Condição de 2ª ordem:** a Hessiana $2\mathbf{X}'\mathbf{X}$ é definida positiva, logo é mínimo. $\blacksquare$
 
-**Geometria (projeção ortogonal).** Os valores ajustados são $\hat{\mathbf{y}} = \mathbf{X}\mathbf{b} = \mathbf{P}\mathbf{y}$, com
+**Geometria (projeção ortogonal).** Os valores ajustados são $\widehat{\mathbf{y}} = \mathbf{X}\mathbf{b} = \mathbf{P}\mathbf{y}$, com
 $$\mathbf{P} = \mathbf{X}(\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}', \qquad \mathbf{M} = \mathbf{I}_n - \mathbf{P},\qquad \mathbf{e} = \mathbf{M}\mathbf{y}.$$
 $\mathbf{P}$ e $\mathbf{M}$ são **simétricas e idempotentes**, com $\mathbf{P}\mathbf{X}=\mathbf{X}$ e $\mathbf{M}\mathbf{X}=\mathbf{0}$. A condição normal $\mathbf{X}'\mathbf{e}=\mathbf{0}$ diz que **o resíduo é ortogonal aos regressores** — que é o significado geométrico de "MQO projeta $\mathbf{y}$ no espaço-coluna de $\mathbf{X}$".
 
@@ -91,9 +91,9 @@ que é a linha final da sua imagem 5. $\blacksquare$
 ## 4. A rota populacional: $\beta_1$ via covariância (imagem 3)
 
 A leitura **estatística** do mesmo parâmetro. Como $y = \beta_0 + \beta_1 x + \varepsilon$:
-$$\operatorname{Cov}[x,y] = \operatorname{Cov}[x,\beta_0] + \operatorname{Cov}[x,\beta_1 x] + \operatorname{Cov}[x,\varepsilon] = \underbrace{0}_{\beta_0 \text{ const.}} + \beta_1\operatorname{Var}[x] + \underbrace{0}_{\text{exogen.}}$$
+$$\operatorname{Cov}(x,y) = \operatorname{Cov}(x,\beta_0) + \operatorname{Cov}(x,\beta_1 x) + \operatorname{Cov}(x,\varepsilon) = \underbrace{0}_{\beta_0 \text{ const.}} + \beta_1\operatorname{Var}(x) + \underbrace{0}_{\text{exogen.}}$$
 Logo
-$$\boxed{\;\beta_1 = \frac{\operatorname{Cov}[x,y]}{\operatorname{Var}[x]}\;}, \qquad \beta_0 = \mathbb{E}[y] - \beta_1\mathbb{E}[x].$$
+$$\boxed{\;\beta_1 = \frac{\operatorname{Cov}(x,y)}{\operatorname{Var}(x)}\;}, \qquad \beta_0 = \mathbb{E}[y] - \beta_1\mathbb{E}[x].$$
 
 **A ponte que importa.** Compare com a §3: o estimador de MQO é o **análogo amostral** deste momento populacional — troque $\operatorname{Cov}$ e $\operatorname{Var}$ por suas versões na amostra e cai em $b_1$. Essa ideia — *"substituir momento populacional por média amostral"* — é o **Método dos Momentos**, que no Hayashi (Cap. 3) generaliza para **GMM** e passa a englobar MQO, VI e quase tudo que vem depois como casos particulares.
 
@@ -107,22 +107,22 @@ Condicionando em $\mathbf{X}$ e usando **1.2** ($\mathbb{E}[\boldsymbol\varepsil
 $$\mathbb{E}[\mathbf{b}\mid\mathbf{X}] = \boldsymbol\beta + (\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'\,\mathbb{E}[\boldsymbol\varepsilon\mid\mathbf{X}] = \boldsymbol\beta.$$
 Pela Lei das Expectativas Iteradas, $\mathbb{E}[\mathbf{b}]=\boldsymbol\beta$. $\blacksquare$
 
-### 5b. Versão escalar — o truque do $k_i$ (a sua imagem 6)
+### 5b. Versão escalar — o truque do $w_i$ (a sua imagem 6)
 Defina os **pesos**
-$$k_i = \frac{x_i - \bar x}{\sum_j (x_j - \bar x)^2}, \qquad\text{de modo que}\qquad b_1 = \sum_i k_i\, y_i \;\;(\text{linear em } y).$$
+$$w_i = \frac{x_i - \bar x}{\sum_j (x_j - \bar x)^2}, \qquad\text{de modo que}\qquad b_1 = \sum_i w_i\, y_i \;\;(\text{linear em } y).$$
 
 Duas propriedades dos pesos (as suas notas laterais **i** e **ii**):
 
-$$\textbf{(i)}\quad \sum_i k_i = \frac{\sum(x_i-\bar x)}{\sum(x_i-\bar x)^2} = 0 \quad (\text{numerador} = 0).$$
+$$\textbf{(i)}\quad \sum_i w_i = \frac{\sum(x_i-\bar x)}{\sum(x_i-\bar x)^2} = 0 \quad (\text{numerador} = 0).$$
 
-$$\textbf{(ii)}\quad \sum_i k_i x_i = \frac{\sum(x_i-\bar x)x_i}{\sum(x_i-\bar x)^2} = 1,$$
+$$\textbf{(ii)}\quad \sum_i w_i x_i = \frac{\sum(x_i-\bar x)x_i}{\sum(x_i-\bar x)^2} = 1,$$
 pois
 $$\sum(x_i-\bar x)x_i = \sum(x_i-\bar x)x_i - \bar x\underbrace{\sum(x_i-\bar x)}_{0} = \sum(x_i-\bar x)^2.$$
 
 Agora substitua $y_i = \beta_0 + \beta_1 x_i + \varepsilon_i$:
-$$b_1 = \sum k_i(\beta_0 + \beta_1 x_i + \varepsilon_i) = \beta_0\underbrace{\sum k_i}_{0} + \beta_1\underbrace{\sum k_i x_i}_{1} + \sum k_i\varepsilon_i = \beta_1 + \sum k_i\varepsilon_i.$$
-Condicionando em $\mathbf{x}$ (onde os $k_i$ são constantes) e usando exogeneidade:
-$$\mathbb{E}[b_1\mid\mathbf{x}] = \beta_1 + \sum k_i\underbrace{\mathbb{E}[\varepsilon_i\mid\mathbf{x}]}_{0} = \boxed{\beta_1} \;\Longrightarrow\; \textbf{não-viesado.}\quad\blacksquare$$
+$$b_1 = \sum w_i(\beta_0 + \beta_1 x_i + \varepsilon_i) = \beta_0\underbrace{\sum w_i}_{0} + \beta_1\underbrace{\sum w_i x_i}_{1} + \sum w_i\varepsilon_i = \beta_1 + \sum w_i\varepsilon_i.$$
+Condicionando em $\mathbf{x}$ (onde os $w_i$ são constantes) e usando exogeneidade:
+$$\mathbb{E}[\mathbf b_1\mid\mathbf{x}] = \beta_1 + \sum w_i\underbrace{\mathbb{E}[\varepsilon_i\mid\mathbf{x}]}_{0} = \boxed{\beta_1} \;\Longrightarrow\; \textbf{não-viesado.}\quad\blacksquare$$
 
 > **Onde tudo se apoia.** A demonstração inteira desaba num único ponto: $\mathbb{E}[\varepsilon_i\mid x_i]=0$. Quebre a exogeneidade e o não-viés vai junto. Segure essa dependência — ela é o eixo da Parte II e da sua pesquisa em diff-in-diff.
 
@@ -131,15 +131,15 @@ $$\mathbb{E}[b_1\mid\mathbf{x}] = \beta_1 + \sum k_i\underbrace{\mathbb{E}[\vare
 ## 6. Variância do estimador (imagem 7)
 
 ### 6a. Versão matricial
-Com $\mathbf{A} = (\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'$ (constante dado $\mathbf{X}$) e usando **1.4** ($\operatorname{Var}[\boldsymbol\varepsilon\mid\mathbf{X}]=\sigma^2\mathbf{I}$):
-$$\operatorname{Var}[\mathbf{b}\mid\mathbf{X}] = \mathbf{A}\,(\sigma^2\mathbf{I})\,\mathbf{A}' = \sigma^2\mathbf{A}\mathbf{A}' = \sigma^2(\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'\mathbf{X}(\mathbf{X}'\mathbf{X})^{-1}.$$
-$$\boxed{\;\operatorname{Var}[\mathbf{b}\mid\mathbf{X}] = \sigma^2(\mathbf{X}'\mathbf{X})^{-1}\;}$$
+Com $\mathbf{A} = (\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'$ (constante dado $\mathbf{X}$) e usando **1.4** ($\operatorname{Var}(\boldsymbol\varepsilon\mid\mathbf{X})=\sigma^2\mathbf{I}$):
+$$\operatorname{Var}(\mathbf{b}\mid\mathbf{X}) = \mathbf{A}\,(\sigma^2\mathbf{I})\,\mathbf{A}' = \sigma^2\mathbf{A}\mathbf{A}' = \sigma^2(\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'\mathbf{X}(\mathbf{X}'\mathbf{X})^{-1}.$$
+$$\boxed{\;\operatorname{Var}(\mathbf{b}\mid\mathbf{X}) = \sigma^2(\mathbf{X}'\mathbf{X})^{-1}\;}$$
 
 ### 6b. Versão escalar (a sua imagem 7)
-$$\operatorname{Var}[b_1\mid\mathbf{x}] = \operatorname{Var}\!\Big[\beta_1 + \sum k_i\varepsilon_i \,\Big|\, \mathbf{x}\Big] = \sum k_i^2\,\operatorname{Var}[\varepsilon_i\mid\mathbf{x}] = \sigma^2\sum k_i^2,$$
+$$\operatorname{Var}(\mathbf b_1\mid\mathbf{x}) = \operatorname{Var}\!\Big[\beta_1 + \sum w_i\varepsilon_i \,\Big|\, \mathbf{x}\Big] = \sum w_i^2\,\operatorname{Var}(\varepsilon_i\mid\mathbf{x}) = \sigma^2\sum w_i^2,$$
 onde os produtos cruzados somem pela **ausência de autocorrelação**. E
-$$\sum k_i^2 = \frac{\sum(x_i-\bar x)^2}{\big[\sum(x_i-\bar x)^2\big]^2} = \frac{1}{\sum(x_i-\bar x)^2}.$$
-$$\boxed{\;\operatorname{Var}[b_1\mid\mathbf{x}] = \frac{\sigma^2}{\sum(x_i-\bar x)^2}\;}\qquad\blacksquare$$
+$$\sum w_i^2 = \frac{\sum(x_i-\bar x)^2}{\big[\sum(x_i-\bar x)^2\big]^2} = \frac{1}{\sum(x_i-\bar x)^2}.$$
+$$\boxed{\;\operatorname{Var}(\mathbf b_1\mid\mathbf{x}) = \frac{\sigma^2}{\sum(x_i-\bar x)^2}\;}\qquad\blacksquare$$
 
 > **Leitura.** A variância cai quando (a) $\sigma^2$ é menor — menos ruído; (b) $n$ cresce — mais dados; (c) $\sum(x_i-\bar x)^2$ é maior — **mais variação em $x$**. É por isso que regressor "parado" estima mal a inclinação.
 
@@ -147,7 +147,7 @@ $$\boxed{\;\operatorname{Var}[b_1\mid\mathbf{x}] = \frac{\sigma^2}{\sum(x_i-\bar
 
 ## 7. Teorema de Gauss-Markov — MQO é BLUE
 
-> **Enunciado.** Sob **1.1–1.4**, o estimador de MQO $\mathbf{b}$ é o **Melhor Estimador Linear Não-Viesado** (*Best Linear Unbiased Estimator*): para qualquer outro estimador linear e não-viesado $\tilde{\boldsymbol\beta}$, a matriz $\operatorname{Var}[\tilde{\boldsymbol\beta}\mid\mathbf{X}] - \operatorname{Var}[\mathbf{b}\mid\mathbf{X}]$ é positiva semidefinida.
+> **Enunciado.** Sob **1.1–1.4**, o estimador de MQO $\mathbf{b}$ é o **Melhor Estimador Linear Não-Viesado** (*Best Linear Unbiased Estimator*): para qualquer outro estimador linear e não-viesado $\tilde{\boldsymbol\beta}$, a matriz $\operatorname{Var}(\tilde{\boldsymbol\beta}\mid\mathbf{X}) - \operatorname{Var}(\mathbf{b}\mid\mathbf{X})$ é positiva semidefinida.
 
 **Demonstração (matricial).** Todo estimador linear é $\tilde{\boldsymbol\beta} = \mathbf{C}\mathbf{y}$ para algum $\mathbf{C}$ ($K\times n$, função de $\mathbf{X}$). Escreva
 $$\mathbf{C} = (\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}' + \mathbf{D},\qquad \mathbf{D} := \mathbf{C} - (\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'.$$
@@ -155,15 +155,15 @@ $$\mathbf{C} = (\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}' + \mathbf{D},\qquad \math
 *Não-viés impõe uma restrição.* $\mathbb{E}[\tilde{\boldsymbol\beta}\mid\mathbf{X}] = \mathbf{C}\mathbf{X}\boldsymbol\beta = \boldsymbol\beta$ para **todo** $\boldsymbol\beta$ exige $\mathbf{C}\mathbf{X}=\mathbf{I}_K$. Como $(\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'\mathbf{X}=\mathbf{I}_K$, isso força
 $$\mathbf{D}\mathbf{X} = \mathbf{0}.$$
 
-*Variância.* Com $\mathbf{C}\mathbf{X}=\mathbf{I}$, tem-se $\tilde{\boldsymbol\beta} = \mathbf{C}(\mathbf{X}\boldsymbol\beta+\boldsymbol\varepsilon) = \boldsymbol\beta + \mathbf{C}\boldsymbol\varepsilon$, logo $\operatorname{Var}[\tilde{\boldsymbol\beta}\mid\mathbf{X}] = \sigma^2\mathbf{C}\mathbf{C}'$. Expandindo:
+*Variância.* Com $\mathbf{C}\mathbf{X}=\mathbf{I}$, tem-se $\tilde{\boldsymbol\beta} = \mathbf{C}(\mathbf{X}\boldsymbol\beta+\boldsymbol\varepsilon) = \boldsymbol\beta + \mathbf{C}\boldsymbol\varepsilon$, logo $\operatorname{Var}(\tilde{\boldsymbol\beta}\mid\mathbf{X}) = \sigma^2\mathbf{C}\mathbf{C}'$. Expandindo:
 $$\mathbf{C}\mathbf{C}' = (\mathbf{X}'\mathbf{X})^{-1} + \underbrace{(\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'\mathbf{D}'}_{=\,0} + \underbrace{\mathbf{D}\mathbf{X}(\mathbf{X}'\mathbf{X})^{-1}}_{=\,0} + \mathbf{D}\mathbf{D}',$$
 onde os termos cruzados são nulos porque $\mathbf{D}\mathbf{X}=\mathbf{0}$ (e sua transposta $\mathbf{X}'\mathbf{D}'=\mathbf{0}$). Portanto
-$$\operatorname{Var}[\tilde{\boldsymbol\beta}\mid\mathbf{X}] = \underbrace{\sigma^2(\mathbf{X}'\mathbf{X})^{-1}}_{\operatorname{Var}[\mathbf{b}\mid\mathbf{X}]} + \sigma^2\mathbf{D}\mathbf{D}'.$$
+$$\operatorname{Var}(\tilde{\boldsymbol\beta}\mid\mathbf{X}) = \underbrace{\sigma^2(\mathbf{X}'\mathbf{X})^{-1}}_{\operatorname{Var}(\mathbf{b}\mid\mathbf{X})} + \sigma^2\mathbf{D}\mathbf{D}'.$$
 Como $\mathbf{D}\mathbf{D}'$ é positiva semidefinida, a diferença é PSD, com igualdade **se e só se** $\mathbf{D}=\mathbf{0}$, i.e. $\tilde{\boldsymbol\beta}=\mathbf{b}$. $\blacksquare$
 
-**Companheira escalar (regressão simples).** Entre os lineares não-viesados $\tilde b_1 = \sum w_i y_i$ com $\sum w_i = 0$ e $\sum w_i x_i = 1$, escreva $w_i = k_i + d_i$. As restrições forçam $\sum d_i = 0$ e $\sum d_i x_i = 0$, donde
-$$\sum k_i d_i = \frac{\sum(x_i-\bar x)d_i}{\sum(x_i-\bar x)^2} = \frac{\sum d_i x_i - \bar x\sum d_i}{\sum(x_i-\bar x)^2} = 0.$$
-Logo $\sum w_i^2 = \sum k_i^2 + 2\sum k_i d_i + \sum d_i^2 = \sum k_i^2 + \sum d_i^2 \ge \sum k_i^2$, com igualdade só quando $d_i \equiv 0$. **O $k_i$ do MQO tem a menor variância.** $\blacksquare$
+**Companheira escalar (regressão simples).** Entre os lineares não-viesados $\tilde b_1 = \sum c_i y_i$ com $\sum c_i = 0$ e $\sum c_i x_i = 1$, escreva $c_i = w_i + d_i$. As restrições forçam $\sum d_i = 0$ e $\sum d_i x_i = 0$, donde
+$$\sum w_i d_i = \frac{\sum(x_i-\bar x)d_i}{\sum(x_i-\bar x)^2} = \frac{\sum d_i x_i - \bar x\sum d_i}{\sum(x_i-\bar x)^2} = 0.$$
+Logo $\sum c_i^2 = \sum w_i^2 + 2\sum w_i d_i + \sum d_i^2 = \sum w_i^2 + \sum d_i^2 \ge \sum w_i^2$, com igualdade só quando $d_i \equiv 0$. **O $w_i$ do MQO tem a menor variância.** $\blacksquare$
 
 Esse é o "$MQO\,(!)$" no centro do seu alvo (imagem 7): o tiro que acerta o centro **e** está no grupo mais fechado dentre os lineares não-viesados.
 
@@ -171,14 +171,14 @@ Esse é o "$MQO\,(!)$" no centro do seu alvo (imagem 7): o tiro que acerta o cen
 
 ## 8. Decomposição do EQM — a sua fórmula do viés
 
-Para qualquer estimador $\hat\theta$ de $\theta$, some e subtraia $\mathbb{E}[\hat\theta]$:
+Para qualquer estimador $\widehat\theta$ de $\theta$, some e subtraia $\mathbb{E}[\widehat\theta]$:
 $$
 \begin{aligned}
-\operatorname{EQM}[\hat\theta] &= \mathbb{E}\big[(\hat\theta-\theta)^2\big] = \mathbb{E}\big[(\hat\theta - \mathbb{E}[\hat\theta] + \mathbb{E}[\hat\theta] - \theta)^2\big]\\[2pt]
-&= \underbrace{\mathbb{E}\big[(\hat\theta-\mathbb{E}[\hat\theta])^2\big]}_{\operatorname{Var}[\hat\theta]} + 2\underbrace{\mathbb{E}[\hat\theta-\mathbb{E}[\hat\theta]]}_{=\,0}\,(\mathbb{E}[\hat\theta]-\theta) + \underbrace{(\mathbb{E}[\hat\theta]-\theta)^2}_{(\operatorname{viés}[\hat\theta])^2}
+\operatorname{EQM}[\widehat\theta] &= \mathbb{E}\big[(\widehat\theta-\theta)^2\big] = \mathbb{E}\big[(\widehat\theta - \mathbb{E}[\widehat\theta] + \mathbb{E}[\widehat\theta] - \theta)^2\big]\\[2pt]
+&= \underbrace{\mathbb{E}\big[(\widehat\theta-\mathbb{E}[\widehat\theta])^2\big]}_{\operatorname{Var}(\widehat\theta)} + 2\underbrace{\mathbb{E}[\widehat\theta-\mathbb{E}[\widehat\theta]]}_{=\,0}\,(\mathbb{E}[\widehat\theta]-\theta) + \underbrace{(\mathbb{E}[\widehat\theta]-\theta)^2}_{(\operatorname{viés}[\widehat\theta])^2}
 \end{aligned}
 $$
-$$\boxed{\;\operatorname{EQM}[\hat\theta] = \operatorname{Var}[\hat\theta] + \big(\operatorname{viés}[\hat\theta]\big)^2\;}\qquad\blacksquare$$
+$$\boxed{\;\operatorname{EQM}[\widehat\theta] = \operatorname{Var}(\widehat\theta) + \big(\operatorname{viés}[\widehat\theta]\big)^2\;}\qquad\blacksquare$$
 
 Formaliza a metáfora do alvo: **erro total = espalhamento + descentralização²** = precisão vs. exatidão.
 
@@ -226,16 +226,16 @@ O Hayashi troca o arcabouço de regressores fixos + exogeneidade estrita por:
 
 ## 12. Aquecimento: a média amostral (imagens 4–5)
 
-O seu desvio pela média amostral **é** o gabarito de tudo que vem. Seja $\{X_i\}$ iid com $\mathbb{E}[X_i]=\mu$, $\operatorname{Var}[X_i]=\sigma^2$.
+O seu desvio pela média amostral **é** o gabarito de tudo que vem. Seja $\{X_i\}$ iid com $\mathbb{E}[X_i]=\mu$, $\operatorname{Var}(X_i)=\sigma^2$.
 
 **Não-viés** (sua imagem 5): $\mathbb{E}[\bar X] = \frac{1}{n}\sum \mathbb{E}[X_i] = \mu.$ ✓
 
-**Variância** (sua imagem 5): $\operatorname{Var}[\bar X] = \frac{1}{n^2}\sum\operatorname{Var}[X_i] = \dfrac{\sigma^2}{n}.$ ✓
+**Variância** (sua imagem 5): $\operatorname{Var}(\bar X) = \frac{1}{n^2}\sum\operatorname{Var}[X_i] = \dfrac{\sigma^2}{n}.$ ✓
 
 **Consistência** — aqui a sua nota $\lim_{n\to\infty}\sigma^2/n = 0$ vira teorema:
-$$\operatorname{EQM}[\bar X] = \operatorname{Var}[\bar X] + \underbrace{(\text{viés})^2}_{0} = \frac{\sigma^2}{n} \xrightarrow[n\to\infty]{} 0.$$
+$$\operatorname{EQM}[\bar X] = \operatorname{Var}(\bar X) + \underbrace{(\text{viés})^2}_{0} = \frac{\sigma^2}{n} \xrightarrow[n\to\infty]{} 0.$$
 Convergência em média quadrática $\Rightarrow$ convergência em probabilidade. Explicitamente, por **Chebyshev**:
-$$P\big(|\bar X - \mu| > \epsilon\big) \le \frac{\operatorname{Var}[\bar X]}{\epsilon^2} = \frac{\sigma^2}{n\epsilon^2} \xrightarrow[n\to\infty]{} 0 \;\Longrightarrow\; \bar X \xrightarrow{p} \mu.$$
+$$P\big(|\bar X - \mu| > \epsilon\big) \le \frac{\operatorname{Var}(\bar X)}{\epsilon^2} = \frac{\sigma^2}{n\epsilon^2} \xrightarrow[n\to\infty]{} 0 \;\Longrightarrow\; \bar X \xrightarrow{p} \mu.$$
 Ou seja: **não-viés + variância→0 ⟹ consistência.** A sua observação do limite era exatamente esse motor. $\blacksquare$
 
 **Normalidade assintótica** — pelo Teorema Central do Limite:
@@ -261,7 +261,7 @@ $$\mathbf{b} \xrightarrow{p} \boldsymbol\beta + \boldsymbol\Sigma_{xx}^{-1}\cdot
 Multiplicando o desvio por $\sqrt{n}$:
 $$\sqrt{n}\,(\mathbf{b}-\boldsymbol\beta) = \Big(\tfrac{1}{n}\textstyle\sum \mathbf{x}_i\mathbf{x}_i'\Big)^{-1}\cdot \frac{1}{\sqrt{n}}\sum \mathbf{x}_i\varepsilon_i.$$
 
-Pelo **TCL** aplicado à MDS $\mathbf{g}_i = \mathbf{x}_i\varepsilon_i$, com $\mathbb{E}[\mathbf{g}_i]=\mathbf{0}$ e $\operatorname{Var}[\mathbf{g}_i]=\mathbf{S}=\mathbb{E}[\varepsilon_i^2\,\mathbf{x}_i\mathbf{x}_i']$:
+Pelo **TCL** aplicado à MDS $\mathbf{g}_i = \mathbf{x}_i\varepsilon_i$, com $\mathbb{E}[\mathbf{g}_i]=\mathbf{0}$ e $\operatorname{Var}(\mathbf{g}_i)=\mathbf{S}=\mathbb{E}[\varepsilon_i^2\,\mathbf{x}_i\mathbf{x}_i']$:
 $$\frac{1}{\sqrt{n}}\sum \mathbf{x}_i\varepsilon_i \xrightarrow{d} N(\mathbf{0},\mathbf{S}).$$
 Combinando com $\tfrac{1}{n}\sum\mathbf{x}_i\mathbf{x}_i'\xrightarrow{p}\boldsymbol\Sigma_{xx}$ via **Slutsky**:
 $$\boxed{\;\sqrt{n}\,(\mathbf{b}-\boldsymbol\beta) \xrightarrow{d} N\!\big(\mathbf{0},\; \boldsymbol\Sigma_{xx}^{-1}\,\mathbf{S}\,\boldsymbol\Sigma_{xx}^{-1}\big)\;}\qquad\blacksquare$$

@@ -41,7 +41,7 @@ Dois grupos (tratado e controle), dois períodos (antes e depois). As médias de
 | **Diferença entre grupos** | $\beta_1$ | $\beta_1+\beta_3$ | $\boxed{\beta_3}$ |
 
 O estimador é a **diferença das diferenças**:
-$$\hat\beta_3=\big(\bar y_{1,depois}-\bar y_{1,antes}\big)-\big(\bar y_{0,depois}-\bar y_{0,antes}\big).$$
+$$\widehat\beta_3=\big(\bar y_{1,depois}-\bar y_{1,antes}\big)-\big(\bar y_{0,depois}-\bar y_{0,antes}\big).$$
 
 A primeira diferença elimina tudo o que é fixo no grupo tratado; a segunda desconta a tendência comum, estimada pelo controle.
 
@@ -72,7 +72,7 @@ Está em [09_teoria.md](09_teoria.md), D09.8. O esqueleto:
 1. Escreva o modelo em $t=1$ e $t=2$ e **tome a diferença**: $\beta_0$ e $\beta_1D_i$ somem, porque não variam no tempo.
 $$\Delta y_i=\beta_2+\beta_3D_i+\beta'\Delta x_i+\Delta\varepsilon_i$$
 2. Tome a esperança dentro de cada grupo e subtraia:
-$$E[\Delta y\mid D=1]-E[\Delta y\mid D=0]=\beta_3+\beta'\big[E(\Delta x\mid D=1)-E(\Delta x\mid D=0)\big]$$
+$$E(\Delta y\mid D=1)-E(\Delta y\mid D=0)=\beta_3+\beta'\big[E(\Delta x\mid D=1)-E(\Delta x\mid D=0)\big]$$
 3. **Ex. 72:** se os controles são invariantes no tempo ($x_{it}=x_i$), então $\Delta x_i=0$ e sobra $\beta_3$ puro.
 
 > [!IMPORTANT]
@@ -82,7 +82,7 @@ $$E[\Delta y\mid D=1]-E[\Delta y\mid D=0]=\beta_3+\beta'\big[E(\Delta x\mid D=1)
 ## 4. A hipótese que segura tudo: tendências paralelas
 
 Na ausência do tratamento, a diferença média entre tratados e controles teria permanecido constante:
-$$E[y^{0}_{i,depois}-y^{0}_{i,antes}\mid D=1]=E[y^{0}_{i,depois}-y^{0}_{i,antes}\mid D=0].$$
+$$E(y^{0}_{i,depois}-y^{0}_{i,antes}\mid D=1)=E(y^{0}_{i,depois}-y^{0}_{i,antes}\mid D=0).$$
 
 É uma hipótese sobre um **contrafactual**, logo não testável diretamente. O que se faz na prática:
 

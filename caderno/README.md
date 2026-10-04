@@ -19,6 +19,7 @@ A prova é no papel; o estudo final também deveria ser. Esta pasta transforma a
 |---|---|---|
 | `caderno_volume1_teoria.pdf` | revisão rápida, intuição visual, teoria dos módulos 00–10, demonstrações centrais, caderno de aula, fontes | estudar e anotar à mão |
 | `caderno_volume2_exercicios.pdf` | Lista 1 resolvida, P1 de 2025/2, bancos de derivações e de outputs, flashcards, gabaritos | conferir depois de resolver |
+| `caderno_volume3_reta_final.pdf` | As 16 famílias de questão da Lista 1 v.1, cada uma com as perguntas socráticas seguidas do algoritmo da resolução | ler na reta final, seção por seção |
 | `simulado_01.pdf` a `simulado_03.pdf` | só as questões, com campo para nome e horário | resolver cronometrado, no papel, antes de abrir o gabarito do volume 2 |
 
 ## Gerar

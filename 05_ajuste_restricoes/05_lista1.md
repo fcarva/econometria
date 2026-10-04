@@ -54,7 +54,7 @@ Função de produção estimada em logs com $n=39\,692$ firmas:
 $$\ln(\text{receita})=\beta_1+\beta_2\ln(\text{capital})+\beta_3\ln(\text{trabalho})+u .$$
 Coeficientes: 0,637325 (capital) e 0,288255 (trabalho); $R^2=0{,}769275$; $SQR=17\,335{,}62$; $F$ global $=66\,164{,}78$.
 
-**(a) Capital e trabalho podem ser muito correlacionados?** Podem, e costumam ser: firmas maiores usam mais dos dois. Se a correlação fosse muito alta, haveria **multicolinearidade** — os estimadores continuariam MELNV, mas com variâncias infladas (FIV alto, $t$ baixos com $F$ alto). Aqui não é o caso: a correlação parcial entre os dois regressores é 0,522, o que dá $FIV=1{,}375$, muito abaixo de 10.
+**(a) Capital e trabalho podem ser muito correlacionados?** Podem, e costumam ser: firmas maiores usam mais dos dois. Se a correlação fosse muito alta, haveria **multicolinearidade** — os estimadores continuariam MELNV, mas com variâncias infladas (VIF alto, $t$ baixos com $F$ alto). Aqui não é o caso: a correlação parcial entre os dois regressores é 0,522, o que dá $VIF=1{,}375$, muito abaixo de 10.
 
 **(b) Sinais e interpretação.** Os dois são positivos, como a teoria manda: mais insumo, mais produto. Como é log-log, são **elasticidades**: capital sobe 1% ⇒ receita sobe 0,637%; trabalho sobe 1% ⇒ receita sobe 0,288%.
 
@@ -66,23 +66,18 @@ Coeficientes: 0,637325 (capital) e 0,288255 (trabalho); $R^2=0{,}769275$; $SQR=1
 
 **(f) Retornos constantes de escala.** Restrição $H_0:\beta_2+\beta_3=1$.
 
-```text
-Hipóteses:   H0: β2 + β3 = 1 (retornos constantes)   vs   H1: β2 + β3 ≠ 1
-Estatística: F = [(SQR_R − SQR_IR)/J] / [SQR_IR/(n − K)]
-             = (48,59 / 1) / (17.335,62 / 39.689) = 48,59 / 0,436787 = 111,24
-Decisão:     111,24 > 3,84 = F crítico (1; ∞) a 5%   ⇒   rejeita-se H0
-Conclusão:   não há retornos constantes de escala. Como a soma estimada é 0,9256 < 1,
-             há retornos DECRESCENTES de escala nos pequenos empreendimentos informais.
-```
+- **Hipóteses:** $H_0:\beta_2+\beta_3=1$ (retornos constantes de escala) vs. $H_1:\beta_2+\beta_3\neq 1$.
+- **Estatística:** $F_{cal}=\dfrac{(SQR_R-SQR_{UR})/q}{SQR_{UR}/(n-K)}=\dfrac{48{,}59/1}{17.335{,}62/39.689}=\dfrac{48{,}59}{0{,}436787}=111{,}24$.
+- **Decisão:** como $F_{cal}=111{,}24>F_{tab}(1,\infty)=3{,}84$, rejeita-se $H_0$ ao nível de 5%.
+- **Conclusão:** não há retornos constantes de escala. Como a soma estimada é $0{,}9256<1$, há retornos **decrescentes** de escala nos pequenos empreendimentos informais.
 
 Pelo $t$ equivalente: $t=(0{,}92558-1)/0{,}0070559=-10{,}547$, e $t^2=111{,}24=F$ — a mesma decisão.
 
 > [!TIP]
 > **O que o enunciado dá e o que você precisa montar**
-> O enunciado entrega $SQR$ restrito (17.384,21) e irrestrito (17.335,62). A diferença, 48,59, é o numerador; o denominador é o $s^2$ do modelo irrestrito. Com $J=1$, lembre-se de que $F=t^2$ — e só é possível calcular o $t$ diretamente se o enunciado der a covariância entre $\hat\beta_2$ e $\hat\beta_3$, que em geral **não** é dada. Por isso o caminho das duas somas de quadrados é o seguro.
+> O enunciado entrega $SQR$ restrito (17.384,21) e irrestrito (17.335,62). A diferença, 48,59, é o numerador; o denominador é o $s^2$ do modelo irrestrito. Com $q=1$, lembre-se de que $F=t^2$ — e só é possível calcular o $t$ diretamente se o enunciado der a covariância entre $\widehat\beta_2$ e $\widehat\beta_3$, que em geral **não** é dada. Por isso o caminho das duas somas de quadrados é o seguro.
 
-**Conferência numérica**
-
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R — 
 | chave_R | nota |
 |---|---|
 | m05_ex55_dif_ssr | 48,59 |
@@ -95,6 +90,7 @@ Pelo $t$ equivalente: $t=(0{,}92558-1)/0{,}0070559=-10{,}547$, e $t^2=111{,}24=F
 | m05_ex55_efeito10_aprox | 2,88255 |
 | m05_ex55_efeito10_exato | 2,7855 |
 | m05_ex55_Fcrit05 | 3,8417 |
+-->
 
 ## Ex. 56 — Demanda por energia elétrica: quadro de ANOVA
 
@@ -112,14 +108,13 @@ Output com $n=10$, $K=3$ (constante, tarifa $T$ e renda $Y$): $R^2=0{,}932022$, 
 
 O quadrado médio dos resíduos, 21,762, tem raiz 4,665: é o "S.E. of regression" do output — bom sinal de que a reconstrução está certa.
 
-**(b) Interpretação dos coeficientes.** $\hat\beta_T=-0{,}263274$: um ponto a mais no índice de tarifa reduz a quantidade demandada em 0,263 unidade — sinal **negativo**, como a lei da demanda exige. $\hat\beta_Y=1{,}237959$: um ponto a mais no índice de renda eleva a demanda em 1,238 — positivo, como se espera de bem normal. A constante (7,889) não tem leitura econômica útil aqui.
+**(b) Interpretação dos coeficientes.** $\widehat\beta_T=-0{,}263274$: um ponto a mais no índice de tarifa reduz a quantidade demandada em 0,263 unidade — sinal **negativo**, como a lei da demanda exige. $\widehat\beta_Y=1{,}237959$: um ponto a mais no índice de renda eleva a demanda em 1,238 — positivo, como se espera de bem normal. A constante (7,889) não tem leitura econômica útil aqui.
 
 **(c) Testes a 10%.** Para a regressão como um todo: $F=47{,}99 \gt F_{2;7;0,10}=3{,}257$ ⇒ rejeita-se $H_0:\beta_T=\beta_Y=0$. Individualmente, com $t_{7;0,05}=1{,}895$ (bilateral a 10%): tarifa $\lvert-2{,}925\rvert\gt 1{,}895$ e renda $6{,}809\gt 1{,}895$, ambos significativos; a constante ($t=0{,}329$) não é.
 
 **(d) $R^2$ e $\bar R^2$.** 93,2% da variação da quantidade é explicada; ajustando pelos graus de liberdade, 91,3%. A diferença é grande porque $n=10$ é pequeno: cada regressor custa caro em graus de liberdade.
 
-**Conferência numérica**
-
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R — 
 | chave_R | nota |
 |---|---|
 | m05_ex56_sst | 2240,90 |
@@ -130,25 +125,24 @@ O quadrado médio dos resíduos, 21,762, tem raiz 4,665: é o "S.E. of regressio
 | m05_ex56_ser_recalc | 4,6650 |
 | m05_ex56_Fcrit10_2_7 | 3,2574 |
 | m05_ex56_tcrit_7_bi10 | 1,8946 |
+-->
 
 ## Ex. 62 — Retornos constantes de escala pelo F restrito
 
 **Tipo:** interpretação · **Chave:** ⏳
 
-```text
-Hipóteses:   H0: β2 + β3 = 1 (retornos constantes de escala)   vs   H1: β2 + β3 ≠ 1
-Estatística: F calculado = 1,95, com J = 1 restrição
-Decisão:     1,95 < 2,45 = F tabelado (α = 5%)   ⇒   NÃO se rejeita H0
-Conclusão:   os dados são compatíveis com retornos constantes de escala.
-```
+- **Hipóteses:** $H_0:\beta_2+\beta_3=1$ (retornos constantes de escala) vs. $H_1:\beta_2+\beta_3\neq 1$.
+- **Estatística:** $F_{cal}=1{,}95$, com $q=1$ restrição.
+- **Decisão:** como $F_{cal}=1{,}95<F_{tab}=2{,}45$, não se rejeita $H_0$ ao nível de 5%.
+- **Conclusão:** os dados são compatíveis com retornos constantes de escala.
 
 > [!WARNING]
 > **Não rejeitar não é provar**
 > A conclusão correta é "não há evidência contra os retornos constantes", e não "a firma tem retornos constantes". Com $F=1{,}95$ e uma restrição, o menor $\alpha$ que levaria à rejeição é cerca de 0,163: bem acima de 5%, mas longe de ser prova de igualdade. Compare com o ex. 55, em que $n$ enorme deu poder para rejeitar uma diferença de apenas 0,074.
 
-**Conferência numérica**
-
+<!-- conferência numérica: valores conferidos contra resultados/*.csv pelo scripts/check_numbers.R — 
 | chave_R | nota |
 |---|---|
 | m05_ex62_p_min | 0,16259 |
 | m05_ex62_Fcrit05_1_inf | 3,8415 |
+-->
