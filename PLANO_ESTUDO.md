@@ -3,7 +3,7 @@ title: "Plano de estudo — Econometria I (P1)"
 disciplina: Econometria I (PECO-5021/6021)
 professor: Edson Zambon Monte
 periodo: 2026/2
-prova-1: 2026-10-02
+prova-1: 2026-10-09
 tags:
   - econometria
   - mestrado/ppgeco
@@ -16,7 +16,7 @@ aliases:
 
 ## Objetivo
 
-Chegar em **02/10/2026** capaz de fazer duas coisas sob pressão:
+Chegar em **09/10/2026** capaz de fazer duas coisas sob pressão:
 
 1. **Demonstrar** no papel, sem consulta, qualquer resultado do MQO nas três rotas — escalar, matricial e assintótica — com cada passo justificado por uma hipótese.
 2. **Ler um output** no formato do professor (NLOGIT ou `ivreg` do R) e escrever hipóteses, estatística, decisão e conclusão em quatro linhas.
@@ -27,7 +27,7 @@ Tudo o mais no repositório existe para servir a esses dois objetivos.
 
 | | Conteúdo | Situação |
 |---|---|---|
-| **P1 (02/10)** | slides SL01 a SL10, Lista 1 inteira (ex. 1–74), molde da P1 2025/2 | módulos [00](00_fundamentos/README.md) a [10](10_endogeneidade_iv/README.md) |
+| **P1 (09/10)** | slides SL01 a SL10, Lista 1 inteira (ex. 1–74), molde da P1 2025/2 | módulos [00](00_fundamentos/README.md) a [10](10_endogeneidade_iv/README.md) |
 | **P2 (depois)** | MQG, heterocedasticidade, autocorrelação, painel, máxima verossimilhança e escolha binária; Lista 2 | esqueletos [11](11_mqg_heterosk_autocorr/README.md) a [14](14_mv_binarias/README.md) |
 
 ## Como cada módulo funciona

@@ -3,7 +3,7 @@ title: "Folha de última revisão — véspera e dia da prova"
 disciplina: Econometria I (PECO-5021/6021)
 professor: Edson Zambon Monte
 periodo: 2026/2
-prova-1: 2026-10-02
+prova-1: 2026-10-09
 relevancia_p1: alta
 status: rascunho
 tags:

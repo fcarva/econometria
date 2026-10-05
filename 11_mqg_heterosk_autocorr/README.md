@@ -17,7 +17,7 @@ aliases:
 # Módulo 11 — MQG, heterocedasticidade e autocorrelação
 
 > [!NOTE]
-> **Esqueleto para depois de 02/10**
+> **Esqueleto para depois de 09/10**
 > Conteúdo de P2. Aqui ficam só o mapa e os exercícios da Lista 2 que pertencem ao módulo, para o trabalho começar sem atrito depois da P1.
 
 ## O que o slide SL11 cobre

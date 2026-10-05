@@ -110,7 +110,7 @@ Trinta e seis demonstrações no formato em que o professor cobra. Use assim: le
 1. **Bloco cronometrado.** Sorteie 8 a 10 itens, misturando as rotas, e resolva em sequência sem consultar. Some os tempos-alvo: é o seu orçamento.
 2. **Correção honesta.** Compare com a demonstração indicada e marque ✅ (saiu inteira), ⚠️ (saiu com falha) ou ❌ (travou).
 3. **Fila de revisão.** Todo ⚠️ e ❌ volta no dia seguinte, depois em 3 e em 7 dias.
-4. **Meta antes do dia 02/10.** Todos os 🔴 em ✅ por duas rodadas seguidas. Os ⚪ podem ficar por último.
+4. **Meta antes do dia 09/10.** Todos os 🔴 em ✅ por duas rodadas seguidas. Os ⚪ podem ficar por último.
 
 > [!TIP]
 > **O que o professor premia**

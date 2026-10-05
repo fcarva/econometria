@@ -456,6 +456,6 @@ Aqui o MQO é **geometria de projeção**. Escrevendo $y = X\beta + \varepsilon$
 > [!note] No vault
 > - [[Demonstrações Econometria I mês 1]] — o índice-referência (D0–D16); esta caminhada é a versão "narrada" de D0–D11
 > - [[Prova Zambon 2025/2]] — a prova real resolvida; a Questão 3 é exatamente os Atos 2–5 daqui
-> - [[Plano Econometria I]] — cronograma até a prova de 02/10
+> - [[Plano Econometria I]] — cronograma até a prova de 09/10
 > - [[Lista 1]] — os 74 exercícios
 > - [[DiD]] — onde a lente econométrica (identificação causal) encontra sua dissertação

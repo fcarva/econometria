@@ -12,7 +12,7 @@ aliases:
 
 # Econometria I: estudo para a P1
 
-Material de estudo de **Econometria I** (PECO-5021/6021, Prof. Edson Zambon Monte, PPGEco/UFES, 2026/2). Livro-base: Greene, *Econometric Analysis*. A preparação mira a **P1 de 02/10/2026**. Tem três objetivos:
+Material de estudo de **Econometria I** (PECO-5021/6021, Prof. Edson Zambon Monte, PPGEco/UFES, 2026/2). Livro-base: Greene, *Econometric Analysis*. A preparação mira a **P1 de 09/10/2026**. Tem três objetivos:
 
 - **demonstrar** tudo o que cai na prova (rotas escalar, matricial e assintótica, com cada passo justificado);
 - **interpretar outputs** no formato do professor (tabela NLOGIT/LIMDEP e diagnósticos do `ivreg` do R);
@@ -89,7 +89,7 @@ Primeira vez nesta máquina: `scripts\r.ps1 R\00_setup.R` instala o que faltar.
 
 As demonstrações centrais D0–D16 do primeiro mês estão em [demonstracoes/](demonstracoes/econometria-i-demonstracoes-mes-1-1.md). A P1 de 2025/2, resolvida e usada como molde da prova, está em [provas/p1_2025_2/](provas/p1_2025_2/econometria-i-prova-2025-2-resolvida.md).
 
-**P2 (esqueletos, para depois de 02/10):**
+**P2 (esqueletos, para depois de 09/10):**
 - [11 MQG, heterocedasticidade e autocorrelação](11_mqg_heterosk_autocorr/README.md)
 - [12 Painel I](12_painel_I/README.md)
 - [13 Painel II](13_painel_II/README.md)

@@ -17,7 +17,7 @@ aliases:
 # Módulo 13 — Painel II
 
 > [!NOTE]
-> **Esqueleto para depois de 02/10**
+> **Esqueleto para depois de 09/10**
 > Conteúdo de P2. O teste de Hausman aqui é primo do Wu-Hausman da P1 ([módulo 10](../10_endogeneidade_iv/10_teoria.md), D10.10): mesma lógica de comparar um estimador consistente-sempre com outro eficiente-sob-H0.
 
 ## O que o slide SL13 cobre

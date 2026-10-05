@@ -3,7 +3,7 @@ title: "Econometria I — Prova 2025/2 resolvida (mapa da 1ª prova)"
 disciplina: Econometria I (PECO-5021/6021)
 professor: Edson Zambon Monte
 prova: 1ª prova — 03/10/2025 (turma 2025/2)
-relevancia: mesmo professor, mesma ementa — molde da sua prova de 02/10
+relevancia: mesmo professor, mesma ementa — molde da sua prova de 09/10
 tags:
   - econometria
   - mestrado/ppgeco
@@ -19,7 +19,7 @@ aliases:
 # Econometria I — Prova 2025/2 resolvida (o molde da sua prova)
 
 > [!abstract] Por que este documento é ouro
-> Esta é a **1ª prova real do Zambon** aplicada em **03/10/2025** para a turma 2025/2 — mesmo professor, mesma ementa (PECO-5021/6021), mesmo estilo que você vai encontrar em **02/10**. Ter a prova *com gabarito* significa que você sabe **exatamente** o que estudar e em que formato responder.
+> Esta é a **1ª prova real do Zambon** aplicada em **03/10/2025** para a turma 2025/2 — mesmo professor, mesma ementa (PECO-5021/6021), mesmo estilo que você vai encontrar em **09/10**. Ter a prova *com gabarito* significa que você sabe **exatamente** o que estudar e em que formato responder.
 >
 > A leitura-chave: **as demonstrações que caem são precisamente as do seu [[Demonstrações Econometria I mês 1]]**. A Questão 3 é D3+D4+D6; a Questão 5 é D14 + consistência. Este documento (1) mapeia cada questão às demonstrações que você já domina, (2) reproduz o padrão de resposta das questões aplicadas (interpretação de output), e (3) **preenche os três tópicos que a prova cobrou e que o doc de demonstrações ainda não tinha**: viés por erro de medição (Q4), consistência assintótica (Q5) e o estimador IV (Q6).
 

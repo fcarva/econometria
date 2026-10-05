@@ -17,7 +17,7 @@ aliases:
 # Módulo 12 — Painel I
 
 > [!NOTE]
-> **Esqueleto para depois de 02/10**
+> **Esqueleto para depois de 09/10**
 > Conteúdo de P2. O único elo com a P1 é o teorema de Frisch-Waugh-Lovell: a transformação *within* é FWL com dummies de unidade ([módulo 04](../04_fwl_particionada/04_teoria.md), D04.6).
 
 ## O que o slide SL12 cobre

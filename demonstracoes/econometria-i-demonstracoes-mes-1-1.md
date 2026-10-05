@@ -5,7 +5,7 @@ professor: Edson Zambon Monte
 periodo: 2026/2
 livro-base: Greene, Econometric Analysis, 7ª ed.
 aulas: [14/08, 21/08, 28/08]
-prova-1: 2026-10-02
+prova-1: 2026-10-09
 tags:
   - econometria
   - mestrado/ppgeco
@@ -707,6 +707,6 @@ Portanto o MQO tem a menor variância na classe — é **eficiente**. Igualdade 
 > - [[MQO — regressão simples]] — detalhamento da 14/08
 > - [[Derivação completa do MQO]] — a versão **narrada** desta rota escalar (D0–D11), com o *porquê* de cada passo, do conceito de erro até Gauss-Markov e as três lentes
 > - [[Prova Zambon 2025/2]] — a 1ª prova real resolvida; mapeia cada questão a estas demonstrações e traz **3 tópicos que caíram e não estão aqui** (viés por erro de medição, consistência assintótica, estimador IV)
-> - [[Plano Econometria I]] — cronograma até a 1ª prova (02/10)
+> - [[Plano Econometria I]] — cronograma até a 1ª prova (09/10)
 > - [[Lista 1]] — guia de revisão dos 74 exercícios
 > - [[Frisch-Waugh-Lovell]] — regressão parcial; entra em D15 (a decomposição da variância com $R_j^2$ sai por FWL) e provavelmente será aprofundado adiante

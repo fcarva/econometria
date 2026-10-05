@@ -15,7 +15,7 @@ aliases:
 
 # Formulário da P1
 
-Tudo o que precisa sair de cabeça em 02/10, na ordem dos módulos. A leitura dos testes está em [vocabulario_interpretacao.md](vocabulario_interpretacao.md).
+Tudo o que precisa sair de cabeça em 09/10, na ordem dos módulos. A leitura dos testes está em [vocabulario_interpretacao.md](vocabulario_interpretacao.md).
 
 ---
 

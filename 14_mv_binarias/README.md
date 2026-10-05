@@ -17,7 +17,7 @@ aliases:
 # Módulo 14 — Máxima verossimilhança e escolha binária
 
 > [!NOTE]
-> **Esqueleto para depois de 02/10**
+> **Esqueleto para depois de 09/10**
 > Conteúdo de P2. A trindade Wald, LM e LR já aparece na P1 ([módulo 07](../07_testes_hipoteses/07_teoria.md), D07.5); aqui ela ganha a forma geral da máxima verossimilhança.
 
 ## O que o slide SL14 cobre

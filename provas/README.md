@@ -3,7 +3,7 @@ title: "Provas — guia de treino para a P1"
 disciplina: Econometria I (PECO-5021/6021)
 professor: Edson Zambon Monte
 periodo: 2026/2
-prova: "P1 — 02/10/2026"
+prova: "P1 — 09/10/2026"
 slides: "SL01–SL10"
 relevancia_p1: alta
 status: rascunho
@@ -16,7 +16,7 @@ aliases:
   - Guia de provas
 ---
 
-# Provas: como treinar para a P1 de 02/10/2026
+# Provas: como treinar para a P1 de 09/10/2026
 
 
 > [!NOTE]
