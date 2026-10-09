@@ -36,7 +36,7 @@ aliases:
 >
 > | Arquivo | Para quê |
 > |---|---|
-> | [p1_2026_2/](p1_2026_2/README.md) | **a P1 de 09/10/2026**: mapa, [resolução com rubrica](p1_2026_2/resolucao.md), autoavaliação e lições |
+> | [p1_2026_2/](p1_2026_2/README.md) | **a P1 de 09/10/2026**: mapa, [resolução com rubrica](p1_2026_2/resolucao.md) e lições |
 > | [p1_2025_2/](p1_2025_2/econometria-i-prova-2025-2-resolvida.md) | a P1 de 2025/2 resolvida: é o molde da sua prova |
 > | [p1_2025_2/reproducao.R](p1_2025_2/reproducao.R) | reproduz em R os dois outputs da P1 2025/2 e as contas das respostas |
 > | [p2_2024_2/mapa.md](p2_2024_2/mapa.md) | tipos de questão da P2 2024/2 e onde estudar cada um |

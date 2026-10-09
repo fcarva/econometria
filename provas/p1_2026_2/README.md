@@ -1,5 +1,5 @@
 ---
-title: "P1 2026/2 — mapa da prova, autoavaliação e lições"
+title: "P1 2026/2 — mapa da prova e lições"
 disciplina: Econometria I (PECO-5021/6021)
 professor: Edson Zambon Monte
 periodo: 2026/2
@@ -46,24 +46,7 @@ Prova aplicada em **09/10/2026**, sem consulta, 10 pontos, com $e=2{,}718$ e dua
 > **As três demonstrações já estavam escritas aqui**
 > Q5, Q6 e Q7 correspondem a D06.5, D04.1–D04.2 e D08.1, com a mesma notação. Os 4,0 pontos da Parte II eram os mais previsíveis da prova.
 
-## 2. Autoavaliação (relato de 09/10, antes da nota oficial)
-
-Estimativa feita a partir do que foi relatado logo depois da prova, item a item, contra a rubrica de [resolucao.md](resolucao.md).
-
-| Questão | Vale | O que foi feito | Estimativa |
-|---|---|---|---|
-| Q1 | 1,5 | não resolvida | 0 |
-| Q2 | 1,5 | a, b e c completos; d com o ponto de reversão certo (32,14) e o efeito marginal como 4,5%, sem o termo $2\beta_3EXP$ | 1,00–1,25 |
-| Q3 | 1,5 | a, b e d respondidos; rejeitou $H_0$ sem calcular o $F$ | 0,75–1,00 |
-| Q4 | 1,5 | c feito; a e b em branco | 0,50–0,75 |
-| Q5 | 1,5 | chegou em $\sigma^2\mathbf C\mathbf C'$ pela subtração; sem a prova de que é semidefinida positiva | 1,00–1,25 |
-| Q6 | 1,0 | incompleta: faltou isolar $\mathbf b_2$ com $\mathbf I-\mathbf P_1$ | 0,25–0,50 |
-| Q7 | 1,5 | feita | 1,00–1,50 |
-| **Total** | **10,0** | | **≈ 4,5 a 6,25** |
-
-Quando a nota oficial sair, registre-a aqui e compare com a estimativa por questão: a diferença mostra quanto o professor dá de crédito parcial.
-
-## 3. O diagnóstico
+## 2. O diagnóstico
 
 > [!WARNING]
 > **Os pontos perdidos estão na conta, não no conceito**

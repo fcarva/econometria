@@ -23,7 +23,7 @@ aliases:
 
 # P1 2026/2 — resolução comentada
 
-Gabarito não oficial da prova de 09/10/2026, montado pelas fotos do enunciado. O enunciado não é reproduzido: cada item tem um título-paráfrase e os dados numéricos necessários. As contas estão conferidas em [reproducao.R](reproducao.R) e o mapa da prova, com a autoavaliação, está no [README](README.md).
+Gabarito não oficial da prova de 09/10/2026, montado pelas fotos do enunciado. O enunciado não é reproduzido: cada item tem um título-paráfrase e os dados numéricos necessários. As contas estão conferidas em [reproducao.R](reproducao.R) e o mapa da prova está no [README](README.md).
 
 > [!NOTE]
 > **Notação**
