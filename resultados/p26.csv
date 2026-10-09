@@ -1,0 +1,45 @@
+chave,valor
+p26_q1_xtx11,            4
+p26_q1_xtx22,           20
+p26_q1_xtx33,            4
+p26_q1_xty1,           39
+p26_q1_xty2,           21
+p26_q1_xty3,            5
+p26_q1_inv22,         0.05
+p26_q1_b0,         9.75
+p26_q1_b1,         1.05
+p26_q1_b2,         1.25
+p26_q1_e1,         0.15
+p26_q1_e2,        -0.45
+p26_q1_e3,         0.45
+p26_q1_e4,        -0.15
+p26_q1_yhat1,         7.85
+p26_q1_yhat4,        14.15
+p26_q1_sqr,         0.45
+p26_q1_sqt,        28.75
+p26_q1_r2,0.984347826087
+p26_q1_s2,         0.45
+p26_q2_educ_aprox,          8.5
+p26_q2_educ_exato,8.87074716997
+p26_q2_fem_aprox,          -18
+p26_q2_fem_exato,-16.4714199654
+p26_q2_t_fem,         -3.6
+p26_q2_F,          6.5
+p26_q2_gl2,          195
+p26_q2_efm10,        0.031
+p26_q2_efm10_pct,          3.1
+p26_q2_erro_comum,          4.5
+p26_q2_exp_max,32.1428571429
+p26_q3_F,8.28571428571
+p26_q3_num,           15
+p26_q3_den,1.81034482759
+p26_q3_gl2,          116
+p26_q4_b1iv,            4
+p26_q4_b0iv,           18
+p26_q4_sim_mqo,3.64288446652
+p26_q4_sim_plim_mqo,         3.64
+p26_q4_sim_iv,3.01133719078
+p26_q5_min_autoval, 32.463716176
+p26_q6_dif_fwl,1.11022302463e-16
+p26_q7_prob_n50,        0.775
+p26_q7_prob_n50000,            0

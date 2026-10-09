@@ -23,6 +23,10 @@ aliases:
 > **Revisão espaçada**
 > Os [flashcards](banco/flashcards.md) cobrem 60 perguntas curtas com resposta escondida, organizadas por módulo — são a ferramenta das revisões de +1, +3 e +7 dias.
 
+> [!CAUTION]
+> **A P1 2026/2 quebrou o padrão**
+> A prova de 09/10/2026 não teve output: 6,0 pontos de contas com números prontos e 4,0 de demonstrações (Gauss-Markov, FWL, consistência). Para a próxima prova, treine as duas estruturas. Ver [p1_2026_2/README.md](p1_2026_2/README.md).
+
 > [!IMPORTANT]
 > **A distribuição real de pontos da P1 2025/2**
 > Interpretação de output (Q1 e Q2) valeu **6,5 dos 10 pontos**; as quatro demonstrações, 3,5. Comece sempre pelas questões de output. Mapa completo em [p1_2025_2/README.md](p1_2025_2/README.md).
@@ -32,6 +36,7 @@ aliases:
 >
 > | Arquivo | Para quê |
 > |---|---|
+> | [p1_2026_2/](p1_2026_2/README.md) | **a P1 de 09/10/2026**: mapa, [resolução com rubrica](p1_2026_2/resolucao.md), autoavaliação e lições |
 > | [p1_2025_2/](p1_2025_2/econometria-i-prova-2025-2-resolvida.md) | a P1 de 2025/2 resolvida: é o molde da sua prova |
 > | [p1_2025_2/reproducao.R](p1_2025_2/reproducao.R) | reproduz em R os dois outputs da P1 2025/2 e as contas das respostas |
 > | [p2_2024_2/mapa.md](p2_2024_2/mapa.md) | tipos de questão da P2 2024/2 e onde estudar cada um |
